@@ -3,7 +3,7 @@ title: Democracia en las comunidades budistas Soto Zen del siglo XXI
 subtitle: "Límites de la votación y sentido de la autoridad en la vía del zen"
 date: 2026-01-24 09:00:00 +0100
 categories: ["Comunidad"]
-tags: ["democracia"]
+tags: ["democracia", "sangha", "gobernanza", "autoridad", "soto zen"]
 ---
 
 Si entendemos la democracia únicamente como un sistema de votación donde todo se decide por mayoría, corremos el riesgo de aplicar categorías políticas modernas a una tradición espiritual que funciona desde otro eje cultural, no por ello menos válido.

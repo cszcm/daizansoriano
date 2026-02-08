@@ -3,7 +3,7 @@ title: Una sangha laica, religiosa y secular
 subtitle: "Prefacio del libro Camino Medio"
 date: 2026-02-08 09:00:00 +0100
 categories: ["Comunidad"]
-tags: ["democracia"]
+tags: ["libros", "sangha", "soto zen", "secularizacion", "camino medio"]
 ---
 
 **Esta entrada forma parte del libro que estoy preparando, cuyo título provisional será *Camino Medio*. Lo que sigue es un fragmento de ese manuscrito en desarrollo, compartido aquí como adelanto.**

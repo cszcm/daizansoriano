@@ -3,7 +3,7 @@ title: "Cuando no hay claridad, también hay presencia"
 subtitle: "La luz de la medianoche en la práctica de zazen"
 date: 2025-12-21 09:00:00 +0100
 categories: ["Zen"]
-tags: ["zazen"]
+tags: ["zazen", "presencia", "no dualidad", "soto zen", "dongshan"]
 ---
 
 «_Medianoche es la verdadera luz; el alba no es clara_».

@@ -3,7 +3,7 @@ title: "Guerra y Violencia"
 subtitle: ""
 date: 2025-05-21 09:00:00 +0100
 categories: ["Paz"]
-tags: ["no-violencia"]
+tags: ["no violencia", "guerra", "paz", "compasion", "interdependencia"]
 ---
 
 La guerra no es solo una tragedia humana, es la expresión más clara del fracaso colectivo en comprender nuestra profunda interdependencia. Frente a la violencia, debemos rechazar toda acción que perpetúe el sufrimiento y comprometernos activamente con la paz y la compasión. No existe «guerra justa», pues toda guerra implica una ruptura fundamental del respeto por la vida, generando más odio, dolor y sufrimiento. La violencia nunca puede ser un camino válido para la resolución de conflictos, porque perpetúa los tres venenos básicos del sufrimiento humano: la codicia, el odio y la ignorancia.

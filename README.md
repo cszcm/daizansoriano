@@ -53,3 +53,42 @@ Esto importará posts y etiquetas si vienen en el feed, pero puede perder catego
 ## Limpieza
 
 Cuando tengas tus entradas reales, borra el ejemplo en `_posts/2024-01-01-bienvenido.md`.
+
+## Categorías y etiquetas (criterio)
+
+Para que el archivo del blog sea coherente (y evitar duplicados por tildes/guiones), usamos este criterio:
+
+- `categories`: 1 categoría por entrada (lista con un único valor).
+- `tags`: 3–5 etiquetas temáticas por entrada.
+- Estilo de `tags`: minúsculas, sin tildes, sin guiones; usar espacios si hace falta.
+
+Ejemplo:
+
+    categories: ["Comunidad"]
+    tags: ["sangha", "soto zen", "secularizacion", "camino medio"]
+
+### Categorías usadas
+
+Actualmente el blog usa estas categorías (mantenerlas tal cual para no fragmentar el archivo):
+
+- Comunidad
+- Etica
+- Psicologia
+- Practica
+- Zen
+- Sociedad
+- Paz
+- Cine
+
+### Tags canónicos (sugeridos)
+
+Si un tema encaja, prioriza estas etiquetas antes de inventar variantes:
+
+- budismo, soto zen, zazen, sangha
+- compasion, interdependencia, presencia, no dualidad, discernimiento
+- paz, guerra, no violencia, violencia
+- democracia, gobernanza, autoridad
+- psicologia, sesgo cognitivo, sesgo de confirmacion, confianza, buenismo
+- tecnologia, IA, etica
+
+Nota: si aparece una nueva etiqueta, intenta que siga el mismo estilo (sin tildes/guiones) y que no duplique otra existente (p. ej. compasion en vez de compasión).

@@ -3,7 +3,7 @@ title: "La sabiduría del corazón despierto"
 subtitle: ""
 date: 2025-09-21 09:00:00 +0100
 categories: ["Practica"]
-tags: ["confianza"]
+tags: ["confianza", "buenismo", "compasion", "zazen", "discernimiento"]
 ---
 
 La confianza es una de las cualidades más profundas del corazón humano. Sin ella, la vida se vuelve una defensa constante, pero con ella se abre la posibilidad de una existencia plena, sin miedo ni control. Pero en el camino espiritual es necesario distinguir entre la **confianza incondicional**, que surge de la comprensión profunda de la realidad, y el **buenismo**, que es una forma de ingenuidad disfrazada de bondad. Esta diferencia no es un matiz intelectual, sino una cuestión vital, ya que de ella depende que nuestra práctica sea auténtica o una ilusión amable.
