@@ -2,7 +2,7 @@
 title: "Avatar y la pedagogía invisible de la violencia"
 subtitle: ""
 date: 2026-01-11 09:00:00 +0100
-categories: ["Cine"]
+categories: ["Sociedad"]
 tags: ["no violencia", "violencia", "cultura", "familia", "compasion"]
 ---
 
