@@ -218,8 +218,7 @@ audio: false
 En cada post, la web aplica esta lógica automáticamente:
 
 1. Si existe un MP3 en `audio/` para esa entrada, se muestra el reproductor HTML5 e intenta reproducir automáticamente.
-2. Si existe MP3 y `tts` no está desactivado, también aparece el bloque TTS para usar `Karaoke` y `Manos libres` como seguimiento visual.
-3. Si no existe MP3, se muestra el lector TTS del navegador (si no está desactivado con `tts: false`).
+2. Si no existe MP3, se muestra el lector TTS del navegador (si no está desactivado con `tts: false`).
 
 ### Ruta esperada del MP3
 
@@ -237,7 +236,3 @@ Cuando hay audio pregrabado para una entrada, el reproductor muestra también un
 ### Reanudar reproducción
 
 Cuando pausas un MP3, el navegador guarda la posición de esa entrada y al volver al post permite retomar desde ese punto.
-
-### Seguir texto con MP3
-
-Cuando hay MP3, el reproductor muestra un enlace `Seguir texto (Karaoke y Manos libres)` que lleva al bloque TTS para activar el seguimiento visual del contenido.
