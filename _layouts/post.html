@@ -3,6 +3,16 @@ layout: default
 ---
 
 <article class="post">
+  {% assign post_audio_rel = page.path | remove_first: "_posts/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
+  {% assign post_audio_path = "/audio/" | append: post_audio_rel %}
+  {% assign has_post_audio = false %}
+  {% for static_file in site.static_files %}
+    {% if static_file.path == post_audio_path %}
+      {% assign has_post_audio = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
   <header class="post-header">
     {% assign wpm = site.reading_wpm | default: 200 %}
     {% assign word_count = content | strip_html | number_of_words %}
@@ -18,7 +28,9 @@ layout: default
   {% endif %}
   </header>
 
-  {% if page.tts != false %}
+  {% if has_post_audio %}
+    {% include post-audio-player.html audio_url=post_audio_path %}
+  {% elsif page.tts != false %}
     {% include tts-player.html %}
   {% endif %}
 

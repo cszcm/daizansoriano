@@ -1,0 +1,8 @@
+{
+  "name": "daizansoriano-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "tts:build": "node scripts/generate-audio.mjs"
+  }
+}

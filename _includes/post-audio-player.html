@@ -1,0 +1,87 @@
+<div class="post-audio-player" data-post-audio-player>
+  <p class="post-audio-status" data-post-audio-status role="status" aria-live="polite">Audio disponible.</p>
+  <audio controls preload="metadata" data-post-audio controlsList="nodownload" playsinline>
+    <source src="{{ include.audio_url | relative_url }}" type="audio/mpeg">
+    Tu navegador no soporta el reproductor de audio.
+  </audio>
+  <p class="post-audio-download">
+    <a href="{{ include.audio_url | relative_url }}" download>Descargar audio MP3</a>
+  </p>
+</div>
+
+<style>
+  .post-audio-player {
+    margin: 1rem 0 1.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  .post-audio-status {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .post-audio-player audio {
+    width: 100%;
+    max-width: 36rem;
+  }
+
+  .post-audio-download {
+    margin: 0.5rem 0 0;
+    font-size: 0.92rem;
+  }
+
+  .post-audio-download a {
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  (function () {
+    function initPostAudioPlayer() {
+      var root = document.querySelector('[data-post-audio-player]');
+      if (!root) {
+        return;
+      }
+
+      var audio = root.querySelector('[data-post-audio]');
+      var status = root.querySelector('[data-post-audio-status]');
+      if (!audio || !status) {
+        return;
+      }
+
+      function setStatus(message) {
+        status.textContent = message;
+      }
+
+      audio.addEventListener('play', function () {
+        setStatus('Reproduciendo audio del artículo.');
+      });
+
+      audio.addEventListener('pause', function () {
+        if (!audio.ended) {
+          setStatus('Audio en pausa.');
+        }
+      });
+
+      audio.addEventListener('ended', function () {
+        setStatus('Audio finalizado.');
+      });
+
+      audio.play().then(function () {
+        setStatus('Reproduciendo audio del artículo.');
+      }).catch(function () {
+        setStatus('Audio listo. Pulsa reproducir para iniciar.');
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPostAudioPlayer);
+      return;
+    }
+
+    initPostAudioPlayer();
+  })();
+</script>

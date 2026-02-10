@@ -162,3 +162,73 @@ Por defecto, si no se define `views`, el contador se muestra.
 ### Archivo relacionado
 
 - Include del contador: `_includes/post-views.html`
+
+## Generador automático de audios MP3
+
+Incluye un script Node para convertir automáticamente tus posts markdown en audio MP3 usando OpenAI TTS, guardando archivos en `audio/`.
+
+### Requisitos
+
+- Node.js 18 o superior.
+- Variable de entorno `OPENAI_API_KEY`.
+
+### Uso
+
+```bash
+export OPENAI_API_KEY="tu_api_key"
+npm run tts:build
+```
+
+El script:
+
+- Lee los posts en `_posts/`.
+- Limpia markdown a texto plano.
+- Genera audio con OpenAI TTS.
+- Guarda cada MP3 en `audio/` respetando la estructura de `_posts/`.
+
+### Opciones
+
+- `--force`: regenera audios aunque ya existan.
+- `--dry-run`: solo muestra qué procesaría, sin llamar a la API.
+
+Ejemplos:
+
+```bash
+npm run tts:build -- --dry-run
+npm run tts:build -- --force
+```
+
+### Variables opcionales
+
+- `OPENAI_TTS_MODEL` (por defecto: `gpt-4o-mini-tts`)
+- `OPENAI_TTS_VOICE` (por defecto: `alloy`)
+- `OPENAI_TTS_MAX_CHARS` (por defecto: `3500`, tamaño por fragmento)
+- `OPENAI_TTS_INSTRUCTIONS` (por defecto: castellano de España `es-ES`)
+
+### Omitir un post
+
+En el front matter del post:
+
+```yaml
+audio: false
+```
+
+## Prioridad audio MP3 vs TTS en la web
+
+En cada post, la web aplica esta lógica automáticamente:
+
+1. Si existe un MP3 en `audio/` para esa entrada, se muestra el reproductor HTML5 e intenta reproducir automáticamente.
+2. Si no existe MP3, se muestra el lector TTS del navegador (si no está desactivado con `tts: false`).
+
+### Ruta esperada del MP3
+
+Debe reflejar la estructura de `_posts/`:
+
+- Post: `_posts/2026/2026-01-24-mi-post.md`
+- Audio: `audio/2026/2026-01-24-mi-post.mp3`
+
+Nota: algunos navegadores bloquean autoplay sin interacción del usuario. En ese caso, el reproductor aparece listo y solo requiere pulsar `play`.
+
+### Descarga del MP3
+
+Cuando hay audio pregrabado para una entrada, el reproductor muestra también un enlace `Descargar audio MP3`.
