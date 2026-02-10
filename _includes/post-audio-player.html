@@ -7,6 +7,9 @@
   <p class="post-audio-download">
     <a href="{{ include.audio_url | relative_url }}" download>Descargar audio MP3</a>
   </p>
+  <p class="post-audio-follow-text">
+    <a href="#tts-follow-mode">Seguir texto (Karaoke y Manos libres)</a>
+  </p>
 </div>
 
 <style>
@@ -33,7 +36,16 @@
     font-size: 0.92rem;
   }
 
+  .post-audio-follow-text {
+    margin: 0.35rem 0 0;
+    font-size: 0.92rem;
+  }
+
   .post-audio-download a {
+    text-decoration: underline;
+  }
+
+  .post-audio-follow-text a {
     text-decoration: underline;
   }
 </style>
@@ -51,9 +63,58 @@
       if (!audio || !status) {
         return;
       }
+      var storageKey = 'post-audio-position:' + '{{ page.url | slugify }}';
+      var restored = false;
 
       function setStatus(message) {
         status.textContent = message;
+      }
+
+      function savePosition() {
+        if (!window.localStorage || !Number.isFinite(audio.currentTime)) {
+          return;
+        }
+        try {
+          window.localStorage.setItem(storageKey, String(audio.currentTime));
+        } catch (error) {
+          // Ignore quota/private mode errors.
+        }
+      }
+
+      function clearSavedPosition() {
+        if (!window.localStorage) {
+          return;
+        }
+        try {
+          window.localStorage.removeItem(storageKey);
+        } catch (error) {
+          // Ignore storage errors.
+        }
+      }
+
+      function restorePosition() {
+        if (!window.localStorage || restored) {
+          return;
+        }
+        restored = true;
+        try {
+          var raw = window.localStorage.getItem(storageKey);
+          if (!raw) {
+            return;
+          }
+          var seconds = parseFloat(raw);
+          if (!Number.isFinite(seconds) || seconds <= 0) {
+            return;
+          }
+          if (!Number.isFinite(audio.duration) || seconds >= audio.duration - 1) {
+            clearSavedPosition();
+            return;
+          }
+          audio.currentTime = seconds;
+          setStatus('Audio listo. Retoma desde donde lo dejaste.');
+        } catch (error) {
+          // Ignore storage/seek errors.
+        }
       }
 
       audio.addEventListener('play', function () {
@@ -61,14 +122,20 @@
       });
 
       audio.addEventListener('pause', function () {
+        savePosition();
         if (!audio.ended) {
           setStatus('Audio en pausa.');
         }
       });
 
       audio.addEventListener('ended', function () {
+        clearSavedPosition();
         setStatus('Audio finalizado.');
       });
+
+      audio.addEventListener('timeupdate', savePosition);
+      audio.addEventListener('loadedmetadata', restorePosition);
+      window.addEventListener('beforeunload', savePosition);
 
       audio.play().then(function () {
         setStatus('Reproduciendo audio del artículo.');

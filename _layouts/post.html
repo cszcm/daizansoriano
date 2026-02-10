@@ -30,6 +30,11 @@ layout: default
 
   {% if has_post_audio %}
     {% include post-audio-player.html audio_url=post_audio_path %}
+    {% if page.tts != false %}
+      <div id="tts-follow-mode">
+        {% include tts-player.html %}
+      </div>
+    {% endif %}
   {% elsif page.tts != false %}
     {% include tts-player.html %}
   {% endif %}
