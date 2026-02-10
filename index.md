@@ -4,7 +4,7 @@ title: "Inicio"
 ---
 
 <section class="post-list">
-  {% assign podcast_items = site.podcast | sort: "date" | reverse %}
+  {% assign podcast_items = site.podcast | where_exp: "item", "item.source_url == nil" | sort: "date" | reverse %}
   <div class="post-grid">
     {% for post in podcast_items %}
       <article class="post-card">
