@@ -11,6 +11,18 @@ permalink: /:title/
 collections:
   podcast:
     output: true
+    permalink: /podcast/:name/
+
+podcast:
+  author: "Daizan Soriano"
+  owner_name: "Daizan Soriano"
+  owner_email: "daizansoriano@caminomedio.org"
+  image: "/assets/daizan.jpg"
+  category: "Religion & Spirituality"
+  subcategory: "Religion"
+  explicit: false
+
+timezone: "UTC"
 
 # GitHub Pages-safe plugins
 plugins:
@@ -28,3 +40,8 @@ defaults:
     values:
       layout: "post"
       author: ""
+  - scope:
+      path: ""
+      type: "podcast"
+    values:
+      layout: "podcast"
