@@ -100,6 +100,7 @@ El blog incluye un reproductor de lectura en voz alta basado en la Web Speech AP
 ### Qué incluye
 
 - Reproductor integrado en cada post con controles `Leer`, `Pausa`, `Reanudar` y `Parar`.
+- Idioma de lectura fijado a `es-ES` (sin selector de variantes).
 - Control de velocidad con slider (reinicia lectura al cambiar velocidad mientras está hablando).
 - Modo `Karaoke`: al activarlo, se resalta el bloque de texto a medida que avanza la lectura.
 - Modo `Manos libres`: al activarlo, la página hace scroll automático durante la lectura.

@@ -170,6 +170,7 @@
       var currentSpeechOffset = 0;
       var pausedCharIndex = 0;
       var isManualPause = false;
+      var hasEligibleVoices = false;
 
       function setStatus(message) {
         if (statusEl) {
@@ -247,10 +248,11 @@
 
       function getEligibleVoices() {
         var eligible = [];
+        var strictLang = normalizeLang(preferredLang);
         for (var i = 0; i < voices.length; i += 1) {
           var voice = voices[i];
           var voiceLang = normalizeLang(voice.lang);
-          if (voiceLang.indexOf('es') !== 0) {
+          if (voiceLang !== strictLang) {
             continue;
           }
           if (preferredGender === 'any') {
@@ -262,16 +264,7 @@
           }
         }
 
-        if (!eligible.length) {
-          for (var j = 0; j < voices.length; j += 1) {
-            var fallbackVoice = voices[j];
-            if (normalizeLang(fallbackVoice.lang).indexOf('es') === 0) {
-              eligible.push(fallbackVoice);
-            }
-          }
-        }
-
-        return eligible.length ? eligible : voices.slice();
+        return eligible;
       }
 
       function getPreferredVoice() {
@@ -312,6 +305,7 @@
         if (!voiceSelect) {
           return;
         }
+        var voiceLabel = root.querySelector('.tts-voice-label');
 
         voiceSelect.innerHTML = '';
         if (!voices.length) {
@@ -320,12 +314,35 @@
           opt.textContent = 'Voz por defecto';
           voiceSelect.appendChild(opt);
           voiceSelect.disabled = true;
+          if (voiceLabel) {
+            voiceLabel.style.display = '';
+          }
+          voiceSelect.style.display = '';
+          hasEligibleVoices = false;
+          setControlsState({ play: true, pause: true, resume: true, stop: true });
           return;
         }
 
+        var renderVoices = getEligibleVoices();
+        if (!renderVoices.length) {
+          var noEsEsOption = document.createElement('option');
+          noEsEsOption.value = '';
+          noEsEsOption.textContent = 'Sin voces es-ES disponibles';
+          voiceSelect.appendChild(noEsEsOption);
+          voiceSelect.disabled = true;
+          if (voiceLabel) {
+            voiceLabel.style.display = '';
+          }
+          voiceSelect.style.display = '';
+          hasEligibleVoices = false;
+          setStatus('No hay voces es-ES disponibles en este navegador/sistema.');
+          setControlsState({ play: true, pause: true, resume: true, stop: true });
+          return;
+        }
+
+        hasEligibleVoices = true;
         voiceSelect.disabled = false;
         var preferred = getPreferredVoice();
-        var renderVoices = getEligibleVoices();
 
         for (var i = 0; i < renderVoices.length; i += 1) {
           var voice = renderVoices[i];
@@ -336,6 +353,19 @@
             option.selected = true;
           }
           voiceSelect.appendChild(option);
+        }
+
+        if (renderVoices.length === 1) {
+          selectedVoiceURI = renderVoices[0].voiceURI || '';
+          if (voiceLabel) {
+            voiceLabel.style.display = 'none';
+          }
+          voiceSelect.style.display = 'none';
+        } else {
+          if (voiceLabel) {
+            voiceLabel.style.display = '';
+          }
+          voiceSelect.style.display = '';
         }
       }
 
@@ -505,6 +535,12 @@
         articleText = refreshContentText();
         if (!articleText) {
           setStatus('No se encontró contenido legible para este artículo.');
+          setControlsState({ play: false, pause: true, resume: true, stop: true });
+          return;
+        }
+
+        if (!hasEligibleVoices) {
+          setStatus('No hay voces es-ES disponibles en este navegador/sistema.');
           setControlsState({ play: false, pause: true, resume: true, stop: true });
           return;
         }
