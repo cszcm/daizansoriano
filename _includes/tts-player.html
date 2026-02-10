@@ -1,0 +1,222 @@
+<div class="tts-player" data-tts-player>
+  <p class="tts-status" data-tts-status role="status" aria-live="polite">Lector de audio listo.</p>
+
+  <div class="tts-controls" data-tts-controls>
+    <button type="button" data-tts-action="play">Leer</button>
+    <button type="button" data-tts-action="pause" disabled>Pausa</button>
+    <button type="button" data-tts-action="resume" disabled>Reanudar</button>
+    <button type="button" data-tts-action="stop" disabled>Parar</button>
+
+    <label class="tts-rate-label" for="tts-rate-{{ page.url | slugify }}">Velocidad</label>
+    <input
+      id="tts-rate-{{ page.url | slugify }}"
+      type="range"
+      min="0.7"
+      max="1.6"
+      step="0.1"
+      value="1"
+      data-tts-rate
+      aria-label="Velocidad de lectura"
+    >
+    <output data-tts-rate-value>1.0x</output>
+  </div>
+</div>
+
+<style>
+  .tts-player {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  .tts-status {
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .tts-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .tts-controls button {
+    cursor: pointer;
+  }
+
+  .tts-rate-label {
+    margin-left: 0.25rem;
+  }
+
+  .tts-controls input[type="range"] {
+    width: 8rem;
+  }
+</style>
+
+<script>
+  (function () {
+    var root = document.querySelector('[data-tts-player]');
+    if (!root) {
+      return;
+    }
+
+    var statusEl = root.querySelector('[data-tts-status]');
+    var controlsEl = root.querySelector('[data-tts-controls]');
+    var playBtn = root.querySelector('[data-tts-action="play"]');
+    var pauseBtn = root.querySelector('[data-tts-action="pause"]');
+    var resumeBtn = root.querySelector('[data-tts-action="resume"]');
+    var stopBtn = root.querySelector('[data-tts-action="stop"]');
+    var rateInput = root.querySelector('[data-tts-rate]');
+    var rateValue = root.querySelector('[data-tts-rate-value]');
+    var synth = window.speechSynthesis;
+    var utterance = null;
+    var articleText = '';
+
+    function setStatus(message) {
+      if (statusEl) {
+        statusEl.textContent = message;
+      }
+    }
+
+    function setControlsState(state) {
+      playBtn.disabled = state.play;
+      pauseBtn.disabled = state.pause;
+      resumeBtn.disabled = state.resume;
+      stopBtn.disabled = state.stop;
+    }
+
+    function getContentText() {
+      var selectors = ['article', '.post-content', '.post', 'main'];
+      var target = null;
+
+      for (var i = 0; i < selectors.length; i += 1) {
+        target = document.querySelector(selectors[i]);
+        if (target) {
+          break;
+        }
+      }
+
+      if (!target) {
+        return '';
+      }
+
+      var clone = target.cloneNode(true);
+      var removable = clone.querySelectorAll('script, style, nav, footer, header, aside, .toc, .comments, .share, .related');
+      removable.forEach(function (node) {
+        node.remove();
+      });
+
+      return (clone.innerText || '')
+        .replace(/\u00a0/g, ' ')
+        .replace(/[ \t]+/g, ' ')
+        .replace(/\n{2,}/g, '\n')
+        .replace(/\s*\n\s*/g, '\n')
+        .trim();
+    }
+
+    function cleanupSpeech() {
+      if (synth.speaking || synth.pending) {
+        synth.cancel();
+      }
+      utterance = null;
+      setControlsState({ play: false, pause: true, resume: true, stop: true });
+    }
+
+    function speakText() {
+      if (!articleText) {
+        setStatus('No se encontró contenido legible para este artículo.');
+        setControlsState({ play: false, pause: true, resume: true, stop: true });
+        return;
+      }
+
+      cleanupSpeech();
+
+      utterance = new SpeechSynthesisUtterance(articleText);
+      utterance.lang = document.documentElement.lang || 'es-ES';
+      utterance.rate = parseFloat(rateInput.value);
+
+      utterance.onstart = function () {
+        setStatus('Leyendo artículo...');
+        setControlsState({ play: true, pause: false, resume: true, stop: false });
+      };
+
+      utterance.onpause = function () {
+        setStatus('Lectura en pausa.');
+        setControlsState({ play: true, pause: true, resume: false, stop: false });
+      };
+
+      utterance.onresume = function () {
+        setStatus('Lectura reanudada.');
+        setControlsState({ play: true, pause: false, resume: true, stop: false });
+      };
+
+      utterance.onend = function () {
+        setStatus('Lectura terminada.');
+        setControlsState({ play: false, pause: true, resume: true, stop: true });
+      };
+
+      utterance.onerror = function () {
+        setStatus('No se pudo reproducir el audio en este navegador.');
+        setControlsState({ play: false, pause: true, resume: true, stop: true });
+      };
+
+      synth.speak(utterance);
+    }
+
+    if (!('speechSynthesis' in window) || typeof window.SpeechSynthesisUtterance === 'undefined') {
+      setStatus('Tu navegador no soporta lectura en voz alta (TTS).');
+      if (controlsEl) {
+        controlsEl.hidden = true;
+      }
+      return;
+    }
+
+    articleText = getContentText();
+    if (!articleText) {
+      setStatus('No se encontró contenido legible para este artículo.');
+      setControlsState({ play: true, pause: true, resume: true, stop: true });
+      return;
+    }
+
+    setControlsState({ play: false, pause: true, resume: true, stop: true });
+
+    playBtn.addEventListener('click', function () {
+      speakText();
+    });
+
+    pauseBtn.addEventListener('click', function () {
+      if (synth.speaking && !synth.paused) {
+        synth.pause();
+      }
+    });
+
+    resumeBtn.addEventListener('click', function () {
+      if (synth.speaking && synth.paused) {
+        synth.resume();
+      }
+    });
+
+    stopBtn.addEventListener('click', function () {
+      cleanupSpeech();
+      setStatus('Lectura detenida.');
+    });
+
+    rateInput.addEventListener('input', function () {
+      var value = parseFloat(rateInput.value).toFixed(1);
+      rateValue.value = value + 'x';
+    });
+
+    rateInput.addEventListener('change', function () {
+      if (synth.speaking) {
+        speakText();
+      }
+    });
+
+    window.addEventListener('beforeunload', function () {
+      cleanupSpeech();
+    });
+  })();
+</script>

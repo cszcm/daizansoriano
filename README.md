@@ -92,3 +92,46 @@ Si un tema encaja, prioriza estas etiquetas antes de inventar variantes:
 - tecnologia, IA, etica
 
 Nota: si aparece una nueva etiqueta, intenta que siga el mismo estilo (sin tildes/guiones) y que no duplique otra existente (p. ej. compasion en vez de compasión).
+
+## Lector de artículos en audio (TTS)
+
+El blog incluye un reproductor de lectura en voz alta basado en la Web Speech API del navegador. Se muestra automáticamente en cada post y lee el contenido del artículo sin depender de servicios externos ni backend.
+
+### Qué incluye
+
+- Reproductor integrado en cada post con controles `Leer`, `Pausa`, `Reanudar` y `Parar`.
+- Control de velocidad con slider (reinicia lectura al cambiar velocidad mientras está hablando).
+- Detección de compatibilidad del navegador con fallback automático (mensaje + controles ocultos).
+- Extracción de texto del contenido del post, excluyendo navegación y bloques no deseados.
+
+### Compatibilidad
+
+- Chrome y Edge: soporte generalmente más estable.
+- Safari y Firefox: el soporte puede variar según versión, sistema operativo y voces disponibles.
+- Si el navegador no soporta TTS, se muestra un mensaje y los controles no aparecen.
+
+### Desactivar en un post
+
+Añade en el front matter del post:
+
+```yaml
+tts: false
+```
+
+Por defecto, si no se define `tts`, el reproductor se muestra.
+
+### Ajustar selector de contenido
+
+El include `_includes/tts-player.html` extrae el texto en este orden:
+
+1. `article`
+2. `.post-content`
+3. `.post`
+4. `main`
+
+Si tu tema usa otra estructura, edita el arreglo `selectors` dentro del script del include y coloca ahí tu selector principal.
+
+### Archivos relacionados
+
+- Include del reproductor: `_includes/tts-player.html`
+- Inserción en layout de posts: `_layouts/post.html`
