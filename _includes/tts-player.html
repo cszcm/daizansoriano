@@ -17,6 +17,15 @@
       <option value="male">Masculina</option>
     </select>
 
+    <label class="tts-karaoke-label" for="tts-karaoke-{{ page.url | slugify }}">
+      <input
+        id="tts-karaoke-{{ page.url | slugify }}"
+        type="checkbox"
+        data-tts-karaoke
+      >
+      Karaoke
+    </label>
+
     <label class="tts-rate-label" for="tts-rate-{{ page.url | slugify }}">Velocidad</label>
     <input
       id="tts-rate-{{ page.url | slugify }}"
@@ -93,6 +102,19 @@
   .tts-pitch-label {
     margin-left: 0.25rem;
   }
+
+  .tts-karaoke-label {
+    margin-left: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+  }
+
+  .tts-karaoke-active {
+    background: rgba(255, 225, 115, 0.35);
+    transition: background 0.2s ease;
+  }
 </style>
 
 <script>
@@ -111,6 +133,7 @@
       var stopBtn = root.querySelector('[data-tts-action="stop"]');
       var voiceSelect = root.querySelector('[data-tts-voice]');
       var genderSelect = root.querySelector('[data-tts-gender]');
+      var karaokeToggle = root.querySelector('[data-tts-karaoke]');
       var rateInput = root.querySelector('[data-tts-rate]');
       var rateValue = root.querySelector('[data-tts-rate-value]');
       var pitchInput = root.querySelector('[data-tts-pitch]');
@@ -122,6 +145,9 @@
       var selectedVoiceURI = '';
       var preferredLang = 'es-ES';
       var preferredGender = 'any';
+      var speechSegments = [];
+      var activeKaraokeBlock = null;
+      var lastBoundaryIndex = 0;
 
       function setStatus(message) {
         if (statusEl) {
@@ -306,18 +332,110 @@
           return '';
         }
 
-        var clone = target.cloneNode(true);
-        var removable = clone.querySelectorAll('script, style, nav, footer, header, aside, .toc, .comments, .share, .related, [data-tts-player]');
-        removable.forEach(function (node) {
-          node.remove();
+        var ignored = 'script, style, nav, footer, header, aside, .toc, .comments, .share, .related, [data-tts-player]';
+        var walker = document.createTreeWalker(target, NodeFilter.SHOW_TEXT, {
+          acceptNode: function (node) {
+            if (!node.nodeValue || !node.nodeValue.trim()) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            if (!node.parentElement) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            if (node.parentElement.closest(ignored)) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+          }
         });
 
-        return (clone.innerText || '')
-          .replace(/\u00a0/g, ' ')
-          .replace(/[ \t]+/g, ' ')
-          .replace(/\n{2,}/g, '\n')
-          .replace(/\s*\n\s*/g, '\n')
-          .trim();
+        function getHighlightBlock(element) {
+          if (!element) {
+            return target;
+          }
+          var block = element.closest('p, li, blockquote, h1, h2, h3, h4, h5, h6, figcaption, td, th');
+          if (block && target.contains(block)) {
+            return block;
+          }
+          return target;
+        }
+
+        var chunks = [];
+        speechSegments = [];
+        var cursor = 0;
+        var textNode = walker.nextNode();
+
+        while (textNode) {
+          var normalized = textNode.nodeValue.replace(/\s+/g, ' ').trim();
+          if (normalized) {
+            if (chunks.length) {
+              cursor += 1;
+            }
+            var start = cursor;
+            cursor += normalized.length;
+            speechSegments.push({
+              start: start,
+              end: cursor,
+              block: getHighlightBlock(textNode.parentElement)
+            });
+            chunks.push(normalized);
+          }
+          textNode = walker.nextNode();
+        }
+
+        return chunks.join(' ').trim();
+      }
+
+      function clearKaraokeHighlight() {
+        if (activeKaraokeBlock) {
+          activeKaraokeBlock.classList.remove('tts-karaoke-active');
+          activeKaraokeBlock = null;
+        }
+      }
+
+      function setKaraokeHighlightByIndex(charIndex) {
+        if (!karaokeToggle || !karaokeToggle.checked) {
+          clearKaraokeHighlight();
+          return;
+        }
+
+        var match = null;
+        for (var i = 0; i < speechSegments.length; i += 1) {
+          var segment = speechSegments[i];
+          if (charIndex >= segment.start && charIndex <= segment.end) {
+            match = segment;
+            break;
+          }
+        }
+
+        if (!match || !match.block) {
+          return;
+        }
+
+        if (activeKaraokeBlock === match.block) {
+          return;
+        }
+
+        clearKaraokeHighlight();
+        match.block.classList.add('tts-karaoke-active');
+        activeKaraokeBlock = match.block;
+      }
+
+      function refreshContentText() {
+        var selectors = ['article', '.post-content', '.post', 'main'];
+        var target = null;
+
+        for (var i = 0; i < selectors.length; i += 1) {
+          target = document.querySelector(selectors[i]);
+          if (target) {
+            break;
+          }
+        }
+
+        if (!target) {
+          return '';
+        }
+
+        return getContentText();
       }
 
       function cleanupSpeech() {
@@ -325,11 +443,13 @@
           synth.cancel();
         }
         utterance = null;
+        clearKaraokeHighlight();
+        lastBoundaryIndex = 0;
         setControlsState({ play: false, pause: true, resume: true, stop: true });
       }
 
       function speakText() {
-        articleText = getContentText();
+        articleText = refreshContentText();
         if (!articleText) {
           setStatus('No se encontró contenido legible para este artículo.');
           setControlsState({ play: false, pause: true, resume: true, stop: true });
@@ -347,6 +467,7 @@
         utterance.onstart = function () {
           setStatus('Leyendo artículo...');
           setControlsState({ play: true, pause: false, resume: true, stop: false });
+          setKaraokeHighlightByIndex(0);
         };
 
         utterance.onpause = function () {
@@ -361,12 +482,22 @@
 
         utterance.onend = function () {
           setStatus('Lectura terminada.');
+          clearKaraokeHighlight();
           setControlsState({ play: false, pause: true, resume: true, stop: true });
         };
 
         utterance.onerror = function () {
           setStatus('No se pudo reproducir el audio en este navegador.');
+          clearKaraokeHighlight();
           setControlsState({ play: false, pause: true, resume: true, stop: true });
+        };
+
+        utterance.onboundary = function (event) {
+          if (typeof event.charIndex !== 'number') {
+            return;
+          }
+          lastBoundaryIndex = event.charIndex;
+          setKaraokeHighlightByIndex(lastBoundaryIndex);
         };
 
         synth.speak(utterance);
@@ -380,7 +511,7 @@
         return;
       }
 
-      articleText = getContentText();
+      articleText = refreshContentText();
       if (!articleText) {
         setStatus('No se encontró contenido legible para este artículo.');
         setControlsState({ play: true, pause: true, resume: true, stop: true });
@@ -449,6 +580,16 @@
         populateVoices();
         if (synth.speaking) {
           speakText();
+        }
+      });
+
+      karaokeToggle.addEventListener('change', function () {
+        if (!karaokeToggle.checked) {
+          clearKaraokeHighlight();
+          return;
+        }
+        if (synth.speaking) {
+          setKaraokeHighlightByIndex(lastBoundaryIndex);
         }
       });
 
