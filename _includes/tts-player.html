@@ -26,6 +26,15 @@
       Karaoke
     </label>
 
+    <label class="tts-autoscroll-label" for="tts-autoscroll-{{ page.url | slugify }}">
+      <input
+        id="tts-autoscroll-{{ page.url | slugify }}"
+        type="checkbox"
+        data-tts-autoscroll
+      >
+      Manos libres
+    </label>
+
     <label class="tts-rate-label" for="tts-rate-{{ page.url | slugify }}">Velocidad</label>
     <input
       id="tts-rate-{{ page.url | slugify }}"
@@ -111,6 +120,14 @@
     cursor: pointer;
   }
 
+  .tts-autoscroll-label {
+    margin-left: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+  }
+
   .tts-karaoke-active {
     background: rgba(255, 225, 115, 0.35);
     transition: background 0.2s ease;
@@ -134,6 +151,7 @@
       var voiceSelect = root.querySelector('[data-tts-voice]');
       var genderSelect = root.querySelector('[data-tts-gender]');
       var karaokeToggle = root.querySelector('[data-tts-karaoke]');
+      var autoScrollToggle = root.querySelector('[data-tts-autoscroll]');
       var rateInput = root.querySelector('[data-tts-rate]');
       var rateValue = root.querySelector('[data-tts-rate-value]');
       var pitchInput = root.querySelector('[data-tts-pitch]');
@@ -148,6 +166,10 @@
       var speechSegments = [];
       var activeKaraokeBlock = null;
       var lastBoundaryIndex = 0;
+      var lastAutoScrollBlock = null;
+      var currentSpeechOffset = 0;
+      var pausedCharIndex = 0;
+      var isManualPause = false;
 
       function setStatus(message) {
         if (statusEl) {
@@ -392,6 +414,30 @@
         }
       }
 
+      function scrollToReadingBlock(block) {
+        if (!autoScrollToggle || !autoScrollToggle.checked || !block) {
+          return;
+        }
+
+        if (lastAutoScrollBlock === block) {
+          return;
+        }
+
+        var rect = block.getBoundingClientRect();
+        var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        var isWithinViewport = rect.top >= 0 && rect.bottom <= viewportHeight;
+
+        if (!isWithinViewport || rect.top > viewportHeight * 0.7) {
+          block.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'nearest'
+          });
+        }
+
+        lastAutoScrollBlock = block;
+      }
+
       function setKaraokeHighlightByIndex(charIndex) {
         if (!karaokeToggle || !karaokeToggle.checked) {
           clearKaraokeHighlight();
@@ -410,6 +456,8 @@
         if (!match || !match.block) {
           return;
         }
+
+        scrollToReadingBlock(match.block);
 
         if (activeKaraokeBlock === match.block) {
           return;
@@ -445,10 +493,15 @@
         utterance = null;
         clearKaraokeHighlight();
         lastBoundaryIndex = 0;
+        lastAutoScrollBlock = null;
+        currentSpeechOffset = 0;
+        pausedCharIndex = 0;
+        isManualPause = false;
         setControlsState({ play: false, pause: true, resume: true, stop: true });
       }
 
-      function speakText() {
+      function speakText(startIndex) {
+        var startAt = typeof startIndex === 'number' ? startIndex : 0;
         articleText = refreshContentText();
         if (!articleText) {
           setStatus('No se encontró contenido legible para este artículo.');
@@ -456,9 +509,16 @@
           return;
         }
 
-        cleanupSpeech();
+        if (synth.speaking || synth.pending) {
+          synth.cancel();
+        }
+        clearKaraokeHighlight();
+        lastAutoScrollBlock = null;
+        isManualPause = false;
+        currentSpeechOffset = Math.max(0, Math.min(startAt, articleText.length - 1));
+        pausedCharIndex = currentSpeechOffset;
 
-        utterance = new SpeechSynthesisUtterance(articleText);
+        utterance = new SpeechSynthesisUtterance(articleText.slice(currentSpeechOffset));
         utterance.lang = preferredLang;
         utterance.rate = parseFloat(rateInput.value);
         utterance.pitch = parseFloat(pitchInput.value);
@@ -467,7 +527,7 @@
         utterance.onstart = function () {
           setStatus('Leyendo artículo...');
           setControlsState({ play: true, pause: false, resume: true, stop: false });
-          setKaraokeHighlightByIndex(0);
+          setKaraokeHighlightByIndex(currentSpeechOffset);
         };
 
         utterance.onpause = function () {
@@ -481,14 +541,24 @@
         };
 
         utterance.onend = function () {
+          if (isManualPause) {
+            return;
+          }
           setStatus('Lectura terminada.');
           clearKaraokeHighlight();
+          pausedCharIndex = 0;
+          currentSpeechOffset = 0;
           setControlsState({ play: false, pause: true, resume: true, stop: true });
         };
 
         utterance.onerror = function () {
+          if (isManualPause) {
+            return;
+          }
           setStatus('No se pudo reproducir el audio en este navegador.');
           clearKaraokeHighlight();
+          pausedCharIndex = 0;
+          currentSpeechOffset = 0;
           setControlsState({ play: false, pause: true, resume: true, stop: true });
         };
 
@@ -496,7 +566,8 @@
           if (typeof event.charIndex !== 'number') {
             return;
           }
-          lastBoundaryIndex = event.charIndex;
+          lastBoundaryIndex = currentSpeechOffset + event.charIndex;
+          pausedCharIndex = lastBoundaryIndex;
           setKaraokeHighlightByIndex(lastBoundaryIndex);
         };
 
@@ -522,19 +593,28 @@
       populateVoices();
 
       playBtn.addEventListener('click', function () {
-        speakText();
+        pausedCharIndex = 0;
+        lastBoundaryIndex = 0;
+        speakText(0);
       });
 
       pauseBtn.addEventListener('click', function () {
-        if (synth.speaking && !synth.paused) {
-          synth.pause();
+        if (synth.speaking || synth.pending) {
+          isManualPause = true;
+          pausedCharIndex = Math.max(lastBoundaryIndex, currentSpeechOffset);
+          synth.cancel();
           setStatus('Lectura en pausa.');
-          setControlsState({ play: true, pause: true, resume: false, stop: false });
+          setControlsState({ play: false, pause: true, resume: false, stop: false });
         }
       });
 
       resumeBtn.addEventListener('click', function () {
+        if (pausedCharIndex > 0 && pausedCharIndex < articleText.length) {
+          speakText(pausedCharIndex);
+          return;
+        }
         if (synth.speaking && synth.paused) {
+          isManualPause = false;
           synth.resume();
           setStatus('Lectura reanudada.');
           setControlsState({ play: true, pause: false, resume: true, stop: false });
@@ -588,6 +668,13 @@
           clearKaraokeHighlight();
           return;
         }
+        if (synth.speaking) {
+          setKaraokeHighlightByIndex(lastBoundaryIndex);
+        }
+      });
+
+      autoScrollToggle.addEventListener('change', function () {
+        lastAutoScrollBlock = null;
         if (synth.speaking) {
           setKaraokeHighlightByIndex(lastBoundaryIndex);
         }
