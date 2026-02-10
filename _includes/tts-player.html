@@ -161,6 +161,10 @@
       var currentSpeechOffset = 0;
       var pausedCharIndex = 0;
       var isManualPause = false;
+      var karaokeTimerId = null;
+      var speechStartTime = 0;
+      var pausedAtTime = 0;
+      var boundaryEventSeen = false;
 
       function setStatus(message) {
         if (statusEl) {
@@ -394,6 +398,40 @@
         }
       }
 
+      function stopKaraokeTracking() {
+        if (karaokeTimerId) {
+          window.clearInterval(karaokeTimerId);
+          karaokeTimerId = null;
+        }
+      }
+
+      function startKaraokeTracking() {
+        stopKaraokeTracking();
+        speechStartTime = Date.now();
+        pausedAtTime = 0;
+        boundaryEventSeen = false;
+
+        karaokeTimerId = window.setInterval(function () {
+          if (!synth.speaking || synth.paused) {
+            return;
+          }
+
+          if (boundaryEventSeen) {
+            setKaraokeHighlightByIndex(lastBoundaryIndex);
+            return;
+          }
+
+          var rate = parseFloat(rateInput.value) || 1;
+          var elapsedSeconds = (Date.now() - speechStartTime) / 1000;
+          var estimatedCharIndex = currentSpeechOffset + Math.floor(elapsedSeconds * 14 * rate);
+          if (estimatedCharIndex > articleText.length) {
+            estimatedCharIndex = articleText.length;
+          }
+          lastBoundaryIndex = estimatedCharIndex;
+          setKaraokeHighlightByIndex(lastBoundaryIndex);
+        }, 250);
+      }
+
       function scrollToReadingBlock(block) {
         if (!autoScrollToggle || !autoScrollToggle.checked || !block) {
           return;
@@ -419,11 +457,6 @@
       }
 
       function setKaraokeHighlightByIndex(charIndex) {
-        if (!karaokeToggle || !karaokeToggle.checked) {
-          clearKaraokeHighlight();
-          return;
-        }
-
         var match = null;
         for (var i = 0; i < speechSegments.length; i += 1) {
           var segment = speechSegments[i];
@@ -438,6 +471,11 @@
         }
 
         scrollToReadingBlock(match.block);
+
+        if (!karaokeToggle || !karaokeToggle.checked) {
+          clearKaraokeHighlight();
+          return;
+        }
 
         if (activeKaraokeBlock === match.block) {
           return;
@@ -472,6 +510,7 @@
         }
         utterance = null;
         clearKaraokeHighlight();
+        stopKaraokeTracking();
         lastBoundaryIndex = 0;
         lastAutoScrollBlock = null;
         currentSpeechOffset = 0;
@@ -508,19 +547,26 @@
           setStatus('Leyendo artículo...');
           setControlsState({ play: true, pause: false, resume: true, stop: false });
           setKaraokeHighlightByIndex(currentSpeechOffset);
+          startKaraokeTracking();
         };
 
         utterance.onpause = function () {
+          pausedAtTime = Date.now();
           setStatus('Lectura en pausa.');
           setControlsState({ play: true, pause: true, resume: false, stop: false });
         };
 
         utterance.onresume = function () {
+          if (pausedAtTime > 0) {
+            speechStartTime += Date.now() - pausedAtTime;
+            pausedAtTime = 0;
+          }
           setStatus('Lectura reanudada.');
           setControlsState({ play: true, pause: false, resume: true, stop: false });
         };
 
         utterance.onend = function () {
+          stopKaraokeTracking();
           if (isManualPause) {
             return;
           }
@@ -532,6 +578,7 @@
         };
 
         utterance.onerror = function () {
+          stopKaraokeTracking();
           if (isManualPause) {
             return;
           }
@@ -546,6 +593,7 @@
           if (typeof event.charIndex !== 'number') {
             return;
           }
+          boundaryEventSeen = true;
           lastBoundaryIndex = currentSpeechOffset + event.charIndex;
           pausedCharIndex = lastBoundaryIndex;
           setKaraokeHighlightByIndex(lastBoundaryIndex);
