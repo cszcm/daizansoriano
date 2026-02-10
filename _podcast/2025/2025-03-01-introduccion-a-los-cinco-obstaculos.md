@@ -1,0 +1,18 @@
+---
+layout: podcast
+title: "Introducción a los cinco obstáculos"
+date: 2025-03-01 10:49:03 +0000
+categories: ["podcast"]
+description: "Sesión de enseñanza realizada en el dojo zen de Elche en el contexto del Curso de Introducción a la Meditación Zen II el 28 de febrero de 2025."
+audio_url: "/assets/mp3/2025/2025-03-01-Curso_Introduccion_al_Zen_II_Los_Cinco_Obstaculos.mp3"
+audio_type: "audio/mpeg"
+audio_length: 22831657
+duration: "43:02"
+explicit: false
+source_url: "https://cszcm.github.io/Audioteca/episodios/2025/03/01/introduccion-a-los-cinco-obstaculos/"
+image: "/assets/images/2025/2025-03-01-introduccion-a-los-cinco-obstaculos.jpg"
+---
+
+## Notas
+
+<p>Sesión de enseñanza realizada en el dojo zen de Elche en el contexto del <a href="https://www.caminomedio.org/curso/introduccion-a-la-meditacion-zen/">Curso de Introducción a la Meditación Zen II </a>el 28 de febrero de 2025.</p>

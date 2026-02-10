@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<article class="post podcast-post">
+  <header class="post-header">
+    {% assign wpm = site.reading_wpm | default: 200 %}
+    {% assign word_count = content | strip_html | number_of_words %}
+    {% assign reading_minutes = word_count | times: 1.0 | divided_by: wpm | ceil %}
+    <p class="post-meta">{{ page.date | date: "%d %b %Y" }}{% if page.duration %} · {{ page.duration }}{% else %} · {{ reading_minutes }} min{% endif %}</p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="post-subtitle">{{ page.description }}</p>
+    {% elsif page.subtitle %}
+      <p class="post-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+
+  {% if page.audio_url %}
+    {% include post-audio-player.html audio_url=page.audio_url %}
+  {% endif %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% if page.tags %}
+  <footer class="post-tags">
+    <span>Etiquetas:</span>
+    {% for tag in page.tags %}
+      <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
+    {% endfor %}
+  </footer>
+  {% endif %}
+</article>

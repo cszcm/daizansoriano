@@ -8,6 +8,10 @@ kramdown:
   input: GFM
 permalink: /:title/
 
+collections:
+  podcast:
+    output: true
+
 # GitHub Pages-safe plugins
 plugins:
   - jekyll-feed
