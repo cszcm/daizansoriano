@@ -12,6 +12,10 @@ layout: default
     {% if page.subtitle %}
       <p class="post-subtitle">{{ page.subtitle }}</p>
     {% endif %}
+
+  {% if page.views != false %}
+    {% include post-views.html %}
+  {% endif %}
   </header>
 
   {% if page.tts != false %}

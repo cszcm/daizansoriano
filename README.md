@@ -138,3 +138,27 @@ Si tu tema usa otra estructura, edita el arreglo `selectors` dentro del script d
 
 - Include del reproductor: `_includes/tts-player.html`
 - Inserción en layout de posts: `_layouts/post.html`
+
+## Contador de visitas por entrada
+
+El blog incluye un contador de visitas por post, compatible con GitHub Pages, mediante un servicio externo ligero (`countapi.xyz`).
+
+### Cómo funciona
+
+- Cada entrada incrementa su propio contador al cargar la página.
+- El contador se identifica por la URL del post.
+- Si el servicio no responde o el navegador bloquea la petición, se muestra `No disponible`.
+
+### Desactivar en un post
+
+Añade en el front matter:
+
+```yaml
+views: false
+```
+
+Por defecto, si no se define `views`, el contador se muestra.
+
+### Archivo relacionado
+
+- Include del contador: `_includes/post-views.html`

@@ -1,0 +1,66 @@
+{% assign counter_namespace = site.url | append: site.baseurl | append: '-post-views' | slugify %}
+{% assign counter_key = page.url | slugify %}
+
+<p class="post-views" data-post-views data-namespace="{{ counter_namespace }}" data-key="{{ counter_key }}" aria-live="polite">
+  Visitas: <span data-post-views-count>Cargando...</span>
+</p>
+
+<style>
+  .post-views {
+    margin: 0.5rem 0 1rem;
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+</style>
+
+<script>
+  (function () {
+    function initPostViews() {
+      var container = document.querySelector('[data-post-views]');
+      if (!container) {
+        return;
+      }
+
+      var countEl = container.querySelector('[data-post-views-count]');
+      var namespace = container.getAttribute('data-namespace');
+      var key = container.getAttribute('data-key');
+
+      function setText(value) {
+        if (countEl) {
+          countEl.textContent = value;
+        }
+      }
+
+      if (!window.fetch || !namespace || !key) {
+        setText('No disponible');
+        return;
+      }
+
+      var endpoint = 'https://api.countapi.xyz/hit/' + encodeURIComponent(namespace) + '/' + encodeURIComponent(key);
+
+      fetch(endpoint, { cache: 'no-store' })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error('counter-request-failed');
+          }
+          return response.json();
+        })
+        .then(function (data) {
+          if (!data || typeof data.value !== 'number') {
+            throw new Error('counter-value-missing');
+          }
+          setText(data.value.toLocaleString('es-ES'));
+        })
+        .catch(function () {
+          setText('No disponible');
+        });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPostViews);
+      return;
+    }
+
+    initPostViews();
+  })();
+</script>

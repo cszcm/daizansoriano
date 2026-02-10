@@ -7,9 +7,6 @@
     <button type="button" data-tts-action="resume" disabled>Reanudar</button>
     <button type="button" data-tts-action="stop" disabled>Parar</button>
 
-    <label class="tts-voice-label" for="tts-voice-{{ page.url | slugify }}">Voz</label>
-    <select id="tts-voice-{{ page.url | slugify }}" data-tts-voice aria-label="Seleccionar voz"></select>
-
     <label class="tts-gender-label" for="tts-gender-{{ page.url | slugify }}">Género</label>
     <select id="tts-gender-{{ page.url | slugify }}" data-tts-gender aria-label="Seleccionar género de voz">
       <option value="any">Automático</option>
@@ -92,10 +89,6 @@
     margin-left: 0.25rem;
   }
 
-  .tts-voice-label {
-    margin-left: 0.25rem;
-  }
-
   .tts-gender-label {
     margin-left: 0.25rem;
   }
@@ -148,7 +141,6 @@
       var pauseBtn = root.querySelector('[data-tts-action="pause"]');
       var resumeBtn = root.querySelector('[data-tts-action="resume"]');
       var stopBtn = root.querySelector('[data-tts-action="stop"]');
-      var voiceSelect = root.querySelector('[data-tts-voice]');
       var genderSelect = root.querySelector('[data-tts-gender]');
       var karaokeToggle = root.querySelector('[data-tts-karaoke]');
       var autoScrollToggle = root.querySelector('[data-tts-autoscroll]');
@@ -160,7 +152,6 @@
       var utterance = null;
       var articleText = '';
       var voices = [];
-      var selectedVoiceURI = '';
       var preferredLang = 'es-ES';
       var preferredGender = 'any';
       var speechSegments = [];
@@ -170,7 +161,6 @@
       var currentSpeechOffset = 0;
       var pausedCharIndex = 0;
       var isManualPause = false;
-      var hasEligibleVoices = false;
 
       function setStatus(message) {
         if (statusEl) {
@@ -247,24 +237,55 @@
       }
 
       function getEligibleVoices() {
-        var eligible = [];
-        var strictLang = normalizeLang(preferredLang);
+        var normalizedPreferredLang = normalizeLang(preferredLang);
+        var preferredBase = normalizedPreferredLang.split('-')[0];
+        var byEsEsAndGender = [];
+        var byEsEs = [];
+        var bySpanishAndGender = [];
+        var bySpanish = [];
+        var byGenderAnyLang = [];
+        var allVoices = voices.slice();
+
         for (var i = 0; i < voices.length; i += 1) {
           var voice = voices[i];
           var voiceLang = normalizeLang(voice.lang);
-          if (voiceLang !== strictLang) {
-            continue;
+          var isEsEs = voiceLang === normalizedPreferredLang;
+          var isSpanish = voiceLang.indexOf(preferredBase) === 0;
+          var matchesGender = preferredGender === 'any' || inferVoiceGender(voice) === preferredGender;
+
+          if (isEsEs && matchesGender) {
+            byEsEsAndGender.push(voice);
           }
-          if (preferredGender === 'any') {
-            eligible.push(voice);
-            continue;
+          if (isEsEs) {
+            byEsEs.push(voice);
           }
-          if (inferVoiceGender(voice) === preferredGender) {
-            eligible.push(voice);
+          if (isSpanish && matchesGender) {
+            bySpanishAndGender.push(voice);
+          }
+          if (isSpanish) {
+            bySpanish.push(voice);
+          }
+          if (matchesGender) {
+            byGenderAnyLang.push(voice);
           }
         }
 
-        return eligible;
+        if (byEsEsAndGender.length) {
+          return byEsEsAndGender;
+        }
+        if (byEsEs.length) {
+          return byEsEs;
+        }
+        if (bySpanishAndGender.length) {
+          return bySpanishAndGender;
+        }
+        if (bySpanish.length) {
+          return bySpanish;
+        }
+        if (byGenderAnyLang.length) {
+          return byGenderAnyLang;
+        }
+        return allVoices;
       }
 
       function getPreferredVoice() {
@@ -274,14 +295,6 @@
         var pool = getEligibleVoices();
         if (!pool.length) {
           return null;
-        }
-
-        if (selectedVoiceURI) {
-          for (var i = 0; i < pool.length; i += 1) {
-            if (pool[i].voiceURI === selectedVoiceURI) {
-              return pool[i];
-            }
-          }
         }
 
         var targetLang = normalizeLang(preferredLang);
@@ -296,76 +309,13 @@
           }
         }
 
-        selectedVoiceURI = best.voiceURI || '';
         return best;
       }
 
       function populateVoices() {
         voices = synth.getVoices() || [];
-        if (!voiceSelect) {
-          return;
-        }
-        var voiceLabel = root.querySelector('.tts-voice-label');
-
-        voiceSelect.innerHTML = '';
         if (!voices.length) {
-          var opt = document.createElement('option');
-          opt.value = '';
-          opt.textContent = 'Voz por defecto';
-          voiceSelect.appendChild(opt);
-          voiceSelect.disabled = true;
-          if (voiceLabel) {
-            voiceLabel.style.display = '';
-          }
-          voiceSelect.style.display = '';
-          hasEligibleVoices = false;
-          setControlsState({ play: true, pause: true, resume: true, stop: true });
-          return;
-        }
-
-        var renderVoices = getEligibleVoices();
-        if (!renderVoices.length) {
-          var noEsEsOption = document.createElement('option');
-          noEsEsOption.value = '';
-          noEsEsOption.textContent = 'Sin voces es-ES disponibles';
-          voiceSelect.appendChild(noEsEsOption);
-          voiceSelect.disabled = true;
-          if (voiceLabel) {
-            voiceLabel.style.display = '';
-          }
-          voiceSelect.style.display = '';
-          hasEligibleVoices = false;
-          setStatus('No hay voces es-ES disponibles en este navegador/sistema.');
-          setControlsState({ play: true, pause: true, resume: true, stop: true });
-          return;
-        }
-
-        hasEligibleVoices = true;
-        voiceSelect.disabled = false;
-        var preferred = getPreferredVoice();
-
-        for (var i = 0; i < renderVoices.length; i += 1) {
-          var voice = renderVoices[i];
-          var option = document.createElement('option');
-          option.value = voice.voiceURI || '';
-          option.textContent = voice.name + ' (' + voice.lang + ')';
-          if (preferred && preferred.voiceURI === voice.voiceURI) {
-            option.selected = true;
-          }
-          voiceSelect.appendChild(option);
-        }
-
-        if (renderVoices.length === 1) {
-          selectedVoiceURI = renderVoices[0].voiceURI || '';
-          if (voiceLabel) {
-            voiceLabel.style.display = 'none';
-          }
-          voiceSelect.style.display = 'none';
-        } else {
-          if (voiceLabel) {
-            voiceLabel.style.display = '';
-          }
-          voiceSelect.style.display = '';
+          setStatus('Preparando voces del sistema...');
         }
       }
 
@@ -539,12 +489,6 @@
           return;
         }
 
-        if (!hasEligibleVoices) {
-          setStatus('No hay voces es-ES disponibles en este navegador/sistema.');
-          setControlsState({ play: false, pause: true, resume: true, stop: true });
-          return;
-        }
-
         if (synth.speaking || synth.pending) {
           synth.cancel();
         }
@@ -683,16 +627,8 @@
         }
       });
 
-      voiceSelect.addEventListener('change', function () {
-        selectedVoiceURI = voiceSelect.value;
-        if (synth.speaking) {
-          speakText();
-        }
-      });
-
       genderSelect.addEventListener('change', function () {
         preferredGender = genderSelect.value;
-        selectedVoiceURI = '';
         populateVoices();
         if (synth.speaking) {
           speakText();
