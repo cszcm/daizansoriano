@@ -3,6 +3,7 @@ layout: podcast
 title: "El cuerpo real"
 date: 2022-12-11 12:21:00 +0000
 categories: ["podcast"]
+tags: ["podcast", "soto zen", "dharma"]
 description: "Lectura del libro El cuerpo real del maestro zen Dokushô Villalba . Grabación realizada durante la práctica en el dojo zen Kômyô de Alicante el 10/12/2022 «La Vía del Buda no puede ser alcanzada sin práctica-experiencia y sin indagación-est…"
 audio_url: "/assets/mp3/2022/2022-12-11-01ElCuerpoReal.mp3"
 audio_type: "audio/mpeg"

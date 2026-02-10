@@ -3,6 +3,7 @@ layout: podcast
 title: "Un café con Lola"
 date: 2014-09-30 22:08:34 +0000
 categories: ["podcast"]
+tags: ["podcast", "soto zen", "dharma"]
 description: "No puedo dejar de compartir en este espacio mi primera experiencia radiofónica en directo&#8230; después de los nervios iniciales conseguí disfrutar y todo. Gracias a Lola Torrent por hacer que todo fluyera tan bien, os dejo con el texto qu…"
 audio_url: "/assets/mp3/2014/2014-09-30-UnCafeConLolaEditado.mp3"
 audio_type: "audio/mpeg"

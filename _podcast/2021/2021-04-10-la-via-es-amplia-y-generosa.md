@@ -3,6 +3,7 @@ layout: podcast
 title: "La Vía es amplia y generosa"
 date: 2021-04-10 09:16:23 +0000
 categories: ["podcast"]
+tags: ["podcast", "soto zen", "dharma"]
 description: "Kusen extraído del libro Fluyendo en el Presente Eterno del maestro zen Dokushô Villalba. Grabación realizada en el dojo zen Kômyô de Alicante el 09/04/2021"
 audio_url: "/assets/mp3/2021/2021-04-10-LaViaEsAmpliaYGenerosa.mp3"
 audio_type: "audio/mpeg"

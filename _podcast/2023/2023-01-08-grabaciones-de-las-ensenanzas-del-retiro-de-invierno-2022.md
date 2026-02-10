@@ -3,6 +3,7 @@ layout: podcast
 title: "Grabaciones de las enseñanzas del retiro de invierno 2022"
 date: 2023-01-08 12:00:27 +0000
 categories: ["podcast"]
+tags: ["podcast", "soto zen", "dharma"]
 description: "A continuación os comparto la grabación de dos sesiones de enseñanza realizadas durante el pasado retiro de invierno en el templo Luz Serena. Lamentablemente, la última sesión no se pudo grabar por problemas técnicos. Primera sesión. [restr…"
 audio_url: "/assets/mp3/2023/2023-01-08-Primerasesionretiroinvierno2022.mp3"
 audio_type: "audio/mpeg"

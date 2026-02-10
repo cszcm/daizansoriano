@@ -3,6 +3,7 @@ layout: podcast
 title: "Imposible de aferrar"
 date: 2021-07-19 15:46:51 +0000
 categories: ["podcast"]
+tags: ["podcast", "soto zen", "dharma"]
 description: "Kusen extraído del libro Vida Simple, Corazón Profundo del maestro zen Dokushô Villalba"
 audio_url: "/assets/mp3/2021/2021-07-19-ImposibleDeAferrar.mp3"
 audio_type: "audio/mpeg"

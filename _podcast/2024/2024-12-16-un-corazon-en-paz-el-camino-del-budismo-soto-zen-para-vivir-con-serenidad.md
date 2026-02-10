@@ -3,6 +3,7 @@ layout: podcast
 title: "Un Corazón en Paz. El Camino del Budismo Soto Zen para Vivir con Serenidad"
 date: 2024-12-16 22:23:55 +0000
 categories: ["podcast"]
+tags: ["podcast", "soto zen", "dharma"]
 description: "En nuestra vida cotidiana, la velocidad y las expectativas marcan el ritmo de nuestra vida. La conferencia «Un Corazón en Paz» es una invitación a redescubrir la calma que habita en lo profundo de cada uno de nosotros a través de la práctic…"
 audio_url: "/assets/mp3/2024/2024-12-16-Charla_Alquimia_Alcoi.mp3"
 audio_type: "audio/mpeg"

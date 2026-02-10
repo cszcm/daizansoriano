@@ -3,6 +3,7 @@ layout: podcast
 title: "Sexta sesión del ciclo de conferencias sobre la Vía del Bodhisattva"
 date: 2022-05-29 10:03:14 +0000
 categories: ["podcast"]
+tags: ["podcast", "soto zen", "dharma"]
 description: "Charla realizada en el dojo zen Kômyô de Alicante , más información sobre el ciclo completo en este enlace ."
 audio_url: "/assets/mp3/2022/2022-05-29-Teisho6.mp3"
 audio_type: "audio/mpeg"

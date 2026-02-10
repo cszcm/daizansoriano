@@ -3,6 +3,7 @@ layout: podcast
 title: "Claramente despiertos"
 date: 2021-06-14 17:13:39 +0000
 categories: ["podcast"]
+tags: ["podcast", "soto zen", "dharma"]
 description: "Kusen extraído del libro Vida Simple, Corazón Profundo del maestro zen Dokushô Villalba"
 audio_url: "/assets/mp3/2021/2021-06-14-ClaramenteDespiertos.mp3"
 audio_type: "audio/mpeg"

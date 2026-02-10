@@ -3,6 +3,7 @@ layout: podcast
 title: "Zazen es un acto de entrega"
 date: 2021-07-10 07:33:20 +0000
 categories: ["podcast"]
+tags: ["podcast", "soto zen", "dharma"]
 description: "Kusen extraído del libro Vida Simple, Corazón Profundo del maestro zen Dokushô Villalba"
 audio_url: "/assets/mp3/2021/2021-07-10-ZazenEsUnActoDeEntrega.mp3"
 audio_type: "audio/mpeg"

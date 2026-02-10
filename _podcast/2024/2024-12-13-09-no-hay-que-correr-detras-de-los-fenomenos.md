@@ -3,6 +3,7 @@ layout: podcast
 title: "09. No hay que correr detrás de los fenómenos"
 date: 2024-12-13 08:22:31 +0000
 categories: ["podcast"]
+tags: ["podcast", "soto zen", "dharma"]
 description: "莫 逐 有 縁 勿 住 空 忍 No hay que correr detrás de los fenómenos ni ape…"
 audio_url: "/assets/mp3/2024/2024-12-13-No-hay-que-correr-detras-de-los-fenomenos.mp3"
 audio_type: "audio/mpeg"
