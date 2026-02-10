@@ -5,13 +5,24 @@ permalink: /tags/
 ---
 
 <section class="tags">
-  {% assign tags = site.tags | sort %}
+  {% assign podcast_items = site.podcast | sort: "date" | reverse %}
+  {% assign tags_joined = "" %}
+  {% for post in podcast_items %}
+    {% for tag in post.tags %}
+      {% assign tags_joined = tags_joined | append: tag | append: "||" %}
+    {% endfor %}
+  {% endfor %}
+  {% assign tags = tags_joined | split: "||" | uniq | sort %}
   {% for tag in tags %}
-    <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
-    <ul>
-      {% for post in tag[1] %}
-        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% unless tag == "" %}
+      <h2 id="{{ tag | slugify }}">{{ tag }}</h2>
+      <ul>
+      {% for post in podcast_items %}
+        {% if post.tags contains tag %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        {% endif %}
       {% endfor %}
-    </ul>
+      </ul>
+    {% endunless %}
   {% endfor %}
 </section>
