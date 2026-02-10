@@ -7,18 +7,41 @@
     <button type="button" data-tts-action="resume" disabled>Reanudar</button>
     <button type="button" data-tts-action="stop" disabled>Parar</button>
 
+    <label class="tts-voice-label" for="tts-voice-{{ page.url | slugify }}">Voz</label>
+    <select id="tts-voice-{{ page.url | slugify }}" data-tts-voice aria-label="Seleccionar voz"></select>
+
+    <label class="tts-gender-label" for="tts-gender-{{ page.url | slugify }}">Género</label>
+    <select id="tts-gender-{{ page.url | slugify }}" data-tts-gender aria-label="Seleccionar género de voz">
+      <option value="any">Automático</option>
+      <option value="female">Femenina</option>
+      <option value="male">Masculina</option>
+    </select>
+
     <label class="tts-rate-label" for="tts-rate-{{ page.url | slugify }}">Velocidad</label>
     <input
       id="tts-rate-{{ page.url | slugify }}"
       type="range"
-      min="0.7"
-      max="1.6"
+      min="0.8"
+      max="1.3"
       step="0.1"
-      value="1"
+      value="1.0"
       data-tts-rate
       aria-label="Velocidad de lectura"
     >
     <output data-tts-rate-value>1.0x</output>
+
+    <label class="tts-pitch-label" for="tts-pitch-{{ page.url | slugify }}">Tono</label>
+    <input
+      id="tts-pitch-{{ page.url | slugify }}"
+      type="range"
+      min="0.8"
+      max="1.2"
+      step="0.1"
+      value="1.0"
+      data-tts-pitch
+      aria-label="Tono de voz"
+    >
+    <output data-tts-pitch-value>1.0</output>
   </div>
 </div>
 
@@ -51,8 +74,24 @@
     margin-left: 0.25rem;
   }
 
+  .tts-voice-label {
+    margin-left: 0.25rem;
+  }
+
+  .tts-gender-label {
+    margin-left: 0.25rem;
+  }
+
+  .tts-controls select {
+    max-width: 13rem;
+  }
+
   .tts-controls input[type="range"] {
     width: 8rem;
+  }
+
+  .tts-pitch-label {
+    margin-left: 0.25rem;
   }
 </style>
 
@@ -70,11 +109,19 @@
       var pauseBtn = root.querySelector('[data-tts-action="pause"]');
       var resumeBtn = root.querySelector('[data-tts-action="resume"]');
       var stopBtn = root.querySelector('[data-tts-action="stop"]');
+      var voiceSelect = root.querySelector('[data-tts-voice]');
+      var genderSelect = root.querySelector('[data-tts-gender]');
       var rateInput = root.querySelector('[data-tts-rate]');
       var rateValue = root.querySelector('[data-tts-rate-value]');
+      var pitchInput = root.querySelector('[data-tts-pitch]');
+      var pitchValue = root.querySelector('[data-tts-pitch-value]');
       var synth = window.speechSynthesis;
       var utterance = null;
       var articleText = '';
+      var voices = [];
+      var selectedVoiceURI = '';
+      var preferredLang = 'es-ES';
+      var preferredGender = 'any';
 
       function setStatus(message) {
         if (statusEl) {
@@ -87,6 +134,161 @@
         pauseBtn.disabled = state.pause;
         resumeBtn.disabled = state.resume;
         stopBtn.disabled = state.stop;
+      }
+
+      function normalizeLang(lang) {
+        return (lang || '').toLowerCase();
+      }
+
+      function scoreVoice(voice, targetLang) {
+        var score = 0;
+        var voiceLang = normalizeLang(voice.lang);
+        var voiceName = (voice.name || '').toLowerCase();
+        var targetBase = targetLang.split('-')[0];
+
+        if (voiceLang === targetLang) {
+          score += 60;
+        } else if (voiceLang.indexOf(targetBase) === 0) {
+          score += 25;
+        }
+
+        if (voice.localService) {
+          score += 10;
+        }
+
+        if (voice.default) {
+          score += 5;
+        }
+
+        if (voiceName.indexOf('neural') !== -1 || voiceName.indexOf('natural') !== -1) {
+          score += 30;
+        }
+
+        if (voiceName.indexOf('google') !== -1 || voiceName.indexOf('microsoft') !== -1) {
+          score += 12;
+        }
+
+        return score;
+      }
+
+      function inferVoiceGender(voice) {
+        var name = (voice.name || '').toLowerCase();
+        var femaleHints = [
+          'female', 'woman', 'mujer', 'femenina', 'carmen', 'elvira', 'laura', 'lucia',
+          'maria', 'sofia', 'helena', 'paulina', 'monica'
+        ];
+        var maleHints = [
+          'male', 'man', 'hombre', 'masculina', 'jorge', 'diego', 'carlos', 'enrique',
+          'raul', 'javier', 'antonio', 'pablo'
+        ];
+
+        for (var i = 0; i < femaleHints.length; i += 1) {
+          if (name.indexOf(femaleHints[i]) !== -1) {
+            return 'female';
+          }
+        }
+
+        for (var j = 0; j < maleHints.length; j += 1) {
+          if (name.indexOf(maleHints[j]) !== -1) {
+            return 'male';
+          }
+        }
+
+        return 'unknown';
+      }
+
+      function getEligibleVoices() {
+        var eligible = [];
+        for (var i = 0; i < voices.length; i += 1) {
+          var voice = voices[i];
+          var voiceLang = normalizeLang(voice.lang);
+          if (voiceLang.indexOf('es') !== 0) {
+            continue;
+          }
+          if (preferredGender === 'any') {
+            eligible.push(voice);
+            continue;
+          }
+          if (inferVoiceGender(voice) === preferredGender) {
+            eligible.push(voice);
+          }
+        }
+
+        if (!eligible.length) {
+          for (var j = 0; j < voices.length; j += 1) {
+            var fallbackVoice = voices[j];
+            if (normalizeLang(fallbackVoice.lang).indexOf('es') === 0) {
+              eligible.push(fallbackVoice);
+            }
+          }
+        }
+
+        return eligible.length ? eligible : voices.slice();
+      }
+
+      function getPreferredVoice() {
+        if (!voices.length) {
+          return null;
+        }
+        var pool = getEligibleVoices();
+        if (!pool.length) {
+          return null;
+        }
+
+        if (selectedVoiceURI) {
+          for (var i = 0; i < pool.length; i += 1) {
+            if (pool[i].voiceURI === selectedVoiceURI) {
+              return pool[i];
+            }
+          }
+        }
+
+        var targetLang = normalizeLang(preferredLang);
+        var best = pool[0];
+        var bestScore = scoreVoice(best, targetLang);
+
+        for (var j = 1; j < pool.length; j += 1) {
+          var currentScore = scoreVoice(pool[j], targetLang);
+          if (currentScore > bestScore) {
+            best = pool[j];
+            bestScore = currentScore;
+          }
+        }
+
+        selectedVoiceURI = best.voiceURI || '';
+        return best;
+      }
+
+      function populateVoices() {
+        voices = synth.getVoices() || [];
+        if (!voiceSelect) {
+          return;
+        }
+
+        voiceSelect.innerHTML = '';
+        if (!voices.length) {
+          var opt = document.createElement('option');
+          opt.value = '';
+          opt.textContent = 'Voz por defecto';
+          voiceSelect.appendChild(opt);
+          voiceSelect.disabled = true;
+          return;
+        }
+
+        voiceSelect.disabled = false;
+        var preferred = getPreferredVoice();
+        var renderVoices = getEligibleVoices();
+
+        for (var i = 0; i < renderVoices.length; i += 1) {
+          var voice = renderVoices[i];
+          var option = document.createElement('option');
+          option.value = voice.voiceURI || '';
+          option.textContent = voice.name + ' (' + voice.lang + ')';
+          if (preferred && preferred.voiceURI === voice.voiceURI) {
+            option.selected = true;
+          }
+          voiceSelect.appendChild(option);
+        }
       }
 
       function getContentText() {
@@ -137,8 +339,10 @@
         cleanupSpeech();
 
         utterance = new SpeechSynthesisUtterance(articleText);
-        utterance.lang = document.documentElement.lang || 'es-ES';
+        utterance.lang = preferredLang;
         utterance.rate = parseFloat(rateInput.value);
+        utterance.pitch = parseFloat(pitchInput.value);
+        utterance.voice = getPreferredVoice();
 
         utterance.onstart = function () {
           setStatus('Leyendo artículo...');
@@ -184,6 +388,7 @@
       }
 
       setControlsState({ play: false, pause: true, resume: true, stop: true });
+      populateVoices();
 
       playBtn.addEventListener('click', function () {
         speakText();
@@ -192,12 +397,16 @@
       pauseBtn.addEventListener('click', function () {
         if (synth.speaking && !synth.paused) {
           synth.pause();
+          setStatus('Lectura en pausa.');
+          setControlsState({ play: true, pause: true, resume: false, stop: false });
         }
       });
 
       resumeBtn.addEventListener('click', function () {
         if (synth.speaking && synth.paused) {
           synth.resume();
+          setStatus('Lectura reanudada.');
+          setControlsState({ play: true, pause: false, resume: true, stop: false });
         }
       });
 
@@ -216,6 +425,36 @@
           speakText();
         }
       });
+
+      pitchInput.addEventListener('input', function () {
+        pitchValue.value = parseFloat(pitchInput.value).toFixed(1);
+      });
+
+      pitchInput.addEventListener('change', function () {
+        if (synth.speaking) {
+          speakText();
+        }
+      });
+
+      voiceSelect.addEventListener('change', function () {
+        selectedVoiceURI = voiceSelect.value;
+        if (synth.speaking) {
+          speakText();
+        }
+      });
+
+      genderSelect.addEventListener('change', function () {
+        preferredGender = genderSelect.value;
+        selectedVoiceURI = '';
+        populateVoices();
+        if (synth.speaking) {
+          speakText();
+        }
+      });
+
+      synth.onvoiceschanged = function () {
+        populateVoices();
+      };
 
       window.addEventListener('beforeunload', function () {
         cleanupSpeech();
