@@ -93,52 +93,6 @@ Si un tema encaja, prioriza estas etiquetas antes de inventar variantes:
 
 Nota: si aparece una nueva etiqueta, intenta que siga el mismo estilo (sin tildes/guiones) y que no duplique otra existente (p. ej. compasion en vez de compasión).
 
-## Lector de artículos en audio (TTS)
-
-El blog incluye un reproductor de lectura en voz alta basado en la Web Speech API del navegador. Se muestra automáticamente en cada post y lee el contenido del artículo sin depender de servicios externos ni backend.
-
-### Qué incluye
-
-- Reproductor integrado en cada post con controles `Leer`, `Pausa`, `Reanudar` y `Parar`.
-- Idioma de lectura fijado a `es-ES` (sin selector de variantes).
-- Control de velocidad con slider (reinicia lectura al cambiar velocidad mientras está hablando).
-- Modo `Karaoke`: al activarlo, se resalta el bloque de texto a medida que avanza la lectura.
-- Modo `Manos libres`: al activarlo, la página hace scroll automático durante la lectura.
-- Detección de compatibilidad del navegador con fallback automático (mensaje + controles ocultos).
-- Extracción de texto del contenido del post, excluyendo navegación y bloques no deseados.
-
-### Compatibilidad
-
-- Chrome y Edge: soporte generalmente más estable.
-- Safari y Firefox: el soporte puede variar según versión, sistema operativo y voces disponibles.
-- Si el navegador no soporta TTS, se muestra un mensaje y los controles no aparecen.
-
-### Desactivar en un post
-
-Añade en el front matter del post:
-
-```yaml
-tts: false
-```
-
-Por defecto, si no se define `tts`, el reproductor se muestra.
-
-### Ajustar selector de contenido
-
-El include `_includes/tts-player.html` extrae el texto en este orden:
-
-1. `article`
-2. `.post-content`
-3. `.post`
-4. `main`
-
-Si tu tema usa otra estructura, edita el arreglo `selectors` dentro del script del include y coloca ahí tu selector principal.
-
-### Archivos relacionados
-
-- Include del reproductor: `_includes/tts-player.html`
-- Inserción en layout de posts: `_layouts/post.html`
-
 ## Contador de visitas por entrada
 
 El blog incluye un contador de visitas por post, compatible con GitHub Pages, mediante un servicio externo ligero (`countapi.xyz`).
@@ -163,62 +117,12 @@ Por defecto, si no se define `views`, el contador se muestra.
 
 - Include del contador: `_includes/post-views.html`
 
-## Generador automático de audios MP3
-
-Incluye un script Node para convertir automáticamente tus posts markdown en audio MP3 usando OpenAI TTS, guardando archivos en `audio/`.
-
-### Requisitos
-
-- Node.js 18 o superior.
-- Variable de entorno `OPENAI_API_KEY`.
-
-### Uso
-
-```bash
-export OPENAI_API_KEY="tu_api_key"
-npm run tts:build
-```
-
-El script:
-
-- Lee los posts en `_posts/`.
-- Limpia markdown a texto plano.
-- Genera audio con OpenAI TTS.
-- Guarda cada MP3 en `audio/` respetando la estructura de `_posts/`.
-
-### Opciones
-
-- `--force`: regenera audios aunque ya existan.
-- `--dry-run`: solo muestra qué procesaría, sin llamar a la API.
-
-Ejemplos:
-
-```bash
-npm run tts:build -- --dry-run
-npm run tts:build -- --force
-```
-
-### Variables opcionales
-
-- `OPENAI_TTS_MODEL` (por defecto: `gpt-4o-mini-tts`)
-- `OPENAI_TTS_VOICE` (por defecto: `alloy`)
-- `OPENAI_TTS_MAX_CHARS` (por defecto: `3500`, tamaño por fragmento)
-- `OPENAI_TTS_INSTRUCTIONS` (por defecto: castellano de España `es-ES`)
-
-### Omitir un post
-
-En el front matter del post:
-
-```yaml
-audio: false
-```
-
-## Prioridad audio MP3 vs TTS en la web
+## Audio MP3 en la web
 
 En cada post, la web aplica esta lógica automáticamente:
 
 1. Si existe un MP3 en `audio/` para esa entrada, se muestra el reproductor HTML5 e intenta reproducir automáticamente.
-2. Si no existe MP3, se muestra el lector TTS del navegador (si no está desactivado con `tts: false`).
+2. Si no existe MP3, no se muestra reproductor de audio.
 
 ### Ruta esperada del MP3
 
