@@ -50,6 +50,19 @@
       </footer>
     </div>
 
+    <aside class="global-audio-dock" data-global-audio-dock hidden aria-label="Mini reproductor">
+      <div class="global-audio-dock__text">
+        <strong class="global-audio-dock__title" data-global-audio-title>Sin audio</strong>
+        <span class="global-audio-dock__meta" data-global-audio-meta></span>
+      </div>
+      <div class="global-audio-dock__actions">
+        <button type="button" data-global-audio-action="play-pause">Reproducir</button>
+        <a href="#" data-global-audio-link>Ir al episodio</a>
+        <button type="button" data-global-audio-action="close" aria-label="Cerrar mini reproductor">Cerrar</button>
+      </div>
+      <audio data-global-audio-el preload="metadata" playsinline></audio>
+    </aside>
+
     <script>
       (function () {
         var button = document.querySelector('.nav-toggle');
@@ -83,6 +96,251 @@
             setOpen(false);
           }
         });
+      })();
+    </script>
+
+    <script>
+      (function () {
+        var STORAGE_KEY = 'site-global-audio-state-v1';
+        var dock = document.querySelector('[data-global-audio-dock]');
+        if (!dock) return;
+
+        var dockAudio = dock.querySelector('[data-global-audio-el]');
+        var titleEl = dock.querySelector('[data-global-audio-title]');
+        var metaEl = dock.querySelector('[data-global-audio-meta]');
+        var playPauseBtn = dock.querySelector('[data-global-audio-action="play-pause"]');
+        var closeBtn = dock.querySelector('[data-global-audio-action="close"]');
+        var episodeLink = dock.querySelector('[data-global-audio-link]');
+        var inlineAudio = document.querySelector('[data-post-audio]');
+        var inlineTitleEl = document.querySelector('.post-title');
+        var lastTimeSave = 0;
+        var state = null;
+
+        function resolveUrl(url) {
+          if (!url) return '';
+          try {
+            return new URL(url, window.location.href).toString();
+          } catch (error) {
+            return '';
+          }
+        }
+
+        function getAudioSrc(audioEl) {
+          if (!audioEl) return '';
+          var sourceEl = audioEl.querySelector('source');
+          return resolveUrl(audioEl.currentSrc || audioEl.getAttribute('src') || (sourceEl ? sourceEl.getAttribute('src') : ''));
+        }
+
+        function getInlineTitle() {
+          if (inlineTitleEl && inlineTitleEl.textContent) {
+            return inlineTitleEl.textContent.trim();
+          }
+          return document.title;
+        }
+
+        function loadState() {
+          try {
+            var raw = window.localStorage.getItem(STORAGE_KEY);
+            if (!raw) return null;
+            var parsed = JSON.parse(raw);
+            if (!parsed || typeof parsed.src !== 'string' || parsed.src === '') return null;
+            return parsed;
+          } catch (error) {
+            return null;
+          }
+        }
+
+        function saveState(nextState) {
+          state = nextState;
+          try {
+            window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+          } catch (error) {
+            // Ignore storage errors.
+          }
+        }
+
+        function clearState() {
+          state = null;
+          try {
+            window.localStorage.removeItem(STORAGE_KEY);
+          } catch (error) {
+            // Ignore storage errors.
+          }
+        }
+
+        function formatSeconds(seconds) {
+          if (!Number.isFinite(seconds) || seconds < 0) {
+            return '0:00';
+          }
+          var total = Math.floor(seconds);
+          var mins = Math.floor(total / 60);
+          var secs = total % 60;
+          return mins + ':' + String(secs).padStart(2, '0');
+        }
+
+        function getActiveAudio() {
+          if (inlineAudio && state && state.src && state.src === getAudioSrc(inlineAudio)) {
+            return inlineAudio;
+          }
+          return dockAudio;
+        }
+
+        function renderDock() {
+          var visible = !!(state && state.src);
+          dock.hidden = !visible;
+          document.body.classList.toggle('has-global-audio-dock', visible);
+          if (!visible) {
+            return;
+          }
+
+          titleEl.textContent = state.title || 'Audio';
+          episodeLink.href = state.pageUrl || window.location.href;
+          playPauseBtn.textContent = state.isPlaying ? 'Pausar' : 'Reproducir';
+          metaEl.textContent = (state.isPlaying ? 'En reproducción' : 'En pausa') + ' · ' + formatSeconds(state.currentTime || 0);
+        }
+
+        function applyStateToDockAudio(shouldSeek) {
+          if (!state || !state.src) return;
+          if (dockAudio.src !== state.src) {
+            dockAudio.src = state.src;
+          }
+          if (Number.isFinite(state.playbackRate) && state.playbackRate > 0) {
+            dockAudio.playbackRate = state.playbackRate;
+          }
+          if (!shouldSeek || !Number.isFinite(state.currentTime) || state.currentTime <= 0) {
+            return;
+          }
+          var applySeek = function () {
+            try {
+              if (Number.isFinite(dockAudio.duration) && state.currentTime >= dockAudio.duration) return;
+              dockAudio.currentTime = state.currentTime;
+            } catch (error) {
+              // Ignore seek errors.
+            }
+          };
+          if (dockAudio.readyState >= 1) {
+            applySeek();
+          } else {
+            dockAudio.addEventListener('loadedmetadata', applySeek, { once: true });
+          }
+        }
+
+        function persistFromAudio(audioEl, baseTitle, baseUrl, forcePlaying) {
+          var src = getAudioSrc(audioEl);
+          if (!src) return;
+          var playing = typeof forcePlaying === 'boolean' ? forcePlaying : (!audioEl.paused && !audioEl.ended);
+          saveState({
+            src: src,
+            title: baseTitle || (state ? state.title : '') || document.title,
+            pageUrl: baseUrl || (state ? state.pageUrl : '') || window.location.href,
+            currentTime: Number.isFinite(audioEl.currentTime) ? audioEl.currentTime : 0,
+            playbackRate: Number.isFinite(audioEl.playbackRate) ? audioEl.playbackRate : 1,
+            isPlaying: playing,
+            updatedAt: Date.now()
+          });
+          renderDock();
+        }
+
+        function bindAudioEvents(audioEl, baseTitle, baseUrl) {
+          if (!audioEl) return;
+          audioEl.addEventListener('play', function () {
+            persistFromAudio(audioEl, baseTitle, baseUrl, true);
+          });
+          audioEl.addEventListener('pause', function () {
+            persistFromAudio(audioEl, baseTitle, baseUrl, false);
+          });
+          audioEl.addEventListener('ratechange', function () {
+            persistFromAudio(audioEl, baseTitle, baseUrl);
+          });
+          audioEl.addEventListener('ended', function () {
+            persistFromAudio(audioEl, baseTitle, baseUrl, false);
+          });
+          audioEl.addEventListener('timeupdate', function () {
+            if (Date.now() - lastTimeSave < 900) return;
+            lastTimeSave = Date.now();
+            persistFromAudio(audioEl, baseTitle, baseUrl);
+          });
+        }
+
+        state = loadState();
+        var inlineSrc = getAudioSrc(inlineAudio);
+        var inlineTitle = getInlineTitle();
+        var inlineUrl = window.location.href;
+
+        bindAudioEvents(dockAudio, state && state.title ? state.title : document.title, state && state.pageUrl ? state.pageUrl : window.location.href);
+        bindAudioEvents(inlineAudio, inlineTitle, inlineUrl);
+
+        if (!state && inlineSrc) {
+          saveState({
+            src: inlineSrc,
+            title: inlineTitle,
+            pageUrl: inlineUrl,
+            currentTime: Number.isFinite(inlineAudio.currentTime) ? inlineAudio.currentTime : 0,
+            playbackRate: Number.isFinite(inlineAudio.playbackRate) ? inlineAudio.playbackRate : 1,
+            isPlaying: false,
+            updatedAt: Date.now()
+          });
+        }
+
+        if (state && inlineAudio && state.src === inlineSrc) {
+          if (Number.isFinite(state.playbackRate) && state.playbackRate > 0) {
+            inlineAudio.playbackRate = state.playbackRate;
+          }
+          if (Number.isFinite(state.currentTime) && state.currentTime > 0) {
+            var restoreInlineTime = function () {
+              try {
+                if (Number.isFinite(inlineAudio.duration) && state.currentTime >= inlineAudio.duration) return;
+                inlineAudio.currentTime = state.currentTime;
+              } catch (error) {
+                // Ignore seek errors.
+              }
+            };
+            if (inlineAudio.readyState >= 1) {
+              restoreInlineTime();
+            } else {
+              inlineAudio.addEventListener('loadedmetadata', restoreInlineTime, { once: true });
+            }
+          }
+        } else if (state && state.src) {
+          applyStateToDockAudio(true);
+          if (state.isPlaying) {
+            dockAudio.play().catch(function () {
+              // Autoplay can be blocked; keep paused state visible.
+              state.isPlaying = false;
+              renderDock();
+            });
+          }
+        }
+
+        playPauseBtn.addEventListener('click', function () {
+          if (!state || !state.src) return;
+          var activeAudio = getActiveAudio();
+          if (activeAudio === dockAudio) {
+            applyStateToDockAudio(true);
+          }
+          if (activeAudio.paused || activeAudio.ended) {
+            activeAudio.play().catch(function () {
+              renderDock();
+            });
+          } else {
+            activeAudio.pause();
+          }
+        });
+
+        closeBtn.addEventListener('click', function () {
+          if (inlineAudio && !inlineAudio.paused) {
+            inlineAudio.pause();
+          }
+          if (!dockAudio.paused) {
+            dockAudio.pause();
+          }
+          dockAudio.removeAttribute('src');
+          dockAudio.load();
+          clearState();
+          renderDock();
+        });
+
+        renderDock();
       })();
     </script>
   </body>

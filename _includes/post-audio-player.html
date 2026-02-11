@@ -1,4 +1,9 @@
-<div class="post-audio-player" data-post-audio-player>
+<div
+  class="post-audio-player"
+  data-post-audio-player
+  data-post-audio-next-url="{% if include.next_url %}{{ include.next_url | relative_url }}{% endif %}"
+  data-post-audio-next-title="{% if include.next_title %}{{ include.next_title | escape }}{% endif %}"
+>
   <p class="post-audio-status" data-post-audio-status role="status" aria-live="polite">Audio disponible.</p>
   <div class="post-audio-controls">
     <label for="post-audio-rate-{{ page.url | slugify }}">Velocidad</label>
@@ -20,6 +25,12 @@
   </p>
   <p class="post-audio-share">
     <button type="button" data-post-audio-share>Compartir momento</button>
+  </p>
+  <p class="post-audio-continuous">
+    <label for="post-audio-continuous-{{ page.url | slugify }}">
+      <input id="post-audio-continuous-{{ page.url | slugify }}" type="checkbox" data-post-audio-continuous>
+      Activar reproducción continua
+    </label>
   </p>
 </div>
 
@@ -70,6 +81,18 @@
   .post-audio-share button {
     font-size: 0.92rem;
   }
+
+  .post-audio-continuous {
+    margin: 0.5rem 0 0;
+    font-size: 0.92rem;
+  }
+
+  .post-audio-continuous label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    cursor: pointer;
+  }
 </style>
 
 <script>
@@ -84,11 +107,15 @@
       var status = root.querySelector('[data-post-audio-status]');
       var rateSelect = root.querySelector('[data-post-audio-rate]');
       var shareBtn = root.querySelector('[data-post-audio-share]');
+      var continuousToggle = root.querySelector('[data-post-audio-continuous]');
       if (!audio || !status) {
         return;
       }
       var storageKey = 'post-audio-position:' + '{{ page.url | slugify }}';
       var rateStorageKey = 'post-audio-rate';
+      var continuousStorageKey = 'post-audio-continuous-autoplay';
+      var nextEpisodeUrl = root.getAttribute('data-post-audio-next-url') || '';
+      var nextEpisodeTitle = root.getAttribute('data-post-audio-next-title') || '';
       var restored = false;
 
       function setStatus(message) {
@@ -225,6 +252,13 @@
 
       audio.addEventListener('ended', function () {
         clearSavedPosition();
+        if (continuousToggle && continuousToggle.checked && nextEpisodeUrl) {
+          setStatus('Episodio finalizado. Reproducción continua al siguiente episodio.');
+          window.setTimeout(function () {
+            window.location.href = nextEpisodeUrl;
+          }, 600);
+          return;
+        }
         setStatus('Audio finalizado.');
       });
 
@@ -248,6 +282,39 @@
       }
 
       restoreRate();
+
+      if (continuousToggle) {
+        if (!nextEpisodeUrl) {
+          continuousToggle.disabled = true;
+          continuousToggle.checked = false;
+        } else {
+          if (window.localStorage) {
+            try {
+              continuousToggle.checked = window.localStorage.getItem(continuousStorageKey) === 'true';
+            } catch (error) {
+              // Ignore storage errors.
+            }
+          }
+          continuousToggle.addEventListener('change', function () {
+            if (window.localStorage) {
+              try {
+                window.localStorage.setItem(continuousStorageKey, continuousToggle.checked ? 'true' : 'false');
+              } catch (error) {
+                // Ignore storage errors.
+              }
+            }
+            if (continuousToggle.checked && nextEpisodeUrl) {
+              if (nextEpisodeTitle) {
+                setStatus('Reproducción continua activada. Siguiente: ' + nextEpisodeTitle + '.');
+              } else {
+                setStatus('Reproducción continua activada.');
+              }
+              return;
+            }
+            setStatus('Reproducción continua desactivada.');
+          });
+        }
+      }
 
       if (shareBtn) {
         shareBtn.addEventListener('click', async function () {

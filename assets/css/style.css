@@ -503,6 +503,83 @@ img {
   border-bottom: 1px solid rgba(161, 106, 58, 0.25);
 }
 
+body.has-global-audio-dock .site-shell {
+  padding-bottom: 6.5rem;
+}
+
+.global-audio-dock {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  width: min(calc(100% - 1.5rem), 900px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.85rem 1rem;
+  align-items: center;
+  padding: 0.8rem 0.95rem;
+  border-radius: 16px;
+  border: 1px solid rgba(161, 106, 58, 0.22);
+  background: rgba(251, 250, 246, 0.96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 32px rgba(34, 30, 22, 0.18);
+  z-index: 30;
+}
+
+.global-audio-dock__text {
+  min-width: 0;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.global-audio-dock__title {
+  font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.global-audio-dock__meta {
+  font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.global-audio-dock__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.global-audio-dock__actions button,
+.global-audio-dock__actions a {
+  font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1px solid rgba(161, 106, 58, 0.26);
+  background: rgba(251, 250, 246, 0.92);
+  color: var(--accent-strong);
+  padding: 0.42rem 0.78rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.global-audio-dock__actions button:hover,
+.global-audio-dock__actions a:hover {
+  border-color: rgba(45, 94, 91, 0.4);
+}
+
+.global-audio-dock audio {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .hero-inner {
     grid-template-columns: 1fr;
@@ -560,5 +637,21 @@ img {
 
   .post-card {
     padding: 1.3rem;
+  }
+
+  body.has-global-audio-dock .site-shell {
+    padding-bottom: 8.8rem;
+  }
+
+  .global-audio-dock {
+    width: calc(100% - 1rem);
+    bottom: 0.5rem;
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .global-audio-dock__actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 }

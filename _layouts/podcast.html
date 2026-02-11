@@ -5,11 +5,37 @@ layout: default
 <article class="post podcast-post">
   {% assign collection_audio_rel = page.path | remove_first: "_podcast/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
   {% assign collection_audio_path = "/audio/" | append: collection_audio_rel %}
+  {% assign podcast_items = site.podcast | sort: "date" %}
+  {% assign current_series = page.series | default: "" | strip %}
+  {% assign current_category = page.categories | first | default: "" | strip %}
+  {% assign next_episode = nil %}
   {% assign has_collection_audio = false %}
   {% for static_file in site.static_files %}
     {% if static_file.path == collection_audio_path %}
       {% assign has_collection_audio = true %}
       {% break %}
+    {% endif %}
+  {% endfor %}
+  {% for item in podcast_items %}
+    {% if item.url != page.url and item.date > page.date %}
+      {% assign item_series = item.series | default: "" | strip %}
+      {% assign series_match = false %}
+      {% assign category_match = false %}
+      {% if current_series != "" and item_series == current_series %}
+        {% assign series_match = true %}
+      {% endif %}
+      {% if current_category != "" and item.categories contains current_category %}
+        {% assign category_match = true %}
+      {% endif %}
+      {% if current_series != "" %}
+        {% if series_match %}
+          {% assign next_episode = item %}
+          {% break %}
+        {% endif %}
+      {% elsif category_match %}
+        {% assign next_episode = item %}
+        {% break %}
+      {% endif %}
     {% endif %}
   {% endfor %}
 
@@ -27,9 +53,9 @@ layout: default
   </header>
 
   {% if page.audio_url %}
-    {% include post-audio-player.html audio_url=page.audio_url %}
+    {% include post-audio-player.html audio_url=page.audio_url next_url=next_episode.url next_title=next_episode.title %}
   {% elsif has_collection_audio %}
-    {% include post-audio-player.html audio_url=collection_audio_path %}
+    {% include post-audio-player.html audio_url=collection_audio_path next_url=next_episode.url next_title=next_episode.title %}
   {% endif %}
 
   <div class="post-content">
