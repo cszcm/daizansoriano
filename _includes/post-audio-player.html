@@ -372,11 +372,7 @@
         });
       }
 
-      audio.play().then(function () {
-        setStatus('Reproduciendo audio del artículo.');
-      }).catch(function () {
-        setStatus('Audio listo. Pulsa reproducir para iniciar.');
-      });
+      setStatus('Audio listo. Pulsa reproducir para iniciar.');
     }
 
     if (document.readyState === 'loading') {
