@@ -362,7 +362,13 @@
               return;
             }
 
-            setStatus('No se pudo compartir automáticamente. Copia esta URL: ' + shareUrl);
+            // Fallback para escritorio: mostrar un cuadro de diálogo con el enlace
+            const fallbackPrompt = window.prompt('Copia este enlace:', shareUrl);
+            if (fallbackPrompt !== null) {
+              setStatus('Enlace mostrado para copiar manualmente.');
+            } else {
+              setStatus('No se pudo compartir automáticamente. Copia esta URL: ' + shareUrl);
+            }
           } catch (error) {
             if (error && error.name === 'AbortError') {
               return;
