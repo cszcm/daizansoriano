@@ -1,48 +1,39 @@
-title: "Daizan Soriano"
-description: "Un blog sobre práctica, vida y dharma"
-url: "https://cszcm.github.io"
-baseurl: "/daizansoriano"
-lang: "es"
+title: Daizan Soriano
+description: Un blog sobre práctica, vida y dharma
+url: https://cszcm.github.io
+baseurl: /daizansoriano
+lang: es
 markdown: kramdown
 kramdown:
   input: GFM
 permalink: /:title/
-
 collections:
   podcast:
     output: true
     permalink: /podcast/:name/
-
 podcast:
-  author: "Daizan Soriano"
-  owner_name: "Daizan Soriano"
-  owner_email: "daizansoriano@caminomedio.org"
-  image: "/assets/daizan.jpg"
-  category: "Religion & Spirituality"
-  subcategory: "Religion"
+  author: Daizan Soriano
+  owner_name: Daizan Soriano
+  owner_email: daizansoriano@caminomedio.org
+  image: /assets/daizan.jpg
+  category: Religion & Spirituality
+  subcategory: Religion
   explicit: false
-
-timezone: "UTC"
-pwa_sw_version: "v0.0.7"
-
-# GitHub Pages-safe plugins
+timezone: UTC
+pwa_sw_version: v0.0.8
 plugins:
   - jekyll-feed
-
-# Build settings
 sass:
   style: compressed
-
-# Defaults
 defaults:
   - scope:
-      path: ""
-      type: "posts"
+      path: ''
+      type: posts
     values:
-      layout: "post"
-      author: ""
+      layout: post
+      author: ''
   - scope:
-      path: ""
-      type: "podcast"
+      path: ''
+      type: podcast
     values:
-      layout: "podcast"
+      layout: podcast

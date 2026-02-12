@@ -1,6 +1,11 @@
 {
   "name": "daizansoriano-tools",
   "private": true,
-  "type": "module",
-  "scripts": {}
+  "type": "commonjs",
+  "scripts": {
+    "bump-sw-version": "node scripts/bump-sw-version.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.1"
+  }
 }
