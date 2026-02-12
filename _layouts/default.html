@@ -155,6 +155,16 @@
           }
         }
 
+        function isLikelyAudioUrl(url) {
+          if (!url || typeof url !== 'string') return false;
+          try {
+            var parsed = new URL(url, window.location.href);
+            return /\.(mp3|m4a|mp4|ogg|wav|aac|flac)(?:$|\?|#)/i.test(parsed.pathname);
+          } catch (error) {
+            return false;
+          }
+        }
+
         function saveState(nextState) {
           state = nextState;
           try {
@@ -233,7 +243,7 @@
         }
 
         function renderDock() {
-          var visible = !!(state && state.src && state.hasStarted && !dismissedUntilPlay && sessionStarted);
+          var visible = !!(state && isLikelyAudioUrl(state.src) && state.hasStarted && !dismissedUntilPlay && sessionStarted);
           dock.hidden = !visible;
           document.body.classList.toggle('has-global-audio-dock', visible);
           if (!visible) {
@@ -320,6 +330,11 @@
         state = loadState();
         dismissedUntilPlay = loadDismissedFlag();
         sessionStarted = loadSessionStartedFlag();
+        if (state && !isLikelyAudioUrl(state.src)) {
+          clearState();
+          setSessionStartedFlag(false);
+          state = null;
+        }
         var inlineSrc = getAudioSrc(inlineAudio);
         var inlineTitle = getInlineTitle();
         var inlineUrl = window.location.href;

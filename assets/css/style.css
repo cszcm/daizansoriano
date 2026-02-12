@@ -526,6 +526,10 @@ body.has-global-audio-dock .site-shell {
   z-index: 30;
 }
 
+.global-audio-dock[hidden] {
+  display: none !important;
+}
+
 .global-audio-dock__text {
   min-width: 0;
   display: grid;
