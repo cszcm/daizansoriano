@@ -1,8 +1,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | default: site.description }}" />
+<meta name="theme-color" content="#f5f1e8" />
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
 <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}" type="image/x-icon" />
+<link rel="apple-touch-icon" href="{{ '/assets/pwa/apple-touch-icon.png' | relative_url }}" />
+<link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}" />
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -10,3 +13,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;600&display=swap" rel="stylesheet" />
 
 <title>{{ page.title | default: site.title }}</title>
+
+<script>
+  (function () {
+    if (!('serviceWorker' in navigator)) return;
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('{{ '/sw.js' | relative_url }}', { scope: '{{ '/' | relative_url }}' }).catch(function () {
+        // Ignore SW registration errors.
+      });
+    });
+  })();
+</script>
