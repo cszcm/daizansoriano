@@ -103,6 +103,7 @@
       (function () {
         var STORAGE_KEY = 'site-global-audio-state-v1';
         var DISMISSED_KEY = 'site-global-audio-dismissed-v1';
+        var SESSION_STARTED_KEY = 'site-global-audio-started-session-v1';
         var dock = document.querySelector('[data-global-audio-dock]');
         if (!dock) return;
 
@@ -117,6 +118,7 @@
         var lastTimeSave = 0;
         var state = null;
         var dismissedUntilPlay = false;
+        var sessionStarted = false;
 
         function resolveUrl(url) {
           if (!url) return '';
@@ -192,6 +194,27 @@
           }
         }
 
+        function loadSessionStartedFlag() {
+          try {
+            return window.sessionStorage.getItem(SESSION_STARTED_KEY) === 'true';
+          } catch (error) {
+            return false;
+          }
+        }
+
+        function setSessionStartedFlag(value) {
+          sessionStarted = value === true;
+          try {
+            if (sessionStarted) {
+              window.sessionStorage.setItem(SESSION_STARTED_KEY, 'true');
+            } else {
+              window.sessionStorage.removeItem(SESSION_STARTED_KEY);
+            }
+          } catch (error) {
+            // Ignore storage errors.
+          }
+        }
+
         function formatSeconds(seconds) {
           if (!Number.isFinite(seconds) || seconds < 0) {
             return '0:00';
@@ -210,7 +233,7 @@
         }
 
         function renderDock() {
-          var visible = !!(state && state.src && state.hasStarted && !dismissedUntilPlay);
+          var visible = !!(state && state.src && state.hasStarted && !dismissedUntilPlay && sessionStarted);
           dock.hidden = !visible;
           document.body.classList.toggle('has-global-audio-dock', visible);
           if (!visible) {
@@ -254,6 +277,7 @@
           if (!src) return;
           var playing = typeof forcePlaying === 'boolean' ? forcePlaying : (!audioEl.paused && !audioEl.ended);
           if (playing) {
+            setSessionStartedFlag(true);
             setDismissedFlag(false);
           } else if (dismissedUntilPlay) {
             return;
@@ -295,6 +319,7 @@
 
         state = loadState();
         dismissedUntilPlay = loadDismissedFlag();
+        sessionStarted = loadSessionStartedFlag();
         var inlineSrc = getAudioSrc(inlineAudio);
         var inlineTitle = getInlineTitle();
         var inlineUrl = window.location.href;
@@ -323,7 +348,7 @@
           }
         } else if (state && state.src) {
           applyStateToDockAudio(true);
-          if (state.isPlaying) {
+          if (state.isPlaying && sessionStarted) {
             dockAudio.play().catch(function () {
               // Autoplay can be blocked; keep paused state visible.
               state.isPlaying = false;
@@ -357,6 +382,7 @@
           dockAudio.removeAttribute('src');
           dockAudio.load();
           setDismissedFlag(true);
+          setSessionStartedFlag(false);
           clearState();
           renderDock();
         });
