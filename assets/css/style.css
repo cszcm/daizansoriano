@@ -486,6 +486,15 @@ img {
   font-size: 0.75rem;
 }
 
+.footer-version {
+  margin: 0.35rem 0 0;
+  font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
 .footer-links {
   margin-top: 1rem;
   display: flex;

@@ -41,6 +41,7 @@
         <div class="container">
           <p>© {{ site.time | date: "%Y" }} {{ site.title }}.</p>
           <p class="footer-mantra">Cada día es un buen día</p>
+          <p class="footer-version">SW {{ site.pwa_sw_version | default: "v1" }}</p>
           <nav class="footer-links">
             <a href="{{ '/archive/' | relative_url }}">Archivo</a>
             <a href="{{ '/categorias/' | relative_url }}">Categorías</a>
