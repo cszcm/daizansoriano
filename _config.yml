@@ -23,7 +23,7 @@ podcast:
   explicit: false
 
 timezone: "UTC"
-pwa_sw_version: "v0.0.3"
+pwa_sw_version: "v0.0.4"
 
 # GitHub Pages-safe plugins
 plugins:

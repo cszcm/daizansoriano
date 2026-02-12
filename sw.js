@@ -1,5 +1,4 @@
----
----
+
 const CACHE_VERSION = '{{ site.pwa_sw_version | default: "v1" }}';
 const CACHE_NAME = `daizan-pwa-${CACHE_VERSION}`;
 
