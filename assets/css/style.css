@@ -587,6 +587,15 @@ body.has-global-audio-dock .site-shell {
 }
 
 @media (max-width: 720px) {
+  body {
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .post-content {
+    font-size: 1.12em;
+  }
+
   .header-inner {
     flex-direction: column;
     align-items: stretch;
