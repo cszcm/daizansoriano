@@ -1,11 +1,13 @@
+---
+---
 {
-  "id": "{{ '/' | relative_url }}",
+  "id": "{{ site.baseurl | default: '' }}/",
   "name": "Daizan Soriano",
   "short_name": "Daizan",
   "description": "{{ site.description | escape }}",
   "lang": "{{ site.lang | default: 'es' }}",
-  "start_url": "{{ '/' | relative_url }}",
-  "scope": "{{ '/' | relative_url }}",
+  "start_url": "{{ site.baseurl | default: '' }}/",
+  "scope": "{{ site.baseurl | default: '' }}/",
   "display": "standalone",
   "background_color": "#f5f1e8",
   "theme_color": "#f5f1e8",
