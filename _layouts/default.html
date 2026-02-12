@@ -102,6 +102,7 @@
     <script>
       (function () {
         var STORAGE_KEY = 'site-global-audio-state-v1';
+        var DISMISSED_KEY = 'site-global-audio-dismissed-v1';
         var dock = document.querySelector('[data-global-audio-dock]');
         if (!dock) return;
 
@@ -115,6 +116,7 @@
         var inlineTitleEl = document.querySelector('.post-title');
         var lastTimeSave = 0;
         var state = null;
+        var dismissedUntilPlay = false;
 
         function resolveUrl(url) {
           if (!url) return '';
@@ -144,6 +146,7 @@
             if (!raw) return null;
             var parsed = JSON.parse(raw);
             if (!parsed || typeof parsed.src !== 'string' || parsed.src === '') return null;
+            parsed.hasStarted = parsed.hasStarted === true || parsed.isPlaying === true || (Number.isFinite(parsed.currentTime) && parsed.currentTime > 0);
             return parsed;
           } catch (error) {
             return null;
@@ -168,6 +171,27 @@
           }
         }
 
+        function loadDismissedFlag() {
+          try {
+            return window.sessionStorage.getItem(DISMISSED_KEY) === 'true';
+          } catch (error) {
+            return false;
+          }
+        }
+
+        function setDismissedFlag(value) {
+          dismissedUntilPlay = value === true;
+          try {
+            if (dismissedUntilPlay) {
+              window.sessionStorage.setItem(DISMISSED_KEY, 'true');
+            } else {
+              window.sessionStorage.removeItem(DISMISSED_KEY);
+            }
+          } catch (error) {
+            // Ignore storage errors.
+          }
+        }
+
         function formatSeconds(seconds) {
           if (!Number.isFinite(seconds) || seconds < 0) {
             return '0:00';
@@ -186,7 +210,7 @@
         }
 
         function renderDock() {
-          var visible = !!(state && state.src);
+          var visible = !!(state && state.src && state.hasStarted && !dismissedUntilPlay);
           dock.hidden = !visible;
           document.body.classList.toggle('has-global-audio-dock', visible);
           if (!visible) {
@@ -229,6 +253,12 @@
           var src = getAudioSrc(audioEl);
           if (!src) return;
           var playing = typeof forcePlaying === 'boolean' ? forcePlaying : (!audioEl.paused && !audioEl.ended);
+          if (playing) {
+            setDismissedFlag(false);
+          } else if (dismissedUntilPlay) {
+            return;
+          }
+          var hasStarted = playing || (state && state.src === src && state.hasStarted === true) || (Number.isFinite(audioEl.currentTime) && audioEl.currentTime > 0);
           saveState({
             src: src,
             title: baseTitle || (state ? state.title : '') || document.title,
@@ -236,6 +266,7 @@
             currentTime: Number.isFinite(audioEl.currentTime) ? audioEl.currentTime : 0,
             playbackRate: Number.isFinite(audioEl.playbackRate) ? audioEl.playbackRate : 1,
             isPlaying: playing,
+            hasStarted: hasStarted,
             updatedAt: Date.now()
           });
           renderDock();
@@ -263,24 +294,13 @@
         }
 
         state = loadState();
+        dismissedUntilPlay = loadDismissedFlag();
         var inlineSrc = getAudioSrc(inlineAudio);
         var inlineTitle = getInlineTitle();
         var inlineUrl = window.location.href;
 
         bindAudioEvents(dockAudio, state && state.title ? state.title : document.title, state && state.pageUrl ? state.pageUrl : window.location.href);
         bindAudioEvents(inlineAudio, inlineTitle, inlineUrl);
-
-        if (!state && inlineSrc) {
-          saveState({
-            src: inlineSrc,
-            title: inlineTitle,
-            pageUrl: inlineUrl,
-            currentTime: Number.isFinite(inlineAudio.currentTime) ? inlineAudio.currentTime : 0,
-            playbackRate: Number.isFinite(inlineAudio.playbackRate) ? inlineAudio.playbackRate : 1,
-            isPlaying: false,
-            updatedAt: Date.now()
-          });
-        }
 
         if (state && inlineAudio && state.src === inlineSrc) {
           if (Number.isFinite(state.playbackRate) && state.playbackRate > 0) {
@@ -336,6 +356,7 @@
           }
           dockAudio.removeAttribute('src');
           dockAudio.load();
+          setDismissedFlag(true);
           clearState();
           renderDock();
         });

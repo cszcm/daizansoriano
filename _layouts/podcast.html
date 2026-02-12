@@ -38,6 +38,14 @@ layout: default
       {% endif %}
     {% endif %}
   {% endfor %}
+  {% if next_episode == nil %}
+    {% for item in podcast_items %}
+      {% if item.url != page.url and item.date > page.date %}
+        {% assign next_episode = item %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 
   <header class="post-header">
     {% assign wpm = site.reading_wpm | default: 200 %}
