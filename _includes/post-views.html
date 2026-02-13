@@ -1,23 +1,9 @@
 {% assign counter_namespace = site.url | append: site.baseurl | append: '-post-views' | slugify %}
 {% assign counter_key = page.url | slugify %}
 {% assign goatcounter_code = site.goatcounter.code | default: '' | strip %}
-{% assign goatcounter_path = site.baseurl | append: page.url %}
 
-<p class="post-views" data-post-views data-namespace="{{ counter_namespace }}" data-key="{{ counter_key }}" aria-live="polite">
-  Visitas:
-  {% if goatcounter_code != '' %}
-    <img
-      class="post-views-counter"
-      src="https://{{ goatcounter_code }}.goatcounter.com/counter/{{ goatcounter_path | uri_escape }}.svg?no_branding=1"
-      alt="Contador de visitas"
-      width="84"
-      height="24"
-      loading="lazy"
-      decoding="async"
-    />
-  {% else %}
-    <span data-post-views-count>Cargando...</span>
-  {% endif %}
+<p class="post-views" data-post-views data-namespace="{{ counter_namespace }}" data-key="{{ counter_key }}" data-goatcounter-code="{{ goatcounter_code }}" aria-live="polite">
+  Visitas: <span data-post-views-count>Cargando...</span>
 </p>
 
 <style>
@@ -27,16 +13,8 @@
     opacity: 0.85;
   }
 
-  .post-views-counter {
-    vertical-align: middle;
-    margin-left: 0.2rem;
-    border: 0;
-  }
 </style>
 
-{% if goatcounter_code != '' %}
-<script data-goatcounter="https://{{ goatcounter_code }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-{% else %}
 <script>
   (function () {
     function initPostViews() {
@@ -48,6 +26,7 @@
       var countEl = container.querySelector('[data-post-views-count]');
       var namespace = container.getAttribute('data-namespace');
       var key = container.getAttribute('data-key');
+      var goatcounterCode = (container.getAttribute('data-goatcounter-code') || '').trim();
 
       function setText(value) {
         if (countEl) {
@@ -68,6 +47,25 @@
         } catch (error) {
           setText('No disponible');
         }
+      }
+
+      function initGoatCounter() {
+        if (!goatcounterCode) {
+          return;
+        }
+
+        if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+          return;
+        }
+
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://gc.zgo.at/count.js';
+        script.setAttribute('data-goatcounter', 'https://' + goatcounterCode + '.goatcounter.com/count');
+        script.onerror = function () {
+          // GoatCounter bloqueado por red/adblock: mantenemos contador fallback sin romper la página.
+        };
+        document.head.appendChild(script);
       }
 
       if (!window.fetch || !namespace || !key) {
@@ -117,6 +115,7 @@
       }
 
       fetchCounter(0);
+      initGoatCounter();
     }
 
     if (document.readyState === 'loading') {
@@ -127,4 +126,3 @@
     initPostViews();
   })();
 </script>
-{% endif %}

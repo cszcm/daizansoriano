@@ -97,13 +97,13 @@ Nota: si aparece una nueva etiqueta, intenta que siga el mismo estilo (sin tilde
 
 El blog incluye un contador de visitas por post.
 
-- Modo recomendado: `GoatCounter` (más fiable).
-- Fallback automático: contador previo (`countapi.xyz`/`counterapi.dev`/`localStorage`) cuando no se configura GoatCounter.
+- Contador visible: proveedores `countapi.xyz`/`counterapi.dev` y fallback local `localStorage`.
+- Tracking adicional opcional: `GoatCounter` si configuras `goatcounter.code`.
 
 ### Cómo funciona
 
-- Si defines `goatcounter.code` en `_config.yml`, se usa GoatCounter para contar y mostrar visitas por URL.
-- Si no defines `goatcounter.code`, se usa el fallback anterior con proveedores externos y respaldo local.
+- El contador visible intenta servicios remotos y, si fallan (CORS, red o adblock), usa contador local para no quedar en blanco.
+- Si defines `goatcounter.code` en `_config.yml`, también se intenta enviar tracking a GoatCounter.
 
 ### Activar GoatCounter
 
