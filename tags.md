@@ -24,24 +24,8 @@ permalink: /tags/
       <ul>
       {% for post in all_items %}
         {% if post.tags contains tag %}
-          {% assign has_audio = false %}
-          {% if post.audio_url %}
-            {% assign has_audio = true %}
-          {% else %}
-            {% if post.collection == "posts" %}
-              {% assign item_audio_rel = post.path | remove_first: "_posts/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
-            {% else %}
-              {% assign item_audio_rel = post.path | remove_first: "_podcast/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
-            {% endif %}
-            {% assign item_audio_path = "/audio/" | append: item_audio_rel %}
-            {% for static_file in site.static_files %}
-              {% if static_file.path == item_audio_path %}
-                {% assign has_audio = true %}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-          <li data-content-item data-content-type="{% if has_audio %}audio{% else %}article{% endif %}"><a href="{{ post.url | relative_url }}">{{ post.title }}</a> · <span class="post-meta">{% if has_audio %}Audio{% else %}Artículo{% endif %}</span></li>
+          {% assign is_audio_item = post.collection == "podcast" %}
+          <li data-content-item data-content-type="{% if is_audio_item %}audio{% else %}article{% endif %}"><a href="{{ post.url | relative_url }}">{{ post.title }}</a> · <span class="post-meta">{% if is_audio_item %}Audio{% else %}Artículo{% endif %}</span></li>
         {% endif %}
       {% endfor %}
       </ul>

@@ -12,25 +12,9 @@ permalink: /archive/
   </div>
   {% assign all_items = site.podcast | concat: site.posts | sort: "date" | reverse %}
   {% for post in all_items %}
-    {% assign has_audio = false %}
-    {% if post.audio_url %}
-      {% assign has_audio = true %}
-    {% else %}
-      {% if post.collection == "posts" %}
-        {% assign item_audio_rel = post.path | remove_first: "_posts/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
-      {% else %}
-        {% assign item_audio_rel = post.path | remove_first: "_podcast/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
-      {% endif %}
-      {% assign item_audio_path = "/audio/" | append: item_audio_rel %}
-      {% for static_file in site.static_files %}
-        {% if static_file.path == item_audio_path %}
-          {% assign has_audio = true %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-    <article data-content-item data-content-type="{% if has_audio %}audio{% else %}article{% endif %}">
-      <p class="post-meta">{{ post.date | date: "%d %b %Y" }} · {% if has_audio %}Audio{% else %}Artículo{% endif %}</p>
+    {% assign is_audio_item = post.collection == "podcast" %}
+    <article data-content-item data-content-type="{% if is_audio_item %}audio{% else %}article{% endif %}">
+      <p class="post-meta">{{ post.date | date: "%d %b %Y" }} · {% if is_audio_item %}Audio{% else %}Artículo{% endif %}</p>
       <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
     </article>
   {% endfor %}
