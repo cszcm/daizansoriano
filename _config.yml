@@ -20,7 +20,7 @@ podcast:
   subcategory: Religion
   explicit: false
 timezone: UTC
-pwa_sw_version: v0.1.4
+pwa_sw_version: v0.1.5
 plugins:
   - jekyll-feed
 sass:
@@ -37,3 +37,4 @@ defaults:
       type: podcast
     values:
       layout: podcast
+      image: /assets/logo.png
