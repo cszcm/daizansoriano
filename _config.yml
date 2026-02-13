@@ -10,7 +10,7 @@ permalink: /:title/
 collections:
   podcast:
     output: true
-    permalink: /:name/
+    permalink: /:title/
 podcast:
   author: Daizan Soriano
   owner_name: Daizan Soriano
