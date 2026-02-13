@@ -458,6 +458,12 @@
               inlineAudio.addEventListener('loadedmetadata', restoreInlineTime, { once: true });
             }
           }
+          if (state.isPlaying && sessionStarted) {
+            inlineAudio.play().catch(function () {
+              state.isPlaying = false;
+              renderDock();
+            });
+          }
         } else if (state && state.src) {
           applyStateToDockAudio(true);
           if (state.isPlaying && sessionStarted) {
