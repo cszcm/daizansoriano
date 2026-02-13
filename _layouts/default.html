@@ -243,10 +243,47 @@
           return dockAudio;
         }
 
+        function syncPodcastPlayTriggers() {
+          var triggers = document.querySelectorAll('[data-global-audio-trigger]');
+          if (!triggers.length) {
+            return;
+          }
+
+          var activeSrc = state && state.src ? resolveUrl(state.src) : '';
+          triggers.forEach(function (trigger) {
+            var sourceUrl = resolveUrl(trigger.getAttribute('data-audio-src') || trigger.getAttribute('href'));
+            var defaultLabel = trigger.getAttribute('data-audio-default-label');
+            if (!defaultLabel) {
+              defaultLabel = (trigger.textContent || '').trim() || '▶ Escuchar';
+              trigger.setAttribute('data-audio-default-label', defaultLabel);
+            }
+
+            var isActive = !!(
+              activeSrc &&
+              sourceUrl &&
+              sourceUrl === activeSrc &&
+              state &&
+              state.hasStarted &&
+              sessionStarted &&
+              !dismissedUntilPlay
+            );
+
+            trigger.classList.toggle('is-active', isActive);
+            trigger.classList.toggle('is-playing', isActive && state.isPlaying === true);
+
+            if (isActive) {
+              trigger.textContent = state.isPlaying ? '⏸ Reproduciendo' : '▶ Reanudar';
+            } else {
+              trigger.textContent = defaultLabel;
+            }
+          });
+        }
+
         function renderDock() {
           var visible = !!(state && isLikelyAudioUrl(state.src) && state.hasStarted && !dismissedUntilPlay && sessionStarted);
           dock.hidden = !visible;
           document.body.classList.toggle('has-global-audio-dock', visible);
+          syncPodcastPlayTriggers();
           if (!visible) {
             return;
           }
@@ -416,7 +453,19 @@
 
           var requestedTitle = (trigger.getAttribute('data-audio-title') || '').trim();
           var requestedPageUrl = resolveUrl(trigger.getAttribute('data-audio-page-url') || window.location.href);
-          var currentTime = (state && state.src === src && Number.isFinite(state.currentTime) && state.currentTime > 0) ? state.currentTime : 0;
+          var sameSourceInDock = dockAudio && resolveUrl(dockAudio.currentSrc || dockAudio.src) === src;
+          if (sameSourceInDock && !dockAudio.paused && !dockAudio.ended) {
+            persistFromAudio(dockAudio, requestedTitle || document.title, requestedPageUrl || window.location.href, true);
+            renderDock();
+            return;
+          }
+
+          var liveCurrentTime = (sameSourceInDock && Number.isFinite(dockAudio.currentTime) && dockAudio.currentTime > 0)
+            ? dockAudio.currentTime
+            : null;
+          var currentTime = Number.isFinite(liveCurrentTime)
+            ? liveCurrentTime
+            : ((state && state.src === src && Number.isFinite(state.currentTime) && state.currentTime > 0) ? state.currentTime : 0);
           var playbackRate = (state && state.src === src && Number.isFinite(state.playbackRate) && state.playbackRate > 0) ? state.playbackRate : 1;
 
           saveState({
