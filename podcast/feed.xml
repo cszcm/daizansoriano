@@ -9,7 +9,7 @@ permalink: /podcast/feed.xml
   xmlns:podcast="https://podcastindex.org/namespace/1.0"
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   {% assign base = site.url | append: site.baseurl %}
-  {% assign episodes = site.podcast | sort: "date" | reverse %}
+  {% assign episodes = site.podcast | concat: site.posts | sort: "date" | reverse %}
 
   <channel>
     <title>{{ site.title | xml_escape }} Podcast</title>
@@ -45,7 +45,11 @@ permalink: /podcast/feed.xml
     {% endif %}
 
     {% for post in episodes %}
-      {% assign inferred_audio_rel = post.path | remove_first: "_podcast/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
+      {% if post.collection == "posts" %}
+        {% assign inferred_audio_rel = post.path | remove_first: "_posts/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
+      {% else %}
+        {% assign inferred_audio_rel = post.path | remove_first: "_podcast/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
+      {% endif %}
       {% assign inferred_audio_path = "/audio/" | append: inferred_audio_rel %}
       {% assign has_inferred_audio = false %}
       {% for static_file in site.static_files %}
