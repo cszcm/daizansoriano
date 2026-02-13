@@ -102,7 +102,7 @@ El blog incluye un contador de visitas por post, compatible con GitHub Pages, me
 - Cada entrada incrementa su propio contador al cargar la página.
 - El contador se identifica por la URL del post.
 - Si un servicio no responde, se intenta automáticamente con el siguiente proveedor.
-- Si todos fallan o el navegador bloquea la petición, se muestra `No disponible`.
+- Si todos fallan o el navegador bloquea la petición, usa un contador local en `localStorage`.
 
 ### Desactivar en un post
 

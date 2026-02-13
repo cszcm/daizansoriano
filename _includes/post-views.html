@@ -31,6 +31,21 @@
         }
       }
 
+      function fallbackToLocalCounter() {
+        try {
+          var localKey = 'post-views-local:' + namespace + ':' + key;
+          var current = parseInt(window.localStorage.getItem(localKey) || '0', 10);
+          if (!Number.isFinite(current) || current < 0) {
+            current = 0;
+          }
+          current += 1;
+          window.localStorage.setItem(localKey, String(current));
+          setText(current.toLocaleString('es-ES'));
+        } catch (error) {
+          setText('No disponible');
+        }
+      }
+
       if (!window.fetch || !namespace || !key) {
         setText('No disponible');
         return;
@@ -53,7 +68,7 @@
 
       function fetchCounter(index) {
         if (index >= providers.length) {
-          setText('No disponible');
+          fallbackToLocalCounter();
           return;
         }
 
