@@ -40,7 +40,7 @@ Si solo tienes un RSS, se puede convertir con:
 
 ```bash
 gem install jekyll-import
-jekyll import rss --source https://tu-blog.com/feed/ 
+jekyll import rss --source https://tu-blog.com/feed/
 ```
 
 Esto importará posts y etiquetas si vienen en el feed, pero puede perder categorías y adjuntos.
