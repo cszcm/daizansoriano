@@ -95,14 +95,26 @@ Nota: si aparece una nueva etiqueta, intenta que siga el mismo estilo (sin tilde
 
 ## Contador de visitas por entrada
 
-El blog incluye un contador de visitas por post, compatible con GitHub Pages, mediante servicios externos ligeros (`countapi.xyz` y fallback a `counterapi.dev`).
+El blog incluye un contador de visitas por post.
+
+- Modo recomendado: `GoatCounter` (más fiable).
+- Fallback automático: contador previo (`countapi.xyz`/`counterapi.dev`/`localStorage`) cuando no se configura GoatCounter.
 
 ### Cómo funciona
 
-- Cada entrada incrementa su propio contador al cargar la página.
-- El contador se identifica por la URL del post.
-- Si un servicio no responde, se intenta automáticamente con el siguiente proveedor.
-- Si todos fallan o el navegador bloquea la petición, usa un contador local en `localStorage`.
+- Si defines `goatcounter.code` en `_config.yml`, se usa GoatCounter para contar y mostrar visitas por URL.
+- Si no defines `goatcounter.code`, se usa el fallback anterior con proveedores externos y respaldo local.
+
+### Activar GoatCounter
+
+En `_config.yml`:
+
+```yaml
+goatcounter:
+  code: "TU_CODIGO"
+```
+
+Tu código es el subdominio de GoatCounter (ejemplo: `midominio` en `https://midominio.goatcounter.com`).
 
 ### Desactivar en un post
 
