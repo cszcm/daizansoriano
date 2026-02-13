@@ -403,6 +403,45 @@
           renderDock();
         });
 
+        document.addEventListener('click', function (event) {
+          var trigger = event.target && event.target.closest ? event.target.closest('[data-global-audio-trigger]') : null;
+          if (!trigger) return;
+
+          event.preventDefault();
+
+          var src = resolveUrl(trigger.getAttribute('data-audio-src') || trigger.getAttribute('href'));
+          if (!src || !isLikelyAudioUrl(src)) {
+            return;
+          }
+
+          var requestedTitle = (trigger.getAttribute('data-audio-title') || '').trim();
+          var requestedPageUrl = resolveUrl(trigger.getAttribute('data-audio-page-url') || window.location.href);
+          var currentTime = (state && state.src === src && Number.isFinite(state.currentTime) && state.currentTime > 0) ? state.currentTime : 0;
+          var playbackRate = (state && state.src === src && Number.isFinite(state.playbackRate) && state.playbackRate > 0) ? state.playbackRate : 1;
+
+          saveState({
+            src: src,
+            title: requestedTitle || (state && state.title ? state.title : document.title),
+            pageUrl: requestedPageUrl || window.location.href,
+            currentTime: currentTime,
+            playbackRate: playbackRate,
+            isPlaying: false,
+            hasStarted: true,
+            updatedAt: Date.now()
+          });
+
+          setSessionStartedFlag(true);
+          setDismissedFlag(false);
+          applyStateToDockAudio(true);
+          renderDock();
+
+          dockAudio.play().then(function () {
+            persistFromAudio(dockAudio, requestedTitle || document.title, requestedPageUrl || window.location.href, true);
+          }).catch(function () {
+            renderDock();
+          });
+        });
+
         renderDock();
       })();
     </script>

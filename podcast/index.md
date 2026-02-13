@@ -40,9 +40,18 @@ permalink: /podcast/
           {% if item.duration %}
             <span class="podcast-spotify-duration">{{ item.duration }}</span>
           {% endif %}
-          <a class="pill is-filled podcast-spotify-play" href="{{ item.url | relative_url }}">▶ Escuchar</a>
           {% if item.audio_url %}
-            <a class="pill" href="{{ item.audio_url | relative_url }}">MP3</a>
+            <a
+              class="pill is-filled podcast-spotify-play"
+              href="{{ item.audio_url | relative_url }}"
+              data-global-audio-trigger
+              data-audio-src="{{ item.audio_url | relative_url }}"
+              data-audio-title="{{ item.title | escape }}"
+              data-audio-page-url="{{ item.url | relative_url }}"
+              aria-label="Reproducir {{ item.title }} en el mini reproductor"
+            >▶ Escuchar</a>
+          {% else %}
+            <a class="pill is-filled podcast-spotify-play" href="{{ item.url | relative_url }}">▶ Escuchar</a>
           {% endif %}
         </div>
       </article>
