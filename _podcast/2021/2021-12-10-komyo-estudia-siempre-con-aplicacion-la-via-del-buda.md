@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2021/Komyo-Estudia-siempre-con-aplicacion-la-Via-del-Bud
 audio_type: "audio/mpeg"
 audio_length: 7413888
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2021/12/10/komyo-estudia-siempre-con-aplicacion-la-via-del-buda/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2021/12/10/komyo-estudia-siempre-con-aplicacion-la-via-del-buda/"
 ---
 
 ## Notas

@@ -10,7 +10,7 @@ audio_type: "audio/mpeg"
 audio_length: 31150299
 duration: "53:34:00"
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2025/05/11/los-cinco-obstaculos-ultima-sesion/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2025/05/11/los-cinco-obstaculos-ultima-sesion/"
 ---
 
 ## Notas

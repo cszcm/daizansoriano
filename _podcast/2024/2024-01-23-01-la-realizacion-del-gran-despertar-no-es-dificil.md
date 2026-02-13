@@ -10,7 +10,7 @@ audio_type: "audio/mpeg"
 audio_length: 5653114
 duration: "4:24"
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2024/01/23/01-la-realizacion-del-gran-despertar-no-es-dificil/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2024/01/23/01-la-realizacion-del-gran-despertar-no-es-dificil/"
 ---
 
 ## Notas

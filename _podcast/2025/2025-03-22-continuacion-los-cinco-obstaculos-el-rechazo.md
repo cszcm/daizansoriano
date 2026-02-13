@@ -10,7 +10,7 @@ audio_type: "audio/mpeg"
 audio_length: 23950802
 duration: "44:57"
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2025/03/22/continuacion-los-cinco-obstaculos-el-rechazo/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2025/03/22/continuacion-los-cinco-obstaculos-el-rechazo/"
 image: "/assets/images/2025/2025-03-22-continuacion-los-cinco-obstaculos-el-rechazo.jpg"
 ---
 

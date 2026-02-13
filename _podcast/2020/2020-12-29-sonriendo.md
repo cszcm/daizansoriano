@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2020/2020-12-29-Sonriendo-Fluyendo-en-el-Presente-Eterno
 audio_type: "audio/mpeg"
 audio_length: 2245860
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2020/12/29/sonriendo/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2020/12/29/sonriendo/"
 ---
 
 ## Notas

@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2021/2021-07-19-ImposibleDeAferrar.mp3"
 audio_type: "audio/mpeg"
 audio_length: 11891430
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2021/07/19/imposible-de-aferrar/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2021/07/19/imposible-de-aferrar/"
 ---
 
 ## Notas

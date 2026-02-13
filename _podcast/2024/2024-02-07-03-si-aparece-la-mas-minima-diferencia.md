@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2024/3.-Pero-si-se-crea-la-menor-diferencia.mp3"
 audio_type: "audio/mpeg"
 audio_length: 3084197
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2024/02/07/03-si-aparece-la-mas-minima-diferencia/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2024/02/07/03-si-aparece-la-mas-minima-diferencia/"
 ---
 
 ## Notas

@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2021/2021-10-16-La_Via_del_Bodhisattva.mp3"
 audio_type: "audio/mpeg"
 audio_length: 50240654
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2021/10/16/la-via-del-bodhisattva/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2021/10/16/la-via-del-bodhisattva/"
 ---
 
 ## Notas

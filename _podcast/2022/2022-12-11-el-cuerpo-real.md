@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2022/2022-12-11-01ElCuerpoReal.mp3"
 audio_type: "audio/mpeg"
 audio_length: 1075164
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2022/12/11/el-cuerpo-real/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2022/12/11/el-cuerpo-real/"
 ---
 
 ## Notas

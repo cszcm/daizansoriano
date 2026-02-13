@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2021/2021-02-20-Disolviendo-tensiones.mp3"
 audio_type: "audio/mpeg"
 audio_length: 17479094
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2021/02/20/disolviendo-tensiones/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2021/02/20/disolviendo-tensiones/"
 ---
 
 ## Notas

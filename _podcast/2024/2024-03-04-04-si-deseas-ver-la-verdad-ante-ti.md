@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2024/4.-Para-que-se-declare-ante-los-ojos.mp3"
 audio_type: "audio/mpeg"
 audio_length: 3138197
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2024/03/04/04-si-deseas-ver-la-verdad-ante-ti/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2024/03/04/04-si-deseas-ver-la-verdad-ante-ti/"
 ---
 
 ## Notas

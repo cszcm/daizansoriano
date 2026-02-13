@@ -10,7 +10,7 @@ audio_type: "audio/mpeg"
 audio_length: 15051531
 duration: "32:27"
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2023/12/19/ensenanza-en-el-dojo-zen-de-murcia/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2023/12/19/ensenanza-en-el-dojo-zen-de-murcia/"
 ---
 
 ## Notas

@@ -10,7 +10,7 @@ audio_type: "audio/mpeg"
 audio_length: 5077739
 duration: "4:47"
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2024/09/27/06-si-no-comprendes-el-principio-profundo/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2024/09/27/06-si-no-comprendes-el-principio-profundo/"
 image: "/assets/images/2024/2024-09-27-06-si-no-comprendes-el-principio-profundo.png"
 ---
 

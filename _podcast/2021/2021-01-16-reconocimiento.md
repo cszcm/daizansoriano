@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2021/2021-01-16-Reconocimiento-Fluyendo-en-el-eterno-pre
 audio_type: "audio/mpeg"
 audio_length: 4469442
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2021/01/16/reconocimiento/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2021/01/16/reconocimiento/"
 ---
 
 ## Notas

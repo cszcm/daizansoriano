@@ -10,7 +10,7 @@ audio_type: "audio/mpeg"
 audio_length: 2940790
 duration: "2:20"
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2024/01/25/02-cuando-no-aparece-el-apego-ni-el-rechazo/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2024/01/25/02-cuando-no-aparece-el-apego-ni-el-rechazo/"
 ---
 
 ## Notas

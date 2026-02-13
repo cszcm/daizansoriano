@@ -1,5 +1,7 @@
 {
     "chat.tools.terminal.autoApprove": {
-        "printf": true
+        "printf": true,
+        "git remote": true,
+        "git rev-parse": true
     }
 }

@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2014/2014-09-30-UnCafeConLolaEditado.mp3"
 audio_type: "audio/mpeg"
 audio_length: 21632887
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2014/09/30/un-cafe-con-lola/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2014/09/30/un-cafe-con-lola/"
 ---
 
 ## Notas

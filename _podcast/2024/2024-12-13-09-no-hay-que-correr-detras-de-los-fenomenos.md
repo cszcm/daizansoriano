@@ -10,7 +10,7 @@ audio_type: "audio/mpeg"
 audio_length: 9240993
 duration: "8:51"
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2024/12/13/09-no-hay-que-correr-detras-de-los-fenomenos/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2024/12/13/09-no-hay-que-correr-detras-de-los-fenomenos/"
 ---
 
 ## Notas

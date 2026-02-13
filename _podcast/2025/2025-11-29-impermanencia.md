@@ -10,7 +10,7 @@ audio_type: "audio/mpeg"
 audio_length: 46185219
 duration: "1:01:42"
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2025/11/29/impermanencia/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2025/11/29/impermanencia/"
 ---
 
 ## Notas

@@ -10,7 +10,7 @@ audio_type: "audio/mpeg"
 audio_length: 5936045
 duration: "9:56"
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2025/02/25/00-texto-del-xin-xin-ming/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2025/02/25/00-texto-del-xin-xin-ming/"
 image: "/assets/images/2025/2025-02-25-00-texto-del-xin-xin-ming.jpg"
 ---
 

@@ -10,7 +10,7 @@ audio_type: "audio/mpeg"
 audio_length: 5621443
 duration: "6:09"
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2024/10/12/07-plena-como-el-gran-vacio/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2024/10/12/07-plena-como-el-gran-vacio/"
 image: "/assets/images/2024/2024-10-12-07-plena-como-el-gran-vacio.png"
 ---
 

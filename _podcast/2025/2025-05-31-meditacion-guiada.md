@@ -10,7 +10,7 @@ audio_type: "audio/mpeg"
 audio_length: 8330271
 duration: "12:06"
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2025/05/31/meditacion-guiada/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2025/05/31/meditacion-guiada/"
 image: "/assets/images/2025/2025-05-31-meditacion-guiada.jpg"
 ---
 

@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2024/2024-03-02-01ElDespertar.mp3"
 audio_type: "audio/mpeg"
 audio_length: 38640184
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2024/03/02/ensenanza-sobre-el-despertar/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2024/03/02/ensenanza-sobre-el-despertar/"
 ---
 
 ## Notas

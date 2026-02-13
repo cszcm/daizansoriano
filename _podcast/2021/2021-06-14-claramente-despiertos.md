@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2021/2021-06-14-ClaramenteDespiertos.mp3"
 audio_type: "audio/mpeg"
 audio_length: 20522969
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2021/06/14/claramente-despiertos/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2021/06/14/claramente-despiertos/"
 ---
 
 ## Notas

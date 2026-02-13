@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2021/2021-04-25-meditacionguiadacontenidosmentales.mp3"
 audio_type: "audio/mpeg"
 audio_length: 29277178
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2021/04/25/meditacion-guiada-atencion-a-los-contenidos-mentales/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2021/04/25/meditacion-guiada-atencion-a-los-contenidos-mentales/"
 ---
 
 ## Notas

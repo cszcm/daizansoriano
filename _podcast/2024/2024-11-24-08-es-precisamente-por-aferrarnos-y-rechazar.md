@@ -10,7 +10,7 @@ audio_type: "audio/mpeg"
 audio_length: 11379857
 duration: "10:04"
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2024/11/24/08-es-precisamente-por-aferrarnos-y-rechazar/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2024/11/24/08-es-precisamente-por-aferrarnos-y-rechazar/"
 ---
 
 ## Notas

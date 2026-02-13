@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2021/2021-09-17-Entrevista-en-Presentastico.m4a"
 audio_type: "audio/mp4"
 audio_length: 68454794
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2021/09/17/entrevista-en-presentastico/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2021/09/17/entrevista-en-presentastico/"
 ---
 
 ## Notas

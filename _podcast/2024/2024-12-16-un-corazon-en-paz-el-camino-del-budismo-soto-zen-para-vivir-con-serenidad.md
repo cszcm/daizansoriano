@@ -10,7 +10,7 @@ audio_type: "audio/mpeg"
 audio_length: 28930910
 duration: "1:30:28"
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2024/12/16/un-corazon-en-paz-el-camino-del-budismo-soto-zen-para-vivir-con-serenidad/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2024/12/16/un-corazon-en-paz-el-camino-del-budismo-soto-zen-para-vivir-con-serenidad/"
 image: "/assets/images/2024/2024-12-16-un-corazon-en-paz-el-camino-del-budismo-soto-zen-para-vivir-con-serenidad.jpg"
 ---
 

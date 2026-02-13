@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2024/5.-La-lucha-entre-el-deseo-y-el-rechazo.mp3"
 audio_type: "audio/mpeg"
 audio_length: 3205301
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2024/03/04/05-el-conflicto-entre-lo-que-aceptas-y-lo-que-rechazas/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2024/03/04/05-el-conflicto-entre-lo-que-aceptas-y-lo-que-rechazas/"
 ---
 
 ## Notas

@@ -9,7 +9,7 @@ audio_url: "/assets/mp3/2021/2021-04-10-LaViaEsAmpliaYGenerosa.mp3"
 audio_type: "audio/mpeg"
 audio_length: 15897846
 explicit: false
-source_url: "https://cszcm.github.io/Audioteca/episodios/2021/04/10/la-via-es-amplia-y-generosa/"
+source_url: "https://daizansoriano.com/Audioteca/episodios/2021/04/10/la-via-es-amplia-y-generosa/"
 ---
 
 ## Notas
