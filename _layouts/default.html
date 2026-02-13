@@ -141,6 +141,24 @@
           return resolveUrl(audioEl.currentSrc || audioEl.getAttribute('src') || (sourceEl ? sourceEl.getAttribute('src') : ''));
         }
 
+        function areSameAudioSource(leftUrl, rightUrl) {
+          var left = resolveUrl(leftUrl);
+          var right = resolveUrl(rightUrl);
+          if (!left || !right) {
+            return false;
+          }
+          if (left === right) {
+            return true;
+          }
+          try {
+            var leftParsed = new URL(left);
+            var rightParsed = new URL(right);
+            return leftParsed.pathname === rightParsed.pathname && leftParsed.search === rightParsed.search;
+          } catch (error) {
+            return false;
+          }
+        }
+
         function getInlineTitle() {
           if (inlineTitleEl && inlineTitleEl.textContent) {
             return inlineTitleEl.textContent.trim();
@@ -242,10 +260,25 @@
         }
 
         function getActiveAudio() {
-          if (inlineAudio && state && state.src && state.src === getAudioSrc(inlineAudio)) {
+          if (inlineAudio && state && state.src && areSameAudioSource(state.src, getAudioSrc(inlineAudio))) {
             return inlineAudio;
           }
           return dockAudio;
+        }
+
+        function getClosestElement(target, selector) {
+          if (!target) return null;
+          if (typeof target.closest === 'function') {
+            return target.closest(selector);
+          }
+          var node = target.nodeType === 1 ? target : target.parentElement;
+          while (node) {
+            if (node.matches && node.matches(selector)) {
+              return node;
+            }
+            node = node.parentElement;
+          }
+          return null;
         }
 
         function syncPodcastPlayTriggers() {
@@ -285,7 +318,8 @@
         }
 
         function renderDock() {
-          var visible = !!(state && isLikelyAudioUrl(state.src) && state.hasStarted && !dismissedUntilPlay && sessionStarted);
+          var hasProgress = !!(state && Number.isFinite(state.currentTime) && state.currentTime > 0);
+          var visible = !!(state && isLikelyAudioUrl(state.src) && state.hasStarted && !dismissedUntilPlay && (sessionStarted || state.isPlaying === true || hasProgress));
           dock.hidden = !visible;
           document.body.classList.toggle('has-global-audio-dock', visible);
           syncPodcastPlayTriggers();
@@ -294,7 +328,7 @@
           }
 
           titleEl.textContent = state.title || 'Audio';
-          episodeLink.href = state.pageUrl || window.location.href;
+          episodeLink.href = resolveUrl(state.pageUrl) || window.location.href;
           playPauseBtn.textContent = state.isPlaying ? 'Pausar' : 'Reproducir';
           metaEl.textContent = (state.isPlaying ? 'En reproducción' : 'En pausa') + ' · ' + formatSeconds(state.currentTime || 0);
         }
@@ -328,6 +362,7 @@
         function persistFromAudio(audioEl, baseTitle, baseUrl, forcePlaying) {
           var src = getAudioSrc(audioEl);
           if (!src) return;
+          var previousForSource = state && areSameAudioSource(state.src, src) ? state : null;
           var playing = typeof forcePlaying === 'boolean' ? forcePlaying : (!audioEl.paused && !audioEl.ended);
           if (playing) {
             setSessionStartedFlag(true);
@@ -335,11 +370,11 @@
           } else if (dismissedUntilPlay) {
             return;
           }
-          var hasStarted = playing || (state && state.src === src && state.hasStarted === true) || (Number.isFinite(audioEl.currentTime) && audioEl.currentTime > 0);
+          var hasStarted = playing || (previousForSource && previousForSource.hasStarted === true) || (Number.isFinite(audioEl.currentTime) && audioEl.currentTime > 0);
           saveState({
             src: src,
-            title: baseTitle || (state ? state.title : '') || document.title,
-            pageUrl: baseUrl || (state ? state.pageUrl : '') || window.location.href,
+            title: baseTitle || (previousForSource ? previousForSource.title : '') || document.title,
+            pageUrl: baseUrl || (previousForSource ? previousForSource.pageUrl : '') || window.location.href,
             currentTime: Number.isFinite(audioEl.currentTime) ? audioEl.currentTime : 0,
             playbackRate: Number.isFinite(audioEl.playbackRate) ? audioEl.playbackRate : 1,
             isPlaying: playing,
@@ -349,24 +384,36 @@
           renderDock();
         }
 
-        function bindAudioEvents(audioEl, baseTitle, baseUrl) {
+        function bindAudioEvents(audioEl, titleResolver, urlResolver) {
           if (!audioEl) return;
+          var resolveTitle = function () {
+            if (typeof titleResolver === 'function') {
+              return titleResolver();
+            }
+            return titleResolver;
+          };
+          var resolvePageUrl = function () {
+            if (typeof urlResolver === 'function') {
+              return urlResolver();
+            }
+            return urlResolver;
+          };
           audioEl.addEventListener('play', function () {
-            persistFromAudio(audioEl, baseTitle, baseUrl, true);
+            persistFromAudio(audioEl, resolveTitle(), resolvePageUrl(), true);
           });
           audioEl.addEventListener('pause', function () {
-            persistFromAudio(audioEl, baseTitle, baseUrl, false);
+            persistFromAudio(audioEl, resolveTitle(), resolvePageUrl(), false);
           });
           audioEl.addEventListener('ratechange', function () {
-            persistFromAudio(audioEl, baseTitle, baseUrl);
+            persistFromAudio(audioEl, resolveTitle(), resolvePageUrl());
           });
           audioEl.addEventListener('ended', function () {
-            persistFromAudio(audioEl, baseTitle, baseUrl, false);
+            persistFromAudio(audioEl, resolveTitle(), resolvePageUrl(), false);
           });
           audioEl.addEventListener('timeupdate', function () {
             if (Date.now() - lastTimeSave < 900) return;
             lastTimeSave = Date.now();
-            persistFromAudio(audioEl, baseTitle, baseUrl);
+            persistFromAudio(audioEl, resolveTitle(), resolvePageUrl());
           });
         }
 
@@ -378,14 +425,21 @@
           setSessionStartedFlag(false);
           state = null;
         }
+        if (state && state.hasStarted && !dismissedUntilPlay && !sessionStarted) {
+          sessionStarted = true;
+        }
         var inlineSrc = getAudioSrc(inlineAudio);
-        var inlineTitle = getInlineTitle();
-        var inlineUrl = window.location.href;
 
-        bindAudioEvents(dockAudio, state && state.title ? state.title : document.title, state && state.pageUrl ? state.pageUrl : window.location.href);
-        bindAudioEvents(inlineAudio, inlineTitle, inlineUrl);
+        bindAudioEvents(dockAudio, function () {
+          return state && state.title ? state.title : document.title;
+        }, function () {
+          return state && state.pageUrl ? state.pageUrl : window.location.href;
+        });
+        bindAudioEvents(inlineAudio, getInlineTitle, function () {
+          return window.location.href;
+        });
 
-        if (state && inlineAudio && state.src === inlineSrc) {
+        if (state && inlineAudio && areSameAudioSource(state.src, inlineSrc)) {
           if (Number.isFinite(state.playbackRate) && state.playbackRate > 0) {
             inlineAudio.playbackRate = state.playbackRate;
           }
@@ -414,6 +468,18 @@
             });
           }
         }
+
+        window.addEventListener('pagehide', function () {
+          if (!state || !state.src) return;
+          var activeAudio = getActiveAudio();
+          if (!activeAudio) return;
+          persistFromAudio(
+            activeAudio,
+            state.title || document.title,
+            state.pageUrl || window.location.href,
+            !activeAudio.paused && !activeAudio.ended
+          );
+        });
 
         playPauseBtn.addEventListener('click', function () {
           if (!state || !state.src) return;
@@ -446,7 +512,7 @@
         });
 
         document.addEventListener('click', function (event) {
-          var trigger = event.target && event.target.closest ? event.target.closest('[data-global-audio-trigger]') : null;
+          var trigger = getClosestElement(event.target, '[data-global-audio-trigger]');
           if (!trigger) return;
 
           event.preventDefault();
@@ -458,7 +524,7 @@
 
           var requestedTitle = (trigger.getAttribute('data-audio-title') || '').trim();
           var requestedPageUrl = resolveUrl(trigger.getAttribute('data-audio-page-url') || window.location.href);
-          var sameSourceInDock = dockAudio && resolveUrl(dockAudio.currentSrc || dockAudio.src) === src;
+          var sameSourceInDock = dockAudio && areSameAudioSource(dockAudio.currentSrc || dockAudio.src, src);
           if (sameSourceInDock && !dockAudio.paused && !dockAudio.ended) {
             persistFromAudio(dockAudio, requestedTitle || document.title, requestedPageUrl || window.location.href, true);
             renderDock();
@@ -470,8 +536,8 @@
             : null;
           var currentTime = Number.isFinite(liveCurrentTime)
             ? liveCurrentTime
-            : ((state && state.src === src && Number.isFinite(state.currentTime) && state.currentTime > 0) ? state.currentTime : 0);
-          var playbackRate = (state && state.src === src && Number.isFinite(state.playbackRate) && state.playbackRate > 0) ? state.playbackRate : 1;
+            : ((state && areSameAudioSource(state.src, src) && Number.isFinite(state.currentTime) && state.currentTime > 0) ? state.currentTime : 0);
+          var playbackRate = (state && areSameAudioSource(state.src, src) && Number.isFinite(state.playbackRate) && state.playbackRate > 0) ? state.playbackRate : 1;
 
           saveState({
             src: src,
