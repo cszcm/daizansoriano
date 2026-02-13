@@ -1,0 +1,18 @@
+Licencia de contenidos (textos, imágenes y audios del sitio)
+
+Salvo indicación expresa en contrario en una entrada concreta, los contenidos
+publicados en este sitio se distribuyen bajo la licencia:
+
+Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional
+(CC BY-NC-ND 4.0)
+
+Resumen legible (deed):
+https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es
+
+Texto legal completo:
+https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.es
+
+Esto significa, de forma resumida:
+- Debes atribuir la autoría.
+- No puedes usar los contenidos con fines comerciales.
+- No puedes distribuir obras derivadas o adaptaciones.

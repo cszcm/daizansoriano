@@ -130,6 +130,13 @@ Por defecto, si no se define `views`, el contador se muestra.
 
 - Include del contador: `_includes/post-views.html`
 
+## Licencia
+
+Este proyecto usa licencia dual:
+
+- Código del sitio (plantillas, estilos, scripts): MIT (`LICENSE`).
+- Contenidos (textos, imágenes, audios), salvo indicación en contra: CC BY-NC-ND 4.0 (`LICENSE-CONTENT.txt`).
+
 ## Audio MP3 en la web
 
 En cada post, la web aplica esta lógica automáticamente:
