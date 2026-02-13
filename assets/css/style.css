@@ -462,6 +462,82 @@ img {
   margin-bottom: 1.5rem;
 }
 
+.podcast-spotify-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.podcast-spotify-item {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid rgba(161, 106, 58, 0.14);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 0.8rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.podcast-spotify-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+}
+
+.podcast-spotify-cover {
+  width: 84px;
+  height: 84px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(161, 106, 58, 0.18);
+  background: var(--accent-soft);
+  display: grid;
+  place-items: center;
+}
+
+.podcast-spotify-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.podcast-spotify-cover span {
+  font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
+  color: var(--accent-strong);
+  font-size: 1.5rem;
+}
+
+.podcast-spotify-body {
+  min-width: 0;
+}
+
+.podcast-spotify-body .post-meta {
+  letter-spacing: 0.14em;
+  margin: 0 0 0.2rem;
+}
+
+.podcast-spotify-body h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.podcast-spotify-body p {
+  margin: 0.35rem 0 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.podcast-spotify-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .tags ul {
   list-style: none;
   padding-left: 0;
@@ -659,6 +735,31 @@ body.has-global-audio-dock .site-shell {
 
   .post-card {
     padding: 1.3rem;
+  }
+
+  .podcast-spotify-item {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.65rem;
+  }
+
+  .podcast-spotify-cover {
+    width: 64px;
+    height: 64px;
+  }
+
+  .podcast-spotify-body h2 {
+    font-size: 1.15rem;
+  }
+
+  .podcast-spotify-body p {
+    font-size: 0.95rem;
+  }
+
+  .podcast-spotify-actions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    padding-top: 0.2rem;
   }
 
   body.has-global-audio-dock .site-shell {
