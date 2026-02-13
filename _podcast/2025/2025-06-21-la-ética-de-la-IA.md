@@ -2,12 +2,14 @@
 layout: podcast
 title: "Harari, la ética de la IA y la mirada budista: deontología, utilitarismo y compasión en diálogo"
 subtitle: ""
+description: "Diálogo entre Harari, deontología, utilitarismo y ética budista para pensar la IA desde la compasión."
+duration: "10:39"
 date: 2025-06-21 09:00:00 +0100
 categories: ["Etica"]
 tags: ["IA", "etica", "tecnologia", "compasion", "harari"]
 ---
 
-Estoy leyendo el último libro de ***Yuval Noah Harari***, *Nexus: Una breve historia de las redes de información desde la Edad de Piedra hasta la IA*. En él, Harari explora cómo la información ha tejido la historia humana y cómo la irrupción de la inteligencia artificial abre un capítulo sin precedentes. Entre sus reflexiones, dedica un espacio a un asunto que como budista me parece clave: qué principios éticos deberían guiar a la IA. Este texto no es un resumen del libro, sino un diálogo con sus propuestas desde la práctica del budismo soto zen.
+Estoy leyendo el último libro de **_Yuval Noah Harari_**, _Nexus: Una breve historia de las redes de información desde la Edad de Piedra hasta la IA_. En él, Harari explora cómo la información ha tejido la historia humana y cómo la irrupción de la inteligencia artificial abre un capítulo sin precedentes. Entre sus reflexiones, dedica un espacio a un asunto que como budista me parece clave: qué principios éticos deberían guiar a la IA. Este texto no es un resumen del libro, sino un diálogo con sus propuestas desde la práctica del budismo soto zen.
 
 Harari menciona dos grandes corrientes que han marcado la filosofía moral occidental: la deontología y el utilitarismo. A partir de ahí, advierte de sus límites y propone un marco más flexible. Aquí intento explicar esos enfoques con ejemplos sencillos y ponerlos en conversación con la ética budista, para ver semejanzas, diferencias y, sobre todo, qué puede servirnos hoy al diseñar y usar sistemas de IA.
 
@@ -73,7 +75,8 @@ Si aplicamos esta mirada al problema que plantea Harari, podríamos decir que la
 
 Un sistema de IA inspirado en este espíritu no solo seguiría normas ni solo optimizaría métricas: leería el contexto, cuidaría la intención detrás de cada decisión y priorizaría el bienestar profundo, no solo la satisfacción inmediata. No se trata de máquinas «buenas» por decreto, sino de tecnologías inscritas en comunidades que practican la responsabilidad, la transparencia y el cuidado.
 
-----
+---
+
 La IA no será mejor que las comunidades que la desarrollan. Si creamos marcos donde la verdad se contrasta, el poder rinde cuentas y el error se repara, la técnica puede ponerse al servicio de la dignidad. Esto se resume en un compromiso práctico: reducir el daño, cuidar a quienes quedan fuera del promedio y aprender juntos a cada paso.
 
 No programamos solo código: nos programamos a nosotros y nosotras cada vez que elegimos cómo usarlo. Cuando una mente sabe parar, escuchar y cuidar, la tecnología se vuelve un medio hábil, no un obstáculo. Mirar el sufrimiento de frente y responder de la manera más adecuada posible en cada situación es una ética que necesitamos aplicar también a la IA.

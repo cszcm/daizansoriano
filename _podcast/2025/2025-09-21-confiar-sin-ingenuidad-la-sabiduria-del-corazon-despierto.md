@@ -2,6 +2,8 @@
 layout: podcast
 title: "La sabiduría del corazón despierto"
 subtitle: ""
+description: "Diferencia entre confianza incondicional y buenismo, y cómo cultivarla con discernimiento en la práctica."
+duration: "12:26"
 date: 2025-09-21 09:00:00 +0100
 categories: ["Practica"]
 tags: ["confianza", "buenismo", "compasion", "zazen", "discernimiento"]
@@ -50,7 +52,11 @@ Practicar confianza incondicional es caminar con los ojos abiertos, sin certezas
 ---
 
 [^1]: En la tradición zen, esta actitud se relaciona con el término japonés _shinjin datsuraku_ («abandonar cuerpo y mente»), que expresa la rendición total al momento presente.
+
 [^2]: En la literatura budista moderna, este fenómeno se conoce como _spiritual bypassing_ (evasión espiritual): usar prácticas espirituales para evitar enfrentar heridas o conflictos internos.
+
 [^3]: Dōgen enseñó que «la práctica misma es la iluminación». Confiar incondicionalmente en la práctica es reconocer que no hay nada fuera del instante presente que alcanzar.
+
 [^4]: Dōgen, _Shōbōgenzō – Genjōkōan_: «Estudiar el camino es estudiarse a sí mismo; estudiarse a sí mismo es olvidarse de sí mismo».
+
 [^5]: En el zen se dice que la mente original es como el cielo: las nubes van y vienen, pero el cielo nunca se altera. Confiar incondicionalmente es reconocer ese cielo en medio de las tormentas.

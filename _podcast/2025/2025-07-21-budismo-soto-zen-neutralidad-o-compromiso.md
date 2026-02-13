@@ -2,6 +2,8 @@
 layout: podcast
 title: "¿Neutralidad o compromiso?"
 subtitle: ""
+description: "Sobre la tensión entre neutralidad y compromiso en el budismo Soto Zen contemporáneo."
+duration: "4:11"
 date: 2025-07-21 09:00:00 +0100
 categories: ["Sociedad"]
 tags: ["compromiso", "budismo", "politica", "neutralidad", "soto zen"]

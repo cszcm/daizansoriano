@@ -2,6 +2,8 @@
 layout: podcast
 title: "Guerra y Violencia"
 subtitle: ""
+description: "Reflexión ética y budista sobre la guerra, la no violencia y la responsabilidad colectiva."
+duration: "11:23"
 date: 2025-05-21 09:00:00 +0100
 categories: ["Paz"]
 tags: ["no violencia", "guerra", "paz", "compasion", "interdependencia"]
@@ -39,7 +41,7 @@ Meditar es un acto revolucionario porque confronta directamente las raíces inte
 
 ### La Utilidad del Bien: Ética y Compasión
 
-Mientras escribía esta entrada, leí un artículo del filósofo Luciano Floridi titulado *La utilidad del bien. Reflexiones sobre los horrores del mundo*[2], y su propuesta me hizo detenerme a reflexionar. Floridi defiende la idea de actuar éticamente no por una recompensa, sino porque el bien tiene valor en sí mismo. Esta perspectiva resuena profundamente con la ética budista y, en particular, con la vía del bodhisattva y la Vía del zen.
+Mientras escribía esta entrada, leí un artículo del filósofo Luciano Floridi titulado _La utilidad del bien. Reflexiones sobre los horrores del mundo_[2], y su propuesta me hizo detenerme a reflexionar. Floridi defiende la idea de actuar éticamente no por una recompensa, sino porque el bien tiene valor en sí mismo. Esta perspectiva resuena profundamente con la ética budista y, en particular, con la vía del bodhisattva y la Vía del zen.
 
 En el budismo Soto Zen hacemos énfasis en que no hay nada que obtener (musotoku): el camino del bodhisattva no busca recompensas ni logros personales, sino que actúa desde una compasión libre de expectativas. Esta actitud se sostiene sobre tres pilares fundamentales: no apegarse a la acción, no apegarse al resultado de la acción, y no apegarse a la idea de un yo que realiza una acción. Así, el bien se manifiesta como una expresión natural de nuestra naturaleza búdica, no como un medio para alcanzar fines. Actuar desde esta comprensión es liberar la acción del ego y del cálculo, permitiendo que surja de la vacuidad, clara y directa.
 
@@ -47,7 +49,7 @@ El bien no se practica por su utilidad inmediata, sino porque expresa y cultiva 
 
 ### Justicia y Acción Colectiva
 
-Un reciente estudio psicológico dirigido por David Gordon y Mikael Puurtinen, publicado en *Social Psychological Bulletin*, muestra que la justicia por parte de quienes están en posiciones de poder depende significativamente de la capacidad de quienes no tienen poder para actuar colectivamente contra la injusticia. Según los investigadores, cuando es más fácil organizar la acción colectiva contra los abusos, quienes ostentan el poder tienden a comportarse de forma más equitativa. Por el contrario, cuando la protesta o la resistencia colectiva es difícil o costosa, los individuos poderosos se sienten libres de actuar injustamente con mayor impunidad. Puedes consultar el estudio completo en EurekAlert[3].
+Un reciente estudio psicológico dirigido por David Gordon y Mikael Puurtinen, publicado en _Social Psychological Bulletin_, muestra que la justicia por parte de quienes están en posiciones de poder depende significativamente de la capacidad de quienes no tienen poder para actuar colectivamente contra la injusticia. Según los investigadores, cuando es más fácil organizar la acción colectiva contra los abusos, quienes ostentan el poder tienden a comportarse de forma más equitativa. Por el contrario, cuando la protesta o la resistencia colectiva es difícil o costosa, los individuos poderosos se sienten libres de actuar injustamente con mayor impunidad. Puedes consultar el estudio completo en EurekAlert[3].
 
 Esta investigación refuerza una perspectiva importante desde el budismo zen: nuestra responsabilidad colectiva y personal frente a la injusticia. La enseñanza zen de actuar desde la compasión y la sabiduría no implica resignación o pasividad, sino todo lo contrario: implica una respuesta consciente, unificada y decidida contra el abuso y la violencia.
 

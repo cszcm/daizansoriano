@@ -2,12 +2,14 @@
 layout: podcast
 title: Una sangha laica, religiosa y secular
 subtitle: "Prefacio del libro Camino Medio"
+description: "Fragmento del libro en preparación Camino Medio sobre la forma de una sangha laica, religiosa y secular en el mundo contemporáneo."
+duration: "7:56"
 date: 2026-02-08 09:00:00 +0100
 categories: ["Comunidad"]
 tags: ["libros", "sangha", "soto zen", "secularizacion", "camino medio"]
 ---
 
-**Esta entrada forma parte del libro que estoy preparando, cuyo título provisional será *Camino Medio*. Lo que sigue es un fragmento de ese manuscrito en desarrollo, compartido aquí como adelanto.**
+**Esta entrada forma parte del libro que estoy preparando, cuyo título provisional será _Camino Medio_. Lo que sigue es un fragmento de ese manuscrito en desarrollo, compartido aquí como adelanto.**
 
 Este libro nace en el seno de una comunidad de práctica que ha surgido en un contexto muy distinto al del budismo tradicional. No vivimos en monasterios ni pertenecemos a una institución religiosa histórica. Vivimos en ciudades, trabajamos, cuidamos, enfermamos, pagamos facturas y criamos hijos e hijas. Y, sin embargo, practicamos la Vía del Buda dentro de la tradición Soto Zen.
 
@@ -25,7 +27,7 @@ Practicar en medio de la vida no es más fácil ni más difícil que retirarse d
 
 Y, al mismo tiempo, practicar en medio de la vida no significa practicar sin pausas. A lo largo del año, la sangha se retira periódicamente para realizar retiros de meditación más intensivos. Estos periodos no son una huida del mundo, sino una forma consciente de tomar distancia temporal de la inercia cotidiana. En el silencio compartido del retiro, el ritmo se simplifica, la atención se afina y la práctica se actualiza. Después, regresamos a nuestras vidas con una energía renovada, con una mirada más clara y con una comprensión más profunda.
 
-Al mismo tiempo, esta sangha es religiosa. No en el sentido de adhesión a un sistema de creencias rígido, sino en el sentido profundo de la palabra religión como aquello que «vuelve a ligar» (*religare*). Una práctica que nos vincula con la vida, con los demás seres, con el misterio de existir. Practicamos zazen, recitamos sutras transmitidos durante siglos y cultivamos una ética basada en los preceptos del bodhisattva. Estas formas nos conectan con una tradición viva que atraviesa generaciones y culturas.
+Al mismo tiempo, esta sangha es religiosa. No en el sentido de adhesión a un sistema de creencias rígido, sino en el sentido profundo de la palabra religión como aquello que «vuelve a ligar» (_religare_). Una práctica que nos vincula con la vida, con los demás seres, con el misterio de existir. Practicamos zazen, recitamos sutras transmitidos durante siglos y cultivamos una ética basada en los preceptos del bodhisattva. Estas formas nos conectan con una tradición viva que atraviesa generaciones y culturas.
 
 La dimensión ritual, simbólica y espiritual está presente porque forma parte inseparable de la tradición que recibimos. No se trata de conservar formas vacías, sino de reconocer que los seres humanos necesitamos gestos, palabras y espacios que expresen lo que no puede reducirse a conceptos. La práctica no es solo comprensión intelectual; es cuerpo, respiración, silencio, repetición, comunidad.
 
@@ -49,6 +51,6 @@ El despertar no pertenece a ningún lugar particular, a ninguna cultura concreta
 
 Este libro no es un tratado doctrinal ni una obra de proselitismo. Es el testimonio de una práctica compartida y de una forma concreta de vivir el dharma en el mundo contemporáneo. Es simplemente una expresión de la práctica viva de una comunidad que transita el camino medio en el mundo actual: entre tradición y modernidad, entre la vida cotidiana y la dimensión más profunda de la existencia.
 
-Este libro no ofrece respuestas definitivas. Si estas páginas pueden acompañar, inspirar o simplemente abrir preguntas, habrán cumplido su propósito. 
+Este libro no ofrece respuestas definitivas. Si estas páginas pueden acompañar, inspirar o simplemente abrir preguntas, habrán cumplido su propósito.
 
 El camino continúa en la práctica perseverante. Siempre.

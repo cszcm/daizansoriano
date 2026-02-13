@@ -10,7 +10,7 @@ permalink: /:title/
 collections:
   podcast:
     output: true
-    permalink: /podcast/:name/
+    permalink: /:name/
 podcast:
   author: Daizan Soriano
   owner_name: Daizan Soriano
@@ -20,7 +20,7 @@ podcast:
   subcategory: Religion
   explicit: false
 timezone: UTC
-pwa_sw_version: v0.1.2
+pwa_sw_version: v0.1.3
 plugins:
   - jekyll-feed
 sass:
