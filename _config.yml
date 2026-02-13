@@ -20,20 +20,20 @@ podcast:
   subcategory: Religion
   explicit: false
 timezone: UTC
-pwa_sw_version: v0.1.1
+pwa_sw_version: v0.1.2
 plugins:
   - jekyll-feed
 sass:
   style: compressed
 defaults:
   - scope:
-      path: ''
+      path: ""
       type: posts
     values:
       layout: post
-      author: ''
+      author: ""
   - scope:
-      path: ''
+      path: ""
       type: podcast
     values:
       layout: podcast

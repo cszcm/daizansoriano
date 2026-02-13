@@ -462,6 +462,19 @@ img {
   margin-bottom: 1.5rem;
 }
 
+.podcast-header-image {
+  margin: 0 0 1.2rem;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(161, 106, 58, 0.14);
+  box-shadow: var(--shadow-soft);
+}
+
+.podcast-header-image img {
+  width: 100%;
+  display: block;
+}
+
 .podcast-spotify-list {
   display: grid;
   gap: 0.9rem;
