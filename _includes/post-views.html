@@ -36,24 +36,48 @@
         return;
       }
 
-      var endpoint = 'https://api.countapi.xyz/hit/' + encodeURIComponent(namespace) + '/' + encodeURIComponent(key);
+      var providers = [
+        {
+          endpoint: 'https://api.countapi.xyz/hit/' + encodeURIComponent(namespace) + '/' + encodeURIComponent(key),
+          readCount: function (data) {
+            return data && typeof data.value === 'number' ? data.value : null;
+          }
+        },
+        {
+          endpoint: 'https://api.counterapi.dev/v1/' + encodeURIComponent(namespace) + '/' + encodeURIComponent(key) + '/up',
+          readCount: function (data) {
+            return data && typeof data.count === 'number' ? data.count : null;
+          }
+        }
+      ];
 
-      fetch(endpoint, { cache: 'no-store' })
-        .then(function (response) {
-          if (!response.ok) {
-            throw new Error('counter-request-failed');
-          }
-          return response.json();
-        })
-        .then(function (data) {
-          if (!data || typeof data.value !== 'number') {
-            throw new Error('counter-value-missing');
-          }
-          setText(data.value.toLocaleString('es-ES'));
-        })
-        .catch(function () {
+      function fetchCounter(index) {
+        if (index >= providers.length) {
           setText('No disponible');
-        });
+          return;
+        }
+
+        var provider = providers[index];
+        fetch(provider.endpoint, { cache: 'no-store' })
+          .then(function (response) {
+            if (!response.ok) {
+              throw new Error('counter-request-failed');
+            }
+            return response.json();
+          })
+          .then(function (data) {
+            var count = provider.readCount(data);
+            if (typeof count !== 'number') {
+              throw new Error('counter-value-missing');
+            }
+            setText(count.toLocaleString('es-ES'));
+          })
+          .catch(function () {
+            fetchCounter(index + 1);
+          });
+      }
+
+      fetchCounter(0);
     }
 
     if (document.readyState === 'loading') {

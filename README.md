@@ -95,13 +95,14 @@ Nota: si aparece una nueva etiqueta, intenta que siga el mismo estilo (sin tilde
 
 ## Contador de visitas por entrada
 
-El blog incluye un contador de visitas por post, compatible con GitHub Pages, mediante un servicio externo ligero (`countapi.xyz`).
+El blog incluye un contador de visitas por post, compatible con GitHub Pages, mediante servicios externos ligeros (`countapi.xyz` y fallback a `counterapi.dev`).
 
 ### Cómo funciona
 
 - Cada entrada incrementa su propio contador al cargar la página.
 - El contador se identifica por la URL del post.
-- Si el servicio no responde o el navegador bloquea la petición, se muestra `No disponible`.
+- Si un servicio no responde, se intenta automáticamente con el siguiente proveedor.
+- Si todos fallan o el navegador bloquea la petición, se muestra `No disponible`.
 
 ### Desactivar en un post
 
