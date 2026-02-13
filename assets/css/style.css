@@ -394,6 +394,15 @@ img {
   box-shadow: var(--shadow-soft);
 }
 
+.about-image {
+  text-align: center;
+  margin: 1rem 0 1.5rem;
+}
+
+.about-image img {
+  display: inline-block;
+}
+
 .links-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
