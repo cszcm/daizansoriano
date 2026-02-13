@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: post
 title: "Sesgo de confirmación y despertar"
 subtitle: ""
 description: "Cómo el sesgo de confirmación condiciona nuestra percepción y cómo zazen ayuda a verlo con claridad."

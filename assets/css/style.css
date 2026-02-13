@@ -462,6 +462,17 @@ img {
   margin-bottom: 1.5rem;
 }
 
+.content-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.content-filter .pill {
+  cursor: pointer;
+}
+
 .podcast-header-image {
   margin: 0 0 1.2rem;
   border-radius: 18px;

@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: post
 title: "Harari, la ética de la IA y la mirada budista: deontología, utilitarismo y compasión en diálogo"
 subtitle: ""
 description: "Diálogo entre Harari, deontología, utilitarismo y ética budista para pensar la IA desde la compasión."

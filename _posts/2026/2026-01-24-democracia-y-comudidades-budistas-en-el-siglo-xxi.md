@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: post
 title: Democracia en las comunidades budistas Soto Zen del siglo XXI
 subtitle: "Límites de la votación y sentido de la autoridad en la vía del zen"
 description: "Reflexión sobre democracia, autoridad y corresponsabilidad en las comunidades Soto Zen del siglo XXI."

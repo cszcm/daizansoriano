@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: post
 title: "Cuando no hay claridad, también hay presencia"
 subtitle: "La luz de la medianoche en la práctica de zazen"
 description: "A partir de Dongshan, una reflexión sobre la práctica de zazen cuando no hay claridad, pero sí presencia."

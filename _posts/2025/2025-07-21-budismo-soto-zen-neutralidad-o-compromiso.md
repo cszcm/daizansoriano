@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: post
 title: "¿Neutralidad o compromiso?"
 subtitle: ""
 description: "Sobre la tensión entre neutralidad y compromiso en el budismo Soto Zen contemporáneo."

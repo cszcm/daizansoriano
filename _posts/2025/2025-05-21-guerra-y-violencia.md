@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: post
 title: "Guerra y Violencia"
 subtitle: ""
 description: "Reflexión ética y budista sobre la guerra, la no violencia y la responsabilidad colectiva."

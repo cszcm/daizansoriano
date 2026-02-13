@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: post
 title: "Avatar y la pedagogía invisible de la violencia"
 subtitle: ""
 description: "Lectura crítica de Avatar y de cómo ciertas narrativas culturales normalizan la violencia como respuesta al conflicto."

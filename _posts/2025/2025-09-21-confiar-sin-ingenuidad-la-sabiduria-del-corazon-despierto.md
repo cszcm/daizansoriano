@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: post
 title: "La sabiduría del corazón despierto"
 subtitle: ""
 description: "Diferencia entre confianza incondicional y buenismo, y cómo cultivarla con discernimiento en la práctica."
