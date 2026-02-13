@@ -1,0 +1,26 @@
+---
+layout: default
+title: "Redirigiendo..."
+permalink: /404.html
+---
+
+<section class="archive" aria-live="polite">
+  <h1>Página no encontrada</h1>
+  <p>Te redirigimos al inicio automáticamente.</p>
+  <p>Si no ocurre en unos segundos, pulsa <a href="{{ '/' | relative_url }}">aquí</a>.</p>
+</section>
+
+<meta http-equiv="refresh" content="0; url={{ '/' | relative_url }}">
+<link rel="canonical" href="{{ '/' | absolute_url }}">
+<script>
+  (function () {
+    var home = "{{ '/' | relative_url }}";
+    if (window.location.pathname === home) {
+      return;
+    }
+    window.location.replace(home);
+  })();
+</script>
+<noscript>
+  <meta http-equiv="refresh" content="0; url={{ '/' | relative_url }}">
+</noscript>
