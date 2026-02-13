@@ -13,6 +13,8 @@ permalink: /podcast/
   <div class="podcast-spotify-list">
     {% for item in podcast_items %}
       <article class="podcast-spotify-item">
+        <div class="podcast-spotify-rank" aria-hidden="true">{{ forloop.index }}</div>
+
         <a class="podcast-spotify-cover" href="{{ item.url | relative_url }}" aria-label="Ir al episodio {{ item.title }}">
           {% if item.image %}
             <img src="{{ item.image | relative_url }}" alt="Portada de {{ item.title }}" loading="lazy" decoding="async">
@@ -25,7 +27,6 @@ permalink: /podcast/
           <p class="post-meta">
             {{ item.date | date: "%d %b %Y" }}
             {% if item.episode %} · Episodio {{ item.episode }}{% endif %}
-            {% if item.duration %} · {{ item.duration }}{% endif %}
           </p>
           <h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
           {% if item.description %}
@@ -36,7 +37,10 @@ permalink: /podcast/
         </div>
 
         <div class="podcast-spotify-actions">
-          <a class="pill is-filled" href="{{ item.url | relative_url }}">Escuchar</a>
+          {% if item.duration %}
+            <span class="podcast-spotify-duration">{{ item.duration }}</span>
+          {% endif %}
+          <a class="pill is-filled podcast-spotify-play" href="{{ item.url | relative_url }}">▶ Escuchar</a>
           {% if item.audio_url %}
             <a class="pill" href="{{ item.audio_url | relative_url }}">MP3</a>
           {% endif %}
