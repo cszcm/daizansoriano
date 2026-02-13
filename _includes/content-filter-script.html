@@ -1,0 +1,41 @@
+<script>
+  (function () {
+    var controls = document.querySelector('[data-content-filter]');
+    var items = document.querySelectorAll('[data-content-item]');
+    if (!controls || !items.length) return;
+
+    var buttons = controls.querySelectorAll('[data-filter]');
+    var params = new URLSearchParams(window.location.search);
+    var initial = params.get('tipo');
+    var valid = { all: true, audio: true, article: true };
+    var current = valid[initial] ? initial : 'all';
+
+    function applyFilter(filterValue) {
+      current = filterValue;
+      items.forEach(function (item) {
+        var itemType = item.getAttribute('data-content-type');
+        item.hidden = current !== 'all' && itemType !== current;
+      });
+      buttons.forEach(function (button) {
+        button.classList.toggle('is-filled', button.getAttribute('data-filter') === current);
+      });
+      var nextParams = new URLSearchParams(window.location.search);
+      if (current === 'all') {
+        nextParams.delete('tipo');
+      } else {
+        nextParams.set('tipo', current);
+      }
+      var nextQuery = nextParams.toString();
+      var nextUrl = window.location.pathname + (nextQuery ? '?' + nextQuery : '') + window.location.hash;
+      window.history.replaceState(null, '', nextUrl);
+    }
+
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        applyFilter(button.getAttribute('data-filter'));
+      });
+    });
+
+    applyFilter(current);
+  })();
+</script>
