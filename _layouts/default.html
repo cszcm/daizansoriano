@@ -454,22 +454,10 @@
           if (Number.isFinite(state.playbackRate) && state.playbackRate > 0) {
             inlineAudio.playbackRate = state.playbackRate;
           }
-          if (Number.isFinite(state.currentTime) && state.currentTime > 0) {
-            var restoreInlineTime = function () {
-              try {
-                if (Number.isFinite(inlineAudio.duration) && state.currentTime >= inlineAudio.duration) return;
-                inlineAudio.currentTime = state.currentTime;
-              } catch (error) {
-                // Ignore seek errors.
-              }
-            };
-            if (inlineAudio.readyState >= 1) {
-              restoreInlineTime();
-            } else {
-              inlineAudio.addEventListener('loadedmetadata', restoreInlineTime, { once: true });
+          var resumeInlinePlayback = function () {
+            if (!(state && state.isPlaying && sessionStarted)) {
+              return;
             }
-          }
-          if (state.isPlaying && sessionStarted) {
             inlineAudio.play().catch(function () {
               applyStateToDockAudio(true);
               dockAudio.play().then(function () {
@@ -484,6 +472,26 @@
                 renderDock();
               });
             });
+          };
+
+          if (Number.isFinite(state.currentTime) && state.currentTime > 0) {
+            var restoreInlineTime = function () {
+              try {
+                if (Number.isFinite(inlineAudio.duration) && state.currentTime >= inlineAudio.duration) return;
+                inlineAudio.currentTime = state.currentTime;
+              } catch (error) {
+                // Ignore seek errors.
+              } finally {
+                resumeInlinePlayback();
+              }
+            };
+            if (inlineAudio.readyState >= 1) {
+              restoreInlineTime();
+            } else {
+              inlineAudio.addEventListener('loadedmetadata', restoreInlineTime, { once: true });
+            }
+          } else {
+            resumeInlinePlayback();
           }
         } else if (state && state.src) {
           applyStateToDockAudio(true);
