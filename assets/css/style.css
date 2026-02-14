@@ -335,10 +335,14 @@ img {
 
 .post-meta {
   font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--muted);
   letter-spacing: 0.22em;
   text-transform: uppercase;
+}
+
+.post-card .post-meta {
+  color: var(--ink-soft);
 }
 
 .post {

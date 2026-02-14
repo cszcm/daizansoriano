@@ -20,7 +20,7 @@ podcast:
   subcategory: Religion
   explicit: false
 timezone: UTC
-pwa_sw_version: v0.3.4
+pwa_sw_version: v0.3.5
 goatcounter:
   code: "daizansoriano"
 plugins:
