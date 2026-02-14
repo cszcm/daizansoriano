@@ -11,7 +11,7 @@ permalink: /lista-correo/
   </header>
 
   <div class="post-content">
-    <form id="WebToLeadForm" action="https://caminomedio.sinergiacrm.org/index.php?entryPoint=WebToPersonCapture" method="POST" name="WebToLeadForm">
+    <form id="WebToLeadForm" action="https://caminomedio.sinergiacrm.org/index.php?entryPoint=WebToPersonCapture" method="POST" name="WebToLeadForm" target="newsletter_submit_frame" novalidate>
       <h2></h2>
       <p>Esta lista de correo es un espacio sencillo para compartir reflexiones, entradas de blog y episodios del podcast que voy publicando como parte de mi práctica y enseñanza del budismo Soto Zen. Los envíos son ocasionales y puedes darte de baja cuando lo desees.</p>
       <div class="row">
@@ -34,10 +34,11 @@ permalink: /lista-correo/
         <div class="clear">&nbsp;</div>
       </div>
       <input name="campaign_id" id="campaign_id" type="hidden" value="00000707-e538-14d1-d6d7-6975ddfb7dd1" />
-      <input name="redirect_url" id="redirect_url" type="hidden" value="https://www.daizansoriano.com" />
       <input name="assigned_user_id" id="assigned_user_id" type="hidden" value="00000f0b-aea0-cbf0-db07-682dc6e0639d" />
       <input name="moduleDir" id="moduleDir" type="hidden" value="Leads" />
     </form>
+    <iframe name="newsletter_submit_frame" title="Envío de suscripción" style="display:none;"></iframe>
+    <p id="newsletter-feedback" class="newsletter-feedback" role="status" aria-live="polite"></p>
 
     <div class="notranslate" style="all: initial;">&nbsp;</div>
 
@@ -45,20 +46,56 @@ permalink: /lista-correo/
       // STIC-custom 20211122 - jch - Avoid multiple submission
       // STIC#489
       var formHasAlreadyBeenSent = false;
+      var hasSubmittedInCurrentPage = false;
+      var feedbackEl = document.getElementById("newsletter-feedback");
+      var submitFrame = document.querySelector('iframe[name="newsletter_submit_frame"]');
+      var submitButton = document.querySelector('#WebToLeadForm input[type="submit"]');
       /**
        * Prevent multiple form submissions
        *
        * @return void
        */
-      function lockMultipleSubmissions() {
+      function lockMultipleSubmissions(event) {
         if (formHasAlreadyBeenSent) {
           console.log("Form is locked because it has already been sent.");
           event.preventDefault();
+          if (feedbackEl) {
+            feedbackEl.textContent = "Tu suscripción ya se está enviando.";
+            feedbackEl.classList.add("is-visible");
+          }
+          return;
         }
         formHasAlreadyBeenSent = true;
+        hasSubmittedInCurrentPage = true;
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.value = "Enviando...";
+        }
+        if (feedbackEl) {
+          feedbackEl.textContent = "Enviando suscripción...";
+          feedbackEl.classList.add("is-visible");
+        }
       }
       // Attach function to event
       document.getElementById("WebToLeadForm").addEventListener("submit", lockMultipleSubmissions);
+      if (submitFrame) {
+        submitFrame.addEventListener("load", function () {
+          if (!hasSubmittedInCurrentPage) {
+            return;
+          }
+          if (feedbackEl) {
+            feedbackEl.textContent = "Suscripción recibida. Gracias.";
+            feedbackEl.classList.add("is-visible");
+          }
+          var formEl = document.getElementById("WebToLeadForm");
+          if (formEl) {
+            formEl.reset();
+          }
+          if (submitButton) {
+            submitButton.value = "Suscrito";
+          }
+        });
+      }
       // END STIC-custom
       function submit_form() {
         check_webtolead_fields();

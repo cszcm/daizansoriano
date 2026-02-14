@@ -748,6 +748,28 @@ img {
   filter: brightness(0.95);
 }
 
+.newsletter-page #WebToLeadForm input[type="submit"]:disabled {
+  opacity: 0.78;
+  cursor: default;
+}
+
+.newsletter-page .newsletter-feedback {
+  margin: 0.75rem 0 0;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(45, 94, 91, 0.22);
+  background: rgba(45, 94, 91, 0.08);
+  color: var(--accent-strong);
+  font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  display: none;
+}
+
+.newsletter-page .newsletter-feedback.is-visible {
+  display: block;
+}
+
 .newsletter-page .notranslate {
   display: none;
 }
