@@ -121,6 +121,7 @@
         var state = null;
         var dismissedUntilPlay = false;
         var sessionStarted = false;
+        var isRestoringInitialState = true;
 
         function resolveUrl(url) {
           if (!url) return '';
@@ -344,7 +345,12 @@
           metaEl.textContent = (state.isPlaying ? 'En reproducción' : 'En pausa') + ' · ' + formatSeconds(state.currentTime || 0);
         }
 
-        function applyStateToDockAudio(shouldSeek) {
+        function applyStateToDockAudio(shouldSeek, onReady) {
+          var notifyReady = function () {
+            if (typeof onReady === 'function') {
+              onReady();
+            }
+          };
           if (!state || !state.src) return;
           if (dockAudio.src !== state.src) {
             dockAudio.src = state.src;
@@ -353,6 +359,7 @@
             dockAudio.playbackRate = state.playbackRate;
           }
           if (!shouldSeek || !Number.isFinite(state.currentTime) || state.currentTime <= 0) {
+            notifyReady();
             return;
           }
           var applySeek = function () {
@@ -361,6 +368,8 @@
               dockAudio.currentTime = state.currentTime;
             } catch (error) {
               // Ignore seek errors.
+            } finally {
+              notifyReady();
             }
           };
           if (dockAudio.readyState >= 1) {
@@ -375,19 +384,38 @@
           if (!src) return;
           var previousForSource = state && areSameAudioSource(state.src, src) ? state : null;
           var playing = typeof forcePlaying === 'boolean' ? forcePlaying : (!audioEl.paused && !audioEl.ended);
+          var nextCurrentTime = Number.isFinite(audioEl.currentTime) ? audioEl.currentTime : 0;
+          var nextPlaybackRate = Number.isFinite(audioEl.playbackRate) ? audioEl.playbackRate : 1;
+
+          // Some browsers emit early pause/timeupdate events at 0s during page init.
+          // Preserve previous progress to avoid resetting resume position.
+          if (
+            isRestoringInitialState &&
+            previousForSource &&
+            !playing &&
+            nextCurrentTime < 0.5 &&
+            Number.isFinite(previousForSource.currentTime) &&
+            previousForSource.currentTime > 0.5
+          ) {
+            nextCurrentTime = previousForSource.currentTime;
+            if (nextPlaybackRate === 1 && Number.isFinite(previousForSource.playbackRate) && previousForSource.playbackRate > 0) {
+              nextPlaybackRate = previousForSource.playbackRate;
+            }
+          }
+
           if (playing) {
             setSessionStartedFlag(true);
             setDismissedFlag(false);
           } else if (dismissedUntilPlay) {
             return;
           }
-          var hasStarted = playing || (previousForSource && previousForSource.hasStarted === true) || (Number.isFinite(audioEl.currentTime) && audioEl.currentTime > 0);
+          var hasStarted = playing || (previousForSource && previousForSource.hasStarted === true) || (Number.isFinite(nextCurrentTime) && nextCurrentTime > 0);
           saveState({
             src: src,
             title: baseTitle || (previousForSource ? previousForSource.title : '') || document.title,
             pageUrl: baseUrl || (previousForSource ? previousForSource.pageUrl : '') || window.location.href,
-            currentTime: Number.isFinite(audioEl.currentTime) ? audioEl.currentTime : 0,
-            playbackRate: Number.isFinite(audioEl.playbackRate) ? audioEl.playbackRate : 1,
+            currentTime: nextCurrentTime,
+            playbackRate: nextPlaybackRate,
             isPlaying: playing,
             hasStarted: hasStarted,
             updatedAt: Date.now()
@@ -496,10 +524,12 @@
         } else if (state && state.src) {
           applyStateToDockAudio(true);
           if (state.isPlaying && sessionStarted) {
-            dockAudio.play().catch(function () {
-              // Autoplay can be blocked; keep paused state visible.
-              state.isPlaying = false;
-              renderDock();
+            applyStateToDockAudio(true, function () {
+              dockAudio.play().catch(function () {
+                // Autoplay can be blocked; keep paused state visible.
+                state.isPlaying = false;
+                renderDock();
+              });
             });
           }
         }
@@ -523,9 +553,17 @@
             applyStateToDockAudio(true);
           }
           if (activeAudio.paused || activeAudio.ended) {
-            activeAudio.play().catch(function () {
-              renderDock();
-            });
+            if (activeAudio === dockAudio) {
+              applyStateToDockAudio(true, function () {
+                dockAudio.play().catch(function () {
+                  renderDock();
+                });
+              });
+            } else {
+              activeAudio.play().catch(function () {
+                renderDock();
+              });
+            }
           } else {
             activeAudio.pause();
           }
@@ -590,14 +628,19 @@
           applyStateToDockAudio(true);
           renderDock();
 
-          dockAudio.play().then(function () {
-            persistFromAudio(dockAudio, requestedTitle || document.title, requestedPageUrl || window.location.href, true);
-          }).catch(function () {
-            renderDock();
+          applyStateToDockAudio(true, function () {
+            dockAudio.play().then(function () {
+              persistFromAudio(dockAudio, requestedTitle || document.title, requestedPageUrl || window.location.href, true);
+            }).catch(function () {
+              renderDock();
+            });
           });
         });
 
         renderDock();
+        window.setTimeout(function () {
+          isRestoringInitialState = false;
+        }, 0);
       })();
     </script>
   </body>
