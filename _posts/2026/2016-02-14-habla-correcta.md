@@ -4,9 +4,9 @@ title: Habla correcta
 subtitle:
 description: "Dentro del Noble Óctuple Sendero, el habla correcta ocupa un lugar central, no como una norma moral impuesta desde fuera, sino como una expresión directa del estado de nuestra mente y de nuestra relación con las demás personas."
 duration: "7:56"
-date: 2026-02-08 09:00:00 +0100
+date: 2026-02-14 09:00:00 +0100
 categories: ["Comunidad"]
-tags: ["libros", "sangha", "soto zen", "secularizacion", "camino medio"]
+tags: ["sangha", "bodhisattva", "habla correcta", "camino medio"]
 ---
 
 
