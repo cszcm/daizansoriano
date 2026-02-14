@@ -32,14 +32,16 @@ title: "Inicio"
 {% endfor %}
 
 {% if featured_audio_item and featured_audio_url != "" %}
+{% assign featured_audio_image = featured_audio_item.image | default: site.podcast.image | default: '/assets/daizan.jpg' %}
+{% if featured_audio_image contains '://' %}
+  {% assign featured_audio_image_url = featured_audio_image %}
+{% else %}
+  {% assign featured_audio_image_url = featured_audio_image | relative_url %}
+{% endif %}
 <section class="home-latest-audio">
   <div class="home-latest-audio__media">
     <a href="{{ featured_audio_item.url | relative_url }}" aria-label="Ir al episodio {{ featured_audio_item.title }}">
-      {% if featured_audio_item.image %}
-        <img src="{{ featured_audio_item.image | relative_url }}" alt="Portada de {{ featured_audio_item.title }}" loading="eager" decoding="async">
-      {% else %}
-        <img src="{{ '/assets/logo.webp' | relative_url }}" alt="Portada del podcast" loading="eager" decoding="async">
-      {% endif %}
+      <img src="{{ featured_audio_image_url }}" alt="Portada de {{ featured_audio_item.title }}" loading="eager" decoding="async">
     </a>
   </div>
   <div class="home-latest-audio__content">
