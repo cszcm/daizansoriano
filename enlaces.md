@@ -56,5 +56,6 @@ permalink: /enlaces/
       <h3>✉️ Correo electrónico</h3>
       <a class="link-button" href="mailto:sensei@daizansoriano.com">📨 Enviar email</a>
     </article>
+
   </div>
 </section>
