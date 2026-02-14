@@ -1,0 +1,6 @@
+{% assign item = include.post %}
+{% assign is_audio_item = false %}
+{% if item.collection == "podcast" or item.layout == "podcast" or item.path contains "_podcast/" %}
+  {% assign is_audio_item = true %}
+{% endif %}
+{% if is_audio_item %}audio{% else %}article{% endif %}
