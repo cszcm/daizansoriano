@@ -16,21 +16,18 @@ layout: default
   {% assign posts_by_date = site.posts | sort: "date" %}
   {% for candidate in posts_by_date %}
     {% if candidate.url != page.url and candidate.date > page.date %}
-      {% assign candidate_audio_rel = candidate.path | remove_first: "_posts/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
-      {% assign candidate_audio_path = "/audio/" | append: candidate_audio_rel %}
-      {% assign candidate_has_audio = false %}
-      {% for static_file in site.static_files %}
-        {% if static_file.path == candidate_audio_path %}
-          {% assign candidate_has_audio = true %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-      {% if candidate_has_audio %}
+      {% assign next_audio_post = candidate %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if next_audio_post == nil %}
+    {% for candidate in posts_by_date %}
+      {% if candidate.url != page.url %}
         {% assign next_audio_post = candidate %}
         {% break %}
       {% endif %}
-    {% endif %}
-  {% endfor %}
+    {% endfor %}
+  {% endif %}
 
   <header class="post-header">
     {% assign wpm = site.reading_wpm | default: 200 %}
