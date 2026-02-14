@@ -19,7 +19,7 @@ permalink: /enlaces/
 
     <article class="link-card">
       <h3>🎧 Podcast</h3>
-      <a class="link-button" href="https://daizansoriano.com/Audioteca/">🟢 Escuchar</a>
+      <a class="link-button" href="{{ '/podcast-plataformas/' | relative_url }}">🟢 Escuchar</a>
     </article>
 
     <article class="link-card">

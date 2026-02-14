@@ -8,6 +8,9 @@ permalink: /podcast/
   <div class="podcast-header-image">
     <img src="{{ '/assets/cabecera.png' | relative_url }}" alt="Cabecera del podcast" loading="eager" decoding="async">
   </div>
+  <p>
+    <a class="pill" href="{{ '/podcast-plataformas/' | relative_url }}">Plataformas de escucha</a>
+  </p>
   {% assign podcast_items = site.podcast | concat: site.posts | sort: "date" | reverse %}
   <div class="podcast-spotify-list">
     {% assign rendered_count = 0 %}
