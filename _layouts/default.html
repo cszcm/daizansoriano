@@ -260,7 +260,22 @@
         }
 
         function getActiveAudio() {
-          if (inlineAudio && state && state.src && areSameAudioSource(state.src, getAudioSrc(inlineAudio))) {
+          var inlineMatchesState = !!(inlineAudio && state && state.src && areSameAudioSource(state.src, getAudioSrc(inlineAudio)));
+          var dockMatchesState = !!(dockAudio && state && state.src && areSameAudioSource(state.src, dockAudio.currentSrc || dockAudio.src));
+
+          if (inlineMatchesState && !inlineAudio.paused && !inlineAudio.ended) {
+            return inlineAudio;
+          }
+          if (dockMatchesState && !dockAudio.paused && !dockAudio.ended) {
+            return dockAudio;
+          }
+          if (inlineMatchesState && Number.isFinite(inlineAudio.currentTime) && inlineAudio.currentTime > 0) {
+            return inlineAudio;
+          }
+          if (dockMatchesState && Number.isFinite(dockAudio.currentTime) && dockAudio.currentTime > 0) {
+            return dockAudio;
+          }
+          if (inlineMatchesState) {
             return inlineAudio;
           }
           return dockAudio;
@@ -460,8 +475,18 @@
           }
           if (state.isPlaying && sessionStarted) {
             inlineAudio.play().catch(function () {
-              state.isPlaying = false;
-              renderDock();
+              applyStateToDockAudio(true);
+              dockAudio.play().then(function () {
+                persistFromAudio(
+                  dockAudio,
+                  state && state.title ? state.title : getInlineTitle(),
+                  state && state.pageUrl ? state.pageUrl : window.location.href,
+                  true
+                );
+              }).catch(function () {
+                state.isPlaying = false;
+                renderDock();
+              });
             });
           }
         } else if (state && state.src) {
