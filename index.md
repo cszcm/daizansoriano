@@ -33,30 +33,42 @@ title: "Inicio"
 
 {% if featured_audio_item and featured_audio_url != "" %}
 <section class="home-latest-audio">
-  <p class="home-latest-audio__kicker">Último audio</p>
-  <h2>{{ featured_audio_item.title }}</h2>
-  <p class="post-meta">
-    {{ featured_audio_item.date | date: "%d %b %Y" }}
-    {% if featured_audio_item.categories %} · {{ featured_audio_item.categories | join: ", " }}{% endif %}
-  </p>
-  <p class="home-latest-audio__summary">
-    {% if featured_audio_item.description %}
-      {{ featured_audio_item.description | strip_html | strip_newlines | truncate: 180 }}
-    {% else %}
-      {{ featured_audio_item.excerpt | strip_html | strip_newlines | truncate: 180 }}
-    {% endif %}
-  </p>
-  <div class="home-latest-audio__actions">
-    <a
-      class="pill is-filled"
-      href="{{ featured_audio_url | relative_url }}"
-      data-global-audio-trigger
-      data-audio-src="{{ featured_audio_url | relative_url }}"
-      data-audio-title="{{ featured_audio_item.title | escape }}"
-      data-audio-page-url="{{ featured_audio_item.url | relative_url }}"
-      aria-label="Escuchar ahora {{ featured_audio_item.title }} en el mini reproductor"
-    >Escuchar ahora</a>
-    <a class="pill" href="{{ featured_audio_item.url | relative_url }}">Ver episodio</a>
+  <div class="home-latest-audio__media">
+    <a href="{{ featured_audio_item.url | relative_url }}" aria-label="Ir al episodio {{ featured_audio_item.title }}">
+      {% if featured_audio_item.image %}
+        <img src="{{ featured_audio_item.image | relative_url }}" alt="Portada de {{ featured_audio_item.title }}" loading="eager" decoding="async">
+      {% else %}
+        <img src="{{ '/assets/logo.webp' | relative_url }}" alt="Portada del podcast" loading="eager" decoding="async">
+      {% endif %}
+    </a>
+  </div>
+  <div class="home-latest-audio__content">
+    <p class="home-latest-audio__kicker">Último audio</p>
+    <h2>{{ featured_audio_item.title }}</h2>
+    <p class="post-meta">
+      {{ featured_audio_item.date | date: "%d %b %Y" }}
+      {% if featured_audio_item.categories %} · {{ featured_audio_item.categories | join: ", " }}{% endif %}
+      {% if featured_audio_item.duration %} · {{ featured_audio_item.duration }}{% endif %}
+    </p>
+    <p class="home-latest-audio__summary">
+      {% if featured_audio_item.description %}
+        {{ featured_audio_item.description | strip_html | strip_newlines | truncate: 180 }}
+      {% else %}
+        {{ featured_audio_item.excerpt | strip_html | strip_newlines | truncate: 180 }}
+      {% endif %}
+    </p>
+    <div class="home-latest-audio__actions">
+      <a
+        class="pill is-filled"
+        href="{{ featured_audio_url | relative_url }}"
+        data-global-audio-trigger
+        data-audio-src="{{ featured_audio_url | relative_url }}"
+        data-audio-title="{{ featured_audio_item.title | escape }}"
+        data-audio-page-url="{{ featured_audio_item.url | relative_url }}"
+        aria-label="Escuchar ahora {{ featured_audio_item.title }} en el mini reproductor"
+      >Escuchar ahora</a>
+      <a class="pill" href="{{ featured_audio_item.url | relative_url }}">Ver episodio</a>
+    </div>
   </div>
 </section>
 {% endif %}

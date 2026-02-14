@@ -377,39 +377,67 @@ img {
 
 .home-latest-audio {
   margin: 1.6rem 0 0.6rem;
-  padding: 1.25rem 1.35rem 1.4rem;
-  border-radius: 20px;
-  border: 1px solid rgba(45, 94, 91, 0.22);
-  background: linear-gradient(135deg, rgba(45, 94, 91, 0.09), rgba(251, 250, 246, 0.95));
+  padding: 1.1rem;
+  border-radius: 24px;
+  border: 1px solid rgba(45, 94, 91, 0.2);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(45, 94, 91, 0.15), transparent 36%),
+    radial-gradient(circle at 12% 100%, rgba(161, 106, 58, 0.14), transparent 42%),
+    linear-gradient(145deg, rgba(251, 250, 246, 0.98), rgba(245, 241, 232, 0.96));
   box-shadow: var(--shadow-soft);
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 1rem 1.1rem;
+  align-items: center;
+}
+
+.home-latest-audio__media a {
+  display: block;
+}
+
+.home-latest-audio__media img {
+  width: 132px;
+  height: 132px;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(45, 94, 91, 0.22);
+  box-shadow: 0 12px 26px rgba(34, 30, 22, 0.18);
+}
+
+.home-latest-audio__content {
+  min-width: 0;
 }
 
 .home-latest-audio__kicker {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.22rem;
   font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.15em;
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent-strong);
 }
 
 .home-latest-audio h2 {
-  margin: 0 0 0.3rem;
-  font-size: clamp(1.5rem, 1.8vw + 0.9rem, 2.2rem);
+  margin: 0 0 0.2rem;
+  font-size: clamp(1.45rem, 1.8vw + 0.85rem, 2.05rem);
   line-height: 1.2;
+  text-wrap: balance;
 }
 
 .home-latest-audio .post-meta {
-  margin: 0.15rem 0 0.45rem;
+  margin: 0.1rem 0 0.4rem;
+  letter-spacing: 0.14em;
 }
 
 .home-latest-audio__summary {
   margin: 0;
   color: var(--ink-soft);
+  max-width: 56ch;
 }
 
 .home-latest-audio__actions {
-  margin-top: 0.95rem;
+  margin-top: 0.8rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
@@ -979,7 +1007,15 @@ body.has-global-audio-dock .site-shell {
 
   .home-latest-audio {
     margin-top: 1.2rem;
-    padding: 1rem 1rem 1.1rem;
+    padding: 1rem;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .home-latest-audio__media img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
   }
 
   .home-latest-audio__actions .pill {
