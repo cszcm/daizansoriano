@@ -6,7 +6,7 @@ permalink: /lista-correo/
 
 <section class="post newsletter-page">
   <header class="section-heading">
-    <p class="post-meta">Contacto</p>
+    <p class="post-meta">Newsletter</p>
     <h1 class="post-title">Lista de correo</h1>
   </header>
 
