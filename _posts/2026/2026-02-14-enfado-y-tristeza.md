@@ -2,7 +2,7 @@
 layout: post
 title: Cuando el enfado y la tristeza también son la Vía
 subtitle: "Practicar zazen cuando el corazón está enfadado o triste"
-description: "Reflexión desde la práctica Soto Zen sobre cómo habitar el enfado y la tristeza sin apropiación ni rechazo."
+description: "Reflexión sobre el enfado y la tristeza y cómo practicar cuando están presentes."
 duration: "5:10"
 date: 2026-02-14 09:00:00 +0100
 categories: ["Practica"]
@@ -19,7 +19,7 @@ La tristeza funciona de un modo más silencioso. A veces no es explosiva, sino p
 
 Uno de los grandes malentendidos sobre la práctica es creer que su finalidad es producir estados agradables. No practicamos para estar siempre en paz. Practicamos para no huir de lo que hay. Practicar zazen cuando estamos tranquilos es sencillo. Practicar cuando el corazón está encogido es otra cosa. Ahí es donde la enseñanza se vuelve carne, piel y huesos.
 
-En el *Xin Xin Ming*, atribuido a Sengcan, se dice en uno de sus versos que «si haces distinciones, el cielo y la tierra se separan infinitamente». Cuando el enfado aparece y lo convertimos en “mi enfado”, cuando la tristeza se transforma en “mi problema”, ya hemos introducido esa distinción sutil. La mente divide y, al dividir, se siente aislada. Pero cuando simplemente dejamos que haya enfado, que haya tristeza, sin apropiación ni rechazo, algo se reunifica. Las emociones no desaparecen, dejan de estar enfrentadas a un yo que intenta controlarlas.
+En el _Xin Xin Ming_, atribuido a Sengcan, se dice en uno de sus versos que «si haces distinciones, el cielo y la tierra se separan infinitamente». Cuando el enfado aparece y lo convertimos en “mi enfado”, cuando la tristeza se transforma en “mi problema”, ya hemos introducido esa distinción sutil. La mente divide y, al dividir, se siente aislada. Pero cuando simplemente dejamos que haya enfado, que haya tristeza, sin apropiación ni rechazo, algo se reunifica. Las emociones no desaparecen, dejan de estar enfrentadas a un yo que intenta controlarlas.
 
 El Buda habló de la segunda flecha: el sufrimiento añadido que surge cuando rechazamos lo que sentimos. La primera flecha puede ser el enfado o la tristeza. La segunda es pensar que no deberíamos sentirlos, que algo en nosotros ha fallado. Cuando dejamos de dispararnos esa segunda flecha, algo se suaviza. El dolor puede seguir presente, pero ya no se solidifica en una identidad.
 
@@ -38,4 +38,3 @@ Incluso ahora.
 Incluso cuando duele.
 
 Incluso cuando el corazón está enfadado o triste.
-
