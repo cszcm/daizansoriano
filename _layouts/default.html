@@ -117,6 +117,9 @@
         var episodeLink = dock.querySelector('[data-global-audio-link]');
         var inlineAudio = document.querySelector('[data-post-audio]');
         var inlineTitleEl = document.querySelector('.post-title');
+        var postAudioRoot = document.querySelector('[data-post-audio-player]');
+        var continuousStorageKey = 'post-audio-continuous-autoplay';
+        var nextEpisodeUrl = postAudioRoot ? resolveUrl(postAudioRoot.getAttribute('data-post-audio-next-url') || '') : '';
         var lastTimeSave = 0;
         var state = null;
         var dismissedUntilPlay = false;
@@ -161,6 +164,25 @@
             return inlineTitleEl.textContent.trim();
           }
           return document.title;
+        }
+
+        function isContinuousAutoplayEnabled() {
+          try {
+            return window.localStorage.getItem(continuousStorageKey) === 'true';
+          } catch (error) {
+            return false;
+          }
+        }
+
+        function canContinueFromDock() {
+          if (!nextEpisodeUrl || !isContinuousAutoplayEnabled() || !state || !state.src || !inlineAudio) {
+            return false;
+          }
+          var inlineSrc = getAudioSrc(inlineAudio);
+          if (!inlineSrc) {
+            return false;
+          }
+          return areSameAudioSource(state.src, inlineSrc);
         }
 
         function loadState() {
@@ -448,6 +470,11 @@
           });
           audioEl.addEventListener('ended', function () {
             persistFromAudio(audioEl, resolveTitle(), resolvePageUrl(), false);
+            if (audioEl === dockAudio && canContinueFromDock()) {
+              window.setTimeout(function () {
+                window.location.href = nextEpisodeUrl;
+              }, 600);
+            }
           });
           audioEl.addEventListener('timeupdate', function () {
             if (Date.now() - lastTimeSave < 900) return;
