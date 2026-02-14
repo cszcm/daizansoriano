@@ -140,12 +140,85 @@
       var storageKey = 'post-audio-position:' + '{{ page.url | slugify }}';
       var rateStorageKey = 'post-audio-rate';
       var continuousStorageKey = 'post-audio-continuous-autoplay';
+      var autoplayNextStorageKey = 'post-audio-next-autoplay';
       var nextEpisodeUrl = root.getAttribute('data-post-audio-next-url') || '';
       var nextEpisodeTitle = root.getAttribute('data-post-audio-next-title') || '';
       var restored = false;
 
       function setStatus(message) {
         status.textContent = message;
+      }
+
+      function normalizePath(urlLike) {
+        try {
+          var parsed = new URL(urlLike, window.location.origin);
+          var path = parsed.pathname || '/';
+          if (path.length > 1) {
+            path = path.replace(/\/+$/, '');
+          }
+          return path;
+        } catch (error) {
+          return '';
+        }
+      }
+
+      function rememberNextAutoplayIntent() {
+        if (!window.localStorage || !nextEpisodeUrl) {
+          return;
+        }
+        try {
+          window.localStorage.setItem(
+            autoplayNextStorageKey,
+            JSON.stringify({
+              path: normalizePath(nextEpisodeUrl),
+              createdAt: Date.now()
+            })
+          );
+        } catch (error) {
+          // Ignore storage errors.
+        }
+      }
+
+      function consumeAutoplayIntentForCurrentPage() {
+        if (!window.localStorage) {
+          return false;
+        }
+        try {
+          var raw = window.localStorage.getItem(autoplayNextStorageKey);
+          if (!raw) {
+            return false;
+          }
+          window.localStorage.removeItem(autoplayNextStorageKey);
+          var parsed = JSON.parse(raw);
+          if (!parsed || !parsed.path || !parsed.createdAt) {
+            return false;
+          }
+          if (Date.now() - Number(parsed.createdAt) > 5 * 60 * 1000) {
+            return false;
+          }
+          return normalizePath(window.location.href) === normalizePath(parsed.path);
+        } catch (error) {
+          return false;
+        }
+      }
+
+      function tryAutoplayAfterNavigation() {
+        var playPromise;
+        try {
+          playPromise = audio.play();
+        } catch (error) {
+          setStatus('Siguiente audio cargado. Pulsa reproducir para continuar.');
+          return;
+        }
+        if (playPromise && typeof playPromise.then === 'function') {
+          playPromise
+            .then(function () {
+              setStatus('Reproducción continua: sonando el siguiente audio.');
+            })
+            .catch(function () {
+              setStatus('Siguiente audio cargado. Pulsa reproducir para continuar.');
+            });
+        }
       }
 
       function savePosition() {
@@ -279,6 +352,7 @@
       audio.addEventListener('ended', function () {
         clearSavedPosition();
         if (continuousToggle && continuousToggle.checked && nextEpisodeUrl) {
+          rememberNextAutoplayIntent();
           setStatus('Episodio finalizado. Reproducción continua al siguiente episodio.');
           window.setTimeout(function () {
             window.location.href = nextEpisodeUrl;
@@ -376,6 +450,17 @@
             setStatus('No se pudo compartir. Copia esta URL: ' + shareUrl);
           }
         });
+      }
+
+      var shouldAutoplayAfterNavigation = consumeAutoplayIntentForCurrentPage();
+      if (shouldAutoplayAfterNavigation) {
+        setStatus('Cargando siguiente audio...');
+        if (audio.readyState >= 2) {
+          tryAutoplayAfterNavigation();
+        } else {
+          audio.addEventListener('canplay', tryAutoplayAfterNavigation, { once: true });
+        }
+        return;
       }
 
       setStatus('Audio listo. Pulsa reproducir para iniciar.');
