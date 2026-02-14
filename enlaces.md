@@ -13,11 +13,6 @@ permalink: /enlaces/
 
   <div class="links-grid">
     <article class="link-card">
-      <h3>🌐 Sitio Web Personal</h3>
-      <a class="link-button" href="https://www.daizansoriano.com">🟦 Acceder</a>
-    </article>
-
-    <article class="link-card">
       <h3>🧘‍♂️ Comunidad Soto Zen Camino Medio</h3>
       <a class="link-button" href="https://www.caminomedio.org">🟩 Acceder</a>
     </article>
