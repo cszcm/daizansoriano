@@ -19,12 +19,12 @@ permalink: /podcast-plataformas/
 
     <article class="link-card">
       <h3>🟢 Spotify</h3>
-      <a class="link-button" href="https://open.spotify.com/genre/podcast-web">🎧 Ir a Spotify</a>
+      <a class="link-button" href="https://open.spotify.com/show/6oP3AJqMJcKCJC883CjvRS">🎧 Ir a Spotify</a>
     </article>
 
     <article class="link-card">
       <h3>🍎 Apple Podcasts (iTunes)</h3>
-      <a class="link-button" href="https://podcasts.apple.com/">🎧 Ir a Apple Podcasts</a>
+      <a class="link-button" href="https://podcasts.apple.com/us/podcast/audioteca-soto-zen/id1623436748">🎧 Ir a Apple Podcasts</a>
     </article>
 
     <article class="link-card">
@@ -34,12 +34,12 @@ permalink: /podcast-plataformas/
 
     <article class="link-card">
       <h3>🔵 iVoox</h3>
-      <a class="link-button" href="https://www.ivoox.com/">🎧 Ir a iVoox</a>
+      <a class="link-button" href="https://www.ivoox.com/podcast-audioteca-soto-zen_sq_f11207083_1.html">🎧 Ir a iVoox</a>
     </article>
 
     <article class="link-card">
       <h3>🟥 YouTube Music</h3>
-      <a class="link-button" href="https://music.youtube.com/">🎧 Ir a YouTube Music</a>
+      <a class="link-button" href="https://www.youtube.com/@CaminoMedioZen">🎧 Ir a YouTube</a>
     </article>
 
   </div>
