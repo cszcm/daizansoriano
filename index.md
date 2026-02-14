@@ -3,6 +3,64 @@ layout: default
 title: "Inicio"
 ---
 
+{% assign audio_items = site.podcast | concat: site.posts | sort: "date" | reverse %}
+{% assign featured_audio_url = "" %}
+{% assign featured_audio_item = nil %}
+{% for item in audio_items %}
+  {% assign item_audio_url = "" %}
+  {% if item.audio_url %}
+    {% assign item_audio_url = item.audio_url %}
+  {% else %}
+    {% if item.collection == "posts" %}
+      {% assign item_audio_rel = item.path | remove_first: "_posts/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
+    {% else %}
+      {% assign item_audio_rel = item.path | remove_first: "_podcast/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
+    {% endif %}
+    {% assign item_audio_path = "/audio/" | append: item_audio_rel %}
+    {% for static_file in site.static_files %}
+      {% if static_file.path == item_audio_path %}
+        {% assign item_audio_url = item_audio_path %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if item_audio_url != "" %}
+    {% assign featured_audio_item = item %}
+    {% assign featured_audio_url = item_audio_url %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if featured_audio_item and featured_audio_url != "" %}
+<section class="home-latest-audio">
+  <p class="home-latest-audio__kicker">Último audio</p>
+  <h2>{{ featured_audio_item.title }}</h2>
+  <p class="post-meta">
+    {{ featured_audio_item.date | date: "%d %b %Y" }}
+    {% if featured_audio_item.categories %} · {{ featured_audio_item.categories | join: ", " }}{% endif %}
+  </p>
+  <p class="home-latest-audio__summary">
+    {% if featured_audio_item.description %}
+      {{ featured_audio_item.description | strip_html | strip_newlines | truncate: 180 }}
+    {% else %}
+      {{ featured_audio_item.excerpt | strip_html | strip_newlines | truncate: 180 }}
+    {% endif %}
+  </p>
+  <div class="home-latest-audio__actions">
+    <a
+      class="pill is-filled"
+      href="{{ featured_audio_url | relative_url }}"
+      data-global-audio-trigger
+      data-audio-src="{{ featured_audio_url | relative_url }}"
+      data-audio-title="{{ featured_audio_item.title | escape }}"
+      data-audio-page-url="{{ featured_audio_item.url | relative_url }}"
+      aria-label="Escuchar ahora {{ featured_audio_item.title }} en el mini reproductor"
+    >Escuchar ahora</a>
+    <a class="pill" href="{{ featured_audio_item.url | relative_url }}">Ver episodio</a>
+  </div>
+</section>
+{% endif %}
+
 <section class="post-list">
   {% assign blog_items = site.posts | sort: "date" | reverse %}
   <div class="post-grid">
@@ -15,3 +73,9 @@ title: "Inicio"
     {% endfor %}
   </div>
 </section>
+
+{% include newsletter-cta.html
+  title="Recibe cada nueva enseñanza por correo"
+  text="Sin ruido, sin spam. Solo nuevas publicaciones y audios."
+  button_label="Quiero recibirlas"
+%}

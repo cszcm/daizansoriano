@@ -32,6 +32,40 @@ layout: default
     {% include post-audio-player.html audio_url=post_audio_path %}
   {% endif %}
 
+  {% assign structured_author = page.author | default: site.podcast.author | default: site.title %}
+  {% assign structured_description = page.description | default: page.subtitle | default: page.excerpt | strip_html | strip_newlines | truncate: 180 %}
+  {% assign structured_image = page.image | default: site.podcast.image | default: '/assets/logo.png' %}
+  {% if structured_image contains '://' %}
+    {% assign structured_image_abs = structured_image %}
+  {% else %}
+    {% assign structured_image_abs = structured_image | absolute_url %}
+  {% endif %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": {{ page.title | jsonify }},
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+      "inLanguage": {{ site.lang | default: "es" | jsonify }},
+      "mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
+      "description": {{ structured_description | jsonify }},
+      "author": {
+        "@type": "Person",
+        "name": {{ structured_author | jsonify }}
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ site.title | jsonify }},
+        "logo": {
+          "@type": "ImageObject",
+          "url": {{ "/assets/logo.png" | absolute_url | jsonify }}
+        }
+      },
+      "image": {{ structured_image_abs | jsonify }}
+    }
+  </script>
+
   <div class="post-content">
     {{ content }}
   </div>
@@ -44,4 +78,10 @@ layout: default
     {% endfor %}
   </footer>
   {% endif %}
+
+  {% include newsletter-cta.html
+    title="¿Te ha servido esta lectura?"
+    text="Recibe la próxima reflexión directamente en tu correo."
+    button_label="Suscribirme"
+  %}
 </article>

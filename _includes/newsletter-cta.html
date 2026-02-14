@@ -1,0 +1,6 @@
+<section class="newsletter-cta" aria-label="Suscripción a la lista de correo">
+  <p class="newsletter-cta__kicker">{{ include.kicker | default: "NEWSLETTER" }}</p>
+  <h2 class="newsletter-cta__title">{{ include.title | default: "Recibe nuevas enseñanzas en tu correo" }}</h2>
+  <p class="newsletter-cta__text">{{ include.text | default: "Un aviso breve cuando haya una nueva publicación o audio." }}</p>
+  <a class="newsletter-cta__button" href="{{ '/lista-correo/' | relative_url }}">{{ include.button_label | default: "Unirme a la lista" }}</a>
+</section>

@@ -66,6 +66,64 @@ layout: default
     {% include post-audio-player.html audio_url=collection_audio_path next_url=next_episode.url next_title=next_episode.title %}
   {% endif %}
 
+  {% assign episode_audio_url = "" %}
+  {% if page.audio_url %}
+    {% assign episode_audio_url = page.audio_url %}
+  {% elsif has_collection_audio %}
+    {% assign episode_audio_url = collection_audio_path %}
+  {% endif %}
+  {% assign structured_author = page.author | default: site.podcast.author | default: site.title %}
+  {% assign structured_description = page.description | default: page.subtitle | default: page.excerpt | strip_html | strip_newlines | truncate: 180 %}
+  {% assign structured_image = page.image | default: site.podcast.image | default: '/assets/logo.png' %}
+  {% if structured_image contains '://' %}
+    {% assign structured_image_abs = structured_image %}
+  {% else %}
+    {% assign structured_image_abs = structured_image | absolute_url %}
+  {% endif %}
+  {% if episode_audio_url != "" %}
+    {% if episode_audio_url contains '://' %}
+      {% assign episode_audio_abs = episode_audio_url %}
+    {% else %}
+      {% assign episode_audio_abs = episode_audio_url | absolute_url %}
+    {% endif %}
+  {% endif %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PodcastEpisode",
+      "name": {{ page.title | jsonify }},
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+      "inLanguage": {{ site.lang | default: "es" | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
+      "description": {{ structured_description | jsonify }},
+      "image": {{ structured_image_abs | jsonify }},
+      "author": {
+        "@type": "Person",
+        "name": {{ structured_author | jsonify }}
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ site.title | jsonify }},
+        "logo": {
+          "@type": "ImageObject",
+          "url": {{ "/assets/logo.png" | absolute_url | jsonify }}
+        }
+      },
+      "partOfSeries": {
+        "@type": "PodcastSeries",
+        "name": {{ site.title | jsonify }},
+        "url": {{ "/podcast/" | absolute_url | jsonify }}
+      }{% if episode_audio_url != "" %},
+      "associatedMedia": {
+        "@type": "MediaObject",
+        "contentUrl": {{ episode_audio_abs | jsonify }},
+        "encodingFormat": {{ page.audio_type | default: "audio/mpeg" | jsonify }}
+      }{% endif %}
+    }
+  </script>
+
   <div class="post-content">
     {{ content }}
   </div>
@@ -78,4 +136,10 @@ layout: default
     {% endfor %}
   </footer>
   {% endif %}
+
+  {% include newsletter-cta.html
+    title="¿Quieres recibir el próximo audio?"
+    text="Te avisamos por correo cuando haya un nuevo episodio."
+    button_label="Unirme a la newsletter"
+  %}
 </article>

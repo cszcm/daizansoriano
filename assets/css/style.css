@@ -67,7 +67,7 @@
 :root {
   --ink: #1d1c17;
   --ink-soft: #3f3a32;
-  --muted: #7a7367;
+  --muted: #645d52;
   --paper: #f5f1e8;
   --paper-deep: #e7dfd0;
   --mist: #fbfaf6;
@@ -121,6 +121,16 @@ body::after {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+:where(a, button, input, select, textarea, summary, [role="button"]):focus-visible {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+:where(a, button, input, select, textarea, summary, [role="button"]):focus:not(:focus-visible) {
+  outline: none;
 }
 
 img {
@@ -365,6 +375,46 @@ img {
   font-size: clamp(1.8rem, 2vw + 1rem, 2.6rem);
 }
 
+.home-latest-audio {
+  margin: 1.6rem 0 0.6rem;
+  padding: 1.25rem 1.35rem 1.4rem;
+  border-radius: 20px;
+  border: 1px solid rgba(45, 94, 91, 0.22);
+  background: linear-gradient(135deg, rgba(45, 94, 91, 0.09), rgba(251, 250, 246, 0.95));
+  box-shadow: var(--shadow-soft);
+}
+
+.home-latest-audio__kicker {
+  margin: 0 0 0.35rem;
+  font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.home-latest-audio h2 {
+  margin: 0 0 0.3rem;
+  font-size: clamp(1.5rem, 1.8vw + 0.9rem, 2.2rem);
+  line-height: 1.2;
+}
+
+.home-latest-audio .post-meta {
+  margin: 0.15rem 0 0.45rem;
+}
+
+.home-latest-audio__summary {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.home-latest-audio__actions {
+  margin-top: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
 .post-list {
   padding: 1.4rem 0 3.5rem;
 }
@@ -385,6 +435,11 @@ img {
 }
 
 .post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+.post-card:focus-within {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lift);
 }
@@ -516,6 +571,55 @@ img {
 .link-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 30px rgba(45, 94, 91, 0.22);
+}
+
+.newsletter-cta {
+  margin: 2.4rem 0 0;
+  padding: 1.3rem 1.4rem 1.5rem;
+  border-radius: 18px;
+  border: 1px solid rgba(161, 106, 58, 0.2);
+  background: linear-gradient(140deg, rgba(251, 250, 246, 0.96), rgba(234, 216, 196, 0.4));
+  box-shadow: var(--shadow-soft);
+}
+
+.newsletter-cta__kicker {
+  margin: 0;
+  font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.newsletter-cta__title {
+  margin: 0.35rem 0 0.25rem;
+  font-size: clamp(1.4rem, 1.6vw + 0.7rem, 1.9rem);
+  line-height: 1.2;
+}
+
+.newsletter-cta__text {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.newsletter-cta__button {
+  margin-top: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.58rem 1.08rem;
+  border-radius: 999px;
+  background: var(--accent-strong);
+  color: #ffffff;
+  font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
+  font-size: 0.84rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.newsletter-cta__button:hover {
+  filter: brightness(0.95);
 }
 
 .post-tags {
@@ -873,6 +977,16 @@ body.has-global-audio-dock .site-shell {
     padding: 1.3rem;
   }
 
+  .home-latest-audio {
+    margin-top: 1.2rem;
+    padding: 1rem 1rem 1.1rem;
+  }
+
+  .home-latest-audio__actions .pill {
+    width: 100%;
+    justify-content: center;
+  }
+
   .podcast-spotify-item {
     grid-template-columns: 2rem 64px minmax(0, 1fr);
     gap: 0.75rem;
@@ -900,6 +1014,28 @@ body.has-global-audio-dock .site-shell {
     grid-column: 1 / -1;
     justify-content: flex-start;
     padding-top: 0.2rem;
+  }
+
+  .newsletter-cta {
+    margin-top: 1.8rem;
+    padding: 1.1rem 1rem 1.2rem;
+  }
+
+  .newsletter-cta__button {
+    width: 100%;
+  }
+
+  .eyebrow,
+  .hero-card__title,
+  .post-meta,
+  .podcast-spotify-duration,
+  .footer-mantra,
+  .footer-version,
+  .global-audio-dock__meta,
+  .global-audio-dock__actions button,
+  .global-audio-dock__actions a {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
   }
 
   body.has-global-audio-dock .site-shell {
