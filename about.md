@@ -5,7 +5,10 @@ permalink: /about/
 ---
 
 <p class="about-image">
-	<img src="{{ '/assets/daizan.jpg' | relative_url }}" alt="Daizan Soriano" />
+	<picture>
+		<source type="image/webp" srcset="{{ '/assets/daizan.webp' | relative_url }}">
+		<img src="{{ '/assets/daizan.jpg' | relative_url }}" alt="Daizan Soriano" />
+	</picture>
 </p>
 
 Daizan Soriano es maestro de meditación zen en la tradición del budismo Soto Zen y presidente de la Comunidad Soto Zen Camino Medio.
