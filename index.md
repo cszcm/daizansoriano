@@ -7,37 +7,38 @@ title: "Inicio"
 {% assign featured_audio_url = "" %}
 {% assign featured_audio_item = nil %}
 {% for item in audio_items %}
-  {% assign item_audio_url = "" %}
-  {% if item.audio_url %}
-    {% assign item_audio_url = item.audio_url %}
-  {% else %}
-    {% if item.collection == "posts" %}
-      {% assign item_audio_rel = item.path | remove_first: "_posts/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
-    {% else %}
-      {% assign item_audio_rel = item.path | remove_first: "_podcast/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
-    {% endif %}
-    {% assign item_audio_path = "/audio/" | append: item_audio_rel %}
-    {% for static_file in site.static_files %}
-      {% if static_file.path == item_audio_path %}
-        {% assign item_audio_url = item_audio_path %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-  {% if item_audio_url != "" %}
-    {% assign featured_audio_item = item %}
-    {% assign featured_audio_url = item_audio_url %}
-    {% break %}
-  {% endif %}
+{% assign item_audio_url = "" %}
+{% if item.audio_url %}
+{% assign item_audio_url = item.audio_url %}
+{% else %}
+{% if item.collection == "posts" %}
+{% assign item_audio_rel = item.path | remove_first: "_posts/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
+{% else %}
+{% assign item_audio_rel = item.path | remove_first: "_podcast/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
+{% endif %}
+{% assign item_audio_path = "/audio/" | append: item_audio_rel %}
+{% for static_file in site.static_files %}
+{% if static_file.path == item_audio_path %}
+{% assign item_audio_url = item_audio_path %}
+{% break %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if item_audio_url != "" %}
+{% assign featured_audio_item = item %}
+{% assign featured_audio_url = item_audio_url %}
+{% break %}
+{% endif %}
 {% endfor %}
 
 {% if featured_audio_item and featured_audio_url != "" %}
 {% assign featured_audio_image = featured_audio_item.image | default: site.podcast.image | default: '/assets/daizan.jpg' %}
 {% if featured_audio_image contains '://' %}
-  {% assign featured_audio_image_url = featured_audio_image %}
+{% assign featured_audio_image_url = featured_audio_image %}
 {% else %}
-  {% assign featured_audio_image_url = featured_audio_image | relative_url %}
+{% assign featured_audio_image_url = featured_audio_image | relative_url %}
 {% endif %}
+
 <section class="home-latest-audio">
   <div class="home-latest-audio__media">
     <a href="{{ featured_audio_item.url | relative_url }}" aria-label="Ir al episodio {{ featured_audio_item.title }}">
