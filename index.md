@@ -45,10 +45,10 @@ title: "Inicio"
       {% if featured_audio_image == '/assets/daizan.jpg' %}
       <picture>
         <source type="image/webp" srcset="{{ '/assets/daizan.webp' | relative_url }}">
-        <img src="{{ featured_audio_image_url }}" alt="Portada de {{ featured_audio_item.title }}" loading="eager" decoding="async">
+        <img src="{{ featured_audio_image_url }}" alt="Portada de {{ featured_audio_item.title }}" width="132" height="132" loading="eager" decoding="async">
       </picture>
       {% else %}
-      <img src="{{ featured_audio_image_url }}" alt="Portada de {{ featured_audio_item.title }}" loading="eager" decoding="async">
+      <img src="{{ featured_audio_image_url }}" alt="Portada de {{ featured_audio_item.title }}" width="132" height="132" loading="eager" decoding="async">
       {% endif %}
     </a>
   </div>
