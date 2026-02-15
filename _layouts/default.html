@@ -12,9 +12,10 @@
               <picture>
                 <source
                   type="image/webp"
-                  srcset="{{ '/assets/logo-266.webp' | relative_url }} 1x, {{ '/assets/logo-532.webp' | relative_url }} 2x"
+                  srcset="{{ '/assets/logo-266.webp' | relative_url }} 266w, {{ '/assets/logo-532.webp' | relative_url }} 532w"
+                  sizes="(max-width: 640px) 180px, 266px"
                 />
-                <img class="site-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Logo de {{ site.title }}" width="266" height="38" decoding="async" />
+                <img class="site-logo" src="{{ '/assets/logocompleto.webp' | relative_url }}" alt="Logo de {{ site.title }}" width="266" height="38" decoding="async" />
               </picture>
               <span class="site-title-text">
                 <span class="site-name">{{ site.title }}</span>

@@ -43,12 +43,19 @@ title: "Inicio"
   <div class="home-latest-audio__media">
     <a href="{{ featured_audio_item.url | relative_url }}" aria-label="Ir al episodio {{ featured_audio_item.title }}">
       {% if featured_audio_image == '/assets/daizan.jpg' %}
-      <picture>
-        <source type="image/webp" srcset="{{ '/assets/daizan.webp' | relative_url }}">
-        <img src="{{ featured_audio_image_url }}" alt="Portada de {{ featured_audio_item.title }}" width="132" height="132" loading="eager" decoding="async">
-      </picture>
+      <img
+        src="{{ '/assets/daizan-264.webp' | relative_url }}"
+        srcset="{{ '/assets/daizan-132.webp' | relative_url }} 132w, {{ '/assets/daizan-264.webp' | relative_url }} 264w"
+        sizes="132px"
+        alt="Portada de {{ featured_audio_item.title }}"
+        width="132"
+        height="132"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
       {% else %}
-      <img src="{{ featured_audio_image_url }}" alt="Portada de {{ featured_audio_item.title }}" width="132" height="132" loading="eager" decoding="async">
+      <img src="{{ featured_audio_image_url }}" alt="Portada de {{ featured_audio_item.title }}" width="132" height="132" loading="eager" fetchpriority="high" decoding="async">
       {% endif %}
     </a>
   </div>
