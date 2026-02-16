@@ -11,7 +11,7 @@ tags: ["emociones", "enfado", "tristeza", "zazen", "soto zen"]
 
 Hay momentos en la vida en los que a uno le gustaría que todo fuese más sencillo pero... la tristeza, el enfado y todo tipo de emociones difíciles aparecen en el día a día. Después de años sentándome, estudiando, acompañando a otras personas en la Vía, de pronto aparece una contracción interior que no encaja con la imagen que se espera de un maestro zen. ¿no debería estar ya más allá de todo esto?
 
-Es como si la práctica tuviera que producir una versión más estable, más ecuánime, más «resuelta» de uno mismo. Sin embargo, cuanto más se profundiza en la práctica, más evidente se vuelve que no nos convierte en otra persona. Nos permite tomar conciencia completamente de lo que ya somos.
+Es como si la práctica tuviera que producir una versión más estable, más ecuánime, más «resuelta» de uno mismo. Sin embargo, cuanto más se profundiza en la práctica, más evidente se vuelve que no nos convierte en otra persona, pero si nos permite tomar conciencia completamente de lo que ya somos.
 
 El enfado no es un error del sistema. Es energía. Energía vital que surge cuando algo toca nuestras expectativas, nuestras heridas, nuestras tendencias kármikas. Cuando lo observamos con atención plena, deja de tener entidad propia y se revela como sensación corporal, por ejemplo, calor en el pecho, presión en la garganta o tensión en el abdomen. Sentirlo en el cuerpo es fundamental si queremos tomar clara conciencia. Esto nos permite no continuar alimentando la narrativa y naturalmente va perdiendo densidad. No desaparece por decreto, pero pierde fuerza y se vuelve cada vez más transparente.
 
