@@ -498,6 +498,32 @@ img {
   padding: 3rem 0 3.5rem;
 }
 
+.post-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.post-share-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(161, 106, 58, 0.3);
+  background: rgba(251, 250, 246, 0.9);
+  color: var(--accent-strong);
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.post-share-button:hover {
+  border-color: rgba(45, 94, 91, 0.4);
+  transform: translateY(-1px);
+}
+
 .post-title {
   font-size: clamp(2.2rem, 3vw + 1rem, 3.4rem);
   margin-bottom: 0.6rem;
@@ -1075,6 +1101,10 @@ body.has-global-audio-dock .site-shell {
 
   .post-content {
     font-size: 1.12em;
+  }
+
+  .post-header-top {
+    align-items: flex-start;
   }
 
   .header-inner {
