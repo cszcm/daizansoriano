@@ -9,7 +9,7 @@ categories: ["Practica"]
 tags: ["preguntas", "ensenanzas", "practica", "zazen", "soto zen"]
 ---
 
-Hay una imagen en la tradición Soto Zen que dice: «Las enseñanzas son el dedo que señala la luna». Es un antídoto para no quedarnos pegados a las palabras, a los libros ni a las explicaciones, porque eso no es la realidad. Si te quedas mirando el dedo, te pierdes el cielo.
+En la tradición Soto Zen decimos: «Las enseñanzas son el dedo que señala la luna». Esta frase es un antídoto para no quedarnos pegados a las palabras, a los libros ni a las explicaciones, porque eso no es la realidad. Si te quedas mirando el dedo, te pierdes el cielo.
 
 Esta metáfora nos ha servido tradicionalmente para no convertir el Zen en un producto de consumo intelectual o en una colección de conceptos para decorar el ego. Nos recuerda que la práctica Soto Zen no va de acumular ideas, sino de aterrizar en la experiencia bruta de la vida.
 
