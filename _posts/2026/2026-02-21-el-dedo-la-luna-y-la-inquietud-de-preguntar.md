@@ -15,9 +15,9 @@ Esta metáfora nos ha servido tradicionalmente para no convertir el Zen en un pr
 
 Sin embargo, cuando uno deja de mirar el dedo y empieza a ver de verdad, surge una duda: si las enseñanzas son el dedo... ¿qué papel juegan las preguntas?
 
-Me atrevería a decir que las preguntas no señalan la luna. Las preguntas son las que nos hacen levantar la cabeza.
+Considero que las preguntas no señalan la luna. Las preguntas son las que nos hacen levantar la cabeza.
 
-Las enseñanzas están ahí, estáticas, en los sutras o en los discursos. Pero una pregunta auténtica solo nace cuando algo cruje por dentro. Aparece cuando la vida cotidiana deja de encajar en las explicaciones de siempre, cuando se abre una grieta en el relato que nos contamos sobre nosotros mismos.
+Las enseñanzas están ahí, estáticas, en los sutras o en los libros. Pero una pregunta auténtica solo nace cuando algo cruje por dentro. Aparece cuando la vida cotidiana deja de encajar en las explicaciones de siempre, cuando se abre una grieta en el relato que nos contamos sobre nosotros mismos.
 
 En ese instante, la pregunta no mira hacia fuera buscando un objeto. Lanza un dardo hacia adentro: «¿Qué está pasando aquí ahora?». Ahí es donde empieza el baile.
 
