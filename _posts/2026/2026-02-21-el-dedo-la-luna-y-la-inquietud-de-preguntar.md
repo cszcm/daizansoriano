@@ -47,4 +47,4 @@ Con el tiempo, la separación se borra. La vida misma se vuelve la enseñanza y 
 
 No exige respuesta.
 
-Es simplemente estar aquí.
+Es simplemente estar aquí, presentes.
