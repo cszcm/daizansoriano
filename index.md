@@ -32,7 +32,11 @@ title: "Inicio"
 {% endfor %}
 
 {% if featured_audio_item and featured_audio_url != "" %}
-{% assign featured_audio_image = featured_audio_item.image | default: site.podcast_meta.image | default: '/assets/daizan.jpg' %}
+{% assign podcast_web_image = site.podcast_meta.web_image | default: '/assets/daizan.jpg' %}
+{% assign featured_audio_image = featured_audio_item.image | default: podcast_web_image %}
+{% if featured_audio_image == '/assets/logo.png' %}
+{% assign featured_audio_image = podcast_web_image %}
+{% endif %}
 {% if featured_audio_image contains '://' %}
 {% assign featured_audio_image_url = featured_audio_image %}
 {% else %}

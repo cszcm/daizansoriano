@@ -74,7 +74,10 @@ layout: default
   {% endif %}
   {% assign structured_author = page.author | default: site.podcast_meta.author | default: site.title %}
   {% assign structured_description = page.description | default: page.subtitle | default: page.excerpt | strip_html | strip_newlines | truncate: 180 %}
-  {% assign structured_image = page.image | default: site.podcast_meta.image | default: '/assets/logo.png' %}
+  {% assign structured_image = page.image | default: site.podcast_meta.web_image | default: site.podcast_meta.image | default: '/assets/logo.png' %}
+  {% if structured_image == '/assets/logo.png' and site.podcast_meta.web_image %}
+    {% assign structured_image = site.podcast_meta.web_image %}
+  {% endif %}
   {% if structured_image contains '://' %}
     {% assign structured_image_abs = structured_image %}
   {% else %}

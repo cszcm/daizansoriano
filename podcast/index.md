@@ -5,8 +5,9 @@ permalink: /podcast/
 ---
 
 <section class="archive">
+  {% assign podcast_web_image = site.podcast_meta.web_image | default: '/assets/daizan.jpg' %}
   <div class="podcast-header-image">
-    <img src="{{ '/assets/cabecera.png' | relative_url }}" alt="Cabecera del podcast" loading="eager" decoding="async">
+    <img src="{{ podcast_web_image | relative_url }}" alt="Daizan Soriano" loading="eager" decoding="async">
   </div>
   <p>
     <a class="pill" href="{{ '/podcast-plataformas/' | relative_url }}">Plataformas de escucha</a>
@@ -38,11 +39,16 @@ permalink: /podcast/
         <div class="podcast-spotify-rank" aria-hidden="true">{{ rendered_count }}</div>
 
         <a class="podcast-spotify-cover" href="{{ item.url | relative_url }}" aria-label="Ir al episodio {{ item.title }}">
-          {% if item.image %}
-            <img src="{{ item.image | relative_url }}" alt="Portada de {{ item.title }}" loading="lazy" decoding="async">
-          {% else %}
-            <span aria-hidden="true">♪</span>
+          {% assign item_cover_image = item.image | default: podcast_web_image %}
+          {% if item_cover_image == '/assets/logo.png' %}
+            {% assign item_cover_image = podcast_web_image %}
           {% endif %}
+          {% if item_cover_image contains '://' %}
+            {% assign item_cover_url = item_cover_image %}
+          {% else %}
+            {% assign item_cover_url = item_cover_image | relative_url %}
+          {% endif %}
+          <img src="{{ item_cover_url }}" alt="Portada de {{ item.title }}" loading="lazy" decoding="async">
         </a>
 
         <div class="podcast-spotify-body">
