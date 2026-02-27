@@ -14,6 +14,7 @@ tags:
     "zazen",
     "discernimiento",
   ]
+audio_length: 6441984
 ---
 
 El sesgo de confirmación es uno de los mecanismos de percepción más habituales, pero al mismo tiempo es uno de los que nos pasa más desapercibido. Básicamente consiste en nuestra tendencia a buscar y aceptar automáticamente la información que confirma nuestras creencias previas, mientras desechamos o ignoramos aquello que las cuestiona. En psicología se estudia como un filtro cognitivo; en la práctica del budismo Soto Zen lo reconocemos como una de las formas en que el yo se protege y refuerza su propia narrativa.

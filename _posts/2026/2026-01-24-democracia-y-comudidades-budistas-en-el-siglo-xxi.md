@@ -7,6 +7,7 @@ duration: "4:47"
 date: 2026-01-24 09:00:00 +0100
 categories: ["Comunidad"]
 tags: ["democracia", "sangha", "gobernanza", "autoridad", "soto zen"]
+audio_length: 4595712
 ---
 
 Si entendemos la democracia únicamente como un sistema de votación donde todo se decide por mayoría, corremos el riesgo de aplicar categorías políticas modernas a una tradición espiritual que funciona desde otro eje cultural, no por ello menos válido.

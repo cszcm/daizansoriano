@@ -160,3 +160,13 @@ Cuando hay audio pregrabado para una entrada, el reproductor muestra también un
 ### Reanudar reproducción
 
 Cuando pausas un MP3, el navegador guarda la posición de esa entrada y al volver al post permite retomar desde ese punto.
+
+### Sincronizar `audio_length` para el RSS
+
+Para asegurar que el feed de podcast publique un `enclosure length` correcto en bytes:
+
+```bash
+npm run sync-audio-lengths
+```
+
+El script recorre `_posts/` y `_podcast/`, detecta el audio local (`audio_url` o ruta inferida en `audio/`) y actualiza/crea `audio_length` en el front matter.

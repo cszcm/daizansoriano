@@ -7,6 +7,7 @@ duration: "5:04"
 date: 2026-01-11 09:00:00 +0100
 categories: ["Sociedad"]
 tags: ["no violencia", "violencia", "cultura", "familia", "compasion"]
+audio_length: 4869120
 ---
 
 El fin de semana fui al cine con mi familia a ver _Avatar: Fuego y ceniza_. Fue una tarde tranquila, con palomitas y la sensación agradable que da estar compartiendo algo bonito con seres queridos. Salimos contentos por el espectáculo visual, pero personalmente me quedé con una sensación de incomodidad.

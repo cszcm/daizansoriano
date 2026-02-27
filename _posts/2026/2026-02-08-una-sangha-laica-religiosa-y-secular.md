@@ -7,6 +7,7 @@ duration: "7:56"
 date: 2026-02-08 09:00:00 +0100
 categories: ["Comunidad"]
 tags: ["libros", "sangha", "soto zen", "secularizacion", "camino medio"]
+audio_length: 7622784
 ---
 
 **Esta entrada forma parte del libro que estoy preparando, cuyo título provisional será _Camino Medio_. Lo que sigue es un fragmento de ese manuscrito en desarrollo, compartido aquí como adelanto.**

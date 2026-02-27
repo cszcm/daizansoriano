@@ -7,6 +7,7 @@ duration: "6:19"
 date: 2025-12-21 09:00:00 +0100
 categories: ["Zen"]
 tags: ["zazen", "presencia", "no dualidad", "soto zen", "dongshan"]
+audio_length: 6057216
 ---
 
 «_Medianoche es la verdadera luz; el alba no es clara_».

@@ -7,6 +7,7 @@ duration: "4:11"
 date: 2025-07-21 09:00:00 +0100
 categories: ["Sociedad"]
 tags: ["compromiso", "budismo", "politica", "neutralidad", "soto zen"]
+audio_length: 4020864
 ---
 
 En los años sesenta, el poeta Gary Snyder escribió un texto que se convirtió en un pequeño manifiesto para toda una generación. Lo llamó _Buddhism and the Coming Revolution_ [1] y allí planteaba que el budismo, en su esencia, era una forma natural de anarquismo: comunidades libres, sencillez de vida, respeto por la tierra y rechazo a toda forma de dominación. Aquella visión, nacida en el cruce entre la práctica zen y la contracultura de la época, inspiró a muchas personas.

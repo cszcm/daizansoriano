@@ -3,7 +3,8 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "bump-sw-version": "node scripts/bump-sw-version.js"
+    "bump-sw-version": "node scripts/bump-sw-version.js",
+    "sync-audio-lengths": "node scripts/sync-audio-lengths.js"
   },
   "dependencies": {
     "js-yaml": "^4.1.1"

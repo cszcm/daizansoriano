@@ -7,6 +7,7 @@ duration: "10:39"
 date: 2025-06-21 09:00:00 +0100
 categories: ["Etica"]
 tags: ["IA", "etica", "tecnologia", "compasion", "harari"]
+audio_length: 10224000
 ---
 
 Estoy leyendo el último libro de **_Yuval Noah Harari_**, _Nexus: Una breve historia de las redes de información desde la Edad de Piedra hasta la IA_. En él, Harari explora cómo la información ha tejido la historia humana y cómo la irrupción de la inteligencia artificial abre un capítulo sin precedentes. Entre sus reflexiones, dedica un espacio a un asunto que como budista me parece clave: qué principios éticos deberían guiar a la IA. Este texto no es un resumen del libro, sino un diálogo con sus propuestas desde la práctica del budismo soto zen.
