@@ -23,6 +23,11 @@ podcast_meta:
   category: Religion & Spirituality
   subcategory: Religion
   explicit: false
+xinxinming_meta:
+  buy_url: "https://amzn.to/4l8X8iv"
+  buy_label: "Comprar en Amazon"
+  cover_image: "/assets/images/2025/portada_xinxinming.png"
+  cover_alt: "Portada del libro Xin Xin Ming de Daizan Soriano"
 timezone: UTC
 pwa_sw_version: v0.5.2
 goatcounter:

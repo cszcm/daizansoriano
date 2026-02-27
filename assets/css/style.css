@@ -956,6 +956,26 @@ img {
   background: var(--accent);
 }
 
+.xxm-cover {
+  margin: 1rem 0 1.2rem;
+  max-width: 260px;
+}
+
+.xxm-cover--chapter {
+  max-width: 180px;
+  margin-top: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.xxm-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(161, 106, 58, 0.18);
+  box-shadow: var(--shadow-soft);
+}
+
 .tags ul {
   list-style: none;
   padding-left: 0;

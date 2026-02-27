@@ -23,8 +23,28 @@ layout: default
   <header class="post-header">
     <p class="post-meta">Xin Xin Ming · Sección {{ page.xxm_order }}</p>
     <h1 class="post-title">{{ page.title }}</h1>
+    {% if site.xinxinming_meta.cover_image %}
+      <figure class="xxm-cover xxm-cover--chapter">
+        <img
+          src="{{ site.xinxinming_meta.cover_image | relative_url }}"
+          alt="{{ site.xinxinming_meta.cover_alt | default: 'Portada de Xin Xin Ming' }}"
+          loading="lazy"
+          decoding="async"
+        >
+      </figure>
+    {% endif %}
     {% if page.source_file %}
       <p class="post-subtitle">Fuente: {{ page.source_file }}</p>
+    {% endif %}
+    {% if site.xinxinming_meta.buy_url %}
+      <p>
+        <a
+          class="pill is-filled"
+          href="{{ site.xinxinming_meta.buy_url }}"
+          target="_blank"
+          rel="sponsored nofollow noopener noreferrer"
+        >{{ site.xinxinming_meta.buy_label | default: "Comprar en Amazon" }}</a>
+      </p>
     {% endif %}
   </header>
 
