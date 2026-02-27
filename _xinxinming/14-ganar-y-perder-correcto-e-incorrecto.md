@@ -2,6 +2,8 @@
 title: "Ganar y perder, correcto e incorrecto…"
 xxm_order: 14
 source_file: "Section0014.md"
+xxm_is_appendix: false
+xxm_is_chapter: true
 permalink: /xin-xin-ming/ganar-y-perder-correcto-e-incorrecto/
 ---
 > Ganar y perder, correcto e incorrecto…

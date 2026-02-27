@@ -2,6 +2,8 @@
 title: "Cuando las dudas se disipan por completo"
 xxm_order: 16
 source_file: "Section0016.md"
+xxm_is_appendix: false
+xxm_is_chapter: true
 permalink: /xin-xin-ming/cuando-las-dudas-se-disipan-por-completo/
 ---
 > Cuando las dudas se disipan por completo,

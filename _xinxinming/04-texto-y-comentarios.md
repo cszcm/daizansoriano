@@ -2,6 +2,8 @@
 title: "Texto y Comentarios"
 xxm_order: 4
 source_file: "Section0004.md"
+xxm_is_appendix: true
+xxm_is_chapter: false
 permalink: /xin-xin-ming/texto-y-comentarios/
 ---
 ## Texto y Comentarios

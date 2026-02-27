@@ -2,6 +2,8 @@
 title: "Anexo: Traducción del Xìn Xīn Míng"
 xxm_order: 20
 source_file: "Section0020.md"
+xxm_is_appendix: true
+xxm_is_chapter: false
 permalink: /xin-xin-ming/anexo-traduccion-del-xin-xin-ming/
 ---
 <h2>Anexo: Traducción del Xìn Xīn Míng</h2>

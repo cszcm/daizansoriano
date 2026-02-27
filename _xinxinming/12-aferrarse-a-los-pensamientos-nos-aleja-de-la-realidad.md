@@ -2,6 +2,8 @@
 title: "Aferrarse a los pensamientos nos aleja de la realidad"
 xxm_order: 12
 source_file: "Section0012.md"
+xxm_is_appendix: false
+xxm_is_chapter: true
 permalink: /xin-xin-ming/aferrarse-a-los-pensamientos-nos-aleja-de-la-realidad/
 ---
 > Aferrarse a los pensamientos nos aleja de la realidad,

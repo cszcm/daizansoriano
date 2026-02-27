@@ -193,4 +193,8 @@ Para regenerar la sección web (`/xin-xin-ming/`):
 npm run generate-xxm
 ```
 
-Este comando genera/actualiza los capítulos dentro de `_xinxinming/` sin imágenes.
+Este comando genera/actualiza:
+
+- capítulos/secciones en `_xinxinming/` (estructura original),
+- versos individuales en `_xinxinming_versos/` (estructura web principal),
+- y mantiene el contenido sin imágenes.

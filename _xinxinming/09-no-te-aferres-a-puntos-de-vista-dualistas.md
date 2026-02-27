@@ -2,6 +2,8 @@
 title: "No te aferres a puntos de vista dualistas"
 xxm_order: 9
 source_file: "Section0009.md"
+xxm_is_appendix: false
+xxm_is_chapter: true
 permalink: /xin-xin-ming/no-te-aferres-a-puntos-de-vista-dualistas/
 ---
 > No te aferres a puntos de vista dualistas,

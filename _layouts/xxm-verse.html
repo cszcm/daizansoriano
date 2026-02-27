@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<article class="post xxm-verse">
+  {% assign ordered_verses = site.xinxinming_versos | sort: "verse_no" %}
+  {% assign previous_verse = nil %}
+  {% assign next_verse = nil %}
+  {% for verse in ordered_verses %}
+    {% if verse.url == page.url %}
+      {% assign previous_index = forloop.index0 | minus: 1 %}
+      {% assign next_index = forloop.index0 | plus: 1 %}
+      {% if previous_index >= 0 %}
+        {% assign previous_verse = ordered_verses[previous_index] %}
+      {% endif %}
+      {% if next_index < ordered_verses.size %}
+        {% assign next_verse = ordered_verses[next_index] %}
+      {% endif %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% assign source_chapter = site.xinxinming | where: "xxm_order", page.chapter_order | first %}
+
+  <header class="post-header">
+    <p class="post-meta">Xin Xin Ming · Verso {{ page.verse_id }}</p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.chapter_title %}
+      <p class="post-subtitle">Capítulo de origen: {{ page.chapter_title }}</p>
+    {% endif %}
+    {% if site.xinxinming_meta.buy_url %}
+      <p>
+        <a
+          class="pill is-filled"
+          href="{{ site.xinxinming_meta.buy_url }}"
+          target="_blank"
+          rel="sponsored nofollow noopener noreferrer"
+        >{{ site.xinxinming_meta.buy_label | default: "Comprar en Amazon" }}</a>
+      </p>
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <nav class="post-tags" aria-label="Navegación de versos">
+    <a href="{{ '/xin-xin-ming/versos/' | relative_url }}">← Índice de versos</a>
+    <a href="{{ '/xin-xin-ming/lectura/' | relative_url }}">Lectura seguida</a>
+    {% if source_chapter %}
+      <a href="{{ source_chapter.url | relative_url }}">Capítulo original</a>
+    {% endif %}
+    {% if previous_verse %}
+      <a href="{{ previous_verse.url | relative_url }}">← Verso {{ previous_verse.verse_id }}</a>
+    {% endif %}
+    {% if next_verse %}
+      <a href="{{ next_verse.url | relative_url }}">Verso {{ next_verse.verse_id }} →</a>
+    {% endif %}
+  </nav>
+</article>

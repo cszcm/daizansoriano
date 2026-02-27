@@ -2,6 +2,8 @@
 title: "Agradecimientos"
 xxm_order: 3
 source_file: "Section0003.md"
+xxm_is_appendix: true
+xxm_is_chapter: false
 permalink: /xin-xin-ming/agradecimientos/
 ---
 ## Agradecimientos

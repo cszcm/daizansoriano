@@ -2,6 +2,8 @@
 title: "El Dharma está más allá de la dualidad"
 xxm_order: 13
 source_file: "Section0013.md"
+xxm_is_appendix: false
+xxm_is_chapter: true
 permalink: /xin-xin-ming/el-dharma-esta-mas-alla-de-la-dualidad/
 ---
 > El Dharma está más allá de la dualidad,

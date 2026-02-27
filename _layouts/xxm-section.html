@@ -33,9 +33,6 @@ layout: default
         >
       </figure>
     {% endif %}
-    {% if page.source_file %}
-      <p class="post-subtitle">Fuente: {{ page.source_file }}</p>
-    {% endif %}
     {% if site.xinxinming_meta.buy_url %}
       <p>
         <a
@@ -49,11 +46,19 @@ layout: default
   </header>
 
   <div class="post-content">
+    {% if page.xxm_is_chapter %}
+      <p>
+        Esta sección pertenece a la estructura original del libro.
+        Para una lectura equilibrada por versos:
+        <a href="{{ '/xin-xin-ming/versos/' | relative_url }}">ir al índice de versos</a>.
+      </p>
+    {% endif %}
     {{ content }}
   </div>
 
   <nav class="post-tags" aria-label="Navegación de secciones">
     <a href="{{ '/xin-xin-ming/' | relative_url }}">← Índice Xin Xin Ming</a>
+    <a href="{{ '/xin-xin-ming/versos/' | relative_url }}">Índice de versos</a>
     {% if previous_section %}
       <a href="{{ previous_section.url | relative_url }}">← {{ previous_section.title }}</a>
     {% endif %}

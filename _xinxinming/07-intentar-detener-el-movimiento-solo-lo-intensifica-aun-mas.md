@@ -2,6 +2,8 @@
 title: "Intentar detener el movimiento solo lo intensifica aún más"
 xxm_order: 7
 source_file: "Section0007.md"
+xxm_is_appendix: false
+xxm_is_chapter: true
 permalink: /xin-xin-ming/intentar-detener-el-movimiento-solo-lo-intensifica-aun-mas/
 ---
 > Intentar detener el movimiento solo lo intensifica aún más.

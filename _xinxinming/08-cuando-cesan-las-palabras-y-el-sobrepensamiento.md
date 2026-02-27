@@ -2,6 +2,8 @@
 title: "Cuando cesan las palabras y el sobrepensamiento"
 xxm_order: 8
 source_file: "Section0008.md"
+xxm_is_appendix: false
+xxm_is_chapter: true
 permalink: /xin-xin-ming/cuando-cesan-las-palabras-y-el-sobrepensamiento/
 ---
 > Cuando cesan las palabras y el sobrepensamiento,

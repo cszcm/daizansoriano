@@ -3,7 +3,11 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const SOURCE_DIR = path.join(ROOT, 'xxm');
-const TARGET_DIR = path.join(ROOT, '_xinxinming');
+const TARGET_SECTIONS_DIR = path.join(ROOT, '_xinxinming');
+const TARGET_VERSES_DIR = path.join(ROOT, '_xinxinming_versos');
+
+const CHAPTER_START = 5;
+const CHAPTER_END = 19;
 
 const MANUAL_TITLES = {
   1: 'Ficha técnica',
@@ -31,6 +35,27 @@ function normalizeTitle(value) {
     .replace(/\s+/g, ' ')
     .trim()
     .replace(/[.:;,\s]+$/, '');
+}
+
+function escapeDoubleQuotes(value) {
+  return String(value).replace(/"/g, '\\"');
+}
+
+function compactBlankLines(lines) {
+  const out = [];
+  let previousBlank = true;
+
+  for (const line of lines) {
+    const isBlank = line.trim() === '';
+    if (isBlank && previousBlank) continue;
+    out.push(line);
+    previousBlank = isBlank;
+  }
+
+  while (out.length > 0 && out[0].trim() === '') out.shift();
+  while (out.length > 0 && out[out.length - 1].trim() === '') out.pop();
+
+  return out;
 }
 
 function deriveTitle(rawContent, order) {
@@ -67,7 +92,7 @@ function deriveTitle(rawContent, order) {
     }
   }
 
-  return `Sección ${String(order).padStart(2, '0')}`;
+  return `Seccion ${String(order).padStart(2, '0')}`;
 }
 
 function cleanContent(rawContent) {
@@ -142,19 +167,7 @@ function cleanContent(rawContent) {
     out.push(line);
   }
 
-  const compact = [];
-  let previousBlank = true;
-  for (const line of out) {
-    const isBlank = line.trim() === '';
-    if (isBlank && previousBlank) continue;
-    compact.push(line);
-    previousBlank = isBlank;
-  }
-
-  while (compact.length > 0 && compact[0].trim() === '') compact.shift();
-  while (compact.length > 0 && compact[compact.length - 1].trim() === '') compact.pop();
-
-  return compact.join('\n');
+  return compactBlankLines(out).join('\n');
 }
 
 function listSourceFiles() {
@@ -165,8 +178,132 @@ function listSourceFiles() {
     .sort((a, b) => a.localeCompare(b));
 }
 
-function toFrontMatterValue(value) {
-  return `"${String(value).replace(/"/g, '\\"')}"`;
+function clearMarkdownFiles(dir) {
+  fs.mkdirSync(dir, { recursive: true });
+  for (const entry of fs.readdirSync(dir)) {
+    if (entry.endsWith('.md')) {
+      fs.unlinkSync(path.join(dir, entry));
+    }
+  }
+}
+
+function isAppendixOrder(order) {
+  return order <= 4 || order >= 20;
+}
+
+function isChapterOrder(order) {
+  return order >= CHAPTER_START && order <= CHAPTER_END;
+}
+
+function cleanCommentLines(lines) {
+  const out = [];
+  let mode = 'normal';
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    if (mode === 'skip_image_block') {
+      if (trimmed === ':::') mode = 'normal';
+      continue;
+    }
+
+    if (mode === 'skip_image_html_div') {
+      if (trimmed === '</div>') mode = 'normal';
+      continue;
+    }
+
+    if (trimmed.startsWith('::: centered-image')) {
+      mode = 'skip_image_block';
+      continue;
+    }
+
+    if (trimmed.startsWith('<div class=\"centered-image\">')) {
+      mode = 'skip_image_html_div';
+      continue;
+    }
+
+    if (trimmed === ':::') continue;
+    if (trimmed.startsWith(':::')) continue;
+    if (/^!\[.*\]\(.*\).*$/.test(trimmed)) continue;
+    if (/^<img\b/i.test(trimmed)) continue;
+    if (/^<h1/i.test(trimmed)) continue;
+    if (/^<br\s*\/?>$/i.test(trimmed)) continue;
+    if (trimmed.startsWith('<div class=\"alineado-centro\">') || trimmed === '</div>') continue;
+
+    out.push(line);
+  }
+
+  return compactBlankLines(out).join('\n');
+}
+
+function extractVerseBlocksFromRaw(rawContent) {
+  const lines = rawContent.split(/\r?\n/);
+  const blocks = [];
+  let i = 0;
+
+  while (i < lines.length) {
+    const trimmed = lines[i].trim();
+    if (!trimmed.startsWith('::: verse')) {
+      i += 1;
+      continue;
+    }
+
+    i += 1;
+    const verseLines = [];
+    while (i < lines.length && lines[i].trim() !== ':::') {
+      const text = stripHtml(lines[i]).trim();
+      if (text) verseLines.push(text);
+      i += 1;
+    }
+
+    if (i < lines.length && lines[i].trim() === ':::') {
+      i += 1;
+    }
+
+    const commentLines = [];
+    while (i < lines.length && !lines[i].trim().startsWith('::: verse')) {
+      commentLines.push(lines[i]);
+      i += 1;
+    }
+
+    if (verseLines.length > 0) {
+      blocks.push({
+        verseLines,
+        comment: cleanCommentLines(commentLines)
+      });
+    }
+  }
+
+  return blocks;
+}
+
+function buildSectionFrontMatter({ title, order, sourceFile, permalink }) {
+  return [
+    '---',
+    `title: "${escapeDoubleQuotes(title)}"`,
+    `xxm_order: ${order}`,
+    `source_file: "${escapeDoubleQuotes(sourceFile)}"`,
+    `xxm_is_appendix: ${isAppendixOrder(order)}`,
+    `xxm_is_chapter: ${isChapterOrder(order)}`,
+    `permalink: ${permalink}`,
+    '---',
+    ''
+  ].join('\n');
+}
+
+function buildVerseFrontMatter({ verseId, verseNo, chapterOrder, chapterTitle, verseText, permalink }) {
+  return [
+    '---',
+    `title: "Verso ${verseId}"`,
+    `verse_id: "${verseId}"`,
+    `verse_no: ${verseNo}`,
+    `chapter_order: ${chapterOrder}`,
+    `chapter_title: "${escapeDoubleQuotes(chapterTitle)}"`,
+    `verse_text: "${escapeDoubleQuotes(verseText)}"`,
+    `permalink: ${permalink}`,
+    '---',
+    ''
+  ].join('\n');
 }
 
 function main() {
@@ -176,13 +313,10 @@ function main() {
     process.exit(1);
   }
 
-  fs.mkdirSync(TARGET_DIR, { recursive: true });
+  clearMarkdownFiles(TARGET_SECTIONS_DIR);
+  clearMarkdownFiles(TARGET_VERSES_DIR);
 
-  for (const entry of fs.readdirSync(TARGET_DIR)) {
-    if (entry.endsWith('.md')) {
-      fs.unlinkSync(path.join(TARGET_DIR, entry));
-    }
-  }
+  const chapterBlocks = [];
 
   for (const fileName of files) {
     const sourcePath = path.join(SOURCE_DIR, fileName);
@@ -192,20 +326,59 @@ function main() {
     const clean = cleanContent(rawContent);
     const slugBase = slugify(title) || `seccion-${String(order).padStart(2, '0')}`;
     const targetName = `${String(order).padStart(2, '0')}-${slugBase}.md`;
-    const targetPath = path.join(TARGET_DIR, targetName);
+    const targetPath = path.join(TARGET_SECTIONS_DIR, targetName);
 
-    const frontMatter = [
-      '---',
-      `title: ${toFrontMatterValue(title)}`,
-      `xxm_order: ${order}`,
-      `source_file: ${toFrontMatterValue(fileName)}`,
-      `permalink: /xin-xin-ming/${slugBase}/`,
-      '---',
-      ''
-    ].join('\n');
+    const sectionFrontMatter = buildSectionFrontMatter({
+      title,
+      order,
+      sourceFile: fileName,
+      permalink: `/xin-xin-ming/${slugBase}/`
+    });
 
-    fs.writeFileSync(targetPath, `${frontMatter}${clean}\n`, 'utf8');
+    fs.writeFileSync(targetPath, `${sectionFrontMatter}${clean}\n`, 'utf8');
     console.log(`Generado: _xinxinming/${targetName}`);
+
+    if (isChapterOrder(order)) {
+      chapterBlocks.push({
+        order,
+        chapterTitle: title,
+        blocks: extractVerseBlocksFromRaw(rawContent)
+      });
+    }
+  }
+
+  chapterBlocks.sort((a, b) => a.order - b.order);
+
+  let verseNo = 0;
+  for (const chapter of chapterBlocks) {
+    for (const block of chapter.blocks) {
+      verseNo += 1;
+      const verseId = String(verseNo).padStart(2, '0');
+      const verseText = block.verseLines.join(' / ');
+      const targetName = `${verseId}.md`;
+      const targetPath = path.join(TARGET_VERSES_DIR, targetName);
+
+      const verseFrontMatter = buildVerseFrontMatter({
+        verseId,
+        verseNo,
+        chapterOrder: chapter.order,
+        chapterTitle: chapter.chapterTitle,
+        verseText,
+        permalink: `/xin-xin-ming/verso/${verseId}/`
+      });
+
+      const verseQuote = block.verseLines.map((line) => `> ${line}`).join('\n');
+      const comment = block.comment ? `\n\n${block.comment}` : '';
+      fs.writeFileSync(targetPath, `${verseFrontMatter}${verseQuote}${comment}\n`, 'utf8');
+      console.log(`Generado: _xinxinming_versos/${targetName}`);
+    }
+  }
+
+  console.log('');
+  console.log(`Capitulos procesados (5-19): ${chapterBlocks.length}`);
+  console.log(`Versos generados: ${verseNo}`);
+  if (verseNo !== 73) {
+    console.warn('Aviso: el numero de versos generados no es 73. Revisa el formato fuente.');
   }
 }
 

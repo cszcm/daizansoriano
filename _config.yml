@@ -15,6 +15,9 @@ collections:
   xinxinming:
     output: true
     permalink: /xin-xin-ming/:name/
+  xinxinming_versos:
+    output: true
+    permalink: /xin-xin-ming/verso/:name/
 podcast_meta:
   author: Daizan Soriano
   owner_name: Daizan Soriano
@@ -55,3 +58,8 @@ defaults:
       type: xinxinming
     values:
       layout: xxm-section
+  - scope:
+      path: ""
+      type: xinxinming_versos
+    values:
+      layout: xxm-verse

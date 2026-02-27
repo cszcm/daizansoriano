@@ -2,6 +2,8 @@
 title: "Cuando desaparece cualquier estructura conceptual"
 xxm_order: 15
 source_file: "Section0015.md"
+xxm_is_appendix: false
+xxm_is_chapter: true
 permalink: /xin-xin-ming/cuando-desaparece-cualquier-estructura-conceptual/
 ---
 > Cuando desaparece cualquier estructura conceptual,

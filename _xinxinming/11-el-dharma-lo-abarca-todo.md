@@ -2,6 +2,8 @@
 title: "El Dharma lo abarca todo"
 xxm_order: 11
 source_file: "Section0011.md"
+xxm_is_appendix: false
+xxm_is_chapter: true
 permalink: /xin-xin-ming/el-dharma-lo-abarca-todo/
 ---
 > El Dharma lo abarca todo,

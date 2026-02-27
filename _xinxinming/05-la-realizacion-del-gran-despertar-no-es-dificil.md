@@ -2,6 +2,8 @@
 title: "La realización del Gran Despertar no es difícil"
 xxm_order: 5
 source_file: "Section0005.md"
+xxm_is_appendix: false
+xxm_is_chapter: true
 permalink: /xin-xin-ming/la-realizacion-del-gran-despertar-no-es-dificil/
 ---
 > La realización del Gran Despertar no es difícil,

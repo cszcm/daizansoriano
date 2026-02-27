@@ -2,6 +2,8 @@
 title: "La ecuanimidad se puede desvanecer con las circunstancias"
 xxm_order: 10
 source_file: "Section0010.md"
+xxm_is_appendix: false
+xxm_is_chapter: true
 permalink: /xin-xin-ming/la-ecuanimidad-se-puede-desvanecer-con-las-circunstancias/
 ---
 > La ecuanimidad se puede desvanecer con las circunstancias.
