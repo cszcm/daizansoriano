@@ -1,5 +1,7 @@
 const CACHE_VERSION = '{{ site.pwa_sw_version | default: "v1" }}';
 const CACHE_NAME = `daizan-pwa-${CACHE_VERSION}`;
+const CACHEABLE_DESTINATIONS = new Set(['style', 'script', 'font', 'image', 'manifest']);
+const AUDIO_FILE_RE = /\.(mp3|m4a|mp4|aac|wav|ogg|flac)(?:$|\?)/i;
 
 function getBasePath() {
   const swUrl = new URL(self.location.href);
@@ -11,6 +13,28 @@ const BASE_PATH = getBasePath();
 function withBase(path) {
   const normalized = path.startsWith('/') ? path : `/${path}`;
   return `${BASE_PATH}${normalized}`;
+}
+
+function isAudioRequest(request, pathname) {
+  if (pathname.startsWith(withBase('/audio/')) || pathname.startsWith(withBase('/assets/mp3/'))) {
+    return true;
+  }
+
+  const destination = request.destination || '';
+  if (destination === 'audio' || destination === 'video') {
+    return true;
+  }
+
+  return AUDIO_FILE_RE.test(pathname);
+}
+
+function isCacheableAssetRequest(request, response) {
+  if (!response || response.status !== 200 || response.type !== 'basic') {
+    return false;
+  }
+
+  const destination = request.destination || '';
+  return CACHEABLE_DESTINATIONS.has(destination);
 }
 
 const APP_SHELL = [
@@ -55,6 +79,11 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  if (isAudioRequest(request, requestUrl.pathname)) {
+    // Do not cache media files. Let browser/network handle range requests directly.
+    return;
+  }
+
   if (request.mode === 'navigate') {
     event.respondWith(
       fetch(request)
@@ -78,14 +107,13 @@ self.addEventListener('fetch', (event) => {
 
       return fetch(request)
         .then((response) => {
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
+          if (isCacheableAssetRequest(request, response)) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           }
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           return response;
         })
-        .catch(() => caches.match(withBase('/')));
+        .catch(() => Response.error());
     })
   );
 });
