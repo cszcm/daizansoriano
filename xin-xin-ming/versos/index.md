@@ -21,7 +21,6 @@ permalink: /xin-xin-ming/versos/
   <div class="post-grid">
     {% for verso in versos %}
       <article class="post-card">
-        <p class="post-meta">Verso {{ verso.verse_id }}</p>
         <h3><a href="{{ verso.url | relative_url }}">{{ verso.title }}</a></h3>
         <p>{{ verso.verse_text | truncate: 170 }}</p>
       </article>

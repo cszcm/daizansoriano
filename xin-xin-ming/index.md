@@ -18,8 +18,12 @@ permalink: /xin-xin-ming/
     </figure>
   {% endif %}
   <p>
-    Esta versión web reorganiza el contenido por versos para que cada uno tenga el mismo peso
-    y resulte más fácil estudiar, leer y compartir.
+    El contenido de esta sección forma parte del libro <em>Xin Xin Ming</em>. Aquí se presenta
+    en formato web, reorganizado por versos, para facilitar su estudio y consulta.
+  </p>
+  <p>
+    Cada página reúne un verso y su comentario correspondiente, manteniendo la continuidad del
+    texto original publicado en el libro.
   </p>
 
   <p>
@@ -42,7 +46,6 @@ permalink: /xin-xin-ming/
     <div class="post-grid">
       {% for verso in versos limit: 6 %}
         <article class="post-card">
-          <p class="post-meta">Verso {{ verso.verse_id }}</p>
           <h3><a href="{{ verso.url | relative_url }}">{{ verso.title }}</a></h3>
           <p>{{ verso.verse_text | truncate: 170 }}</p>
         </article>

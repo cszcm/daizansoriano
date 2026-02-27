@@ -23,21 +23,22 @@ layout: default
   <header class="post-header">
     <p class="post-meta">Xin Xin Ming · Verso {{ page.verse_id }}</p>
     <h1 class="post-title">{{ page.title }}</h1>
-    {% if site.xinxinming_meta.buy_url %}
-      <p>
-        <a
-          class="pill is-filled"
-          href="{{ site.xinxinming_meta.buy_url }}"
-          target="_blank"
-          rel="sponsored nofollow noopener noreferrer"
-        >{{ site.xinxinming_meta.buy_label | default: "Comprar en Amazon" }}</a>
-      </p>
-    {% endif %}
   </header>
 
   <div class="post-content">
     {{ content }}
   </div>
+
+  {% if site.xinxinming_meta.buy_url %}
+    <p>
+      <a
+        class="pill is-filled"
+        href="{{ site.xinxinming_meta.buy_url }}"
+        target="_blank"
+        rel="sponsored nofollow noopener noreferrer"
+      >{{ site.xinxinming_meta.buy_label | default: "Comprar en Amazon" }}</a>
+    </p>
+  {% endif %}
 
   <nav class="post-tags" aria-label="Navegación de versos">
     <a href="{{ '/xin-xin-ming/versos/' | relative_url }}">← Índice de versos</a>

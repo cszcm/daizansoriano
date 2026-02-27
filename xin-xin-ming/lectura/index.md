@@ -19,7 +19,6 @@ permalink: /xin-xin-ming/lectura/
   {% assign versos = site.xinxinming_versos | sort: "verse_no" %}
   {% for verso in versos %}
     <article class="post-card" id="v{{ verso.verse_id }}">
-      <p class="post-meta">Verso {{ verso.verse_id }}</p>
       <h3><a href="{{ verso.url | relative_url }}">{{ verso.title }}</a></h3>
       <div class="post-content">
         {{ verso.content | markdownify }}
