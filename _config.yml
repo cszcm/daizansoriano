@@ -12,6 +12,9 @@ collections:
   podcast:
     output: true
     permalink: /:title/
+  xinxinming:
+    output: true
+    permalink: /xin-xin-ming/:name/
 podcast_meta:
   author: Daizan Soriano
   owner_name: Daizan Soriano
@@ -42,3 +45,8 @@ defaults:
     values:
       layout: podcast
       image: /assets/logo.png
+  - scope:
+      path: ""
+      type: xinxinming
+    values:
+      layout: xxm-section

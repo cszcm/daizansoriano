@@ -4,7 +4,8 @@
   "type": "commonjs",
   "scripts": {
     "bump-sw-version": "node scripts/bump-sw-version.js",
-    "sync-audio-lengths": "node scripts/sync-audio-lengths.js"
+    "sync-audio-lengths": "node scripts/sync-audio-lengths.js",
+    "generate-xxm": "node scripts/generate-xxm-section.js"
   },
   "dependencies": {
     "js-yaml": "^4.1.1"

@@ -182,3 +182,15 @@ npm run sync-audio-lengths
 ```
 
 El script recorre `_posts/` y `_podcast/`, detecta el audio local (`audio_url` o ruta inferida en `audio/`) y actualiza/crea `audio_length` en el front matter.
+
+## Sección Xin Xin Ming
+
+El contenido fuente del libro está en `xxm/SectionXXXX.md`.
+
+Para regenerar la sección web (`/xin-xin-ming/`):
+
+```bash
+npm run generate-xxm
+```
+
+Este comando genera/actualiza los capítulos dentro de `_xinxinming/` sin imágenes.

@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<article class="post xxm-section">
+  {% assign ordered_sections = site.xinxinming | sort: "xxm_order" %}
+  {% assign previous_section = nil %}
+  {% assign next_section = nil %}
+  {% for section in ordered_sections %}
+    {% if section.url == page.url %}
+      {% assign previous_index = forloop.index0 | minus: 1 %}
+      {% assign next_index = forloop.index0 | plus: 1 %}
+      {% if previous_index >= 0 %}
+        {% assign previous_section = ordered_sections[previous_index] %}
+      {% endif %}
+      {% if next_index < ordered_sections.size %}
+        {% assign next_section = ordered_sections[next_index] %}
+      {% endif %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  <header class="post-header">
+    <p class="post-meta">Xin Xin Ming · Sección {{ page.xxm_order }}</p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.source_file %}
+      <p class="post-subtitle">Fuente: {{ page.source_file }}</p>
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <nav class="post-tags" aria-label="Navegación de secciones">
+    <a href="{{ '/xin-xin-ming/' | relative_url }}">← Índice Xin Xin Ming</a>
+    {% if previous_section %}
+      <a href="{{ previous_section.url | relative_url }}">← {{ previous_section.title }}</a>
+    {% endif %}
+    {% if next_section %}
+      <a href="{{ next_section.url | relative_url }}">{{ next_section.title }} →</a>
+    {% endif %}
+  </nav>
+</article>
