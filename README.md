@@ -54,6 +54,18 @@ Esto importará posts y etiquetas si vienen en el feed, pero puede perder catego
 
 Cuando tengas tus entradas reales, borra el ejemplo en `_posts/2024-01-01-bienvenido.md`.
 
+### Limpieza de historial git (tamano del repo)
+
+Para auditar tamano historico:
+
+```bash
+bash scripts/audit-git-history-size.sh 30
+```
+
+Guia de reescritura de historial (con `git filter-repo`):
+
+- `scripts/HISTORY_CLEANUP.md`
+
 ## Categorías y etiquetas (criterio)
 
 Para que el archivo del blog sea coherente (y evitar duplicados por tildes/guiones), usamos este criterio:
