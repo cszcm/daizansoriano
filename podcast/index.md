@@ -13,6 +13,29 @@ permalink: /podcast/
     <a class="pill" href="{{ '/podcast-plataformas/' | relative_url }}">Plataformas de escucha</a>
   </p>
   {% assign podcast_items = site.podcast | concat: site.posts | sort: "date" | reverse %}
+  {% assign rendered_total = 0 %}
+  {% for item in podcast_items %}
+    {% assign item_audio_url = "" %}
+    {% if item.audio_url %}
+      {% assign item_audio_url = item.audio_url %}
+    {% else %}
+      {% if item.collection == "posts" %}
+        {% assign item_audio_rel = item.path | remove_first: "_posts/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
+      {% else %}
+        {% assign item_audio_rel = item.path | remove_first: "_podcast/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
+      {% endif %}
+      {% assign item_audio_path = "/audio/" | append: item_audio_rel %}
+      {% for static_file in site.static_files %}
+        {% if static_file.path == item_audio_path %}
+          {% assign item_audio_url = item_audio_path %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if item_audio_url != "" %}
+      {% assign rendered_total = rendered_total | plus: 1 %}
+    {% endif %}
+  {% endfor %}
   <div class="podcast-spotify-list">
     {% assign rendered_count = 0 %}
     {% for item in podcast_items %}
@@ -35,8 +58,9 @@ permalink: /podcast/
       {% endif %}
       {% if item_audio_url != "" %}
       {% assign rendered_count = rendered_count | plus: 1 %}
+      {% assign rendered_rank = rendered_total | minus: rendered_count | plus: 1 %}
       <article class="podcast-spotify-item">
-        <div class="podcast-spotify-rank" aria-hidden="true">{{ rendered_count }}</div>
+        <div class="podcast-spotify-rank" aria-hidden="true">{{ rendered_rank }}</div>
 
         <a class="podcast-spotify-cover" href="{{ item.url | relative_url }}" aria-label="Ir al episodio {{ item.title }}">
           {% assign item_cover_image = item.image | default: podcast_web_image %}
