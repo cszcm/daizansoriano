@@ -63,9 +63,9 @@ layout: default
     {% include post-audio-player.html audio_url=post_audio_path next_url=next_audio_post.url next_title=next_audio_post.title %}
   {% endif %}
 
-  {% assign structured_author = page.author | default: site.podcast.author | default: site.title %}
+  {% assign structured_author = page.author | default: site.podcast_meta.author | default: site.title %}
   {% assign structured_description = page.description | default: page.subtitle | default: page.excerpt | strip_html | strip_newlines | truncate: 180 %}
-  {% assign structured_image = page.image | default: site.podcast.image | default: '/assets/logo.png' %}
+  {% assign structured_image = page.image | default: site.podcast_meta.image | default: '/assets/logo.png' %}
   {% if structured_image contains '://' %}
     {% assign structured_image_abs = structured_image %}
   {% else %}

@@ -11,7 +11,7 @@ collections:
   podcast:
     output: true
     permalink: /:title/
-podcast:
+podcast_meta:
   author: Daizan Soriano
   owner_name: Daizan Soriano
   owner_email: daizansoriano@caminomedio.org

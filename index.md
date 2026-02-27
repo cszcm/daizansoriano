@@ -32,7 +32,7 @@ title: "Inicio"
 {% endfor %}
 
 {% if featured_audio_item and featured_audio_url != "" %}
-{% assign featured_audio_image = featured_audio_item.image | default: site.podcast.image | default: '/assets/daizan.jpg' %}
+{% assign featured_audio_image = featured_audio_item.image | default: site.podcast_meta.image | default: '/assets/daizan.jpg' %}
 {% if featured_audio_image contains '://' %}
 {% assign featured_audio_image_url = featured_audio_image %}
 {% else %}

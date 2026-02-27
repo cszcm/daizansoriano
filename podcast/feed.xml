@@ -9,6 +9,13 @@ permalink: /podcast/feed.xml
   xmlns:podcast="https://podcastindex.org/namespace/1.0"
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   {% assign base = site.url | append: site.baseurl %}
+  {% assign podcast_meta = site.podcast_meta %}
+  {% assign channel_image = podcast_meta.image | default: '/assets/logo.png' %}
+  {% if channel_image contains '://' %}
+    {% assign channel_image_abs = channel_image %}
+  {% else %}
+    {% assign channel_image_abs = base | append: channel_image %}
+  {% endif %}
   {% assign episodes = site.podcast | concat: site.posts | sort: "date" | reverse %}
 
   <channel>
@@ -18,29 +25,32 @@ permalink: /podcast/feed.xml
     <language>{{ site.lang | default: 'es' }}</language>
     <atom:link href="{{ base | xml_escape }}/podcast/feed.xml" rel="self" type="application/rss+xml" />
 
-    <itunes:author>{{ site.podcast.author | default: site.title | xml_escape }}</itunes:author>
+    <itunes:author>{{ podcast_meta.author | default: site.title | xml_escape }}</itunes:author>
     <itunes:summary>{{ site.description | xml_escape }}</itunes:summary>
-    <itunes:explicit>{% if site.podcast.explicit == true %}true{% else %}false{% endif %}</itunes:explicit>
+    <itunes:explicit>{% if podcast_meta.explicit == true %}true{% else %}false{% endif %}</itunes:explicit>
     <podcast:locked>no</podcast:locked>
 
-    {% if site.podcast.owner_name or site.podcast.owner_email %}
+    {% if podcast_meta.owner_name or podcast_meta.owner_email %}
     <itunes:owner>
-      {% if site.podcast.owner_name %}<itunes:name>{{ site.podcast.owner_name | xml_escape }}</itunes:name>{% endif %}
-      {% if site.podcast.owner_email %}<itunes:email>{{ site.podcast.owner_email | xml_escape }}</itunes:email>{% endif %}
+      {% if podcast_meta.owner_name %}<itunes:name>{{ podcast_meta.owner_name | xml_escape }}</itunes:name>{% endif %}
+      {% if podcast_meta.owner_email %}<itunes:email>{{ podcast_meta.owner_email | xml_escape }}</itunes:email>{% endif %}
     </itunes:owner>
     {% endif %}
 
-    {% if site.podcast.image %}
-      <itunes:image href="{% if site.podcast.image contains '://' %}{{ site.podcast.image | xml_escape }}{% else %}{{ base | xml_escape }}{{ site.podcast.image | xml_escape }}{% endif %}" />
-    {% endif %}
+    <itunes:image href="{{ channel_image_abs | xml_escape }}" />
+    <image>
+      <url>{{ channel_image_abs | xml_escape }}</url>
+      <title>{{ site.title | xml_escape }} Podcast</title>
+      <link>{{ base | xml_escape }}/podcast/</link>
+    </image>
 
-    {% if site.podcast.category %}
-      {% if site.podcast.subcategory %}
-        <itunes:category text="{{ site.podcast.category | xml_escape }}">
-          <itunes:category text="{{ site.podcast.subcategory | xml_escape }}" />
+    {% if podcast_meta.category %}
+      {% if podcast_meta.subcategory %}
+        <itunes:category text="{{ podcast_meta.category | xml_escape }}">
+          <itunes:category text="{{ podcast_meta.subcategory | xml_escape }}" />
         </itunes:category>
       {% else %}
-        <itunes:category text="{{ site.podcast.category | xml_escape }}" />
+        <itunes:category text="{{ podcast_meta.category | xml_escape }}" />
       {% endif %}
     {% endif %}
 
@@ -81,6 +91,13 @@ permalink: /podcast/feed.xml
         <description>{{ post.description | default: post.excerpt | strip_html | strip_newlines | xml_escape }}</description>
 
         <enclosure url="{{ audio_abs | replace: ' ', '%20' | xml_escape }}" length="{{ post.audio_length | default: 0 }}" type="{{ audio_type }}" />
+        {% assign episode_image = post.image | default: channel_image %}
+        {% if episode_image contains '://' %}
+          {% assign episode_image_abs = episode_image %}
+        {% else %}
+          {% assign episode_image_abs = base | append: episode_image %}
+        {% endif %}
+        <itunes:image href="{{ episode_image_abs | xml_escape }}" />
 
         <itunes:summary>{{ post.description | default: post.excerpt | strip_html | strip_newlines | xml_escape }}</itunes:summary>
         {% if post.duration %}<itunes:duration>{{ post.duration }}</itunes:duration>{% endif %}
