@@ -7,7 +7,7 @@ permalink: /podcast/
 <section class="archive">
   {% assign podcast_web_image = site.podcast_meta.web_image | default: '/assets/daizan.jpg' %}
   <div class="podcast-header-image">
-    <img src="{{ podcast_web_image | relative_url }}" alt="Daizan Soriano" loading="eager" decoding="async">
+    <img src="{{ '/assets/cabecera.png' | relative_url }}" alt="Cabecera del podcast" loading="eager" decoding="async">
   </div>
   <p>
     <a class="pill" href="{{ '/podcast-plataformas/' | relative_url }}">Plataformas de escucha</a>

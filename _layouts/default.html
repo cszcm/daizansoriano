@@ -32,11 +32,15 @@
           </div>
 
           <nav class="site-nav" id="site-nav">
-            <a href="{{ '/podcast/' | relative_url }}">Podcast</a>
-            <a href="{{ '/xin-xin-ming/' | relative_url }}">Xin Xin Ming</a>
-            <a href="{{ '/about/' | relative_url }}">Acerca de</a>
-            <a href="{{ '/enlaces/' | relative_url }}">Enlaces</a>
-            <a href="{{ '/lista-correo/' | relative_url }}">Lista de correo</a>
+            <div class="site-nav__row">
+              <a href="{{ '/podcast/' | relative_url }}">Podcast</a>
+              <a href="{{ '/about/' | relative_url }}">Acerca de</a>
+              <a href="{{ '/enlaces/' | relative_url }}">Enlaces</a>
+            </div>
+            <div class="site-nav__row">
+              <a href="{{ '/xin-xin-ming/' | relative_url }}">Xin Xin Ming</a>
+              <a href="{{ '/lista-correo/' | relative_url }}">Lista de correo</a>
+            </div>
           </nav>
         </div>
       </header>
