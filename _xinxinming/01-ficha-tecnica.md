@@ -3,7 +3,6 @@ title: "Ficha técnica"
 xxm_order: 1
 source_file: "Section0001.md"
 xxm_is_appendix: true
-xxm_is_chapter: false
 permalink: /xin-xin-ming/ficha-tecnica/
 ---
 **Autor:** Samuel Daizan Soriano

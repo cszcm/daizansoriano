@@ -3,7 +3,6 @@ title: "Glosario"
 xxm_order: 21
 source_file: "Section0021.md"
 xxm_is_appendix: true
-xxm_is_chapter: false
 permalink: /xin-xin-ming/glosario/
 ---
 ## Glosario

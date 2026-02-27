@@ -3,7 +3,6 @@ title: "Si puedes ser así"
 xxm_order: 19
 source_file: "Section0019.md"
 xxm_is_appendix: false
-xxm_is_chapter: true
 permalink: /xin-xin-ming/si-puedes-ser-asi/
 ---
 > Si puedes ser así,

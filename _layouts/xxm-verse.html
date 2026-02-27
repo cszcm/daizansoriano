@@ -19,14 +19,10 @@ layout: default
       {% break %}
     {% endif %}
   {% endfor %}
-  {% assign source_chapter = site.xinxinming | where: "xxm_order", page.chapter_order | first %}
 
   <header class="post-header">
     <p class="post-meta">Xin Xin Ming · Verso {{ page.verse_id }}</p>
     <h1 class="post-title">{{ page.title }}</h1>
-    {% if page.chapter_title %}
-      <p class="post-subtitle">Capítulo de origen: {{ page.chapter_title }}</p>
-    {% endif %}
     {% if site.xinxinming_meta.buy_url %}
       <p>
         <a
@@ -46,9 +42,6 @@ layout: default
   <nav class="post-tags" aria-label="Navegación de versos">
     <a href="{{ '/xin-xin-ming/versos/' | relative_url }}">← Índice de versos</a>
     <a href="{{ '/xin-xin-ming/lectura/' | relative_url }}">Lectura seguida</a>
-    {% if source_chapter %}
-      <a href="{{ source_chapter.url | relative_url }}">Capítulo original</a>
-    {% endif %}
     {% if previous_verse %}
       <a href="{{ previous_verse.url | relative_url }}">← Verso {{ previous_verse.verse_id }}</a>
     {% endif %}

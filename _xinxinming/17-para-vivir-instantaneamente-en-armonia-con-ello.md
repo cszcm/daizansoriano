@@ -3,7 +3,6 @@ title: "Para vivir instantáneamente en armonía con ello"
 xxm_order: 17
 source_file: "Section0017.md"
 xxm_is_appendix: false
-xxm_is_chapter: true
 permalink: /xin-xin-ming/para-vivir-instantaneamente-en-armonia-con-ello/
 ---
 > Para vivir instantáneamente en armonía con ello,

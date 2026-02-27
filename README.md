@@ -195,6 +195,6 @@ npm run generate-xxm
 
 Este comando genera/actualiza:
 
-- capítulos/secciones en `_xinxinming/` (estructura original),
+- secciones base en `_xinxinming/`,
 - versos individuales en `_xinxinming_versos/` (estructura web principal),
 - y mantiene el contenido sin imágenes.

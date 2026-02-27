@@ -3,7 +3,6 @@ title: "Bibliografía"
 xxm_order: 22
 source_file: "Section0022.md"
 xxm_is_appendix: true
-xxm_is_chapter: false
 permalink: /xin-xin-ming/bibliografia/
 ---
 ## Bibliografía

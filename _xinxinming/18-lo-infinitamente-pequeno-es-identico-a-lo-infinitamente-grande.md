@@ -3,7 +3,6 @@ title: "Lo infinitamente pequeño es idéntico a lo infinitamente grande"
 xxm_order: 18
 source_file: "Section0018.md"
 xxm_is_appendix: false
-xxm_is_chapter: true
 permalink: /xin-xin-ming/lo-infinitamente-pequeno-es-identico-a-lo-infinitamente-grande/
 ---
 > Lo infinitamente pequeño es idéntico a lo infinitamente grande,

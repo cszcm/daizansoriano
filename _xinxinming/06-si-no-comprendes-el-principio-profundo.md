@@ -3,7 +3,6 @@ title: "Si no comprendes el principio profundo"
 xxm_order: 6
 source_file: "Section0006.md"
 xxm_is_appendix: false
-xxm_is_chapter: true
 permalink: /xin-xin-ming/si-no-comprendes-el-principio-profundo/
 ---
 > Si no comprendes el principio profundo,

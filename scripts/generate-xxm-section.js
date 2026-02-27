@@ -6,8 +6,8 @@ const SOURCE_DIR = path.join(ROOT, 'xxm');
 const TARGET_SECTIONS_DIR = path.join(ROOT, '_xinxinming');
 const TARGET_VERSES_DIR = path.join(ROOT, '_xinxinming_versos');
 
-const CHAPTER_START = 5;
-const CHAPTER_END = 19;
+const VERSE_SOURCE_START = 5;
+const VERSE_SOURCE_END = 19;
 
 const MANUAL_TITLES = {
   1: 'Ficha técnica',
@@ -191,8 +191,8 @@ function isAppendixOrder(order) {
   return order <= 4 || order >= 20;
 }
 
-function isChapterOrder(order) {
-  return order >= CHAPTER_START && order <= CHAPTER_END;
+function isVerseSourceOrder(order) {
+  return order >= VERSE_SOURCE_START && order <= VERSE_SOURCE_END;
 }
 
 function cleanCommentLines(lines) {
@@ -284,21 +284,18 @@ function buildSectionFrontMatter({ title, order, sourceFile, permalink }) {
     `xxm_order: ${order}`,
     `source_file: "${escapeDoubleQuotes(sourceFile)}"`,
     `xxm_is_appendix: ${isAppendixOrder(order)}`,
-    `xxm_is_chapter: ${isChapterOrder(order)}`,
     `permalink: ${permalink}`,
     '---',
     ''
   ].join('\n');
 }
 
-function buildVerseFrontMatter({ verseId, verseNo, chapterOrder, chapterTitle, verseText, permalink }) {
+function buildVerseFrontMatter({ verseId, verseNo, verseText, permalink }) {
   return [
     '---',
     `title: "Verso ${verseId}"`,
     `verse_id: "${verseId}"`,
     `verse_no: ${verseNo}`,
-    `chapter_order: ${chapterOrder}`,
-    `chapter_title: "${escapeDoubleQuotes(chapterTitle)}"`,
     `verse_text: "${escapeDoubleQuotes(verseText)}"`,
     `permalink: ${permalink}`,
     '---',
@@ -316,7 +313,7 @@ function main() {
   clearMarkdownFiles(TARGET_SECTIONS_DIR);
   clearMarkdownFiles(TARGET_VERSES_DIR);
 
-  const chapterBlocks = [];
+  const sourceSections = [];
 
   for (const fileName of files) {
     const sourcePath = path.join(SOURCE_DIR, fileName);
@@ -338,20 +335,19 @@ function main() {
     fs.writeFileSync(targetPath, `${sectionFrontMatter}${clean}\n`, 'utf8');
     console.log(`Generado: _xinxinming/${targetName}`);
 
-    if (isChapterOrder(order)) {
-      chapterBlocks.push({
+    if (isVerseSourceOrder(order)) {
+      sourceSections.push({
         order,
-        chapterTitle: title,
         blocks: extractVerseBlocksFromRaw(rawContent)
       });
     }
   }
 
-  chapterBlocks.sort((a, b) => a.order - b.order);
+  sourceSections.sort((a, b) => a.order - b.order);
 
   let verseNo = 0;
-  for (const chapter of chapterBlocks) {
-    for (const block of chapter.blocks) {
+  for (const sourceSection of sourceSections) {
+    for (const block of sourceSection.blocks) {
       verseNo += 1;
       const verseId = String(verseNo).padStart(2, '0');
       const verseText = block.verseLines.join(' / ');
@@ -361,8 +357,6 @@ function main() {
       const verseFrontMatter = buildVerseFrontMatter({
         verseId,
         verseNo,
-        chapterOrder: chapter.order,
-        chapterTitle: chapter.chapterTitle,
         verseText,
         permalink: `/xin-xin-ming/verso/${verseId}/`
       });
@@ -375,7 +369,7 @@ function main() {
   }
 
   console.log('');
-  console.log(`Capitulos procesados (5-19): ${chapterBlocks.length}`);
+  console.log(`Secciones fuente procesadas (5-19): ${sourceSections.length}`);
   console.log(`Versos generados: ${verseNo}`);
   if (verseNo !== 73) {
     console.warn('Aviso: el numero de versos generados no es 73. Revisa el formato fuente.');
