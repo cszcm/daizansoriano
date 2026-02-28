@@ -116,6 +116,7 @@
     <script>
       (function () {
         var STORAGE_KEY = 'site-global-audio-state-v1';
+        var LISTENED_KEY = 'site-listened-audio-v1';
         var DISMISSED_KEY = 'site-global-audio-dismissed-v1';
         var SESSION_STARTED_KEY = 'site-global-audio-started-session-v1';
         var dock = document.querySelector('[data-global-audio-dock]');
@@ -134,6 +135,7 @@
         var nextEpisodeUrl = postAudioRoot ? resolveUrl(postAudioRoot.getAttribute('data-post-audio-next-url') || '') : '';
         var lastTimeSave = 0;
         var state = null;
+        var listenedMap = {};
         var dismissedUntilPlay = false;
         var sessionStarted = false;
         var isRestoringInitialState = true;
@@ -218,6 +220,54 @@
           } catch (error) {
             return false;
           }
+        }
+
+        function normalizeAudioKey(url) {
+          var resolved = resolveUrl(url);
+          if (!resolved) return '';
+          try {
+            var parsed = new URL(resolved);
+            return parsed.pathname + parsed.search;
+          } catch (error) {
+            return '';
+          }
+        }
+
+        function loadListenedMap() {
+          try {
+            var raw = window.localStorage.getItem(LISTENED_KEY);
+            if (!raw) return {};
+            var parsed = JSON.parse(raw);
+            if (!parsed || typeof parsed !== 'object') {
+              return {};
+            }
+            return parsed;
+          } catch (error) {
+            return {};
+          }
+        }
+
+        function saveListenedMap() {
+          try {
+            window.localStorage.setItem(LISTENED_KEY, JSON.stringify(listenedMap));
+          } catch (error) {
+            // Ignore storage errors.
+          }
+        }
+
+        function isListenedAudio(url) {
+          var key = normalizeAudioKey(url);
+          return !!(key && listenedMap[key]);
+        }
+
+        function markAudioAsListened(url) {
+          var key = normalizeAudioKey(url);
+          if (!key || listenedMap[key]) {
+            return;
+          }
+          listenedMap[key] = Date.now();
+          saveListenedMap();
+          syncPodcastPlayTriggers();
         }
 
         function saveState(nextState) {
@@ -336,6 +386,7 @@
           var activeSrc = state && state.src ? resolveUrl(state.src) : '';
           triggers.forEach(function (trigger) {
             var sourceUrl = resolveUrl(trigger.getAttribute('data-audio-src') || trigger.getAttribute('href'));
+            var listened = isListenedAudio(sourceUrl);
             var defaultLabel = trigger.getAttribute('data-audio-default-label');
             if (!defaultLabel) {
               defaultLabel = (trigger.textContent || '').trim() || '▶ Escuchar';
@@ -354,9 +405,21 @@
 
             trigger.classList.toggle('is-active', isActive);
             trigger.classList.toggle('is-playing', isActive && state.isPlaying === true);
+            trigger.classList.toggle('is-listened', listened);
+
+            var itemRoot = getClosestElement(trigger, '[data-podcast-episode-item]');
+            if (itemRoot) {
+              itemRoot.classList.toggle('is-listened', listened);
+              var listenedIndicator = itemRoot.querySelector('[data-podcast-listened-indicator]');
+              if (listenedIndicator) {
+                listenedIndicator.hidden = !listened;
+              }
+            }
 
             if (isActive) {
               trigger.textContent = state.isPlaying ? '⏸ Reproduciendo' : '▶ Reanudar';
+            } else if (listened) {
+              trigger.textContent = '✓ Reproducido';
             } else {
               trigger.textContent = defaultLabel;
             }
@@ -481,6 +544,7 @@
             persistFromAudio(audioEl, resolveTitle(), resolvePageUrl());
           });
           audioEl.addEventListener('ended', function () {
+            markAudioAsListened(getAudioSrc(audioEl));
             persistFromAudio(audioEl, resolveTitle(), resolvePageUrl(), false);
             if (audioEl === dockAudio && canContinueFromDock()) {
               window.setTimeout(function () {
@@ -496,6 +560,7 @@
         }
 
         state = loadState();
+        listenedMap = loadListenedMap();
         dismissedUntilPlay = loadDismissedFlag();
         sessionStarted = loadSessionStartedFlag();
         if (state && !isLikelyAudioUrl(state.src)) {

@@ -59,7 +59,7 @@ permalink: /podcast/
       {% if item_audio_url != "" %}
       {% assign rendered_count = rendered_count | plus: 1 %}
       {% assign rendered_rank = rendered_total | minus: rendered_count | plus: 1 %}
-      <article class="podcast-spotify-item">
+      <article class="podcast-spotify-item" data-podcast-episode-item data-podcast-episode-src="{{ item_audio_url | relative_url }}">
         <div class="podcast-spotify-rank" aria-hidden="true">{{ rendered_rank }}</div>
 
         <a class="podcast-spotify-cover" href="{{ item.url | relative_url }}" aria-label="Ir al episodio {{ item.title }}">
@@ -92,6 +92,7 @@ permalink: /podcast/
           {% if item.duration %}
             <span class="podcast-spotify-duration">{{ item.duration }}</span>
           {% endif %}
+          <span class="podcast-spotify-listened" data-podcast-listened-indicator hidden>Reproducido</span>
           <a
             class="pill is-filled podcast-spotify-play"
             href="{{ item_audio_url | relative_url }}"

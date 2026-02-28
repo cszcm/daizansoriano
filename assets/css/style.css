@@ -879,6 +879,10 @@ img {
   box-shadow: var(--shadow-lift);
 }
 
+.podcast-spotify-item.is-listened {
+  border-color: rgba(45, 94, 91, 0.28);
+}
+
 .podcast-spotify-rank {
   font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
   color: var(--muted);
@@ -957,12 +961,30 @@ img {
   justify-content: center;
 }
 
+.podcast-spotify-play.is-listened:not(.is-playing) {
+  background: rgba(45, 94, 91, 0.14);
+  border-color: rgba(45, 94, 91, 0.34);
+  color: var(--accent-strong);
+}
+
 .podcast-spotify-play.is-active {
   box-shadow: 0 0 0 2px rgba(45, 94, 91, 0.24);
 }
 
 .podcast-spotify-play.is-playing {
   background: var(--accent);
+}
+
+.podcast-spotify-listened {
+  font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  border: 1px solid rgba(45, 94, 91, 0.28);
+  border-radius: 999px;
+  padding: 0.3rem 0.62rem;
+  background: rgba(45, 94, 91, 0.08);
 }
 
 .xxm-cover {
