@@ -3,55 +3,29 @@ layout: default
 title: "Inicio"
 ---
 
-{% assign audio_items = site.podcast | concat: site.posts | sort: "date" | reverse %}
-{% assign featured_audio_url = "" %}
-{% assign featured_audio_item = nil %}
-{% for item in audio_items %}
-{% assign item_audio_url = "" %}
-{% if item.audio_url %}
-{% assign item_audio_url = item.audio_url %}
-{% else %}
-{% if item.collection == "posts" %}
-{% assign item_audio_rel = item.path | remove_first: "_posts/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
-{% else %}
-{% assign item_audio_rel = item.path | remove_first: "_podcast/" | replace: ".markdown", ".mp3" | replace: ".md", ".mp3" %}
-{% endif %}
-{% assign item_audio_path = "/audio/" | append: item_audio_rel %}
-{% for static_file in site.static_files %}
-{% if static_file.path == item_audio_path %}
-{% assign item_audio_url = item_audio_path %}
-{% break %}
-{% endif %}
-{% endfor %}
-{% endif %}
-{% if item_audio_url != "" %}
-{% assign featured_audio_item = item %}
-{% assign featured_audio_url = item_audio_url %}
-{% break %}
-{% endif %}
-{% endfor %}
+{% assign blog_items = site.posts | sort: "date" | reverse %}
+{% assign featured_post = blog_items | first %}
 
-{% if featured_audio_item and featured_audio_url != "" %}
-{% assign podcast_web_image = site.podcast_meta.web_image | default: '/assets/daizan.jpg' %}
-{% assign featured_audio_image = featured_audio_item.image | default: podcast_web_image %}
-{% if featured_audio_image == '/assets/logo.png' %}
-{% assign featured_audio_image = podcast_web_image %}
+{% if featured_post %}
+{% assign featured_post_image = featured_post.image | default: '/assets/daizan.jpg' %}
+{% if featured_post_image == '/assets/logo.png' %}
+{% assign featured_post_image = '/assets/daizan.jpg' %}
 {% endif %}
-{% if featured_audio_image contains '://' %}
-{% assign featured_audio_image_url = featured_audio_image %}
+{% if featured_post_image contains '://' %}
+{% assign featured_post_image_url = featured_post_image %}
 {% else %}
-{% assign featured_audio_image_url = featured_audio_image | relative_url %}
+{% assign featured_post_image_url = featured_post_image | relative_url %}
 {% endif %}
 
-<section class="home-latest-audio">
-  <div class="home-latest-audio__media">
-    <a href="{{ featured_audio_item.url | relative_url }}" aria-label="Ir al episodio {{ featured_audio_item.title }}">
-      {% if featured_audio_image == '/assets/daizan.jpg' %}
+<section class="home-featured-post">
+  <div class="home-featured-post__media">
+    <a href="{{ featured_post.url | relative_url }}" aria-label="Ir a la entrada {{ featured_post.title }}">
+      {% if featured_post_image == '/assets/daizan.jpg' %}
       <img
         src="{{ '/assets/daizan-264.webp' | relative_url }}"
         srcset="{{ '/assets/daizan-132.webp' | relative_url }} 132w, {{ '/assets/daizan-264.webp' | relative_url }} 264w"
         sizes="132px"
-        alt="Portada de {{ featured_audio_item.title }}"
+        alt="Imagen de la entrada {{ featured_post.title }}"
         width="132"
         height="132"
         loading="eager"
@@ -59,45 +33,34 @@ title: "Inicio"
         decoding="async"
       >
       {% else %}
-      <img src="{{ featured_audio_image_url }}" alt="Portada de {{ featured_audio_item.title }}" width="132" height="132" loading="eager" fetchpriority="high" decoding="async">
+      <img src="{{ featured_post_image_url }}" alt="Imagen de la entrada {{ featured_post.title }}" width="132" height="132" loading="eager" fetchpriority="high" decoding="async">
       {% endif %}
     </a>
   </div>
-  <div class="home-latest-audio__content">
-    <p class="home-latest-audio__kicker">Último audio</p>
-    <h2>{{ featured_audio_item.title }}</h2>
+  <div class="home-featured-post__content">
+    <p class="home-featured-post__kicker">Última entrada</p>
+    <h2>{{ featured_post.title }}</h2>
     <p class="post-meta">
-      {{ featured_audio_item.date | date: "%d %b %Y" }}
-      {% if featured_audio_item.categories %} · {{ featured_audio_item.categories | join: ", " }}{% endif %}
-      {% if featured_audio_item.duration %} · {{ featured_audio_item.duration }}{% endif %}
+      {{ featured_post.date | date: "%d %b %Y" }}
+      {% if featured_post.categories %} · {{ featured_post.categories | join: ", " }}{% endif %}
     </p>
-    <p class="home-latest-audio__summary">
-      {% if featured_audio_item.description %}
-        {{ featured_audio_item.description | strip_html | strip_newlines | truncate: 180 }}
+    <p class="home-featured-post__summary">
+      {% if featured_post.description %}
+        {{ featured_post.description | strip_html | strip_newlines | truncate: 180 }}
       {% else %}
-        {{ featured_audio_item.excerpt | strip_html | strip_newlines | truncate: 180 }}
+        {{ featured_post.excerpt | strip_html | strip_newlines | truncate: 180 }}
       {% endif %}
     </p>
-    <div class="home-latest-audio__actions">
-      <a
-        class="pill is-filled"
-        href="{{ featured_audio_url | relative_url }}"
-        data-global-audio-trigger
-        data-audio-src="{{ featured_audio_url | relative_url }}"
-        data-audio-title="{{ featured_audio_item.title | escape }}"
-        data-audio-page-url="{{ featured_audio_item.url | relative_url }}"
-        aria-label="Escuchar ahora {{ featured_audio_item.title }} en el mini reproductor"
-      >Escuchar ahora</a>
-      <a class="pill" href="{{ featured_audio_item.url | relative_url }}">Ver episodio</a>
+    <div class="home-featured-post__actions">
+      <a class="pill is-filled" href="{{ featured_post.url | relative_url }}">Leer entrada</a>
     </div>
   </div>
 </section>
 {% endif %}
 
 <section class="post-list">
-  {% assign blog_items = site.posts | sort: "date" | reverse %}
   <div class="post-grid">
-    {% for post in blog_items %}
+    {% for post in blog_items offset:1 %}
       <article class="post-card">
         <p class="post-meta">{{ post.date | date: "%d %b %Y" }}{% if post.categories %} · {{ post.categories | join: ", " }}{% endif %}</p>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
