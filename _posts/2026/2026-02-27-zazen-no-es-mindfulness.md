@@ -3,10 +3,13 @@ layout: post
 title: Zazen no es mindfulness
 subtitle: Práctica sin meta
 description: Una reflexión sobre las diferencias entre mindfulness y zazen en la tradición Soto Zen.
+image: /assets/images/2026/zafu.png
 date: 2026-02-27 09:00:00 +0100
 categories: [Practica]
 tags: [zazen, mindfulness, soto zen, despertar]
 ---
+
+![Zafu y zafutón preparados para la práctica de zazen.](/assets/images/2026/zafu.png)
 
 Hoy en día el mindfulness ha penetrado con éxito en hospitales, colegios, empresas y aplicaciones móviles. Se presenta como una herramienta eficiente para gestionar el estrés y encontrar equilibrio.
 
