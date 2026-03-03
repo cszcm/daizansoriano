@@ -25,7 +25,7 @@ permalink: /lista-correo/
         <div class="clear">&nbsp;</div>
       </div>
       <div class="row">
-        <div class="col"><label>Correo electrónico: </label><input name="email1" id="email1" type="email" /></div>
+        <div class="col"><label>Correo electrónico: <span class="required">*</span></label><input name="email1" id="email1" type="email" required="" /></div>
         <div class="col">&nbsp;</div>
         <div class="clear">&nbsp;</div>
       </div>
@@ -56,6 +56,16 @@ permalink: /lista-correo/
        * @return void
        */
       function lockMultipleSubmissions(event) {
+        var emailField = document.getElementById("email1");
+        if (emailField && !emailField.checkValidity()) {
+          event.preventDefault();
+          if (feedbackEl) {
+            feedbackEl.textContent = "Introduce un correo electrónico válido.";
+            feedbackEl.classList.add("is-visible");
+          }
+          emailField.focus();
+          return;
+        }
         if (formHasAlreadyBeenSent) {
           console.log("Form is locked because it has already been sent.");
           event.preventDefault();
