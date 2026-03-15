@@ -9,13 +9,14 @@ tags: [dogen, eihei shingi, serie dogen, sangha]
 series: Dogen para practicantes de hoy
 series_slug: dogen-para-practicantes-de-hoy
 series_order: 0
+published: false
 ---
 
-Hay textos espirituales que parecen dirigirse a un tiempo y a un mundo ya desaparecidos. A primera vista, el *Eihei Shingi* de Dogen podría parecer uno de ellos: un conjunto de normas monásticas escritas para organizar la vida en un monasterio japonés del siglo XIII. Sin embargo, una lectura atenta revela algo muy distinto. Más que un manual de protocolo religioso, este texto es una reflexión exigente sobre cómo llevar nuestra práctica a lo cotidiano.
+Hay textos espirituales que parecen dirigirse a un tiempo y a un mundo ya desaparecidos. A primera vista, el _Eihei Shingi_ de Dogen podría parecer uno de ellos: un conjunto de normas monásticas escritas para organizar la vida en un monasterio japonés del siglo XIII. Sin embargo, una lectura atenta revela algo muy distinto. Más que un manual de protocolo religioso, este texto es una reflexión exigente sobre cómo llevar nuestra práctica a lo cotidiano.
 
 Eso es precisamente lo que vuelve actual a Dogen. No porque debamos copiar sin más sus formas, sino porque sigue viendo con claridad problemas que no han desaparecido: la separación entre lo espiritual y lo ordinario, la escasa valoración del trabajo invisible, la dificultad de sostener una disciplina compartida, la tendencia a consumir sin gratitud, la confusión entre estudiar y acumular ideas, la incapacidad de recibir corrección sin defender el ego y la ilusión de que la organización comunitaria es algo secundario.
 
-La serie que aquí se presenta parte de esa convicción. No ofrece una traducción ni un resumen lineal del *Eihei Shingi*. Tampoco busca reconstruir de manera erudita el contexto histórico de la obra. Su intención es otra: releer algunos de sus núcleos más vivos para practicantes y comunidades de hoy. En lugar de preguntarse cómo reproducir un monasterio medieval, estos textos preguntan qué principios intentaba proteger Dogen y cómo podrían traducirse de manera sobria, lúcida y practicable en una sangha contemporánea.
+La serie que aquí se presenta parte de esa convicción. No ofrece una traducción ni un resumen lineal del _Eihei Shingi_. Tampoco busca reconstruir de manera erudita el contexto histórico de la obra. Su intención es otra: releer algunos de sus núcleos más vivos para practicantes y comunidades de hoy. En lugar de preguntarse cómo reproducir un monasterio medieval, estos textos preguntan qué principios intentaba proteger Dogen y cómo podrían traducirse de manera sobria, lúcida y practicable en una sangha contemporánea.
 
 Los seis artículos recorren, desde distintos ángulos, una misma intuición de fondo: la práctica no sucede aparte de la vida común, sino dentro de ella. En Dogen, cocinar, sentarse, comer, estudiar, respetar una transmisión y asumir responsabilidades no son actividades periféricas alrededor del despertar. Son algunos de sus lugares de verificación.
 

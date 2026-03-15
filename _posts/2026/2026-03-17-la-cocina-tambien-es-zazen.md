@@ -1,37 +1,31 @@
 ---
 layout: post
-title: La cocina también es zazen
-subtitle: Cómo leer a Dogen cuando el trabajo invisible sostiene toda la práctica
-description: Una lectura contemporánea de Dogen sobre la cocina, el trabajo invisible y la dignidad espiritual de las tareas que sostienen una sangha.
+title: "La cocina también es zazen"
+subtitle: "Cuando el trabajo invisible sostiene la práctica"
+description: "Una lectura contemporánea de Dogen sobre la cocina, el trabajo invisible y la dignidad espiritual de las tareas que sostienen una sangha."
 date: 2026-03-17 09:00:00 +0000
 categories: [Practica]
 tags: [dogen, eihei shingi, serie dogen, tenzo, sangha]
-series: Dogen para practicantes de hoy
+series: "Dogen para practicantes de hoy"
 series_slug: dogen-para-practicantes-de-hoy
 series_order: 1
 published: false
 ---
 
-*Texto original inspirado en los temas centrales del* Eihei Shingi *atribuido a Dogen. No es una traducción ni un resumen lineal de la obra.*
+*Texto inspirado en las enseñanzas sobre el tenzo recogidas en el Eihei Shingi de Dogen.*
 
-En la mirada de Dogen, cocinar no es una tarea secundaria, sino una prueba de madurez espiritual. Este texto relee esa intuición para una sangha contemporánea.
+En la tradición Soto Zen, cocinar no es una tarea secundaria, sino una prueba de madurez espiritual. Este texto relee esa intuición para una sangha contemporánea a partir de un malentendido especialmente persistente en la vida espiritual: creer que unas actividades son verdaderamente sagradas y otras meramente funcionales. Meditar, escuchar una enseñanza o participar en una ceremonia parecería pertenecer al centro de la práctica, mientras que cocinar, limpiar o gestionar suministros quedaría relegado a una periferia menos noble. El primer gran gesto de Dogen consiste en negar esa separación.
 
-Entre los muchos malentendidos que acompañan a la vida espiritual, hay uno especialmente persistente: creer que unas actividades son verdaderamente sagradas y otras meramente funcionales. Meditar, escuchar una enseñanza o participar en una ceremonia parecería pertenecer al centro de la práctica. Cocinar, limpiar, organizar provisiones o atender detalles materiales quedaría relegado a una periferia menos noble. El primer gran gesto de Dogen consiste en negar esa separación.
+Cuando escribe sobre el *tenzo*, el responsable de la cocina monástica, no está ofreciendo solo instrucciones operativas. En el *Tenzo Kyokun*, uno de sus textos más conocidos, insiste en que esta función exige una mente tan clara y comprometida como la de cualquier responsable de la práctica. Está corrigiendo una visión entera del camino al recordarnos que el despertar no existe al margen de las condiciones materiales que sostienen la vida común. La cocina no es el reverso de la práctica; es uno de sus lugares decisivos.
 
-Cuando escribe sobre el tenzo, el responsable de la cocina monástica, no está ofreciendo solo instrucciones para que un monasterio funcione bien. Está corrigiendo una visión entera del camino. Nos dice, en esencia, que el despertar no existe al margen de las condiciones materiales que sostienen la vida común. La cocina no es el reverso de la práctica. Es uno de sus lugares decisivos.
+Dogen percibe que el desprecio por el trabajo invisible no es solo un defecto organizativo, sino una deformación espiritual. En cualquier comunidad tendemos a valorar lo que otorga prestigio, dejando que lo silencioso se dé por supuesto. Sin embargo, cuando esas tareas se descuidan, toda la comunidad se resiente. El Dharma no flota en el vacío: se encarna en el cuidado de lo pequeño.
 
-El problema humano que este capítulo aborda sigue plenamente vigente. En cualquier comunidad, religiosa o no, tendemos a valorar más aquello que se ve, que se oye o que otorga prestigio. Lo silencioso y repetitivo se da por supuesto. Rara vez se admira a quien deja la sala limpia, calcula las cantidades justas para todos o llega antes que nadie para preparar el lugar común. Y, sin embargo, cuando esas tareas se hacen mal o se descuidan, toda la comunidad se resiente. Lo que Dogen percibe es que el desprecio por el trabajo invisible no es solo un defecto organizativo: es una deformación espiritual.
+Esta visión nos lleva directamente al corazón de la interdependencia. No somos islas practicando en aislamiento; la mente del que cocina y la mente del que medita están unidas por hilos invisibles pero muy reales. La actitud con la que se manipulan los alimentos —la presencia, el respeto y la ausencia de queja— se manifiesta inevitablemente en lo que se prepara. Cocinar con una mente agitada o resentida es ofrecer un alimento que carece de la nutrición del Dharma. Por el contrario, cuando el *tenzo* toca los ingredientes con una mente estable y ecuánime, cada gesto se convierte en una forma de ofrecer la práctica a toda la comunidad.
 
-Por eso la actitud que busca formar en el tenzo no es simplemente eficiencia. Quiere otra cosa: una mente estable, ecuánime y respetuosa, capaz de tocar los ingredientes y los utensilios sin prisa, sin fastidio y sin vanidad. La cocina aparece como una escuela de precisión interior. La calidad de la atención se expresa en lo que se hace con las manos. Preparar una comida no es «hacer algo mientras tanto». Es revelar el tipo de mente con el que uno habita la Vía.
+Aunque muchos detalles de estos textos pertenecen a un contexto monástico medieval, su núcleo vivo permanece intacto: ninguna tarea necesaria para el bien común es espiritualmente inferior. En una cultura que premia la visibilidad y el reconocimiento inmediato, esta intuición adquiere una vigencia radical. Una comunidad empieza a vaciarse cuando el trabajo común se considera una carga para algunas personas y un derecho para otras.
 
-Buena parte de los detalles concretos del texto pertenecen, desde luego, a un contexto monástico medieval. Los horarios, la distribución de funciones, el entorno material del templo y la articulación ritual de la cocina no pueden trasladarse sin más a una sangha moderna. Sería absurdo imitar externamente ese mundo sin comprender lo que intentaba proteger. Y precisamente por eso la lectura contemporánea resulta fecunda: al retirar la corteza histórica, aparece el núcleo vivo.
+Practicar hoy este capítulo exige dignificar de verdad las tareas que sostienen la práctica compartida. En una comunidad moderna, *tenzo* es toda persona que custodia las condiciones materiales del despertar común: quien ordena los cojines, prepara la sala, gestiona un calendario o limpia sin rastro de teatralidad. Allí también se expresa el Dharma.
 
-Ese núcleo podría formularse así: ninguna tarea necesaria para el bien común es espiritualmente inferior. Todo depende de la calidad de presencia, de la ausencia de resentimiento y del cuidado que pongamos en lo pequeño. Esta intuición no ha perdido vigencia; probablemente la ha ganado. Vivimos en una cultura que premia la visibilidad y minimiza lo que no produce reconocimiento inmediato. En una sangha, esa lógica puede ser devastadora. Una comunidad empieza a vaciarse cuando el trabajo común se considera una carga para algunos y un derecho adquirido para otros.
+Dogen también nos invita a una relación justa con la escasez y la abundancia: no despreciar lo humilde ni exaltarse con lo excelente. Una comunidad madura no mide la dignidad de su práctica por la sofisticación de sus medios. Puede haber mucho ego en una estética impecable y mucho Dharma en una sobriedad bien cuidada.
 
-Practicar hoy este capítulo no exige recrear una cocina monástica tradicional. Exige dignificar de verdad las tareas que sostienen la práctica compartida. Cocinar en un retiro, ordenar cojines, preparar una sala, gestionar un calendario, responder con cuidado a quien pregunta por primera vez, limpiar sin teatralidad ni queja: todo eso forma parte del camino. Quizá incluso convenga ampliar el sentido del tenzo. En una comunidad moderna, tenzo es toda persona que cuida las condiciones materiales del despertar común.
-
-Hay otro punto importante. Dogen no solo pide trabajo cuidadoso; pide también una relación justa con la escasez y la abundancia. No despreciar lo humilde ni exaltarse con lo excelente. No actuar de manera diferente según la calidad de los recursos. Esa enseñanza vale hoy más allá de la cocina. Una comunidad madura no mide la dignidad de su práctica por la belleza de su sala, la sofisticación de sus retiros o la abundancia de sus medios. Puede haber mucho ego en una estética impecable, y mucho Dharma en una sobriedad bien cuidada.
-
-Tal vez la pregunta práctica que este artículo deja a una sangha contemporánea sea muy simple: quién está haciendo el trabajo invisible y con qué espíritu se hace. Si nadie lo cuida, la comunidad se sostiene sobre una ficción. Si siempre recae sobre los mismos, la comunidad se alimenta de una injusticia. Si se hace con resentimiento, termina contaminando el conjunto. Pero si ese trabajo se reconoce, se comparte y se ofrece con atención, entonces la estructura cotidiana deja de ser un estorbo para la práctica y se convierte en una de sus expresiones más honestas.
-
-En ese sentido, la cocina es una imagen de toda la vida común. Lo importante no es solo que haya alimento, sino cómo se prepara, cómo se reparte y desde qué mente se ofrece. Dogen no idealiza las tareas humildes por romanticismo. Las toma en serio porque sabe que el despertar solo se vuelve creíble cuando toca la materia de la vida.
+Al final, la pregunta que este legado nos plantea es sencilla y exigente a la vez: quién está haciendo el trabajo invisible y con qué espíritu se realiza. Cuando esas tareas se llevan a cabo con atención y se reconocen como parte integral de la Vía, la estructura cotidiana deja de ser un estorbo y se convierte en su expresión más honesta. Lo importante no es solo que haya alimento, sino cómo se reparte y desde qué mente se ofrece, porque el despertar solo se vuelve creíble cuando toca, con delicadeza y rigor, la materia misma de la vida cotidiana.
