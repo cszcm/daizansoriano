@@ -3,7 +3,7 @@ layout: post
 title: Dogen para practicantes de hoy
 subtitle: Introducción general a una serie de lecturas contemporáneas del Eihei Shingi
 description: Una introducción a seis lecturas contemporáneas del Eihei Shingi para traducir a Dogen a la vida y la sangha de hoy.
-date: 2026-03-16 09:00:00 +0000
+date: 2026-03-14 09:00:00 +0000
 categories: [Estudio]
 tags: [dogen, eihei shingi, serie dogen, sangha]
 series: Dogen para practicantes de hoy
