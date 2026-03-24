@@ -33,7 +33,7 @@ xinxinming_meta:
   cover_image: "/assets/images/2025/portada_xinxinming.png"
   cover_alt: "Portada del libro Xin Xin Ming de Daizan Soriano"
 timezone: UTC
-pwa_sw_version: v0.5.4
+pwa_sw_version: v0.5.5
 goatcounter:
   code: "daizansoriano"
 plugins:
