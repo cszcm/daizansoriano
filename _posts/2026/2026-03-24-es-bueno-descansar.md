@@ -6,7 +6,6 @@ description: Una reflexión sobre el descanso en la tradición zen, no como paus
 date: 2026-03-24 09:00:00 +0100
 categories: [Practica]
 tags: [descanso, zazen, practica, identidad, soto zen]
-draft: false
 ---
 
 Hay una historia muy conocida, casi un mantra en los manuales de liderazgo y productividad, sobre dos leñadores que compiten por ver quién corta más leña en un día. Uno de ellos trabaja sin parar, sudando cada minuto, mientras que el otro desaparece durante una hora a mitad de la jornada. Al final del día, el que se tomó el respiro ha cortado mucho más que el que no se detuvo. Cuando el primero, agotado y frustrado, le pregunta cómo lo ha hecho, el segundo responde con calma: «Es que, mientras tú seguías cortando, yo me detuve a afilar la sierra».
