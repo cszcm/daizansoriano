@@ -2,8 +2,8 @@
 layout: podcast
 title: "La Vía del Bodhisattva"
 date: 2021-10-16 21:13:50 +0000
-categories: ["podcast"]
-tags: ["podcast", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, soto zen, dharma]
 description: "Teishô ((Los teishôs son sesiones de enseñanza formal sobre el Dharma impartidas por el maestro zen a sus discípulos y estudiantes durante los retiros intensivos (sesshin) o durante la vida cotidiana en el templo. Los temas suelen ser comen…"
 audio_url: "/assets/mp3/2021/2021-10-16-La_Via_del_Bodhisattva.mp3"
 audio_type: "audio/mpeg"

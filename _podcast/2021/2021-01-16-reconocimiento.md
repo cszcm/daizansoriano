@@ -2,8 +2,8 @@
 layout: podcast
 title: "Reconocimiento"
 date: 2021-01-16 17:10:00 +0000
-categories: ["podcast"]
-tags: ["podcast", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, soto zen, dharma]
 description: "Kusen extraído del libro Fluyendo en el Presente Eterno de Dokushô Villalba. Grabación realizada en el Dojo Zen Kômyô de Alicante [do_widget id=powerpress_subscribe-2]"
 audio_url: "/assets/mp3/2021/2021-01-16-Reconocimiento-Fluyendo-en-el-eterno-presente.mp3"
 audio_type: "audio/mpeg"

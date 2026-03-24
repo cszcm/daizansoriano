@@ -2,8 +2,8 @@
 layout: podcast
 title: "Meditación guiada: atención a los contenidos mentales."
 date: 2021-04-25 20:28:45 +0000
-categories: ["podcast"]
-tags: ["podcast", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, soto zen, dharma]
 description: "Este fin de semana se ha impartido el cuarto módulo del curso de profundización de la Escuela de Atención Plena , en el que he participado como instructor y en el que entre otras actividades he dirigido esta meditación guiada que comparto e…"
 audio_url: "/assets/mp3/2021/2021-04-25-meditacionguiadacontenidosmentales.mp3"
 audio_type: "audio/mpeg"

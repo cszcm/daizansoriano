@@ -2,8 +2,8 @@
 layout: podcast
 title: "Continuación: Los Cinco Obstáculos, el Rechazo"
 date: 2025-03-22 08:19:31 +0000
-categories: ["podcast"]
-tags: ["podcast", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, soto zen, dharma]
 description: "Sesión de enseñanza realizada en el dojo zen de Elche en el contexto del Curso de Introducción a la Meditación Zen II el 14 de marzo de 2025."
 audio_url: "/assets/mp3/2025/2025-03-22-Curso_Introduccion_al_Zen_II_Los_Cinco_Obstaculos_Rechazo.mp3"
 audio_type: "audio/mpeg"

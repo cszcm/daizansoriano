@@ -5,8 +5,8 @@ subtitle: "Prefacio del libro Camino Medio"
 description: "Fragmento del libro en preparación Camino Medio sobre la forma de una sangha laica, religiosa y secular en el mundo contemporáneo."
 duration: "7:56"
 date: 2026-02-08 09:00:00 +0100
-categories: ["Comunidad"]
-tags: ["libros", "sangha", "soto zen", "secularizacion", "camino medio"]
+categories: [Comunidad]
+tags: [libros, sangha, soto zen, secularizacion, camino medio]
 audio_length: 7622784
 ---
 

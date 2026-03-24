@@ -2,8 +2,8 @@
 layout: podcast
 title: "Kômyô – Estudia siempre con aplicación la Vía del Buda"
 date: 2021-12-10 05:28:00 +0000
-categories: ["podcast"]
-tags: ["podcast", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, soto zen, dharma]
 description: "Texto extraído del libro Kômyô. Clara Luz del maestro zen Dokushô Villalba leído en el dojo zen Kômyô de Alicante el viernes 3 de diciembre durante la práctica de zazen."
 audio_url: "/assets/mp3/2021/Komyo-Estudia-siempre-con-aplicacion-la-Via-del-Buddha.mp3"
 audio_type: "audio/mpeg"

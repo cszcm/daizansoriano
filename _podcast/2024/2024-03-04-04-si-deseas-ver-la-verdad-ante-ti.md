@@ -2,8 +2,8 @@
 layout: podcast
 title: "04. Si deseas ver la verdad ante ti"
 date: 2024-03-04 09:50:00 +0000
-categories: ["podcast"]
-tags: ["podcast", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, soto zen, dharma]
 description: " 欲 得 現 前 莫 存 順 逆 Si deseas ver la verdad ante ti, no tomes partido a fav…"
 audio_url: "/assets/mp3/2024/4.-Para-que-se-declare-ante-los-ojos.mp3"
 audio_type: "audio/mpeg"

@@ -2,8 +2,8 @@
 layout: podcast
 title: "Preguntas y respuestas retiro de acercamiento mayo 2021"
 date: 2021-05-09 16:30:36 +0000
-categories: ["podcast"]
-tags: ["podcast", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, soto zen, dharma]
 description: "La semana pasada tuve la oportunidad de dirigir el retiro de acercamiento en el templo Luz Serena y esta es la sesión de preguntas y respuestas que grabé durante el encuentro de la tarde."
 audio_url: "/assets/mp3/2021/2021-05-09-preguntasyrespuestasretirodeacercamientomayo2021.mp3"
 audio_type: "audio/mpeg"

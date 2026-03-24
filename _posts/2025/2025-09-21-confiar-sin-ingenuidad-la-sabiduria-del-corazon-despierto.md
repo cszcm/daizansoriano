@@ -5,8 +5,8 @@ subtitle: ""
 description: "Diferencia entre confianza incondicional y buenismo, y cómo cultivarla con discernimiento en la práctica."
 duration: "12:26"
 date: 2025-09-21 09:00:00 +0100
-categories: ["Practica"]
-tags: ["confianza", "buenismo", "compasion", "zazen", "discernimiento"]
+categories: [Practica]
+tags: [confianza, buenismo, compasion, zazen, discernimiento]
 audio_length: 11934336
 ---
 

@@ -2,8 +2,8 @@
 layout: podcast
 title: "Preguntas y respuestas retiro de primavera"
 date: 2021-04-06 11:44:06 +0000
-categories: ["podcast"]
-tags: ["podcast", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, soto zen, dharma]
 description: "En este audio encontrarás la sesión de preguntas y respuestas realizada durante el pasado retiro de introducción en el Templo Luz Serena ."
 audio_url: "/assets/mp3/2021/2021-04-06-2021-04-02_183222554editado.mp3"
 audio_type: "audio/mpeg"

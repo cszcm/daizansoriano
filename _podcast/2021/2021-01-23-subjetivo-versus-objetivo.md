@@ -2,8 +2,8 @@
 layout: podcast
 title: "Subjetivo versus objetivo"
 date: 2021-01-23 17:13:00 +0000
-categories: ["podcast"]
-tags: ["podcast", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, soto zen, dharma]
 description: "Kusen extraído del libro Fluyendo en el Presente Eterno de Dokushô Villalba. Grabación realizada para el Dojo Zen Kômyô de Alicante y el Dojo Zen de Murcia. [do_widget id=powerpress_subscribe-2]"
 audio_url: "/assets/mp3/2021/2021-01-23-Subjetivo-Vs-objetivo-Fluyendo-en-el-eterno-presente.mp3"
 audio_type: "audio/mpeg"

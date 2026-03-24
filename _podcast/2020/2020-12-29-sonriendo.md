@@ -2,8 +2,8 @@
 layout: podcast
 title: "Sonriendo"
 date: 2020-12-29 17:04:00 +0000
-categories: ["podcast"]
-tags: ["podcast", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, soto zen, dharma]
 description: "Kusen extraído del libro Fluyendo en el Presente Eterno de Dokushô Villalba . Grabación realizada en el Dojo Zen Kômyô de Alicante"
 audio_url: "/assets/mp3/2020/2020-12-29-Sonriendo-Fluyendo-en-el-Presente-Eterno.mp3"
 audio_type: "audio/mpeg"

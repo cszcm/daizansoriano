@@ -5,7 +5,7 @@ subtitle: ""
 description: "Cómo el sesgo de confirmación condiciona nuestra percepción y cómo zazen ayuda a verlo con claridad."
 duration: "6:43"
 date: 2025-08-21 09:00:00 +0100
-categories: ["Psicologia"]
+categories: [Psicologia]
 tags:
   [
     "sesgo cognitivo",

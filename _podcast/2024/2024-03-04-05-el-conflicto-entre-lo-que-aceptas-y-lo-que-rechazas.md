@@ -2,8 +2,8 @@
 layout: podcast
 title: "05. El conflicto entre lo que aceptas y lo que rechazas"
 date: 2024-03-04 10:55:00 +0000
-categories: ["podcast"]
-tags: ["podcast", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, soto zen, dharma]
 description: " 違 順 相 爭 是 爲 心 病 El conflicto entre lo que aceptas y lo que rechazas, en…"
 audio_url: "/assets/mp3/2024/5.-La-lucha-entre-el-deseo-y-el-rechazo.mp3"
 audio_type: "audio/mpeg"

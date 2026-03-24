@@ -5,8 +5,8 @@ subtitle: ""
 description: "Lectura crítica de Avatar y de cómo ciertas narrativas culturales normalizan la violencia como respuesta al conflicto."
 duration: "5:04"
 date: 2026-01-11 09:00:00 +0100
-categories: ["Sociedad"]
-tags: ["no violencia", "violencia", "cultura", "familia", "compasion"]
+categories: [Sociedad]
+tags: [no violencia, violencia, cultura, familia, compasion]
 audio_length: 4869120
 ---
 

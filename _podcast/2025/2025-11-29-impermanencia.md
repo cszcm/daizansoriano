@@ -2,8 +2,8 @@
 layout: podcast
 title: "Impermanencia"
 date: 2025-11-29 07:17:57 +0000
-categories: ["podcast"]
-tags: ["podcast", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, soto zen, dharma]
 description: "El pasado 15 de noviembre celebramos en el dojo zen de Alicante un retiro urbano dentro del programa de práctica de la Comunidad Soto Zen Camino Medio. En ese contexto grabé un audio que recoge la enseñanza compartida aquella tarde, nacida …"
 audio_url: "/assets/mp3/2025/2025-11-29-impermanencia.mp3"
 audio_type: "audio/mpeg"

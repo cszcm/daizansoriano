@@ -5,8 +5,8 @@ subtitle: "Las preguntas que abren la práctica"
 description: "Reflexión sobre la diferencia entre preguntas superficiales y preguntas profundas en la práctica Soto Zen."
 duration: "10:20"
 date: 2026-02-21 09:00:00 +0100
-categories: ["Practica"]
-tags: ["preguntas", "ensenanzas", "practica", "zazen", "soto zen"]
+categories: [Practica]
+tags: [preguntas, ensenanzas, practica, zazen, soto zen]
 ---
 
 En la tradición Soto Zen decimos: «Las enseñanzas son el dedo que señala la luna». Esta frase es un antídoto para no quedarnos pegados a las palabras, a los libros ni a las explicaciones, porque eso no es la realidad. Si te quedas mirando el dedo, te pierdes el cielo.

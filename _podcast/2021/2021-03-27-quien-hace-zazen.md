@@ -2,8 +2,8 @@
 layout: podcast
 title: "¿Quién hace zazen?"
 date: 2021-03-27 09:11:53 +0000
-categories: ["podcast"]
-tags: ["podcast", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, soto zen, dharma]
 description: "Kusen extraído del libro Fluyendo en el Presente Eterno del maestro zen Dokushô Villalba. Grabación realizada en el dojo zen Kômyô de Alicante el 26/03/2021 Cuándo nos sentamos en zazen, ¿quién se sienta en zazen? ¿quién hace qué? ¿qué sign…"
 audio_url: "/assets/mp3/2021/2021-03-27-QuienHaceZazenEditado.mp3"
 audio_type: "audio/mpeg"

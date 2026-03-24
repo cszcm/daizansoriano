@@ -2,8 +2,8 @@
 layout: podcast
 title: "Presentación del libro Camino Medio"
 date: 2026-03-15 10:00:00 +0000
-categories: ["podcast"]
-tags: ["podcast", "camino medio", "libro", "soto zen", "dharma"]
+categories: [podcast]
+tags: [podcast, camino medio, libro, soto zen, dharma]
 description: "Grabación de la presentación de Camino Medio, un recorrido por la práctica del budismo Soto Zen con una mirada actualizada para la vida contemporánea."
 audio_url: "/assets/mp3/2026/Presentacion_Camino_Medio.mp3"
 audio_type: "audio/mpeg"

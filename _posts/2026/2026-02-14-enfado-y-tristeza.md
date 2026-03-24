@@ -5,8 +5,8 @@ subtitle: "Practicar zazen cuando el corazón está enfadado o triste"
 description: "Reflexión sobre el enfado y la tristeza y cómo practicar cuando están presentes."
 duration: "5:10"
 date: 2026-02-14 09:00:00 +0100
-categories: ["Practica"]
-tags: ["emociones", "enfado", "tristeza", "zazen", "soto zen"]
+categories: [Practica]
+tags: [emociones, enfado, tristeza, zazen, soto zen]
 ---
 
 Hay momentos en la vida en los que a uno le gustaría que todo fuese más sencillo pero... la tristeza, el enfado y todo tipo de emociones difíciles aparecen en el día a día. Después de años sentándome, estudiando, acompañando a otras personas en la Vía, de pronto aparece una contracción interior que no encaja con la imagen que se espera de un maestro zen. ¿no debería estar ya más allá de todo esto?
