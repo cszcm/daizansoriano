@@ -23,12 +23,14 @@
               </span>
             </a>
 
-            <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-controls="site-nav" aria-expanded="false">
-              <svg class="nav-toggle__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
-                <path fill="currentColor" d="M4 6.5h16a1 1 0 0 0 0-2H4a1 1 0 0 0 0 2Zm16 5H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2Zm0 7H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2Z"/>
-              </svg>
-              <span class="nav-toggle__text">Menú</span>
-            </button>
+            <div class="header-controls">
+              <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-controls="site-nav" aria-expanded="false">
+                <svg class="nav-toggle__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M4 6.5h16a1 1 0 0 0 0-2H4a1 1 0 0 0 0 2Zm16 5H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2Zm0 7H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2Z"/>
+                </svg>
+                <span class="nav-toggle__text">Menú</span>
+              </button>
+            </div>
           </div>
 
           <nav class="site-nav" id="site-nav">
@@ -76,6 +78,192 @@
       </div>
       <audio data-global-audio-el preload="metadata" playsinline></audio>
     </aside>
+
+    <div class="accessibility-widget" data-accessibility-widget>
+      <button
+        class="accessibility-trigger"
+        type="button"
+        aria-label="Abrir accesibilidad"
+        aria-controls="accessibility-panel"
+        aria-expanded="false"
+        data-accessibility-trigger
+      >
+        <span class="accessibility-trigger__icon" aria-hidden="true">Aa</span>
+        <span class="accessibility-trigger__label">Accesibilidad</span>
+      </button>
+
+      <aside class="accessibility-panel" id="accessibility-panel" hidden data-accessibility-panel aria-label="Opciones de accesibilidad">
+        <div class="accessibility-panel__section">
+          <p class="accessibility-panel__title">Tema</p>
+          <div class="accessibility-choice-row" role="group" aria-label="Tema del sitio" data-theme-switcher>
+            <button class="accessibility-choice" type="button" data-theme-option="auto">Auto</button>
+            <button class="accessibility-choice" type="button" data-theme-option="light">Claro</button>
+            <button class="accessibility-choice" type="button" data-theme-option="dark">Oscuro</button>
+          </div>
+        </div>
+
+        <div class="accessibility-panel__section">
+          <div class="accessibility-setting">
+            <div>
+              <p class="accessibility-setting__label">Tipografia grande</p>
+              <p class="accessibility-setting__hint">Aumenta el tamano base del texto.</p>
+            </div>
+            <button class="accessibility-toggle" type="button" data-font-size-toggle aria-pressed="false">Desactivado</button>
+          </div>
+        </div>
+
+        <div class="accessibility-panel__section">
+          <div class="accessibility-setting">
+            <div>
+              <p class="accessibility-setting__label">Alto contraste</p>
+              <p class="accessibility-setting__hint">Refuerza color, bordes y legibilidad.</p>
+            </div>
+            <button class="accessibility-toggle" type="button" data-contrast-toggle aria-pressed="false">Desactivado</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script>
+      (function () {
+        var THEME_STORAGE_KEY = 'site-theme-preference';
+        var FONT_STORAGE_KEY = 'site-font-size-preference';
+        var CONTRAST_STORAGE_KEY = 'site-contrast-preference';
+        var root = document.documentElement;
+        var widget = document.querySelector('[data-accessibility-widget]');
+        var trigger = document.querySelector('[data-accessibility-trigger]');
+        var panel = document.querySelector('[data-accessibility-panel]');
+        var switcher = document.querySelector('[data-theme-switcher]');
+        var buttons = switcher ? switcher.querySelectorAll('[data-theme-option]') : [];
+        var fontButton = document.querySelector('[data-font-size-toggle]');
+        var contrastButton = document.querySelector('[data-contrast-toggle]');
+        var metaTheme = document.querySelector('meta[name="theme-color"]');
+        var mediaQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        if (!switcher || !buttons.length || !trigger || !panel || !fontButton || !contrastButton || !widget) return;
+
+        function getStoredValue(storageKey, allowedValues, fallbackValue) {
+          try {
+            var stored = window.localStorage.getItem(storageKey);
+            if (allowedValues.indexOf(stored) !== -1) return stored;
+          } catch (error) {
+            return fallbackValue;
+          }
+          return fallbackValue;
+        }
+
+        function resolvePreference() {
+          return getStoredValue(THEME_STORAGE_KEY, ['auto', 'light', 'dark'], 'auto');
+        }
+
+        function resolveFontSizePreference() {
+          return getStoredValue(FONT_STORAGE_KEY, ['normal', 'large'], 'normal');
+        }
+
+        function resolveContrastPreference() {
+          return getStoredValue(CONTRAST_STORAGE_KEY, ['normal', 'high'], 'normal');
+        }
+
+        function resolveTheme(preference) {
+          if (preference === 'dark') return 'dark';
+          if (preference === 'light') return 'light';
+          return mediaQuery && mediaQuery.matches ? 'dark' : 'light';
+        }
+
+        function setPanelOpen(isOpen) {
+          panel.hidden = !isOpen;
+          trigger.setAttribute('aria-expanded', String(isOpen));
+          trigger.setAttribute('aria-label', isOpen ? 'Cerrar accesibilidad' : 'Abrir accesibilidad');
+          widget.classList.toggle('is-open', isOpen);
+        }
+
+        function syncUi(preference, fontPreference, contrastPreference) {
+          var theme = resolveTheme(preference);
+          var isDark = theme === 'dark';
+          root.setAttribute('data-theme', theme);
+          root.setAttribute('data-theme-preference', preference);
+          root.setAttribute('data-font-size', fontPreference);
+          root.setAttribute('data-contrast', contrastPreference);
+          if (metaTheme) metaTheme.setAttribute('content', isDark ? '#111714' : '#f5f1e8');
+          Array.prototype.forEach.call(buttons, function (button) {
+            var isActive = button.getAttribute('data-theme-option') === preference;
+            button.classList.toggle('is-active', isActive);
+            button.setAttribute('aria-pressed', String(isActive));
+          });
+          fontButton.classList.toggle('is-active', fontPreference === 'large');
+          fontButton.setAttribute('aria-pressed', String(fontPreference === 'large'));
+          fontButton.textContent = fontPreference === 'large' ? 'Activado' : 'Desactivado';
+
+          contrastButton.classList.toggle('is-active', contrastPreference === 'high');
+          contrastButton.setAttribute('aria-pressed', String(contrastPreference === 'high'));
+          contrastButton.textContent = contrastPreference === 'high' ? 'Activado' : 'Desactivado';
+        }
+
+        function storeValue(storageKey, value) {
+          try {
+            window.localStorage.setItem(storageKey, value);
+          } catch (error) {
+            // Ignore storage access issues and still apply settings for this session.
+          }
+        }
+
+        function syncFromStorage() {
+          syncUi(resolvePreference(), resolveFontSizePreference(), resolveContrastPreference());
+        }
+
+        syncFromStorage();
+        setPanelOpen(false);
+
+        Array.prototype.forEach.call(buttons, function (button) {
+          button.addEventListener('click', function () {
+            storeValue(THEME_STORAGE_KEY, button.getAttribute('data-theme-option') || 'auto');
+            syncFromStorage();
+          });
+        });
+
+        fontButton.addEventListener('click', function () {
+          var nextValue = resolveFontSizePreference() === 'large' ? 'normal' : 'large';
+          storeValue(FONT_STORAGE_KEY, nextValue);
+          syncFromStorage();
+        });
+
+        contrastButton.addEventListener('click', function () {
+          var nextValue = resolveContrastPreference() === 'high' ? 'normal' : 'high';
+          storeValue(CONTRAST_STORAGE_KEY, nextValue);
+          syncFromStorage();
+        });
+
+        trigger.addEventListener('click', function () {
+          setPanelOpen(panel.hidden);
+        });
+
+        document.addEventListener('click', function (event) {
+          if (panel.hidden) return;
+          var insideWidget = event.target && event.target.closest ? event.target.closest('[data-accessibility-widget]') : null;
+          if (!insideWidget) setPanelOpen(false);
+        });
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && !panel.hidden) {
+            setPanelOpen(false);
+            trigger.focus();
+          }
+        });
+
+        if (mediaQuery) {
+          var handleSystemThemeChange = function () {
+            var storedTheme = getStoredValue(THEME_STORAGE_KEY, ['auto', 'light', 'dark'], 'auto');
+            if (storedTheme === 'light' || storedTheme === 'dark') return;
+            syncFromStorage();
+          };
+
+          if (typeof mediaQuery.addEventListener === 'function') {
+            mediaQuery.addEventListener('change', handleSystemThemeChange);
+          } else if (typeof mediaQuery.addListener === 'function') {
+            mediaQuery.addListener(handleSystemThemeChange);
+          }
+        }
+      })();
+    </script>
 
     <script>
       (function () {

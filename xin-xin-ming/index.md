@@ -45,9 +45,11 @@ permalink: /xin-xin-ming/
     <p class="post-meta">Versos disponibles: {{ versos.size }}</p>
     <div class="post-grid">
       {% for verso in versos limit: 6 %}
-        <article class="post-card">
-          <h3><a href="{{ verso.url | relative_url }}">{{ verso.title }}</a></h3>
-          <p>{{ verso.verse_text | truncate: 170 }}</p>
+        <article class="post-card post-card--linked">
+          <a class="post-card__link" href="{{ verso.url | relative_url }}">
+            <h3>{{ verso.title }}</h3>
+            <p>{{ verso.verse_text | truncate: 170 }}</p>
+          </a>
         </article>
       {% endfor %}
     </div>

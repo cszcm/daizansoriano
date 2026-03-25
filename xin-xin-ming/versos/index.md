@@ -20,9 +20,11 @@ permalink: /xin-xin-ming/versos/
   {% assign versos = site.xinxinming_versos | sort: "verse_no" %}
   <div class="post-grid">
     {% for verso in versos %}
-      <article class="post-card">
-        <h3><a href="{{ verso.url | relative_url }}">{{ verso.title }}</a></h3>
-        <p>{{ verso.verse_text | truncate: 170 }}</p>
+      <article class="post-card post-card--linked">
+        <a class="post-card__link" href="{{ verso.url | relative_url }}">
+          <h3>{{ verso.title }}</h3>
+          <p>{{ verso.verse_text | truncate: 170 }}</p>
+        </a>
       </article>
     {% endfor %}
   </div>

@@ -1,7 +1,42 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#f5f1e8" />
+<meta name="color-scheme" content="light dark" />
 <meta name="apple-mobile-web-app-title" content="Daizan Soriano" />
+<script>
+  (function () {
+    var themeStorageKey = 'site-theme-preference';
+    var fontStorageKey = 'site-font-size-preference';
+    var contrastStorageKey = 'site-contrast-preference';
+    var root = document.documentElement;
+    var metaTheme = document.querySelector('meta[name="theme-color"]');
+    var darkThemeColor = '#111714';
+    var lightThemeColor = '#f5f1e8';
+
+    function getStoredValue(storageKey, allowedValues, fallbackValue) {
+      try {
+        var stored = window.localStorage.getItem(storageKey);
+        if (allowedValues.indexOf(stored) !== -1) return stored;
+      } catch (error) {
+        // Ignore storage access issues and fall back to defaults.
+      }
+      return fallbackValue;
+    }
+
+    var themePreference = getStoredValue(themeStorageKey, ['auto', 'light', 'dark'], 'auto');
+    var fontPreference = getStoredValue(fontStorageKey, ['normal', 'large'], 'normal');
+    var contrastPreference = getStoredValue(contrastStorageKey, ['normal', 'high'], 'normal');
+    var theme = themePreference === 'dark' || (themePreference === 'auto' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+
+    root.setAttribute('data-theme', theme);
+    root.setAttribute('data-theme-preference', themePreference);
+    root.setAttribute('data-font-size', fontPreference);
+    root.setAttribute('data-contrast', contrastPreference);
+    if (metaTheme) {
+      metaTheme.setAttribute('content', theme === 'dark' ? darkThemeColor : lightThemeColor);
+    }
+  })();
+</script>
 {% if page.url == '/' or page.url == '' %}
 <link rel="preload" as="image" href="{{ '/assets/daizan-264.webp' | relative_url }}" imagesrcset="{{ '/assets/daizan-132.webp' | relative_url }} 132w, {{ '/assets/daizan-264.webp' | relative_url }} 264w" imagesizes="132px" />
 {% endif %}

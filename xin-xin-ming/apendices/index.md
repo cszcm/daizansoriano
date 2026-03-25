@@ -21,10 +21,12 @@ permalink: /xin-xin-ming/apendices/
   {% assign apendices = site.xinxinming | where: "xxm_is_appendix", true | sort: "xxm_order" %}
   <div class="post-grid">
     {% for apendice in apendices %}
-      <article class="post-card">
-        <p class="post-meta">Apéndice {{ apendice.xxm_order }}</p>
-        <h3><a href="{{ apendice.url | relative_url }}">{{ apendice.title }}</a></h3>
-        <p>{{ apendice.excerpt | strip_html | strip_newlines | truncate: 170 }}</p>
+      <article class="post-card post-card--linked">
+        <a class="post-card__link" href="{{ apendice.url | relative_url }}">
+          <p class="post-meta">Apéndice {{ apendice.xxm_order }}</p>
+          <h3>{{ apendice.title }}</h3>
+          <p>{{ apendice.excerpt | strip_html | strip_newlines | truncate: 170 }}</p>
+        </a>
       </article>
     {% endfor %}
   </div>
