@@ -44,10 +44,10 @@
 <link rel="preload" href="{{ '/assets/fonts/cormorant-garamond-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="{{ '/assets/fonts/zen-kaku-gothic-new-400-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="{{ '/assets/fonts/zen-kaku-gothic-new-500-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}" as="style" />
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
-<link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}" type="image/x-icon" />
-<link rel="apple-touch-icon" href="{{ '/assets/pwa/apple-touch-icon.png' | relative_url }}" />
+<link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.pwa_sw_version | default: 'v1' }}" as="style" />
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.pwa_sw_version | default: 'v1' }}" />
+<link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}?v={{ site.pwa_sw_version | default: 'v1' }}" type="image/x-icon" />
+<link rel="apple-touch-icon" href="{{ '/assets/pwa/apple-touch-icon.png' | relative_url }}?v={{ site.pwa_sw_version | default: 'v1' }}" />
 <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}?v={{ site.pwa_sw_version | default: 'v1' }}" />
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}" />
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }} Podcast" href="{{ '/podcast/feed.xml' | relative_url }}" />
@@ -57,7 +57,7 @@
   (function () {
     if (!('serviceWorker' in navigator)) return;
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('{{ '/sw.js' | relative_url }}', { scope: '{{ '/' | relative_url }}' }).catch(function () {
+      navigator.serviceWorker.register('{{ '/sw.js' | relative_url }}?v={{ site.pwa_sw_version | default: 'v1' }}', { scope: '{{ '/' | relative_url }}' }).catch(function () {
         // Ignore SW registration errors.
       });
     });
