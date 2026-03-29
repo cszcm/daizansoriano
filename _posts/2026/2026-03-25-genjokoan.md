@@ -36,7 +36,7 @@ Solo hay que entrar.
 
 Si te detienes un momento y miras la realidad desde las enseñanzas de Buda, empiezan a aparecer muchas distinciones: ves ignorancia y despertar, práctica, vida y muerte, budas y seres humanos.[^1]
 
-Pero si sigues estudiando el dharma un poco más profundamente, puede ocurrir algo distinto: las cosas ya no parecen tener un “yo” fijo. Y entonces esas diferencias se aflojan… ya no hay realmente ignorancia frente a despertar, ni seres separados, ni una vida opuesta a la muerte.[^2]
+Pero si sigues estudiando el dharma un poco más profundamente, puede ocurrir algo distinto: las cosas ya no parecen tener un «yo» fijo. Y entonces esas diferencias se aflojan… ya no hay realmente ignorancia frente a despertar, ni seres separados, ni una vida opuesta a la muerte.[^2]
 
 La vía de Buda no se queda en ninguna de estas dos formas de ver la realidad. Y sin embargo, en tu experiencia siguen apareciendo la vida y la muerte, la confusión y la claridad, seres vivientes y budas.[^3]
 
@@ -46,7 +46,7 @@ y las malas hierbas crecen aunque no las quieras.[^4]
 
 ### 2
 
-Mira cómo funciona habitualmente: cuando intentas entender las cosas desde el “yo y lo mío”, todo se complica y te pierdes.[^5]
+Mira cómo funciona habitualmente: cuando intentas entender las cosas desde el «yo y lo mío», todo se complica y te pierdes.[^5]
 
 Pero hay otra posibilidad: dejar que las cosas, tal como son, te muestren quién eres. Y entonces tu naturaleza original se aclara sin esfuerzo.[^6]
 
@@ -58,7 +58,7 @@ Incluso después de comprender algo importante, la práctica continúa abriéndo
 
 Y otras veces, incluso dentro de la confusión, seguimos girando sin darnos cuenta.[^10]
 
-Un buda no va pensando “soy un buda”.[^11]
+Un buda no va pensando «soy un buda».[^11]
 
 Y, sin embargo, su vida expresa eso de forma natural, momento a momento.[^12]
 
@@ -80,7 +80,7 @@ Soltar esa idea es dejar que la realidad misma te muestre quien eres realmente.[
 
 Cuando eso ocurre, cae la separación: cae tu propio cuerpomente y el cuerpomente de los demás.[^19]
 
-Entonces no queda rastro de “he alcanzado algo”,[^20]  
+Entonces no queda rastro de «he alcanzado algo»,[^20]  
 y ese no-rastro continúa sin fin.[^21]
 
 Al principio, cuando empiezas a buscar el Dharma, parece que estás lejos.[^22]
@@ -95,7 +95,7 @@ Pero si miras con atención, eres tú quien se está moviendo.[^25]
 
 De la misma manera, cuando la mente está confusa, parece que hay algo permanente dentro de ti.[^26]
 
-Pero si vuelves a este momento, con atención, se ve claramente: no hay nada sólido a lo que llamar “yo”.[^27]
+Pero si vuelves a este momento, con atención, se ve claramente: no hay nada sólido a lo que llamar «yo».[^27]
 
 ### 6
 
@@ -234,15 +234,15 @@ no se trata de saber, sino de vivirlo directamente.[^67]
 
 ## Notas
 
-[^1]: Si te fijas, es así como solemos mirar: separando, clasificando, poniendo nombre. Es útil… pero también estrecha la experiencia. Es el punto de partida: ver el mundo como “yo” frente a “lo otro”.
+[^1]: Si te fijas, es así como solemos mirar: separando, clasificando, poniendo nombre. Es útil… pero también estrecha la experiencia. Es el punto de partida: ver el mundo como «yo» frente a «lo otro».
 
-[^2]: No desaparecen las cosas. Lo que se afloja es la sensación de que hay un “yo” separado frente a ellas. Si nada tiene una esencia fija, las distinciones pierden solidez. Aquí es fácil quedarse atrapado en la idea del vacío.
+[^2]: No desaparecen las cosas. Lo que se afloja es la sensación de que hay un «yo» separado frente a ellas. Si nada tiene una esencia fija, las distinciones pierden solidez. Aquí es fácil quedarse atrapado en la idea del vacío.
 
-[^3]: La práctica no cambia la vida en algo distinto. Cambia la forma de estar en ella. La realidad no es "esto" ni "aquello", ni siquiera "ambas cosas". Es la coexistencia de la forma y el vacío. Hay budas y hay seres, pero ninguno es lo que parece.
+[^3]: La práctica no cambia la vida en algo distinto. Cambia la forma de estar en ella. La realidad no es «esto» ni «aquello», ni siquiera «ambas cosas». Es la coexistencia de la forma y el vacío. Hay budas y hay seres, pero ninguno es lo que parece.
 
 [^4]: La realidad no sigue nuestras preferencias. Y, aun así, estamos completamente dentro de ella. Las flores siguen cayendo… y eso duele. El despertar no anestesia. El despertar no te hace inmune al dolor ni a la preferencia; las flores siguen cayendo y eso te entristece.
 
-[^5]: Cuando todo pasa por el filtro del “yo”, aparece tensión: querer entender, controlar, asegurar… y ahí empieza el extravío. El error del esfuerzo egoico de intentar "alcanzar" el despertar es como intentar morderse los propios dientes. El "yo" no puede atrapar la realidad porque el "yo" es el obstáculo.
+[^5]: Cuando todo pasa por el filtro del «yo», aparece tensión: querer entender, controlar, asegurar… y ahí empieza el extravío. El error del esfuerzo egoico de intentar «alcanzar» el despertar es como intentar morderse los propios dientes. El «yo» no puede atrapar la realidad porque el «yo» es el obstáculo.
 
 [^6]: Aquí no se trata de entender más, sino de dejar de forzar. Y en ese dejar, algo se muestra por sí mismo. No eres tú quien practica; es la Realidad la que practica a través de ti. Tú eres el escenario, no el actor.
 
@@ -250,7 +250,7 @@ no se trata de saber, sino de vivirlo directamente.[^67]
 
 [^8]: A veces la comprensión se convierte en otra forma de agarrarse. Crees que has llegado… y eso mismo te cierra.
 
-[^9]: No hay un punto final. Incluso lo que parece claro sigue desplegándose. Incluso el despertar es algo de lo que hay que despertar. No hay un lugar donde puedas decir "ya está".
+[^9]: No hay un punto final. Incluso lo que parece claro sigue desplegándose. Incluso el despertar es algo de lo que hay que despertar. No hay un lugar donde puedas decir «ya está».
 
 [^10]: Muchas veces no vemos que estamos dando vueltas. Y eso también forma parte del camino.
 
@@ -262,7 +262,7 @@ no se trata de saber, sino de vivirlo directamente.[^67]
 
 [^14]: No es un conocimiento indirecto ni una representación. No estás ante una copia de la realidad, sino en contacto directo con ella. Más allá del reflejo: Un espejo está separado de lo que refleja. Eres el sonido de la campana, no el que la escucha.
 
-[^15]: Nuestra atención es como una linterna. Si iluminas el "yo", el mundo queda a oscuras. Si iluminas el mundo, el "yo" desaparece. No puedes verlo todo a la vez en la conciencia lineal. Cada vez que algo se revela, otra parte permanece velada. Ver esto también es parte de la sabiduría.
+[^15]: Nuestra atención es como una linterna. Si iluminas el «yo», el mundo queda a oscuras. Si iluminas el mundo, el «yo» desaparece. No puedes verlo todo a la vez en la conciencia lineal. Cada vez que algo se revela, otra parte permanece velada. Ver esto también es parte de la sabiduría.
 
 [^16]: No como una reflexión mental, sino como una atención directa a lo que está ocurriendo.
 
@@ -274,7 +274,7 @@ no se trata de saber, sino de vivirlo directamente.[^67]
 
 [^20]: No hay nadie que pueda apropiarse de lo que ocurre.
 
-[^21]: La práctica no se detiene ni se convierte en algo que poseer. El No-Rastro: La verdadera espiritualidad es invisible. Si alguien "parece" un santo, todavía huele a ego. El rastro desaparece porque ya no hay separación entre la persona y la vía.
+[^21]: La práctica no se detiene ni se convierte en algo que poseer. El No-Rastro: La verdadera espiritualidad es invisible. Si alguien «parece» un santo, todavía huele a ego. El rastro desaparece porque ya no hay separación entre la persona y la vía.
 
 [^22]: Al principio parece que hay algo fuera que hay que alcanzar.
 
@@ -282,19 +282,19 @@ no se trata de saber, sino de vivirlo directamente.[^67]
 
 [^24]: Es fácil confundir lo que se mueve cuando no miramos con atención.
 
-[^25]: Cambiar el punto de vista lo cambia todo. Usamos el "yo" como punto de referencia fijo y creemos que el mundo cambia. La práctica nos lleva a darnos cuenta de que el observador es el que está en flujo constante.
+[^25]: Cambiar el punto de vista lo cambia todo. Usamos el «yo» como punto de referencia fijo y creemos que el mundo cambia. La práctica nos lleva a darnos cuenta de que el observador es el que está en flujo constante.
 
-[^26]: La sensación de un “yo” fijo aparece cuando la mente está confusa.
+[^26]: La sensación de un «yo» fijo aparece cuando la mente está confusa.
 
-[^27]: Si miras de cerca, esa solidez no se encuentra. Al "regresar justo aquí y ahora", buscas ese "yo" sólido que sufre o desea y... no lo encuentras. Solo hay sensaciones pasando.
+[^27]: Si miras de cerca, esa solidez no se encuentra. Al «regresar justo aquí y ahora», buscas ese «yo» sólido que sufre o desea y... no lo encuentras. Solo hay sensaciones pasando.
 
-[^28]: Todo cambia, pero no de la forma lineal que solemos imaginar. La leña no es "causa" y la ceniza "efecto". Cada una es una expresión total y absoluta de la existencia en su propio momento.
+[^28]: Todo cambia, pero no de la forma lineal que solemos imaginar. La leña no es «causa» y la ceniza «efecto». Cada una es una expresión total y absoluta de la existencia en su propio momento.
 
-[^29]: Nuestra forma de pensar en “antes” y “después” es más rígida de lo que parece.
+[^29]: Nuestra forma de pensar en «antes» y «después» es más rígida de lo que parece.
 
-[^30]: Cada instante es completo en sí mismo. Cada instante es un universo cerrado. El "tú" de hace cinco minutos no es el "tú" de ahora. No hay un hilo que los una, salvo la memoria, que es otra idea presente.
+[^30]: Cada instante es completo en sí mismo. Cada instante es un universo cerrado. El «tú» de hace cinco minutos no es el «tú» de ahora. No hay un hilo que los una, salvo la memoria, que es otra idea presente.
 
-[^31]: No-Nacimiento / No-Muerte: Si no hay un "yo" que transita de la vida a la muerte, entonces no hay nadie que nazca ni nadie que muera. Solo hay vida ocurriendo y muerte ocurriendo.
+[^31]: No-Nacimiento / No-Muerte: Si no hay un «yo» que transita de la vida a la muerte, entonces no hay nadie que nazca ni nadie que muera. Solo hay vida ocurriendo y muerte ocurriendo.
 
 [^32]: La vida no necesita completarse: ya es completa ahora.
 
@@ -302,7 +302,7 @@ no se trata de saber, sino de vivirlo directamente.[^67]
 
 [^34]: Invierno y primavera no son una cosa convirtiéndose en otra.
 
-[^35]: Cada uno se manifiesta plenamente en su momento. El invierno no "trabaja" para que llegue la primavera. El invierno es perfecto siendo invierno. Tu confusión actual no es un paso previo a la claridad; es tu "posición-dharma" ahora mismo.
+[^35]: Cada uno se manifiesta plenamente en su momento. El invierno no «trabaja» para que llegue la primavera. El invierno es perfecto siendo invierno. Tu confusión actual no es un paso previo a la claridad; es tu «posición-dharma» ahora mismo.
 
 [^36]: Esta imagen apunta a algo delicado: presencia sin apropiación.
 
@@ -316,9 +316,9 @@ no se trata de saber, sino de vivirlo directamente.[^67]
 
 [^41]: Tampoco hay nada que bloquear.
 
-[^42]: Lo pequeño y lo inmenso no están separados. No hay grados de verdad. La totalidad del universo está en una respiración, igual que toda la luna está en una gota. Lo pequeño contiene lo grande. No es que la luna "quepa" porque se encoge, sino porque la naturaleza de la gota y la naturaleza de la luna son la misma.
+[^42]: Lo pequeño y lo inmenso no están separados. No hay grados de verdad. La totalidad del universo está en una respiración, igual que toda la luna está en una gota. Lo pequeño contiene lo grande. No es que la luna «quepa» porque se encoge, sino porque la naturaleza de la gota y la naturaleza de la luna son la misma.
 
-[^43]: La práctica no te "sacia" en el sentido de adormecerte. Te vuelve más sensible a lo que te falta.
+[^43]: La práctica no te «sacia» en el sentido de adormecerte. Te vuelve más sensible a lo que te falta.
 
 [^44]: Cuando se abre de verdad, aparece humildad, incluso sensación de no haber terminado.
 
@@ -326,7 +326,7 @@ no se trata de saber, sino de vivirlo directamente.[^67]
 
 [^46]: Pero eso es solo lo que alcanzamos a ver.
 
-[^47]: La realidad no se agota en nuestra percepción. El mundo que ves es real, pero no es el único mundo. Tu práctica te permite ver la "redondez" del mar, pero el mar tiene infinitas formas que no ves.
+[^47]: La realidad no se agota en nuestra percepción. El mundo que ves es real, pero no es el único mundo. Tu práctica te permite ver la «redondez» del mar, pero el mar tiene infinitas formas que no ves.
 
 [^48]: Siempre vemos desde un lugar concreto.
 
@@ -336,13 +336,13 @@ no se trata de saber, sino de vivirlo directamente.[^67]
 
 [^51]: Nunca estamos fuera de donde estamos.
 
-[^52]: Cada vida se realiza en sus propias condiciones. No puedes "salir" de la realidad para observarla. Estás inmerso en ella. No hay un lugar sagrado y otro profano. El cielo está donde el pájaro vuela.
+[^52]: Cada vida se realiza en sus propias condiciones. No puedes «salir» de la realidad para observarla. Estás inmerso en ella. No hay un lugar sagrado y otro profano. El cielo está donde el pájaro vuela.
 
-[^53]: No necesitas ir a otro lugar para practicar. El pez y el agua no son dos cosas; son "pez-agua". Tú y tu vida sois un solo acto.
+[^53]: No necesitas ir a otro lugar para practicar. El pez y el agua no son dos cosas; son «pez-agua». Tú y tu vida sois un solo acto.
 
 [^54]: Esperar a entenderlo todo es quedarse parado. Puedes leer mil libros sobre el cielo, pero si no vuelas, no sabes qué es el cielo.
 
-[^55]: Es en el paso donde aparece el camino. El camino no está debajo de tus pies; tus pies hacen el camino al pisar. No hay una "Vía de Buda" externa que debas encontrar.
+[^55]: Es en el paso donde aparece el camino. El camino no está debajo de tus pies; tus pies hacen el camino al pisar. No hay una «Vía de Buda» externa que debas encontrar.
 
 [^56]: No depende de una historia ni de un momento especial.
 
@@ -354,7 +354,7 @@ no se trata de saber, sino de vivirlo directamente.[^67]
 
 [^60]: No hay otro lugar al que ir.
 
-[^61]: El despertar no es una información que metes en la cabeza. Es un estado del ser que el intelecto no puede "poseer" ni explicar, igual que no puedes explicar el sabor del agua. No sabes cuándo despiertas, igual que no sabes en qué momento exacto te quedas dormido o en qué segundo exacto la flor se abre. Ocurre en la totalidad, no en la cronología.
+[^61]: El despertar no es una información que metes en la cabeza. Es un estado del ser que el intelecto no puede «poseer» ni explicar, igual que no puedes explicar el sabor del agua. No sabes cuándo despiertas, igual que no sabes en qué momento exacto te quedas dormido o en qué segundo exacto la flor se abre. Ocurre en la totalidad, no en la cronología.
 
 [^62]: La escena es completamente cotidiana.
 
