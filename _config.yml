@@ -1,7 +1,7 @@
 title: Daizan Soriano
 description: Un blog sobre práctica, vida y dharma
 url: https://daizansoriano.com
-baseurl: ""
+baseurl: ''
 lang: es
 image: /assets/logo.png
 markdown: kramdown
@@ -28,14 +28,14 @@ podcast_meta:
   subcategory: Religion
   explicit: false
 xinxinming_meta:
-  buy_url: "https://amzn.to/4l8X8iv"
-  buy_label: "Comprar en Amazon"
-  cover_image: "/assets/images/2025/portada_xinxinming.png"
-  cover_alt: "Portada del libro Xin Xin Ming de Daizan Soriano"
+  buy_url: https://amzn.to/4l8X8iv
+  buy_label: Comprar en Amazon
+  cover_image: /assets/images/2025/portada_xinxinming.png
+  cover_alt: Portada del libro Xin Xin Ming de Daizan Soriano
 timezone: UTC
-pwa_sw_version: v0.5.8
+pwa_sw_version: v0.5.9
 goatcounter:
-  code: "daizansoriano"
+  code: daizansoriano
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -43,24 +43,24 @@ sass:
   style: compressed
 defaults:
   - scope:
-      path: ""
+      path: ''
       type: posts
     values:
       layout: post
-      author: ""
+      author: ''
   - scope:
-      path: ""
+      path: ''
       type: podcast
     values:
       layout: podcast
       image: /assets/logo.png
   - scope:
-      path: ""
+      path: ''
       type: xinxinming
     values:
       layout: xxm-section
   - scope:
-      path: ""
+      path: ''
       type: xinxinming_versos
     values:
       layout: xxm-verse
