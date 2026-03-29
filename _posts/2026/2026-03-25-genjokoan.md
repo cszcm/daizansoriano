@@ -2,7 +2,7 @@
 layout: post
 title: Genjōkōan
 subtitle: Una reescritura contemporánea con notas para la práctica
-description: Una reescritura en español contemporáneo del Genjōkōan de Dōgen, acompañada de notas de lectura y práctica desde la tradición Soto Zen.
+description: Una reescritura en español contemporáneo https://daizansoriano.com/del Genjōkōan de Dōgen, acompañada de notas de lectura y práctica desde la tradición Soto Zen.
 date: 2026-03-25 09:00:00 +0100
 categories: [Practica]
 tags: [genjokoan, dogen, shobogenzo, zazen, practica, soto zen]
@@ -209,7 +209,7 @@ No debemos pensar que lo realizado se convierta en conocimiento propio ni que el
 
 El maestro zen Baoche del monte Mayu estaba abanicándose.[^62]
 
-Un monje se acercó y dijo: la naturaleza del viento es permanente y no hay lugar al que no llegue. ¿Por qué, entonces, te abanicas?[^^63]
+Un monje se acercó y dijo: la naturaleza del viento es permanente y no hay lugar al que no llegue. ¿Por qué, entonces, te abanicas?[^63]
 
 El maestro respondió: solo sabes que la naturaleza del viento es permanente, pero todavía no comprendes el sentido de que llegue a todas partes.[^64]
 
