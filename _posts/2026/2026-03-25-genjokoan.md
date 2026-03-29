@@ -28,6 +28,8 @@ Las notas pueden leerse en el momento en que aparecen, o pueden ignorarse en una
 
 Solo hay que entrar.
 
+[Descargar PDF con notas]({{ '/assets/pdf/2026/2026-03-25-genjokoan.pdf' | relative_url }})
+
 ## Texto
 
 ### 1
