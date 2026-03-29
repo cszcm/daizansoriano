@@ -8,8 +8,6 @@ categories: [Practica]
 tags: [genjokoan, dogen, shobogenzo, zazen, practica, soto zen]
 ---
 
-# Genjōkōan
-
 ## Introducción
 
 El Genjōkōan es un texto del siglo XIII escrito por Eihei Dōgen, monje zen japonés que viajó a China para estudiar y, a su regreso, fundó la escuela Sōtō Zen del budismo en Japón. Lo escribió en 1233, en forma de carta, para un estudiante laico llamado Yōkōshu. Más tarde lo incluyó como texto de apertura del Shōbōgenzō, su obra principal, una colección de escritos sobre el Dharma que Dōgen redactó a lo largo de toda su vida.
