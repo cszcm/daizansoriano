@@ -3,7 +3,7 @@ layout: post
 title: Genjōkōan
 subtitle: Una reescritura contemporánea con notas para la práctica
 description: Una reescritura en español contemporáneo https://daizansoriano.com/del Genjōkōan de Dōgen, acompañada de notas de lectura y práctica desde la tradición Soto Zen.
-date: 2026-03-25 09:00:00 +0100
+date: 2026-03-29 09:00:00 +0100
 categories: [Practica]
 tags: [genjokoan, dogen, shobogenzo, zazen, practica, soto zen]
 ---
