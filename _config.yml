@@ -1,7 +1,7 @@
 title: Daizan Soriano
 description: Un blog sobre práctica, vida y dharma
 url: https://daizansoriano.com
-baseurl: ''
+baseurl: ""
 lang: es
 image: /assets/logo.png
 markdown: kramdown
@@ -33,7 +33,7 @@ xinxinming_meta:
   cover_image: /assets/images/2025/portada_xinxinming.png
   cover_alt: Portada del libro Xin Xin Ming de Daizan Soriano
 timezone: UTC
-pwa_sw_version: v0.5.11
+pwa_sw_version: v0.5.12
 goatcounter:
   code: daizansoriano
 plugins:
@@ -44,24 +44,24 @@ sass:
   style: compressed
 defaults:
   - scope:
-      path: ''
+      path: ""
       type: posts
     values:
       layout: post
-      author: ''
+      author: ""
   - scope:
-      path: ''
+      path: ""
       type: podcast
     values:
       layout: podcast
       image: /assets/logo.png
   - scope:
-      path: ''
+      path: ""
       type: xinxinming
     values:
       layout: xxm-section
   - scope:
-      path: ''
+      path: ""
       type: xinxinming_versos
     values:
       layout: xxm-verse
