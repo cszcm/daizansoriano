@@ -10,11 +10,11 @@ tags: [newsletter, marzo, lista de correo]
 
 ## Asunto
 
-Marzo en Camino Medio: libro, descanso, Genjokoan y una nueva reflexión
+Marzo en Camino Medio: libro, podcast, descanso, Genjokoan y una nueva reflexión
 
 ## Preencabezado
 
-Cuatro publicaciones recientes: el lanzamiento de Camino Medio, una reflexión sobre el descanso, Genjokoan y un nuevo texto sobre Gabor Maté.
+Cinco publicaciones recientes: libro, podcast, descanso, Genjokoan y un nuevo texto sobre Gabor Maté.
 
 ## Cuerpo
 
@@ -22,44 +22,53 @@ Hola,
 
 Comparto contigo las publicaciones que he ido añadiendo al blog durante el mes de marzo.
 
-Han sido semanas en las que han convivido cuatro direcciones distintas, pero muy relacionadas entre si: la alegria de compartir un nuevo libro, una reflexion sobre el descanso en la practica, una nueva aproximacion a uno de los textos mas importantes de Dogen y una mirada al sufrimiento contemporaneo a partir de la obra de Gabor Maté.
+Han sido semanas en las que han convivido varias direcciones muy relacionadas entre sí: la alegría de compartir un nuevo libro, la grabación de su presentación, una reflexión sobre el descanso en la práctica, una nueva aproximación a uno de los textos más importantes de Dogen y una mirada al sufrimiento contemporáneo a partir de la obra de Gabor Maté.
 
 ### 1. Camino Medio: nuevo libro
 
-En marzo publique una entrada para anunciar la salida de mi nuevo libro, _Camino Medio: La sabiduria atemporal del budismo a traves de una mirada actualizada_.
+En marzo publiqué una entrada para anunciar la salida de mi nuevo libro, _Camino Medio: La sabiduría atemporal del budismo a través de una mirada actualizada_.
 
-Es un libro escrito con la intencion de acercar la practica y la vision del budismo Soto Zen a la vida contemporanea, sin separarlas de lo cotidiano.
+Es un libro escrito con la intención de acercar la práctica y la visión del budismo Soto Zen a la vida contemporánea, sin separarlas de lo cotidiano.
 
 Puedes leer la entrada aqui:
 https://daizansoriano.com/lanzamiento-libro-camino-medio/
 
 ### 2. Es bueno descansar
 
-Tambien publique una reflexion sobre el descanso, no entendido como una pausa utilitaria para rendir mas, sino como la posibilidad de dejar de sostener, aunque sea por un momento, el esfuerzo de ser alguien.
+También publiqué una reflexión sobre el descanso, no entendido como una pausa utilitaria para rendir más, sino como la posibilidad de dejar de sostener, aunque sea por un momento, el esfuerzo de ser alguien.
 
-Es un texto muy vinculado a la practica de zazen y a esa forma de descanso que no consiste en escapar de la experiencia, sino en dejar de tensarla.
+Es un texto muy vinculado a la práctica de zazen y a esa forma de descanso que no consiste en escapar de la experiencia, sino en dejar de tensarla.
 
 Puedes leerlo aqui:
 https://daizansoriano.com/es-bueno-descansar/
 
-### 3. Genjokoan
+### 3. Podcast: presentación del libro Camino Medio
 
-A finales de mes comparti una reescritura contemporanea del _Genjokoan_ de Dogen, acompanada de notas para la lectura y la practica.
+Durante marzo también publiqué en el podcast la grabación completa de la presentación de _Camino Medio_.
 
-Es un texto al que vuelvo una y otra vez, y esta version nace del deseo de ofrecer una puerta de entrada mas cercana, sin perder la profundidad ni la extrañeza del original.
+En ese audio comparto el sentido del libro, el recorrido que propone y el tipo de práctica que intenta sostener en medio de la vida cotidiana.
+
+Puedes escucharlo aqui:
+https://daizansoriano.com/presentacion-del-libro-camino-medio/
+
+### 4. Genjokoan
+
+A finales de mes compartí una reescritura contemporánea del _Genjokoan_ de Dogen, acompañada de notas para la lectura y la práctica.
+
+Es un texto al que vuelvo una y otra vez, y esta versión nace del deseo de ofrecer una puerta de entrada más cercana, sin perder la profundidad ni la extrañeza del original.
 
 Puedes leerlo aqui:
 https://daizansoriano.com/genjokoan/
 
-Tambien puedes descargarlo en estos formatos:
+También puedes descargarlo en estos formatos:
 PDF: https://daizansoriano.com/assets/pdf/2026/2026-03-25-genjokoan.pdf
 EPUB: https://daizansoriano.com/assets/epub/2026/2026-03-25-genjokoan.epub
 
-### 4. ¿Normalidad o domesticacion?
+### 5. ¿Normalidad o domesticación?
 
-Tambien he publicado una reflexion inspirada en _El mito de la normalidad_, de Gabor Maté, y en su resonancia con la practica budista.
+También he publicado una reflexión inspirada en _El mito de la normalidad_, de Gabor Maté, y en su resonancia con la práctica budista.
 
-Es un texto sobre trauma, adaptacion, desconexion y esa pregunta de fondo que aparece cuando empezamos a ver con mas claridad: si lo normal en nuestra cultura es tambien lo sano, o si muchas veces solo hemos aprendido a sobrevivir.
+Es un texto sobre trauma, adaptación, desconexión y esa pregunta de fondo que aparece cuando empezamos a ver con más claridad: si lo normal en nuestra cultura es también lo sano, o si muchas veces solo hemos aprendido a sobrevivir.
 
 Puedes leerlo aqui:
 https://daizansoriano.com/normalidad-o-domesticacion/
