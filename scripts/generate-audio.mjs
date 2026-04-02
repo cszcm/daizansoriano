@@ -25,9 +25,42 @@ const INSTRUCTIONS =
 const RESPONSE_FORMAT = process.env.OPENAI_TTS_RESPONSE_FORMAT || 'mp3';
 const SPEED = Number(process.env.OPENAI_TTS_SPEED || 1);
 
-if (!dryRun && !process.env.OPENAI_API_KEY) {
-  console.error('Falta OPENAI_API_KEY en el entorno.');
-  process.exit(1);
+function parseEnvFile(content) {
+  const values = {};
+  for (const rawLine of content.split('\n')) {
+    const line = rawLine.trim();
+    if (!line || line.startsWith('#')) continue;
+
+    const match = line.match(/^([A-Za-z_][A-Za-z0-9_]*)=(.*)$/);
+    if (!match) continue;
+
+    let value = match[2].trim();
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+    values[match[1]] = value;
+  }
+  return values;
+}
+
+async function loadLocalEnv() {
+  const candidates = ['.env.local', '.env'];
+
+  for (const filename of candidates) {
+    const fullPath = path.join(ROOT, filename);
+    const content = await fs.readFile(fullPath, 'utf8').catch(() => null);
+    if (!content) continue;
+
+    const parsed = parseEnvFile(content);
+    for (const [key, value] of Object.entries(parsed)) {
+      if (!process.env[key]) {
+        process.env[key] = value;
+      }
+    }
+  }
 }
 
 function parseFrontMatter(content) {
@@ -245,6 +278,13 @@ async function generateOne(contentFile) {
 }
 
 async function main() {
+  await loadLocalEnv();
+
+  if (!dryRun && !process.env.OPENAI_API_KEY) {
+    console.error('Falta OPENAI_API_KEY en el entorno o en .env.local.');
+    process.exit(1);
+  }
+
   const files = await resolveTargets();
 
   if (files.length === 0) {

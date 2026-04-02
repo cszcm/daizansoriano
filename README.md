@@ -192,6 +192,14 @@ Requisitos:
 - Node.js 18 o superior.
 - Variable de entorno `OPENAI_API_KEY`.
 
+También puedes guardar la clave en un archivo local ignorado por git:
+
+```bash
+echo 'OPENAI_API_KEY=tu_api_key' > .env.local
+```
+
+El script cargará automáticamente `.env.local` y, si no existe, `.env`.
+
 Uso básico:
 
 ```bash
