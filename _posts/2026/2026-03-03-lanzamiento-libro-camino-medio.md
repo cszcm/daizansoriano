@@ -5,6 +5,8 @@ subtitle: La sabiduría atemporal del budismo con una mirada actualizada
 description: Anuncio del lanzamiento de Camino Medio, un recorrido práctico por la tradición Soto Zen para la vida contemporánea.
 image: /assets/images/2026/librocaminomedio.png
 date: 2026-03-03 09:00:00 +0100
+redirect_from:
+  - /2026/03/03/lanzamiento-libro-camino-medio/
 categories: [Libros]
 tags: [camino medio, libro, soto zen, zazen, budismo]
 ---

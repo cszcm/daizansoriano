@@ -5,6 +5,8 @@ subtitle: "Límites de la votación y sentido de la autoridad en la vía del zen
 description: "Reflexión sobre democracia, autoridad y corresponsabilidad en las comunidades Soto Zen del siglo XXI."
 duration: "4:47"
 date: 2026-01-24 09:00:00 +0100
+redirect_from:
+  - /2026/01/24/democracia-y-comudidades-budistas-en-el-siglo-xxi/
 categories: [Comunidad]
 tags: [democracia, sangha, gobernanza, autoridad, soto zen]
 audio_length: 4595712

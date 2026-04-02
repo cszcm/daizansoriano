@@ -5,6 +5,8 @@ subtitle: Práctica sin meta
 description: Una reflexión sobre las diferencias entre mindfulness y zazen en la tradición Soto Zen.
 image: /assets/images/2026/zafu.png
 date: 2026-02-27 09:00:00 +0100
+redirect_from:
+  - /2026/02/27/zazen-no-es-mindfulness/
 categories: [Practica]
 tags: [zazen, mindfulness, soto zen, despertar]
 ---

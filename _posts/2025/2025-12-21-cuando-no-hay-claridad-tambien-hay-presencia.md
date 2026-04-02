@@ -5,6 +5,8 @@ subtitle: "La luz de la medianoche en la práctica de zazen"
 description: "A partir de Dongshan, una reflexión sobre la práctica de zazen cuando no hay claridad, pero sí presencia."
 duration: "6:19"
 date: 2025-12-21 09:00:00 +0100
+redirect_from:
+  - /2025/12/21/cuando-no-hay-claridad-tambien-hay-presencia/
 categories: [Zen]
 tags: [zazen, presencia, no dualidad, soto zen, dongshan]
 audio_length: 6057216

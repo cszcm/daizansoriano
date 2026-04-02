@@ -5,6 +5,8 @@ subtitle: ""
 description: "Reflexión ética y budista sobre la guerra, la no violencia y la responsabilidad colectiva."
 duration: "11:23"
 date: 2025-05-21 09:00:00 +0100
+redirect_from:
+  - /2025/05/21/guerra-y-violencia/
 categories: [Paz]
 tags: [no violencia, guerra, paz, compasion, interdependencia]
 audio_length: 10922880

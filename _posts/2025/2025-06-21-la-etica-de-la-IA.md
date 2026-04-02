@@ -5,6 +5,8 @@ subtitle: ""
 description: "Diálogo entre Harari, deontología, utilitarismo y ética budista para pensar la IA desde la compasión."
 duration: "10:39"
 date: 2025-06-21 09:00:00 +0100
+redirect_from:
+  - /2025/06/21/la-etica-de-la-ia/
 categories: [Etica]
 tags: [IA, etica, tecnologia, compasion, harari]
 audio_length: 10224000

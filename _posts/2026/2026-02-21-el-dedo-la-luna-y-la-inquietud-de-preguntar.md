@@ -5,6 +5,8 @@ subtitle: "Las preguntas que abren la práctica"
 description: "Reflexión sobre la diferencia entre preguntas superficiales y preguntas profundas en la práctica Soto Zen."
 duration: "10:20"
 date: 2026-02-21 09:00:00 +0100
+redirect_from:
+  - /2026/02/21/el-dedo-la-luna-y-la-inquietud-de-preguntar/
 categories: [Practica]
 tags: [preguntas, ensenanzas, practica, zazen, soto zen]
 ---

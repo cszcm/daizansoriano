@@ -3,7 +3,9 @@ layout: post
 title: "¿Normalidad o domesticación?"
 subtitle: Gabor Maté y el despertar
 description: Una lectura de El mito de la normalidad desde la práctica del budismo zen, el trauma, la adaptación y la posibilidad de despertar.
-date: 2026-04-02 09:00:00 +0200
+date: 2026-03-31 09:00:00 +0200
+redirect_from:
+  - /2026/03/31/normalidad-o-domesticacion/
 categories: [Practica]
 tags: [gabor mate, trauma, zazen, budismo, despertar, practica, soto zen]
 ---
