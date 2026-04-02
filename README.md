@@ -183,6 +183,69 @@ npm run sync-audio-lengths
 
 El script recorre `_posts/` y `_podcast/`, detecta el audio local (`audio_url` o ruta inferida en `audio/`) y actualiza/crea `audio_length` en el front matter.
 
+### Generar MP3 con OpenAI TTS
+
+El repositorio incluye de nuevo un script para convertir posts markdown en audio MP3 usando la API de OpenAI y guardarlos en `audio/`.
+
+Requisitos:
+
+- Node.js 18 o superior.
+- Variable de entorno `OPENAI_API_KEY`.
+
+Uso básico:
+
+```bash
+export OPENAI_API_KEY="tu_api_key"
+npm run tts:build
+```
+
+Para generar y después sincronizar `audio_length` en una sola pasada:
+
+```bash
+export OPENAI_API_KEY="tu_api_key"
+npm run tts:build-and-sync
+```
+
+Esto:
+
+- recorre `_posts/`,
+- limpia el markdown a texto plano,
+- genera audio con OpenAI TTS,
+- y guarda cada MP3 respetando la estructura de carpetas en `audio/`.
+
+También puedes pasar rutas concretas:
+
+```bash
+npm run tts:build -- _posts/2026/2026-03-31-normalidad-o-domesticacion.md
+npm run tts:build -- _posts/2026
+```
+
+Atajo equivalente para una sola entrada:
+
+```bash
+npm run tts:post -- _posts/2026/2026-03-31-normalidad-o-domesticacion.md
+```
+
+Opciones:
+
+- `--dry-run`: muestra qué procesaría sin llamar a la API.
+- `--force`: regenera aunque el MP3 ya exista.
+
+Variables opcionales:
+
+- `OPENAI_TTS_MODEL` por defecto `gpt-4o-mini-tts`
+- `OPENAI_TTS_VOICE` por defecto `alloy`
+- `OPENAI_TTS_MAX_CHARS` por defecto `3500`
+- `OPENAI_TTS_INSTRUCTIONS` para controlar tono, dicción o acento
+- `OPENAI_TTS_RESPONSE_FORMAT` por defecto `mp3`
+- `OPENAI_TTS_SPEED` por defecto `1`
+
+Puedes omitir un post concreto con este front matter:
+
+```yaml
+audio: false
+```
+
 ## Sección Xin Xin Ming
 
 El contenido fuente del libro está en `xxm/SectionXXXX.md`.

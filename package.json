@@ -5,7 +5,10 @@
   "scripts": {
     "bump-sw-version": "node scripts/bump-sw-version.js",
     "sync-audio-lengths": "node scripts/sync-audio-lengths.js",
-    "generate-xxm": "node scripts/generate-xxm-section.js"
+    "generate-xxm": "node scripts/generate-xxm-section.js",
+    "tts:build": "node scripts/generate-audio.mjs",
+    "tts:build-and-sync": "node scripts/generate-audio.mjs && node scripts/sync-audio-lengths.js",
+    "tts:post": "node scripts/generate-audio.mjs"
   },
   "dependencies": {
     "js-yaml": "^4.1.1"
