@@ -243,7 +243,7 @@ Variables opcionales:
 
 - `OPENAI_TTS_MODEL` por defecto `gpt-4o-mini-tts`
 - `OPENAI_TTS_VOICE` por defecto `alloy`
-- `OPENAI_TTS_MAX_CHARS` por defecto `3500`
+- `OPENAI_TTS_MAX_CHARS` por defecto `4096`
 - `OPENAI_TTS_INSTRUCTIONS` para controlar tono, dicción o acento
 - `OPENAI_TTS_RESPONSE_FORMAT` por defecto `mp3`
 - `OPENAI_TTS_SPEED` por defecto `1`

@@ -18,10 +18,10 @@ const dryRun = flags.has('--dry-run');
 
 const MODEL = process.env.OPENAI_TTS_MODEL || 'gpt-4o-mini-tts';
 const VOICE = process.env.OPENAI_TTS_VOICE || 'alloy';
-const MAX_CHARS_PER_CHUNK = Number(process.env.OPENAI_TTS_MAX_CHARS || 3500);
+const MAX_CHARS_PER_CHUNK = Number(process.env.OPENAI_TTS_MAX_CHARS || 4096);
 const INSTRUCTIONS =
   process.env.OPENAI_TTS_INSTRUCTIONS ||
-  'Habla en castellano de España (es-ES), con dicción natural, cercana y serena.';
+  'Habla en castellano de España (es-ES), con una sola voz estable de principio a fin, timbre constante, dicción natural, cercana y serena, sin cambios de tono entre fragmentos.';
 const RESPONSE_FORMAT = process.env.OPENAI_TTS_RESPONSE_FORMAT || 'mp3';
 const SPEED = Number(process.env.OPENAI_TTS_SPEED || 1);
 
@@ -134,6 +134,48 @@ function normalizeText(markdown) {
 function splitText(text, maxChars) {
   if (text.length <= maxChars) return [text];
 
+  const paragraphs = text
+    .split(/\n\s*\n/)
+    .map((chunk) => chunk.trim())
+    .filter(Boolean);
+
+  if (paragraphs.length > 1) {
+    const grouped = [];
+    let current = '';
+
+    for (const paragraph of paragraphs) {
+      const candidate = current ? `${current}\n\n${paragraph}` : paragraph;
+      if (candidate.length <= maxChars) {
+        current = candidate;
+        continue;
+      }
+
+      if (current) {
+        grouped.push(current);
+        current = '';
+      }
+
+      if (paragraph.length <= maxChars) {
+        current = paragraph;
+        continue;
+      }
+
+      grouped.push(...splitLongChunk(paragraph, maxChars));
+    }
+
+    if (current) {
+      grouped.push(current);
+    }
+
+    return grouped;
+  }
+
+  return splitLongChunk(text, maxChars);
+}
+
+function splitLongChunk(text, maxChars) {
+  if (text.length <= maxChars) return [text];
+
   const chunks = [];
   let cursor = 0;
   while (cursor < text.length) {
@@ -143,14 +185,16 @@ function splitText(text, maxChars) {
         text.lastIndexOf('. ', end),
         text.lastIndexOf('? ', end),
         text.lastIndexOf('! ', end),
-        text.lastIndexOf('; ', end)
+        text.lastIndexOf('; ', end),
+        text.lastIndexOf(': ', end)
       );
+      const commaBreak = text.lastIndexOf(', ', end);
       const spaceBreak = text.lastIndexOf(' ', end);
-      const breakAt =
-        punctuationBreak > cursor + Math.floor(maxChars * 0.5)
-          ? punctuationBreak + 1
-          : spaceBreak;
-      if (breakAt > cursor + Math.floor(maxChars * 0.6)) {
+      const breakCandidates = [punctuationBreak + 1, commaBreak + 1, spaceBreak].filter(
+        (value) => value > cursor + Math.floor(maxChars * 0.6)
+      );
+      const breakAt = breakCandidates.sort((a, b) => b - a)[0];
+      if (breakAt) {
         end = breakAt;
       }
     }

@@ -9,6 +9,7 @@ redirect_from:
   - /2026/02/21/el-dedo-la-luna-y-la-inquietud-de-preguntar/
 categories: [Practica]
 tags: [preguntas, ensenanzas, practica, zazen, soto zen]
+audio_length: 5712768
 ---
 
 En la tradición Soto Zen decimos: «Las enseñanzas son el dedo que señala la luna». Esta frase es un antídoto para no quedarnos pegados a las palabras, a los libros ni a las explicaciones, porque eso no es la realidad. Si te quedas mirando el dedo, te pierdes el cielo.

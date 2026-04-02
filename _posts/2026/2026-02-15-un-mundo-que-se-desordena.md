@@ -9,6 +9,7 @@ redirect_from:
   - /2026/02/15/un-mundo-que-se-desordena/
 categories: [Sociedad]
 tags: [dharma, impermanencia, interdependencia, politica, sufrimiento]
+audio_length: 13898496
 ---
 
 Hay épocas en las que la realidad parece perder su forma habitual, como si el suelo bajo los pies se volviera arena y las narrativas que la mantenían estable en nuestra mente comenzaran a tambalearse. Cuando una época así llega, muchas personas sienten que lo viejo se desmorona y que lo nuevo no termina de aparecer. En muchas personas esto produce un estado en el que el cuerpo se tensa, la imaginación se vuelve apocalíptica o, al contrario, se aferra a una esperanza voluntarista, a un buenismo optimista a prueba de bombas. Desde el dharma del buda, ambos movimientos son comprensibles, pero también son dos formas de evitar el contacto directo con lo que está ocurriendo: la primera convierte el presente en una condena; la segunda, en promesa idealizada. La práctica del dharma nos da otra opción: mirar sin fabricar un refugio mental, y ver qué revela esa mirada.
