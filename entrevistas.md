@@ -19,6 +19,18 @@ image: /assets/daizan.jpg
     <p>Entrevista recuperada desde sotozen.es sobre la practica zen en Alicante, el recorrido de Daizan Soriano y su experiencia en la Via.</p>
   </article>
 
+  <article>
+    <p class="post-meta">Archivo recuperado · Entrevista</p>
+    <h2><a href="{{ '/entrevistas/encuentro-en-silenciarte21/' | relative_url }}">Encuentro en Silenciarte21</a></h2>
+    <p>Ficha de archivo sobre un encuentro con Pedro, creador de Silenciarte21, previo a un retiro de introduccion al zen en Gran Canaria.</p>
+  </article>
+
+  <article>
+    <p class="post-meta">Archivo recuperado · Entrevista</p>
+    <h2><a href="{{ '/entrevistas/entrevista-en-conconciencia-com/' | relative_url }}">Entrevista en conconciencia.com</a></h2>
+    <p>Ficha de archivo sobre la entrevista realizada por Inaki Calvo para conconciencia.com, recuperada desde el archivo antiguo del sitio.</p>
+  </article>
+
   {% assign interview_items = site.podcast | concat: site.posts | sort: "date" | reverse %}
   {% assign rendered_interviews = 0 %}
   {% for item in interview_items %}
@@ -42,23 +54,4 @@ image: /assets/daizan.jpg
     </article>
   {% endif %}
 
-  <section class="post">
-    <header class="section-heading">
-      <p class="post-meta">Pendientes de recuperar</p>
-      <h2 class="post-title">Archivo antiguo</h2>
-      <p class="post-subtitle">Estas entrevistas aparecen en la categoria antigua y estan pendientes de recuperacion completa.</p>
-    </header>
-
-    <article class="post-card">
-      <p class="post-meta">27 May 2021 · Entrevista</p>
-      <h3>Encuentro en Silenciarte21</h3>
-      <p>Con motivo de una visita a Las Palmas de Gran Canaria para un retiro de introduccion al zen, se compartio un encuentro con Pedro, creador de Silenciarte21.</p>
-    </article>
-
-    <article class="post-card">
-      <p class="post-meta">14 Aug 2015 · Entrevista</p>
-      <h3>Entrevista en conconciencia.com</h3>
-      <p>Entrevista realizada por Inaki Calvo para conconciencia.com, mencionada en el archivo antiguo y pendiente de recuperacion integra.</p>
-    </article>
-  </section>
 </section>
