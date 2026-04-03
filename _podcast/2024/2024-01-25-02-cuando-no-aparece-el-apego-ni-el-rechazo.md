@@ -4,7 +4,7 @@ title: "02. Cuando no aparece el apego ni el rechazo"
 date: 2024-01-25 10:56:41 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: " 但 莫 憎 愛 洞 然 明 白 Cuando no aparece el apego ni el rechazo, todo manifies…"
+description: "Comentario al segundo verso del Xin Xin Ming sobre ecuanimidad, apego y rechazo."
 audio_url: "/assets/mp3/2024/2024-01-25-2.-Cuando-no-hay-amor-ni-odio.mp3"
 audio_type: "audio/mpeg"
 audio_length: 2940790

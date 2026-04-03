@@ -4,7 +4,7 @@ title: "Cuarta sesión del ciclo de conferencias sobre la Vía del Bodhisattva"
 date: 2022-04-21 16:10:14 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: "Charla realizada en el dojo zen Kômyô de Alicante , más información sobre el ciclo completo en este enlace ."
+description: "Cuarta sesion del ciclo de conferencias sobre la Via del Bodhisattva, grabada en el dojo zen Komyo de Alicante."
 audio_url: "/assets/mp3/2022/2022-04-21-Teisho4.mp3"
 audio_type: "audio/mpeg"
 audio_length: 60285937

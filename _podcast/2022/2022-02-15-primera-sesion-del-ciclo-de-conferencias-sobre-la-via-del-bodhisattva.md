@@ -4,7 +4,7 @@ title: "Primera sesión del ciclo de conferencias sobre la Vía del Bodhisattva"
 date: 2022-02-15 20:58:56 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: "Charla realizada en el dojo zen Kômyô de Alicante , más información sobre el ciclo completo en este enlace ."
+description: "Primera sesion del ciclo de conferencias sobre la Via del Bodhisattva, grabada en el dojo zen Komyo de Alicante."
 audio_url: "/assets/mp3/2022/2022-02-15-Teisho1.mp3"
 audio_type: "audio/mpeg"
 audio_length: 40244741

@@ -4,7 +4,7 @@ title: "Enseñanza en el dojo zen de Murcia"
 date: 2023-12-19 12:08:06 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: "La pasada semana tuvimos una jornada de práctica en el dojo de Murcia y grabé la enseñanza que impartí, lamentablemente el micrófono no grabó bien el interesante coloquio que tuvimos a continuación, pero al menos podéis escuchar la parte in…"
+description: "Ensenanza grabada durante una jornada de practica en el dojo zen de Murcia."
 audio_url: "/assets/mp3/2023/2023-12-19-26-nov-11.mp3"
 audio_type: "audio/mpeg"
 audio_length: 15051531

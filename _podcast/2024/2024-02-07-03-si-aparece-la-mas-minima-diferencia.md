@@ -4,7 +4,7 @@ title: "03. Si aparece la más mínima diferencia"
 date: 2024-02-07 10:33:36 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: " 毫 釐 有 差 天 地 懸 隔 Si aparece la más mínima diferencia, cielo y tierra que…"
+description: "Comentario al tercer verso del Xin Xin Ming sobre la dualidad y la separacion aparente entre cielo y tierra."
 audio_url: "/assets/mp3/2024/3.-Pero-si-se-crea-la-menor-diferencia.mp3"
 audio_type: "audio/mpeg"
 audio_length: 3084197

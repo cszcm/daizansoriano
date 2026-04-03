@@ -4,7 +4,7 @@ title: "Trascendiendo la dualidad"
 date: 2021-03-12 17:40:00 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: "Kusen extraído del libro Fluyendo en el Presente Eterno del maestro zen Dokushô Villalba. Grabación realizada en la práctica online de la CBSZ el 12/03/2021"
+description: "Kusen extraido del libro Fluyendo en el Presente Eterno de Dokusho Villalba sobre trascender la dualidad en la practica."
 audio_url: "/assets/mp3/2021/2021-03-12-TrascendiendoLaDualidad.mp3"
 audio_type: "audio/mpeg"
 audio_length: 14320533

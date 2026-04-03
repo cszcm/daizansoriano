@@ -4,7 +4,7 @@ title: "06. Si no comprendes el principio profundo"
 date: 2024-09-27 12:10:37 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: " 不 識 玄 旨 徒 勞 念 靜 Si no comprendes el principio profundo, te esfuerzas en…"
+description: "Comentario al sexto verso del Xin Xin Ming sobre el principio profundo y la busqueda inutil de una quietud fabricada."
 audio_url: "/assets/mp3/2024/2024-09-27-Al-no-comprender-el-sentido-profundo.mp3"
 audio_type: "audio/mpeg"
 audio_length: 5077739

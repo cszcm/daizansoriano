@@ -4,7 +4,7 @@ title: "Más allá del más allá"
 date: 2021-03-06 09:39:37 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: "Kusen extraído del libro Fluyendo en el Presente Eterno del maestro zen Dokushô Villalba. Grabación realizada en la práctica online de la CBSZ el 05/03/2021"
+description: "Kusen extraido del libro Fluyendo en el Presente Eterno de Dokusho Villalba sobre ir mas alla del mas alla."
 audio_url: "/assets/mp3/2021/2021-03-06-MasAllaDelMasAlla.mp3"
 audio_type: "audio/mpeg"
 audio_length: 16441306

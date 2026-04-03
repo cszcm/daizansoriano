@@ -4,7 +4,7 @@ title: "08. Es precisamente por aferrarnos y rechazar"
 date: 2024-11-24 20:20:00 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: " 良 由 取 捨 所 以 不 如 Es precisamente por aferrarnos y rechazar, que perdemos…"
+description: "Comentario al octavo verso del Xin Xin Ming sobre como el aferramiento y el rechazo nos alejan de la armonia."
 audio_url: "/assets/mp3/2024/2024-11-24-A-causa-del-apego-y-el-rechazo.mp3"
 audio_type: "audio/mpeg"
 audio_length: 11379857

@@ -4,7 +4,7 @@ title: "07. Plena como el gran vacío"
 date: 2024-10-12 09:00:58 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: " 圓 同 太 虚 無 欠 無 餘 Plena como el gran vacío, nada falta, nada sobra. Comen…"
+description: "Comentario al septimo verso del Xin Xin Ming sobre plenitud, vacio y la experiencia de que nada falta ni sobra."
 audio_url: "/assets/mp3/2024/2024-10-12-Perfecta-como-el-espacio-inmenso.mp3"
 audio_type: "audio/mpeg"
 audio_length: 5621443

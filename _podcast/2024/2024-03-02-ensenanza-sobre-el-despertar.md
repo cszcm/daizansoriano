@@ -4,7 +4,7 @@ title: "Enseñanza sobre el Despertar."
 date: 2024-03-02 07:24:52 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: "En la tradición budista, el concepto de despertar ocupa un lugar central. Es el punto culminante de la búsqueda espiritual, el despertar de la mente a su verdadera naturaleza y a la realidad última de la existencia. A lo largo de los siglos…"
+description: "Ensenanza sobre el despertar en la tradicion budista y su sentido practico dentro del zen."
 audio_url: "/assets/mp3/2024/2024-03-02-01ElDespertar.mp3"
 audio_type: "audio/mpeg"
 audio_length: 38640184

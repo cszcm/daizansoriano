@@ -4,7 +4,7 @@ title: "El santo olvido de sí"
 date: 2021-02-27 12:06:15 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: "Kusen extraído del libro Fluyendo en el Presente Eterno del maestro zen Dokushô Villalba. Grabación realizada en la práctica online de la CBSZ el 26/02/2021"
+description: "Kusen extraido del libro Fluyendo en el Presente Eterno de Dokusho Villalba sobre el santo olvido de si."
 audio_url: "/assets/mp3/2021/2021-02-27-El-olvido-de-si.mp3"
 audio_type: "audio/mpeg"
 audio_length: 17561499

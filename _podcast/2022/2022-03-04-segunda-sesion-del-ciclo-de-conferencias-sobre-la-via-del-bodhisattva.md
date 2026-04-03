@@ -4,7 +4,7 @@ title: "Segunda sesión del ciclo de conferencias sobre la Vía del Bodhisattva"
 date: 2022-03-04 08:00:00 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: "Charla realizada en el dojo zen Kômyô de Alicante , más información sobre el ciclo completo en este enlace ."
+description: "Segunda sesion del ciclo de conferencias sobre la Via del Bodhisattva, grabada en el dojo zen Komyo de Alicante."
 audio_url: "/assets/mp3/2022/2022-03-04-Teisho2.mp3"
 audio_type: "audio/mpeg"
 audio_length: 50590608

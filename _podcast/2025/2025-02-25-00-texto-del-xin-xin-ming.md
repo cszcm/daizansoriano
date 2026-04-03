@@ -4,7 +4,7 @@ title: "00 Texto del Xin Xin Ming"
 date: 2025-02-25 09:12:20 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: "El presente texto es una versión que se ajusta a la esencia del Xin Xin Ming, pero con un estilo libre y fluido para hacer su lectura más clara y accesible. Conserva el sentido profundo del texto original, pero evita construcciones demasiad…"
+description: "Lectura completa del Xin Xin Ming en una version fluida y accesible, fiel a la esencia del texto."
 audio_url: "/assets/mp3/2025/2025-02-25-Texto-completo.mp3"
 audio_type: "audio/mpeg"
 audio_length: 5936045

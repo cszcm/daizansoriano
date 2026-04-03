@@ -4,7 +4,7 @@ title: "Grabaciones de las enseñanzas del retiro de primavera 2022"
 date: 2022-04-22 13:22:32 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: "Grabaciones de las cuatro sesiones de enseñanza realizadas durante el retiro de primavera en el templo Luz Serena. Ordenadas según fueron impartidas. Primera sesión. [restrict level=»1&#8243;] Segunda sesión, preguntas y respuestas. Tercera…"
+description: "Grabaciones de las sesiones de ensenanza del retiro de primavera 2022 en el templo Luz Serena, ordenadas segun fueron impartidas."
 audio_url: "/assets/mp3/2022/2022-04-22-Teisho1.mp3"
 audio_type: "audio/mpeg"
 audio_length: 26256334

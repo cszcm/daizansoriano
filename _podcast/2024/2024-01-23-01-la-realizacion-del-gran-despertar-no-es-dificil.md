@@ -4,7 +4,7 @@ title: "01. La realización del Gran Despertar no es difícil."
 date: 2024-01-23 11:17:53 +0000
 categories: [podcast]
 tags: [podcast, soto zen, dharma]
-description: " 至 道 無 難 唯 嫌 揀 擇 La realización del Gran Despertar no es difícil. Tan so…"
+description: "Comentario al primer verso del Xin Xin Ming: la realizacion del Gran Despertar no es dificil cuando soltamos apego y rechazo."
 audio_url: "/assets/mp3/2024/2024-01-23-1.-La-Via-Suprema-no-es-dificil.mp3"
 audio_type: "audio/mpeg"
 audio_length: 5653114
