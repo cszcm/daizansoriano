@@ -35,6 +35,11 @@ image: /assets/daizan.jpg
     </article>
 
     <article class="link-card">
+      <h3>📚 General</h3>
+      <a class="link-button" href="{{ '/general/' | relative_url }}">🟡 Explorar</a>
+    </article>
+
+    <article class="link-card">
       <h3>📩 Telegram</h3>
       <a class="link-button" href="https://t.me/daizansoriano">🔷 Abrir</a>
     </article>
