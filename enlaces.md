@@ -1,6 +1,7 @@
 ---
 layout: default
-title: "Enlaces"
+title: "Enlaces y contacto | Daizan Soriano"
+description: "Accesos directos al podcast, redes y canales de contacto de Daizan Soriano."
 permalink: /enlaces/
 ---
 

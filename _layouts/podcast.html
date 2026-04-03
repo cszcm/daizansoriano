@@ -73,7 +73,7 @@ layout: default
     {% assign episode_audio_url = collection_audio_path %}
   {% endif %}
   {% assign structured_author = page.author | default: site.podcast_meta.author | default: site.title %}
-  {% assign structured_description = page.description | default: page.subtitle | default: page.excerpt | strip_html | strip_newlines | truncate: 180 %}
+  {% assign structured_description = page.description | default: page.subtitle | default: page.excerpt | strip_html | strip_newlines | replace: '&#8230;', '...' | split: '[' | first | strip | truncate: 180 %}
   {% assign structured_image = page.image | default: site.podcast_meta.web_image | default: site.podcast_meta.image | default: '/assets/logo.png' %}
   {% if structured_image == '/assets/logo.png' and site.podcast_meta.web_image %}
     {% assign structured_image = site.podcast_meta.web_image %}
@@ -139,6 +139,40 @@ layout: default
     {% endfor %}
   </footer>
   {% endif %}
+
+  {% assign related_episodes_count = 0 %}
+  <section class="post-list" aria-label="Mas audios">
+    <header class="section-heading">
+      <p class="post-meta">Escuchar despues</p>
+      <h2 class="post-title">Más audios</h2>
+    </header>
+    <div class="post-grid">
+      {% for item in podcast_items %}
+        {% if item.url != page.url %}
+          {% assign item_series = item.series | default: "" | strip %}
+          {% assign same_series = false %}
+          {% assign same_category = false %}
+          {% if current_series != "" and item_series == current_series %}
+            {% assign same_series = true %}
+          {% endif %}
+          {% if current_category != "" and item.categories contains current_category %}
+            {% assign same_category = true %}
+          {% endif %}
+          {% if same_series or same_category or related_episodes_count < 3 %}
+            {% assign related_episodes_count = related_episodes_count | plus: 1 %}
+            <article class="post-card">
+              <p class="post-meta">{{ item.date | date: "%d %b %Y" }}{% if item.categories %} · {{ item.categories | join: ", " }}{% endif %}</p>
+              <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+              <p>{{ item.description | default: item.excerpt | strip_html | strip_newlines | replace: '&#8230;', '...' | split: '[' | first | strip | truncate: 160 }}</p>
+            </article>
+          {% endif %}
+          {% if related_episodes_count >= 3 %}
+            {% break %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
 
   {% include newsletter-cta.html
     title="¿Quieres recibir el próximo audio?"

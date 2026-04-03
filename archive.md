@@ -1,10 +1,16 @@
 ---
 layout: default
-title: "Archivo"
+title: "Archivo de articulos y podcast"
+description: "Archivo cronologico de articulos, audios y publicaciones de Daizan Soriano sobre meditacion zen y Dharma."
 permalink: /archive/
 ---
 
 <section class="archive">
+  <header class="section-heading">
+    <p class="post-meta">Archivo</p>
+    <h1 class="post-title">Archivo de publicaciones</h1>
+    <p class="post-subtitle">Explora en orden cronologico los articulos del blog y los episodios de audio.</p>
+  </header>
   {% include content-filter-controls.html %}
   {% assign all_items = site.podcast | concat: site.posts | sort: "date" | reverse %}
   {% for post in all_items %}

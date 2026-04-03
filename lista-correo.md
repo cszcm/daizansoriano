@@ -1,6 +1,7 @@
 ---
 layout: default
-title: "Lista de correo"
+title: "Newsletter de meditacion zen"
+description: "Suscripcion por correo para recibir nuevas reflexiones, articulos y episodios de audio de Daizan Soriano."
 permalink: /lista-correo/
 ---
 

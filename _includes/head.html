@@ -52,6 +52,37 @@
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}" />
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }} Podcast" href="{{ '/podcast/feed.xml' | relative_url }}" />
 {% seo %}
+{% assign meta_image = page.image | default: site.image | default: '/assets/daizan.jpg' %}
+{% if meta_image contains '://' %}
+  {% assign meta_image_abs = meta_image %}
+{% else %}
+  {% assign meta_image_abs = meta_image | absolute_url %}
+{% endif %}
+{% assign page_description = page.description | default: page.subtitle | default: page.excerpt | default: site.description | strip_html | strip_newlines | replace: '&#8230;', '...' | split: '[' | first | replace: '  ', ' ' | strip %}
+{% if page.layout == 'post' %}
+<meta name="robots" content="index,follow,max-image-preview:large" />
+{% elsif page.layout == 'podcast' %}
+<meta name="robots" content="index,follow,max-image-preview:large" />
+{% elsif page.url == '/404.html' %}
+<meta name="robots" content="noindex,follow" />
+{% else %}
+<meta name="robots" content="index,follow" />
+{% endif %}
+<meta property="og:image" content="{{ meta_image_abs }}" />
+<meta name="twitter:image" content="{{ meta_image_abs }}" />
+<meta name="twitter:description" content="{{ page_description | escape }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ site.author.name | default: site.title | jsonify }},
+    "url": {{ site.author.url | default: site.url | jsonify }},
+    "image": {{ '/assets/daizan.jpg' | absolute_url | jsonify }},
+    "sameAs": {{ site.social.links | jsonify }}
+  }
+</script>
+{% include breadcrumbs-jsonld.html %}
 
 <script>
   (function () {

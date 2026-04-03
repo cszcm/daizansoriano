@@ -1,9 +1,10 @@
 title: Daizan Soriano
-description: Un blog sobre práctica, vida y dharma
+description: Meditacion zen, budismo Soto Zen y reflexiones sobre practica, vida y dharma.
 url: https://daizansoriano.com
 baseurl: ""
 lang: es
 image: /assets/logo.png
+logo: /assets/logo.png
 markdown: kramdown
 kramdown:
   input: GFM
@@ -36,32 +37,51 @@ timezone: UTC
 pwa_sw_version: v0.5.12
 goatcounter:
   code: daizansoriano
+author:
+  name: Daizan Soriano
+  url: https://daizansoriano.com/about/
+social:
+  name: Daizan Soriano
+  links:
+    - https://t.me/daizansoriano
+    - https://mastodon.social/@daizansoriano
+    - https://www.youtube.com/playlist?list=PLDzty2lPYX3SZxMbpNlEVRHeOcSje_h-R
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
   - jekyll-redirect-from
 sass:
   style: compressed
 defaults:
   - scope:
       path: ""
+    values:
+      image: /assets/daizan.jpg
+  - scope:
+      path: ""
       type: posts
     values:
       layout: post
-      author: ""
+      author: Daizan Soriano
   - scope:
       path: ""
       type: podcast
     values:
       layout: podcast
-      image: /assets/logo.png
+      author: Daizan Soriano
+      image: /assets/podcast-cover-3000.jpg
   - scope:
       path: ""
       type: xinxinming
     values:
       layout: xxm-section
+      author: Daizan Soriano
+      image: /assets/images/2025/portada_xinxinming.png
   - scope:
       path: ""
       type: xinxinming_versos
     values:
       layout: xxm-verse
+      author: Daizan Soriano
+      image: /assets/images/2025/portada_xinxinming.png

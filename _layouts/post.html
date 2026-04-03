@@ -64,7 +64,7 @@ layout: default
   {% endif %}
 
   {% assign structured_author = page.author | default: site.podcast_meta.author | default: site.title %}
-  {% assign structured_description = page.description | default: page.subtitle | default: page.excerpt | strip_html | strip_newlines | truncate: 180 %}
+  {% assign structured_description = page.description | default: page.subtitle | default: page.excerpt | strip_html | strip_newlines | replace: '&#8230;', '...' | split: '[' | first | strip | truncate: 180 %}
   {% assign structured_image = page.image | default: site.podcast_meta.image | default: '/assets/logo.png' %}
   {% if structured_image contains '://' %}
     {% assign structured_image_abs = structured_image %}
@@ -108,6 +108,42 @@ layout: default
       <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
     {% endfor %}
   </footer>
+  {% endif %}
+
+  {% assign related_posts_count = 0 %}
+  {% assign primary_category = page.categories | first %}
+  {% assign primary_tag = page.tags | first %}
+  {% if primary_category or primary_tag %}
+  <section class="post-list" aria-label="Entradas relacionadas">
+    <header class="section-heading">
+      <p class="post-meta">Seguir leyendo</p>
+      <h2 class="post-title">Entradas relacionadas</h2>
+    </header>
+    <div class="post-grid">
+      {% for candidate in site.posts %}
+        {% if candidate.url != page.url %}
+          {% assign is_related = false %}
+          {% if primary_category and candidate.categories contains primary_category %}
+            {% assign is_related = true %}
+          {% endif %}
+          {% if is_related == false and primary_tag and candidate.tags contains primary_tag %}
+            {% assign is_related = true %}
+          {% endif %}
+          {% if is_related %}
+            {% assign related_posts_count = related_posts_count | plus: 1 %}
+            <article class="post-card">
+              <p class="post-meta">{{ candidate.date | date: "%d %b %Y" }}{% if candidate.categories %} · {{ candidate.categories | join: ", " }}{% endif %}</p>
+              <h3><a href="{{ candidate.url | relative_url }}">{{ candidate.title }}</a></h3>
+              <p>{{ candidate.description | default: candidate.excerpt | strip_html | strip_newlines | replace: '&#8230;', '...' | split: '[' | first | strip | truncate: 160 }}</p>
+            </article>
+          {% endif %}
+          {% if related_posts_count >= 3 %}
+            {% break %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
   {% endif %}
 
   {% include newsletter-cta.html

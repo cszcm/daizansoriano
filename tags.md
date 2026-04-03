@@ -1,10 +1,16 @@
 ---
 layout: default
-title: "Etiquetas"
+title: "Etiquetas sobre zen, practica y Dharma"
+description: "Indice de etiquetas para navegar articulos y episodios relacionados con temas concretos del budismo Soto Zen."
 permalink: /tags/
 ---
 
 <section class="tags">
+  <header class="section-heading">
+    <p class="post-meta">Indice tematico</p>
+    <h1 class="post-title">Etiquetas</h1>
+    <p class="post-subtitle">Accede a temas especificos y cruza articulos y audios relacionados.</p>
+  </header>
   {% include content-filter-controls.html %}
   {% assign all_items = site.podcast | concat: site.posts | sort: "date" | reverse %}
   {% assign tags_joined = "" %}

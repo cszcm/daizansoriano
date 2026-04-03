@@ -1,6 +1,8 @@
 ---
 layout: default
-title: "Inicio"
+title: "Meditacion zen y budismo Soto Zen"
+description: "Reflexiones, ensenanzas y recursos de meditacion zen y budismo Soto Zen de Daizan Soriano."
+permalink: /
 ---
 
 {% assign blog_items = site.posts | sort: "date" | reverse %}
@@ -16,6 +18,12 @@ title: "Inicio"
 {% else %}
 {% assign featured_post_image_url = featured_post_image | relative_url %}
 {% endif %}
+
+<section class="section-heading">
+  <p class="post-meta">Budismo Soto Zen</p>
+  <h1 class="post-title">Meditacion zen y budismo Soto Zen</h1>
+  <p class="post-subtitle">Textos, audios y recursos de practica de Daizan Soriano para integrar el Dharma en la vida cotidiana.</p>
+</section>
 
 <section class="home-featured-post">
   <div class="home-featured-post__media">

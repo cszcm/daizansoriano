@@ -1,10 +1,17 @@
 ---
 layout: default
-title: "Podcast"
+title: "Podcast de meditacion zen y budismo Soto Zen"
+description: "Episodios de audio con ensenanzas, meditaciones y reflexiones de Daizan Soriano sobre budismo Soto Zen."
 permalink: /podcast/
+image: /assets/podcast-cover-3000.jpg
 ---
 
 <section class="archive">
+  <header class="section-heading">
+    <p class="post-meta">Audio</p>
+    <h1 class="post-title">Podcast</h1>
+    <p class="post-subtitle">Episodios sobre meditacion zen, practica y budismo Soto Zen para escuchar cuando quieras.</p>
+  </header>
   {% assign podcast_web_image = site.podcast_meta.web_image | default: '/assets/daizan.jpg' %}
   <div class="podcast-header-image">
     <img src="{{ '/assets/cabecera.png' | relative_url }}" alt="Cabecera del podcast" loading="eager" decoding="async">
@@ -82,9 +89,9 @@ permalink: /podcast/
           </p>
           <h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
           {% if item.description %}
-            <p>{{ item.description | strip_html | strip_newlines | truncate: 160 }}</p>
+            <p>{{ item.description | strip_html | strip_newlines | replace: '&#8230;', '...' | split: '[' | first | strip | truncate: 160 }}</p>
           {% else %}
-            <p>{{ item.excerpt | strip_html | strip_newlines | truncate: 160 }}</p>
+            <p>{{ item.excerpt | strip_html | strip_newlines | replace: '&#8230;', '...' | split: '[' | first | strip | truncate: 160 }}</p>
           {% endif %}
         </div>
 

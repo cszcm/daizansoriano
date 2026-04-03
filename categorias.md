@@ -1,10 +1,16 @@
 ---
 layout: default
-title: "Categorías"
+title: "Categorias de meditacion zen y budismo"
+description: "Indice por categorias para encontrar articulos y audios sobre meditacion zen, practica y budismo Soto Zen."
 permalink: /categorias/
 ---
 
 <section class="tags">
+  <header class="section-heading">
+    <p class="post-meta">Navegacion tematica</p>
+    <h1 class="post-title">Categorias</h1>
+    <p class="post-subtitle">Encuentra contenidos agrupados por grandes temas de practica y estudio.</p>
+  </header>
   {% include content-filter-controls.html %}
   {% assign all_items = site.podcast | concat: site.posts | sort: "date" | reverse %}
   {% assign categories_joined = "" %}

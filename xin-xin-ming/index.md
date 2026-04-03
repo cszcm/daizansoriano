@@ -1,7 +1,9 @@
 ---
 layout: default
-title: "Xin Xin Ming"
+title: "Xin Xin Ming | Libro y comentarios"
+description: "Lectura web del Xin Xin Ming con comentarios, versos y materiales de apoyo de Daizan Soriano."
 permalink: /xin-xin-ming/
+image: /assets/images/2025/portada_xinxinming.png
 ---
 
 <section class="archive">

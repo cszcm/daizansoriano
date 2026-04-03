@@ -1,0 +1,69 @@
+{% if page.url != '/' and page.url != '' %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": {{ '/' | absolute_url | jsonify }}
+      }
+      {% if page.collection == 'podcast' or page.url == '/podcast/' %}
+      ,{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Podcast",
+        "item": {{ '/podcast/' | absolute_url | jsonify }}
+      }
+        {% if page.url != '/podcast/' %}
+      ,{
+        "@type": "ListItem",
+        "position": 3,
+        "name": {{ page.title | jsonify }},
+        "item": {{ page.url | absolute_url | jsonify }}
+      }
+        {% endif %}
+      {% elsif page.collection == 'xinxinming' or page.collection == 'xinxinming_versos' or page.url contains '/xin-xin-ming/' %}
+      ,{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Xin Xin Ming",
+        "item": {{ '/xin-xin-ming/' | absolute_url | jsonify }}
+      }
+        {% if page.collection == 'xinxinming_versos' or page.url == '/xin-xin-ming/versos/' %}
+      ,{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Versos",
+        "item": {{ '/xin-xin-ming/versos/' | absolute_url | jsonify }}
+      }
+          {% if page.url != '/xin-xin-ming/versos/' %}
+      ,{
+        "@type": "ListItem",
+        "position": 4,
+        "name": {{ page.title | jsonify }},
+        "item": {{ page.url | absolute_url | jsonify }}
+      }
+          {% endif %}
+        {% elsif page.url != '/xin-xin-ming/' %}
+      ,{
+        "@type": "ListItem",
+        "position": 3,
+        "name": {{ page.title | jsonify }},
+        "item": {{ page.url | absolute_url | jsonify }}
+      }
+        {% endif %}
+      {% else %}
+      ,{
+        "@type": "ListItem",
+        "position": 2,
+        "name": {{ page.title | jsonify }},
+        "item": {{ page.url | absolute_url | jsonify }}
+      }
+      {% endif %}
+    ]
+  }
+</script>
+{% endif %}

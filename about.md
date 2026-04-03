@@ -1,8 +1,15 @@
 ---
 layout: default
-title: "Acerca de"
+title: "Daizan Soriano | Maestro de meditacion zen"
+description: "Biografia de Daizan Soriano, maestro de meditacion zen en la tradicion Soto Zen y autor de este sitio."
 permalink: /about/
 ---
+
+<header class="section-heading">
+  <p class="post-meta">Biografia</p>
+  <h1 class="post-title">Daizan Soriano</h1>
+  <p class="post-subtitle">Maestro de meditacion zen en la tradicion del budismo Soto Zen.</p>
+</header>
 
 <p class="about-image">
 	<picture>
