@@ -25,6 +25,11 @@ image: /assets/daizan.jpg
     </article>
 
     <article class="link-card">
+      <h3>🎙️ Entrevistas</h3>
+      <a class="link-button" href="{{ '/entrevistas/' | relative_url }}">🟠 Explorar</a>
+    </article>
+
+    <article class="link-card">
       <h3>📩 Telegram</h3>
       <a class="link-button" href="https://t.me/daizansoriano">🔷 Abrir</a>
     </article>
