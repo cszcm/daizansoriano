@@ -3,6 +3,7 @@ layout: default
 title: "Newsletter de meditacion zen"
 description: "Suscripcion por correo para recibir nuevas reflexiones, articulos y episodios de audio de Daizan Soriano."
 permalink: /lista-correo/
+image: /assets/daizan.jpg
 ---
 
 <section class="post newsletter-page">

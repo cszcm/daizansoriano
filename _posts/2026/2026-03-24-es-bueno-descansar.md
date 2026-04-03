@@ -3,6 +3,7 @@ layout: post
 title: Es bueno descansar
 subtitle: Descansar de ser alguien
 description: Una reflexión sobre el descanso en la tradición zen, no como pausa utilitaria, sino como soltar el esfuerzo de sostener una identidad.
+image: /assets/images/2026/zafu.png
 date: 2026-03-24 09:00:00 +0100
 redirect_from:
   - /2026/03/24/es-bueno-descansar/

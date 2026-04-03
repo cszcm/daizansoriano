@@ -3,6 +3,7 @@ layout: default
 title: "Daizan Soriano | Maestro de meditacion zen"
 description: "Biografia de Daizan Soriano, maestro de meditacion zen en la tradicion Soto Zen y autor de este sitio."
 permalink: /about/
+image: /assets/daizan.jpg
 ---
 
 <header class="section-heading">

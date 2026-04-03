@@ -3,6 +3,7 @@ layout: post
 title: Una sangha laica, religiosa y secular
 subtitle: "Prefacio del libro Camino Medio"
 description: "Fragmento del libro en preparación Camino Medio sobre la forma de una sangha laica, religiosa y secular en el mundo contemporáneo."
+image: /assets/images/2026/librocaminomedio.png
 duration: "7:56"
 date: 2026-02-08 09:00:00 +0100
 redirect_from:

@@ -3,6 +3,7 @@ layout: post
 title: Cuando el enfado y la tristeza también son la Vía
 subtitle: "Practicar zazen cuando el corazón está enfadado o triste"
 description: "Reflexión sobre el enfado y la tristeza y cómo practicar cuando están presentes."
+image: /assets/images/2026/zafu.png
 duration: "5:10"
 date: 2026-02-14 09:00:00 +0100
 redirect_from:

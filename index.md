@@ -3,6 +3,7 @@ layout: default
 title: "Meditacion zen y budismo Soto Zen"
 description: "Reflexiones, ensenanzas y recursos de meditacion zen y budismo Soto Zen de Daizan Soriano."
 permalink: /
+image: /assets/daizan.jpg
 ---
 
 {% assign blog_items = site.posts | sort: "date" | reverse %}

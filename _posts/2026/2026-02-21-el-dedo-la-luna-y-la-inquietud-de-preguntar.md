@@ -3,6 +3,7 @@ layout: post
 title: El dedo, la luna y la inquietud de preguntar
 subtitle: "Las preguntas que abren la práctica"
 description: "Reflexión sobre la diferencia entre preguntas superficiales y preguntas profundas en la práctica Soto Zen."
+image: /assets/images/2026/zafu.png
 duration: "10:20"
 date: 2026-02-21 09:00:00 +0100
 redirect_from:

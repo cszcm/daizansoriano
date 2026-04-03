@@ -3,8 +3,9 @@ layout: podcast
 title: "Entrevista en Presentástico"
 date: 2021-09-17 07:15:23 +0000
 categories: [podcast]
-tags: [podcast, soto zen, dharma]
+tags: [podcast, entrevista, entrevistas, soto zen, dharma]
 description: "Entrevista en Presentastico con Carles Cano sobre meditacion, budismo zen y divulgacion de la practica."
+image: /assets/images/2021/entrevista-en-presentastico-img1.webp
 audio_url: "/assets/mp3/2021/2021-09-17-Entrevista-en-Presentastico.m4a"
 audio_type: "audio/mp4"
 audio_length: 68454794

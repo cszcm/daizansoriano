@@ -3,6 +3,7 @@ layout: post
 title: Un mundo que se desordena y la práctica del dharma del buda
 subtitle: "Impermanencia, miedo y lucidez en tiempos de fractura"
 description: "Reflexión desde el dharma sobre el desorden global, el miedo colectivo y la práctica de una acción lúcida sin odio ni cinismo."
+image: /assets/daizan.jpg
 duration: "13:35"
 date: 2026-02-15 09:00:00 +0100
 redirect_from:
