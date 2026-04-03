@@ -67,6 +67,22 @@ image: /assets/daizan.jpg
 </section>
 {% endif %}
 
+<section class="post-list" aria-label="Entrevistas destacadas">
+  <div class="post-grid">
+    <article class="post-card">
+      <p class="post-meta">Archivo tematico</p>
+      <h3><a href="{{ '/entrevistas/' | relative_url }}">Entrevistas y conversaciones</a></h3>
+      <p>Recuperacion de entrevistas, apariciones en medios y conversaciones sobre meditacion zen, practica y budismo Soto Zen.</p>
+    </article>
+
+    <article class="post-card">
+      <p class="post-meta">Archivo tematico</p>
+      <h3><a href="{{ '/cronicas/' | relative_url }}">Cronicas de retiros y practica</a></h3>
+      <p>Memorias de retiros, textos de comunidad y cronicas recuperadas para conservar la experiencia viva de la practica.</p>
+    </article>
+  </div>
+</section>
+
 <section class="post-list">
   <div class="post-grid">
     {% for post in blog_items offset:1 %}
