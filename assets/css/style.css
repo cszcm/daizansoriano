@@ -423,6 +423,81 @@ img {
   color: var(--accent-strong);
 }
 
+.site-search-form {
+  margin-top: 0.4rem;
+  padding: 0.35rem 0.1rem 0;
+}
+
+.site-search-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.search-label {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.site-search-form__row,
+.search-form-row {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.site-search-input,
+.search-input {
+  width: 100%;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  border-radius: 16px;
+  border: 1px solid var(--line-soft);
+  background: var(--surface-card);
+  color: var(--ink);
+  font: inherit;
+  box-shadow: var(--shadow-soft);
+}
+
+.site-search-input::placeholder,
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+.site-search-input:focus,
+.search-input:focus {
+  outline: none;
+  border-color: var(--line-accent-strong);
+  box-shadow: 0 0 0 3px rgba(169, 92, 58, 0.14);
+}
+
+.site-search-button {
+  flex: 0 0 auto;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.site-search-button:hover {
+  transform: translateY(-1px);
+  border-color: var(--line-accent-strong);
+  background: var(--surface-accent-soft);
+}
+
 .main-content {
   flex: 1;
 }
@@ -760,6 +835,37 @@ html[data-contrast="high"] .post-content a:hover {
 .post-content img {
   border-radius: 18px;
   box-shadow: var(--shadow-soft);
+}
+
+.search-page {
+  padding: 0.8rem 0 3rem;
+}
+
+.search-page-form {
+  margin-bottom: 1rem;
+}
+
+.search-status {
+  color: var(--muted);
+  margin: 0 0 1.1rem;
+}
+
+.search-results {
+  padding-top: 0.2rem;
+}
+
+.search-result-card h2 {
+  margin: 0.55rem 0 0.7rem;
+  font-size: 1.35rem;
+}
+
+.search-result-card a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.search-result-card p:last-child {
+  margin-bottom: 0;
 }
 
 .about-image {
@@ -1594,6 +1700,23 @@ html[data-font-size="large"] .newsletter-page #WebToLeadForm textarea {
     border-radius: 16px;
     border-color: var(--line-soft);
     background: var(--surface-glass);
+  }
+
+  .site-search-form {
+    padding-top: 0.45rem;
+  }
+
+  .site-search-form__row,
+  .search-form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .site-search-button,
+  .search-form-row .pill {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .site-tagline {

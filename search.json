@@ -1,0 +1,52 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+{% assign first_item = true %}
+{% for post in site.posts %}
+  {% unless post.search_exclude %}
+    {% unless first_item %},{% endunless %}
+    {
+      "title": {{ post.title | jsonify }},
+      "url": {{ post.url | relative_url | jsonify }},
+      "type": "articulo",
+      "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+      "description": {{ post.description | default: post.subtitle | default: post.excerpt | strip_html | strip_newlines | replace: "  ", " " | strip | jsonify }},
+      "content": {{ post.content | strip_html | strip_newlines | replace: "  ", " " | strip | truncate: 1800 | jsonify }}
+    }
+    {% assign first_item = false %}
+  {% endunless %}
+{% endfor %}
+{% for episode in site.podcast %}
+  {% unless episode.search_exclude %}
+    {% unless first_item %},{% endunless %}
+    {
+      "title": {{ episode.title | jsonify }},
+      "url": {{ episode.url | relative_url | jsonify }},
+      "type": "podcast",
+      "date": {{ episode.date | date: "%Y-%m-%d" | jsonify }},
+      "description": {{ episode.description | default: episode.subtitle | default: episode.excerpt | strip_html | strip_newlines | replace: "  ", " " | strip | jsonify }},
+      "content": {{ episode.content | strip_html | strip_newlines | replace: "  ", " " | strip | truncate: 1800 | jsonify }}
+    }
+    {% assign first_item = false %}
+  {% endunless %}
+{% endfor %}
+{% for page in site.pages %}
+  {% assign page_url = page.url | default: page.permalink %}
+  {% if page.title and page_url != '/search.json' and page_url != '/404.html' and page_url != '/buscar/' %}
+    {% unless page.search_exclude %}
+      {% unless first_item %},{% endunless %}
+      {
+        "title": {{ page.title | jsonify }},
+        "url": {{ page_url | relative_url | jsonify }},
+        "type": "pagina",
+        "date": null,
+        "description": {{ page.description | default: page.subtitle | default: page.excerpt | strip_html | strip_newlines | replace: "  ", " " | strip | jsonify }},
+        "content": {{ page.content | strip_html | strip_newlines | replace: "  ", " " | strip | truncate: 1800 | jsonify }}
+      }
+      {% assign first_item = false %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
+]
