@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "TA-CHIEN HUI-NENG"
+title: "Hui-neng, sexto patriarca del zen"
 description: "Pasaje clasico y comentario en torno a Hui-neng, sexto patriarca chino del zen, recuperado integramente del archivo antiguo."
 permalink: /general/ta-chien-hui-neng/
 image: /assets/daizan.jpg
@@ -13,7 +13,7 @@ tags: [archivo-recuperado, hui-neng, texto-clasico]
 <article class="post">
   <header class="post-header">
     <p class="post-meta">Archivo recuperado · Texto clasico · 17 Jun 2023</p>
-    <h1 class="post-title">TA-CHIEN HUI-NENG</h1>
+    <h1 class="post-title">Hui-neng, sexto patriarca del zen</h1>
     <p class="post-subtitle">Pasaje del Denkoroku y comentario sobre Hui-neng recuperado integramente del archivo antiguo.</p>
   </header>
 

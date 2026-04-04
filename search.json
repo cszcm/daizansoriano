@@ -32,6 +32,48 @@ permalink: /search.json
     {% assign first_item = false %}
   {% endunless %}
 {% endfor %}
+{% for item in site.archivo_recuperado %}
+  {% unless item.search_exclude %}
+    {% unless first_item %},{% endunless %}
+    {
+      "title": {{ item.title | jsonify }},
+      "url": {{ item.url | relative_url | jsonify }},
+      "type": "articulo",
+      "date": {{ item.date | date: "%Y-%m-%d" | jsonify }},
+      "description": {{ item.description | default: item.subtitle | default: item.excerpt | strip_html | strip_newlines | replace: "  ", " " | strip | jsonify }},
+      "content": {{ item.content | strip_html | strip_newlines | replace: "  ", " " | strip | truncate: 1800 | jsonify }}
+    }
+    {% assign first_item = false %}
+  {% endunless %}
+{% endfor %}
+{% for item in site.cronicas_recuperadas %}
+  {% unless item.search_exclude %}
+    {% unless first_item %},{% endunless %}
+    {
+      "title": {{ item.title | jsonify }},
+      "url": {{ item.url | relative_url | jsonify }},
+      "type": "articulo",
+      "date": {{ item.date | date: "%Y-%m-%d" | jsonify }},
+      "description": {{ item.description | default: item.subtitle | default: item.excerpt | strip_html | strip_newlines | replace: "  ", " " | strip | jsonify }},
+      "content": {{ item.content | strip_html | strip_newlines | replace: "  ", " " | strip | truncate: 1800 | jsonify }}
+    }
+    {% assign first_item = false %}
+  {% endunless %}
+{% endfor %}
+{% for item in site.entrevistas_recuperadas %}
+  {% unless item.search_exclude %}
+    {% unless first_item %},{% endunless %}
+    {
+      "title": {{ item.title | jsonify }},
+      "url": {{ item.url | relative_url | jsonify }},
+      "type": "articulo",
+      "date": {{ item.date | date: "%Y-%m-%d" | jsonify }},
+      "description": {{ item.description | default: item.subtitle | default: item.excerpt | strip_html | strip_newlines | replace: "  ", " " | strip | jsonify }},
+      "content": {{ item.content | strip_html | strip_newlines | replace: "  ", " " | strip | truncate: 1800 | jsonify }}
+    }
+    {% assign first_item = false %}
+  {% endunless %}
+{% endfor %}
 {% for page in site.pages %}
   {% assign page_url = page.url | default: page.permalink %}
   {% if page.title and page_url != '/search.json' and page_url != '/404.html' and page_url != '/buscar/' %}

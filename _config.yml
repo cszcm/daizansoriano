@@ -10,6 +10,15 @@ kramdown:
   input: GFM
 permalink: /:title/
 collections:
+  archivo_recuperado:
+    output: true
+    permalink: /:path/
+  cronicas_recuperadas:
+    output: true
+    permalink: /:path/
+  entrevistas_recuperadas:
+    output: true
+    permalink: /:path/
   podcast:
     output: true
     permalink: /:title/
@@ -57,6 +66,27 @@ defaults:
   - scope:
       path: ""
     values:
+      image: /assets/daizan.jpg
+  - scope:
+      path: ""
+      type: archivo_recuperado
+    values:
+      layout: default
+      author: Daizan Soriano
+      image: /assets/daizan.jpg
+  - scope:
+      path: ""
+      type: cronicas_recuperadas
+    values:
+      layout: default
+      author: Daizan Soriano
+      image: /assets/daizan.jpg
+  - scope:
+      path: ""
+      type: entrevistas_recuperadas
+    values:
+      layout: default
+      author: Daizan Soriano
       image: /assets/daizan.jpg
   - scope:
       path: ""

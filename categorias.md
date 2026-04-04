@@ -12,8 +12,10 @@ permalink: /categorias/
     <p class="post-subtitle">Encuentra contenidos agrupados por grandes temas de practica y estudio, incluyendo piezas recuperadas del archivo antiguo.</p>
   </header>
   {% include content-filter-controls.html %}
-  {% assign archive_pages = site.pages | where: "archive_entry", true | sort: "date" | reverse %}
-  {% assign all_items = site.podcast | concat: site.posts | concat: archive_pages | sort: "date" | reverse %}
+  {% assign archive_items = site.archivo_recuperado | sort: "date" | reverse %}
+  {% assign chronicle_items = site.cronicas_recuperadas | sort: "date" | reverse %}
+  {% assign interview_items = site.entrevistas_recuperadas | sort: "date" | reverse %}
+  {% assign all_items = site.podcast | concat: site.posts | concat: archive_items | concat: chronicle_items | concat: interview_items | sort: "date" | reverse %}
   {% assign categories_joined = "" %}
   {% for item in all_items %}
     {% for category in item.categories %}
