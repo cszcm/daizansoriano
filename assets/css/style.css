@@ -688,6 +688,12 @@ img {
   padding: 1.4rem 0 3.5rem;
 }
 
+.post-list__footer {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
 .post-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -1785,6 +1791,11 @@ html[data-font-size="large"] .newsletter-page #WebToLeadForm textarea {
   }
 
   .home-featured-post__actions .pill {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .post-list__footer .pill {
     width: 100%;
     justify-content: center;
   }
