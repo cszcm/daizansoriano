@@ -53,6 +53,10 @@ Una identidad adaptada.
 
 En términos más cercanos a nuestra práctica, dejamos de vivir plenamente este cuerpo-mente[^4] y empezamos a habitar una imagen imaginaria de lo que somos.
 
+Ya no sentimos de manera directa; interpretamos. Ya no respondemos desde la intimidad viva de la experiencia; reaccionamos desde un personaje. Ese personaje puede ser competente, amable, espiritual, fuerte o autosuficiente, pero sigue siendo una forma de alejamiento de lo que realmente somos. Poco a poco terminamos identificándonos más con la imagen que ofrecemos o defendemos que con la realidad inmediata de sentir, temer, desear, amar o dolernos.
+
+Eso se percibe con mucha claridad en zazen. El cuerpo está aquí, respirando, sentado, manifestando cansancio, inquietud o apertura. Pero la mente insiste en contarse a sí misma quién está sentado: alguien que lo hace bien, alguien que fracasa, alguien que debería estar más en calma, alguien que tendría que haber resuelto ya sus conflictos. Así, en vez de habitar este cuerpo-mente tal como es, habitamos una narración sobre nosotros mismos. Y esa narración, por refinada que parezca, sigue siendo una forma de separación.
+
 ## Adaptarse no es despertar
 
 Uno de los puntos más incisivos de _El mito de la normalidad_ es la crítica a la idea de adaptación.
@@ -68,6 +72,10 @@ Pensamientos automáticos. Reacciones. Tensiones.
 Todo un entramado de respuestas aprendidas que operan sin que nos demos cuenta.
 
 La práctica no consiste en adaptarse mejor a ese funcionamiento, sino en verlo con claridad. Y en esa visión, algo comienza a cambiar.
+
+Ese cambio no suele producirse de manera espectacular. No es que desaparezcan de golpe nuestras defensas, ni que el miedo deje de operar de un día para otro. Lo que cambia, en primer lugar, es la relación con todo ello. Allí donde antes había identificación ciega, empieza a haber presencia. Allí donde solo había repetición, aparece un pequeño espacio.
+
+Y ese pequeño espacio es decisivo. En él dejamos de ser completamente arrastrados por el automatismo. Podemos reconocer una reacción antes de convertirla en destino. Podemos sentir una emoción sin quedar enteramente definidos por ella. Podemos advertir una tensión sin obedecerla de inmediato. La práctica no nos vuelve mejores piezas del engranaje; nos devuelve, poco a poco, la libertad de no vivir en modo automático, mecánicamente.
 
 ## El cuerpo como lugar de verdad
 
