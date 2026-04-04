@@ -4,6 +4,10 @@ title: "TA-CHIEN HUI-NENG"
 description: "Ficha de archivo recuperado sobre un pasaje clasico y comentario en torno a Hui-neng, sexto patriarca chino del zen."
 permalink: /general/ta-chien-hui-neng/
 image: /assets/daizan.jpg
+date: 2023-06-17
+archive_entry: true
+categories: [Zen]
+tags: [archivo-recuperado, hui-neng, texto-clasico]
 ---
 
 <article class="post">

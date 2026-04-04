@@ -4,6 +4,10 @@ title: "Jataka. La virtud de la paciencia"
 description: "Ficha de archivo recuperado sobre un jataka clasico que pone de relieve la paciencia como virtud central del camino."
 permalink: /general/jataka-la-virtud-de-la-paciencia/
 image: /assets/daizan.jpg
+date: 2012-02-22
+archive_entry: true
+categories: [Practica]
+tags: [archivo-recuperado, paciencia, jataka]
 ---
 
 <article class="post">

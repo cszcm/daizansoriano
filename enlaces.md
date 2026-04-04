@@ -35,8 +35,8 @@ image: /assets/daizan.jpg
     </article>
 
     <article class="link-card">
-      <h3>📚 General</h3>
-      <a class="link-button" href="{{ '/general/' | relative_url }}">🟡 Explorar</a>
+      <h3>🗂 Archivo</h3>
+      <a class="link-button" href="{{ '/archive/' | relative_url }}">🟡 Explorar</a>
     </article>
 
     <article class="link-card">

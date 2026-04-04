@@ -4,6 +4,10 @@ title: "Un maestro zen en la prision de Villena"
 description: "Ficha de archivo recuperado sobre la experiencia de llevar mindfulness basado en la tradicion budista al centro penitenciario de Villena."
 permalink: /general/un-maestro-zen-en-la-prision-de-villena/
 image: /assets/daizan.jpg
+date: 2023-01-28
+archive_entry: true
+categories: [Sociedad]
+tags: [archivo-recuperado, prision, mindfulness]
 ---
 
 <article class="post">

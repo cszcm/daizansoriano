@@ -4,6 +4,10 @@ title: "La Danza de la Luz y la Sombra"
 description: "Ficha de archivo recuperado sobre un poema dedicado a la relacion entre luz y sombra en el sendero del despertar."
 permalink: /general/la-danza-de-la-luz-y-la-sombra/
 image: /assets/daizan.jpg
+date: 2023-06-30
+archive_entry: true
+categories: [Zen]
+tags: [archivo-recuperado, poesia, no-dualidad]
 ---
 
 <article class="post">

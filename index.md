@@ -138,9 +138,9 @@ image: /assets/daizan.jpg
     </article>
 
     <article class="post-card">
-      <p class="post-meta">Archivo tematico</p>
-      <h3><a href="{{ '/general/' | relative_url }}">Textos generales y recursos</a></h3>
-      <p>Ensayos, relatos, poemas y piezas recuperadas que amplian el mapa del sitio mas alla de las entradas recientes.</p>
+      <p class="post-meta">Archivo</p>
+      <h3><a href="{{ '/archive/' | relative_url }}">Archivo completo</a></h3>
+      <p>Todos los articulos, audios y piezas recuperadas ordenados cronologicamente para explorar el fondo completo del sitio.</p>
     </article>
 
     <article class="post-card">
