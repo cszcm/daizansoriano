@@ -316,9 +316,9 @@ img {
 .header-brand {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
-  flex: 1;
+  flex: 0 1 auto;
   min-width: 0;
 }
 
@@ -499,8 +499,8 @@ img {
 }
 
 .site-search-form--footer {
-  margin-top: 1.25rem;
-  max-width: 32rem;
+  margin-top: 0;
+  max-width: none;
 }
 
 .main-content {
@@ -1314,6 +1314,21 @@ html[data-contrast="high"] .post-content a:hover {
   font-size: 0.95rem;
 }
 
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1.75rem 2.5rem;
+  align-items: start;
+}
+
+.footer-column > :first-child {
+  margin-top: 0;
+}
+
+.footer-column > :last-child {
+  margin-bottom: 0;
+}
+
 .footer-mantra {
   margin: 0.4rem 0 0;
   font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
@@ -1332,20 +1347,21 @@ html[data-contrast="high"] .post-content a:hover {
 }
 
 .footer-links {
-  margin-top: 1rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  margin-top: 0;
+  display: grid;
+  gap: 0.7rem;
   font-family: "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  align-content: start;
 }
 
 .footer-links a {
   text-decoration: none;
   color: var(--muted);
   border-bottom: 1px solid var(--line-medium);
+  width: fit-content;
 }
 
 body.has-global-audio-dock .site-shell {
@@ -1616,6 +1632,10 @@ html[data-font-size="large"] .newsletter-page #WebToLeadForm textarea {
   .hero-inner {
     grid-template-columns: 1fr;
   }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px) {
@@ -1639,6 +1659,8 @@ html[data-font-size="large"] .newsletter-page #WebToLeadForm textarea {
 
   .header-brand {
     width: 100%;
+    justify-content: space-between;
+    flex: 1 1 auto;
   }
 
   .nav-toggle {
@@ -1709,6 +1731,15 @@ html[data-font-size="large"] .newsletter-page #WebToLeadForm textarea {
 
   .site-search-form {
     padding-top: 0.45rem;
+  }
+
+  .site-search-form--footer {
+    padding-top: 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .site-search-form__row,

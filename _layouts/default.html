@@ -53,11 +53,13 @@
       </main>
 
       <footer class="site-footer">
-        <div class="container">
-          <p>© {{ site.time | date: "%Y" }} {{ site.title }}.</p>
-          <p class="footer-mantra">Cada día es un buen día</p>
-          <p class="footer-version">SW {{ site.pwa_sw_version | default: "v1" }}</p>
-          <nav class="footer-links">
+        <div class="container footer-grid">
+          <div class="footer-column footer-column--identity">
+            <p>© {{ site.time | date: "%Y" }} {{ site.title }}.</p>
+            <p class="footer-mantra">Cada día es un buen día</p>
+            <p class="footer-version">SW {{ site.pwa_sw_version | default: "v1" }}</p>
+          </div>
+          <nav class="footer-column footer-column--links footer-links" aria-label="Enlaces del pie">
             <a href="{{ '/archive/' | relative_url }}">Archivo</a>
             <a href="{{ '/entrevistas/' | relative_url }}">Entrevistas</a>
             <a href="{{ '/cronicas/' | relative_url }}">Crónicas</a>
@@ -66,7 +68,7 @@
             <a href="{{ '/tags/' | relative_url }}">Etiquetas</a>
             <a href="{{ '/licencia/' | relative_url }}">Licencia</a>
           </nav>
-          <form class="site-search-form site-search-form--footer" action="{{ '/buscar/' | relative_url }}" method="get" role="search">
+          <form class="footer-column site-search-form site-search-form--footer" action="{{ '/buscar/' | relative_url }}" method="get" role="search">
             <label class="site-search-label" for="site-search-input-footer">Buscar en el sitio</label>
             <div class="site-search-form__row">
               <input class="site-search-input" id="site-search-input-footer" name="q" type="search" inputmode="search" autocomplete="off" spellcheck="false" placeholder="Buscar" />
