@@ -28,5 +28,5 @@ En definitiva, no se trata de fundar un nuevo sistema socioeconómico ideal. Se 
 
 Ese es, quizá, el verdadero manifiesto del budismo Soto Zen: **continuar**. Continuar sentándonos, levantándonos, respirando, actuando, cuidando. Continuar sin esperar nada a cambio. Continuar porque ya en este mismo instante, la vida se manifiesta completa.
 
-[1]: Versión traducida https://sotozen.es/zendodigital/articulos/buddhismo-la-revolucion-venidera-gary-snyder/
+[1]: Versión traducida https://caminomedio.org/zendodigital/articulos/buddhismo-la-revolucion-venidera-gary-snyder/
 [2]: Sitio oficial de la Comunidad Soto Zen Camino Medio https://caminomedio.org

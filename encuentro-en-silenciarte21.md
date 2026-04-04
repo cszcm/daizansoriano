@@ -25,7 +25,8 @@ image: /assets/images/2021/encuentro-en-silenciarte21-img1.png
     <p>Para más información sobre el retiro:</p>
 
     <p>
-      <a class="pill is-filled" href="https://grancanaria.sotozen.es/" rel="noopener noreferrer" target="_blank">Ver informacion del retiro en Gran Canaria</a>
+      <a class="pill is-filled" href="https://grancanaria.caminomedio.org/" rel="noopener noreferrer" target="_blank">Ver informacion del retiro en Gran Canaria</a>
     </p>
+
   </div>
 </article>

@@ -14,7 +14,7 @@ source_url: "https://daizansoriano.com/Audioteca/episodios/2022/12/11/el-cuerpo-
 
 ## Notas
 
-<p>Lectura del libro<a href="https://amzn.to/3FHNmRl"> El cuerpo real</a> del maestro zen <a href="https://dokushovillalba.com">Dokushô </a><a href="https://dokushovillalba.com/el-cuerpo-real/">Villalba</a>. Grabación realizada durante la práctica en el <a href="https://alicante.sotozen.es">dojo zen Kômyô de Alicante</a> el 10/12/2022</p> <p>«La Vía del Buda no puede ser alcanzada sin práctica-experiencia y sin indagación-estudio.»</p>  <p>Booktrailer del libro:</p>
+<p>Lectura del libro<a href="https://amzn.to/3FHNmRl"> El cuerpo real</a> del maestro zen <a href="https://dokushovillalba.com">Dokushô </a><a href="https://dokushovillalba.com/el-cuerpo-real/">Villalba</a>. Grabación realizada durante la práctica en el <a href="https://alicante.caminomedio.org">dojo zen Kômyô de Alicante</a> el 10/12/2022</p> <p>«La Vía del Buda no puede ser alcanzada sin práctica-experiencia y sin indagación-estudio.»</p>  <p>Booktrailer del libro:</p>
 
 <div class="video">
   <iframe

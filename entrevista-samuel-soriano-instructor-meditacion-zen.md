@@ -20,13 +20,13 @@ image: /assets/images/2018/entrevista-samuel-soriano-instructor-meditacion-zen-i
 
     <p>Esta entrevista fue publicada originalmente en Soto Zen y la incorporo aqui de forma integra para conservarla dentro del sitio actual.</p>
 
-    <p>El <a href="https://sotozen.es/" rel="noopener noreferrer" target="_blank">centro zen Komyo de Alicante</a> es el mas antiguo de la CBSZ. Se fundo en el ano 1986, y algunos de sus miembros iniciales siguen apoyandolo activamente, en tanto que otros nos hemos ido uniendo por el camino. Nuestra practica es sobria y respetuosa, siguiendo la forma y el fondo de la ensenanza zen transmitida por el maestro Dokusho Villalba. Actualmente estamos incorporando la practica del Mindfulness Basado en la Tradicion Buddhista a traves de cursos de cinco semanas.</p>
+    <p>El <a href="https://caminomedio.org/" rel="noopener noreferrer" target="_blank">centro zen Komyo de Alicante</a> es el mas antiguo de la CBSZ. Se fundo en el ano 1986, y algunos de sus miembros iniciales siguen apoyandolo activamente, en tanto que otros nos hemos ido uniendo por el camino. Nuestra practica es sobria y respetuosa, siguiendo la forma y el fondo de la ensenanza zen transmitida por el maestro Dokusho Villalba. Actualmente estamos incorporando la practica del Mindfulness Basado en la Tradicion Buddhista a traves de cursos de cinco semanas.</p>
 
     <p><strong>Samuel Soriano</strong><br />45 anos<br />Alicante<br />Responsable del Dojo Zen Komyo de Alicante y presidente de la Asociacion Zen de Alicante.<br />Discipulo desde el ano 2000.</p>
 
     <p><strong>Como es la practica en tu centro de Alicante?</strong></p>
 
-    <p>El <a href="https://sotozen.es/" rel="noopener noreferrer" target="_blank">centro zen Komyo de Alicante</a> es el mas antiguo de la CBSZ. Se fundo en el ano 1986, y algunos de sus miembros iniciales siguen apoyandolo activamente, en tanto que otros nos hemos ido uniendo por el camino. Nuestra practica es sobria y respetuosa, siguiendo la forma y el fondo de la ensenanza zen transmitida por el maestro Dokusho Villalba. Actualmente estamos incorporando la practica del Mindfulness Basado en la Tradicion Buddhista a traves de cursos de cinco semanas.</p>
+    <p>El <a href="https://caminomedio.org/" rel="noopener noreferrer" target="_blank">centro zen Komyo de Alicante</a> es el mas antiguo de la CBSZ. Se fundo en el ano 1986, y algunos de sus miembros iniciales siguen apoyandolo activamente, en tanto que otros nos hemos ido uniendo por el camino. Nuestra practica es sobria y respetuosa, siguiendo la forma y el fondo de la ensenanza zen transmitida por el maestro Dokusho Villalba. Actualmente estamos incorporando la practica del Mindfulness Basado en la Tradicion Buddhista a traves de cursos de cinco semanas.</p>
 
     <p><strong>Ademas de responsable del dojo, tienes alguna otra responsabilidad relacionada con la Comunidad? Cual?</strong></p>
 
@@ -53,5 +53,6 @@ image: /assets/images/2018/entrevista-samuel-soriano-instructor-meditacion-zen-i
     <p><strong>Uno de los puntos centrales del Zen es la relacion maestro-discipulo. Como la reflejarias en tu experiencia personal?</strong></p>
 
     <p>La relacion maestro-discipulo es una de las cosas mas importantes que han sucedido en mi vida. La tutela amorosa del maestro Dokusho durante tantos anos es sin duda un preciado regalo. Por ello la reflejaria como una experiencia amorosa en la que ambos nos enriquecemos mutuamente.</p>
+
   </div>
 </article>
