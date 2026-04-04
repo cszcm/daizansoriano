@@ -45,6 +45,12 @@ image: /assets/daizan.jpg
 
   <article>
     <p class="post-meta">Archivo recuperado · Cronica</p>
+    <h2><a href="{{ '/cronicas/cronica-de-las-jornadas-de-introduccion-a-la-practica-de-la-meditacion-zen/' | relative_url }}">Cronica de las jornadas de introduccion a la practica de la meditacion zen</a></h2>
+    <p>Texto de Nacho sobre unas jornadas de introduccion en Luz Serena guiadas por Samuel Soriano en febrero de 2008.</p>
+  </article>
+
+  <article>
+    <p class="post-meta">Archivo recuperado · Cronica</p>
     <h2><a href="{{ '/cronicas/cronica-introduccion-en-luz-serena/' | relative_url }}">Cronica introduccion en Luz Serena</a></h2>
     <p>Relato temprano sobre entrar en Luz Serena, desacelerar y dejar que el silencio marque otro ritmo.</p>
   </article>
