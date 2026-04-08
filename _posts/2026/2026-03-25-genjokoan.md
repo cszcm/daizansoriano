@@ -86,7 +86,7 @@ y ese no-rastro continúa sin fin.[^21]
 
 Al principio, cuando empiezas a buscar el Dharma, parece que estás lejos.[^22]
 
-Pero cuando esto se realiza de verdad, simplemente eres lo que siempre has sido.[^23]
+Pero cuando se realiza el Dharma, simplemente eres lo que siempre has sido.[^23]
 
 ### 5
 
@@ -143,7 +143,7 @@ Cada reflejo, sea largo o breve, manifiesta la inmensidad de la gota de rocío y
 
 ### 8
 
-Cuando el Dharma no ha llenado por completo cuerpo y mente, uno cree que ya ha comprendido.
+Cuando el Dharma no ha penetrado por completo cuerpo y mente, uno cree que ya ha comprendido.
 
 Cuando sientes que ya has comprendido, sientes que aún falta algo.[^43]
 
