@@ -37,13 +37,13 @@ Solo hay que entrar.
 
 Si te detienes un momento y miras la realidad desde las enseñanzas de Buda, empiezan a aparecer muchas distinciones: ves ignorancia y despertar, práctica, vida y muerte, budas y seres humanos.[^1]
 
-Pero si sigues estudiando el dharma un poco más profundamente, puede ocurrir algo distinto: las cosas ya no parecen tener un «yo» fijo. Y entonces esas diferencias se aflojan… ya no hay realmente ignorancia frente a despertar, ni seres separados, ni una vida opuesta a la muerte.[^2]
+Pero si sigues estudiando el dharma un poco más profundamente, ocurre algo distinto: las cosas ya no parecen tener un «yo» fijo. Y entonces esas diferencias se aflojan… ya no hay realmente ignorancia frente a despertar, ni seres separados, ni una vida opuesta a la muerte.[^2]
 
 La vía de Buda no se queda en ninguna de estas dos formas de ver la realidad. Y sin embargo, en tu experiencia siguen apareciendo la vida y la muerte, la confusión y la claridad, seres vivientes y budas.[^3]
 
-Y, aun así, si observas detenidamente, la vida es muy directa:  
+Si observas detenidamente, la vida es tal cual:  
 las flores se marchitan aunque te gusten,  
-y las malas hierbas crecen aunque no las quieras.[^4]
+y las malas hierbas crecen aunque las detestes.[^4]
 
 ### 2
 
@@ -53,15 +53,15 @@ Pero hay otra posibilidad: dejar que las cosas, tal como son, te muestren quién
 
 Quien llega a ver profundamente su propia confusión, está ya en el camino del Buda.[^7]
 
-Quien cree que ha comprendido, sigue dando vueltas dentro del samsara.[^8]
+Quien cree que ha comprendido, sigue dando vueltas en el samsara.[^8]
 
-Incluso después de comprender algo importante, la práctica continúa abriéndose.[^9]
+Incluso después de comprender algo importante, la práctica continúa desplegándose.[^9]
 
-Y otras veces, incluso dentro de la confusión, seguimos girando sin darnos cuenta.[^10]
+Y otras veces, dentro de nuestra confusión, seguimos girando sin darnos cuenta.[^10]
 
 Un buda no va pensando «soy un buda».[^11]
 
-Y, sin embargo, su vida expresa eso de forma natural, momento a momento.[^12]
+Y, sin embargo, su vida expresa la budeidad de forma natural, momento a momento.[^12]
 
 ### 3
 
@@ -241,7 +241,7 @@ no se trata de saber, sino de vivirlo directamente.[^67]
 
 [^3]: La práctica no cambia la vida en algo distinto. Cambia la forma de estar en ella. La realidad no es «esto» ni «aquello», ni siquiera «ambas cosas». Es la coexistencia de la forma y el vacío. Hay budas y hay seres, pero ninguno es lo que parece.
 
-[^4]: La realidad no sigue nuestras preferencias. Y, aun así, estamos completamente dentro de ella. Las flores siguen cayendo… y eso duele. El despertar no anestesia. El despertar no te hace inmune al dolor ni a la preferencia; las flores siguen cayendo y eso te entristece.
+[^4]: La realidad no sigue nuestras preferencias. Y, aun así, estamos completamente dentro de ella. Las flores siguen cayendo… y eso duele. El despertar no anestesia. El despertar no te hace inmune al dolor ni a la preferencia; las flores siguen cayendo y eso te entristece. Y viceversa, las malas hiervas crecen a sus anchas por doquier, sea cuales sean las circunstancias siempre aparecen malas hiervas, aunque las detestemos profundamente.
 
 [^5]: Cuando todo pasa por el filtro del «yo», aparece tensión: querer entender, controlar, asegurar… y ahí empieza el extravío. El error del esfuerzo egoico de intentar «alcanzar» el despertar es como intentar morderse los propios dientes. El «yo» no puede atrapar la realidad porque el «yo» es el obstáculo.
 
