@@ -55,7 +55,7 @@ El agua es la vida del pez. El cielo es la vida del pájaro. El pez es la vida d
 
 Ahora bien, si un pez o un pájaro quisieran traspasar los límites del cielo o del agua, no encontrarían ningún camino para hacerlo. Practicar la Vía significa encontrar el lugar en el que te encuentras, actualizando así el punto fundamental. Este lugar no es grande ni pequeño, nuestro ni de los demás. No viene del pasado ni se limita al presente. Es el momento presente tal y como es. Lo mismo sucede con la práctica y la realización de la Vía del Buda: si recibes enseñanzas, debes comprenderlas; si recibes instrucciones, debes ponerlas en práctica. Aquí es donde el Lugar está. Penetrando más y más en la Vía, te irás dando cuenta de que el límite de tu conocimiento es incognoscible. El conocimiento surge simultáneamente con la plena experiencia del Dharma de Buda que lo penetra todo. Entonces no supongas que podrás comprender intelectualmente lo que has realizado. Aunque la experiencia del estado último se manifiesta inmediatamente, su misteriosa existencia no puede ser siempre comprendida. ¿Por qué tendrías que comprender lo que has experimentado?
 
-❀
+12 ❀
 
 El maestro zen Hotetsu, del monte Mayuku, se estaba abanicando. Un monje se le acercó y le preguntó: “La naturaleza del aire siempre está presente y llega a todas partes, ¿por qué se está usted abanicando?” 
 El maestro respondió: “Aunque has comprendido que la naturaleza del aire es permanente, aún no has comprendido el sentido de que llegue a por todas partes”.

@@ -212,9 +212,9 @@ No debemos pensar que lo realizado se convierta en conocimiento propio ni que el
 
 El maestro zen Baoche del monte Mayu estaba abanicándose.[^62]
 
-Un monje se acercó y dijo: la naturaleza del viento es permanente y no hay lugar al que no llegue. ¿Por qué, entonces, te abanicas?[^63]
+Un monje se acercó y dijo: la naturaleza del aire es permanente y no hay lugar al que no llegue. ¿Por qué, entonces, te abanicas?[^63]
 
-El maestro respondió: solo sabes que la naturaleza del viento es permanente, pero todavía no comprendes el sentido de que llegue a todas partes.[^64]
+El maestro respondió: solo sabes que la naturaleza del aire es permanente, pero todavía no comprendes el sentido de que llegue a todas partes.[^64]
 
 El monje preguntó:
 
@@ -226,9 +226,9 @@ El monje se inclinó profundamente y comprendió en silencio.[^66]
 
 La experiencia auténtica del buddhadharma y el camino vital de su correcta transmisión son así.
 
-Decir que no hace falta abanicar porque la naturaleza del viento es permanente y que, por tanto, debería sentirse el viento incluso sin abanico, es no comprender ni la permanencia ni la naturaleza del viento.
+Decir que no hace falta abanicar porque la naturaleza del aire es permanente y que, por tanto, debería sentirse el aire incluso sin abanico, es no comprender ni la permanencia ni la naturaleza del aire.
 
-Precisamente porque la naturaleza del viento es permanente, el viento de la casa de Buda hace aparecer el oro de la gran tierra y convierte el agua del gran río en crema.
+Precisamente porque la naturaleza del aire es permanente, el aire de la casa de Buda hace aparecer el oro de la gran tierra y convierte el agua del gran río en crema.
 
 Así es la práctica:  
 no se trata de saber, sino de vivirlo directamente.[^67]
