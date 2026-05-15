@@ -15,3 +15,5 @@ yarn-error.log*
 # Local secrets
 .env
 .env.local
+deploy.sh
+.github/workflows/deploy.yml

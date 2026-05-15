@@ -269,3 +269,7 @@ Este comando genera/actualiza:
 - secciones base en `_xinxinming/`,
 - versos individuales en `_xinxinming_versos/` (estructura web principal),
 - y mantiene el contenido sin imágenes.
+
+
+
+ ssh-keygen -t ed25519 -C "deploy-daizansoriano" -f ~/. ssh/d_deploy_daizansoriano -N "" 
