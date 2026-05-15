@@ -16,4 +16,3 @@ yarn-error.log*
 .env
 .env.local
 deploy.sh
-.github/workflows/deploy.yml
