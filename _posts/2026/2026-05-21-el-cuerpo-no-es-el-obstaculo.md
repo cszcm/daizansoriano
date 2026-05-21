@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "El cuerpo no es el obstáculo"
-subtitle: "Sobre la práctica encarnada en el budismo Soto Zen y nuestra relación con el dolor, el envejecimiento y la impermanencia"
+subtitle: "Sobre la práctica en el budismo Soto Zen y nuestra relación con el dolor, el envejecimiento y la impermanencia"
 description: "Una reflexión sobre por qué el cuerpo no es un obstáculo para la práctica de zazen, sino el camino mismo. Incluye el trabajo con el dolor, el envejecimiento y la enseñanza de shikantaza."
 date: 2026-05-21 10:00:00 +0200
 categories: [Práctica]
