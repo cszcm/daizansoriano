@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Meditacion zen y budismo Soto Zen"
+title: "Ensenanzas de Daizan Soriano"
 description: "Reflexiones, ensenanzas y recursos de meditacion zen y budismo Soto Zen de Daizan Soriano."
 permalink: /
 image: /assets/daizan.jpg
@@ -25,7 +25,7 @@ image: /assets/daizan.jpg
 
 <section class="section-heading">
   <p class="post-meta">Budismo Soto Zen</p>
-  <h1 class="post-title">Meditacion zen y budismo Soto Zen</h1>
+  <h1 class="post-title">Ensenanzas de Daizan Soriano</h1>
   <p class="post-subtitle">Textos, audios y recursos de practica de Daizan Soriano para integrar el Dharma en la vida cotidiana.</p>
 </section>
 
