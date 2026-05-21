@@ -48,7 +48,7 @@ Pero la práctica no me ha convertido en alguien situado fuera de la condición 
 
 También tengo días en que la práctica fluye y días en que cuesta. No soy la excepción a nada de lo que enseño.
 
-Si algo enseña la práctica del budismo Soto Zen es precisamente que no se trata de convertirse en una versión idealizada de uno mismo, sino de ver con claridad esta vida tal como es. Practicar no nos vuelve impecables. Nos vuelve, con suerte, más honestos respecto a nuestras ilusiones y más disponibles para seguir aprendiendo.
+Si algo enseña la práctica del budismo Soto Zen es precisamente que no se trata de convertirse en una versión idealizada de uno mismo, sino de ver con claridad esta vida tal como es. Practicar no nos vuelve impecables. Nos vuelve, con tiempo, práctica y paciencia, más honestos respecto a nuestras ilusiones y más disponibles para seguir aprendiendo.
 
 Lo que sí puedo ofrecerte es continuidad en el acompañamiento, honestidad cuando me equivoque, y el compromiso de seguir practicando y aprendiendo mientras te acompaño a hacer lo mismo. No más que eso. Pero tampoco menos.
 
