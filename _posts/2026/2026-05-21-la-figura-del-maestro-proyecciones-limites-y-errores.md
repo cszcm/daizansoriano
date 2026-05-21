@@ -14,7 +14,7 @@ Este texto es un intento de ser transparente sobre esa incomodidad, y sobre lo q
 
 Que diga todo esto no significa que la figura del maestro no tenga sentido. Lo tiene. La práctica del budismo Soto Zen no se transmite solo mediante ideas o lecturas, sino también a través del encuentro humano, de la práctica compartida, de la corrección de formas, del contraste con otra mirada y del acompañamiento sostenido en el tiempo.
 
-Pero precisamente porque este vínculo puede ser profundamente fértil, conviene mirarlo con honestidad.
+Pero precisamente porque este vínculo puede ser profundamente fértil, conviene cuidarlo.
 
 ## El maestro como pantalla
 
