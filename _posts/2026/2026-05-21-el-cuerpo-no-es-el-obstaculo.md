@@ -8,7 +8,7 @@ categories: [Práctica]
 tags: [zazen, cuerpo, impermanencia, dogen, soto zen, practica, dolor, shikantaza]
 ---
 
-Muchas personas llegan a la práctica de zazen con un cuerpo cansado. A veces hay dolor en las cervicales, tensión en la espalda, molestias en las rodillas o en los hombros. El paso de los años deja su huella. También la vida cotidiana, con sus exigencias, preocupaciones y esfuerzos, se inscribe silenciosamente en la musculatura, en la respiración, en la postura. Todo lo que vivimos deja su hueya en nuestro cuerpo.
+Muchas personas llegan a la práctica de zazen con un cuerpo cansado. A veces hay dolor en las cervicales, tensión en la espalda, molestias en las rodillas o en los hombros. El paso de los años deja su huella. También la vida cotidiana, con sus exigencias, preocupaciones y esfuerzos, se inscribe silenciosamente en la musculatura, en la respiración, en la postura.
 
 Aunque esto sea así, con frecuencia aparece una idea equivocada en las personas que practican zazen y empiezan a profundizar, es decir, pensar que el cuerpo es un obstáculo para la práctica. Como si la verdadera meditación ocurriera en algún lugar puramente mental, y el cuerpo fuera simplemente una dificultad que habría que soportar o, mejor aún, trascender.
 
@@ -22,7 +22,7 @@ La práctica de zazen apunta en una dirección completamente distinta.
 
 Dogen insistió una y otra vez en que el despertar no es una comprensión puramente intelectual, sino una realización encarnada. No practicamos a pesar del cuerpo. No utilizamos el cuerpo como un simple vehículo para alcanzar otra cosa.
 
-Practicamos en este cuerpo, con este cuerpo, como este cuerpo que es personal e intrasferible.
+Practicamos en este cuerpo, con este cuerpo, como este cuerpo.
 
 Y esto tiene implicaciones profundas. Si el cuerpo no es un objeto secundario que acompaña a una mente supuestamente más importante, sino la forma concreta en que esta existencia se manifiesta, entonces cada sensación, cada limitación y cada cambio físico forman parte del camino.
 
@@ -44,9 +44,7 @@ Y ahí está la práctica.
 
 No únicamente en la sensación física, sino en observar con claridad cómo la mente añade capas de sufrimiento sobre la experiencia directa.
 
-Una molestia en la rodilla puede convertirse rápidamente en una historia sobre el deterioro, la edad, la incapacidad o la frustración. Esa historia genera tensión adicional, y esa tensión intensifica aún más la sensación inicial.
-
-Observar ese mecanismo sin dramatismo, sin identificarnos con él, es una práctica profundamente transformadora.
+Una molestia en la rodilla puede convertirse rápidamente en una historia sobre el deterioro, la edad, la incapacidad o la frustración. Esa historia genera tensión adicional, y esa tensión intensifica aún más la sensación inicial. Observar ese mecanismo sin dramatismo, sin identificarnos con él, es una práctica profundamente transformadora. Y observarlo tampoco significa hacerlo perfectamente. La mente que se enreda en la historia, la resistencia que aparece una y otra vez, la dificultad para soltar: todo eso es también práctica. No hay un punto de llegada desde el que el sufrimiento añadido desaparece por completo. Lo que cambia, poco a poco, es nuestra relación con él.
 
 El cuerpo envejece. Cambia. Se fatiga. Se vuelve más vulnerable. Esto no es un error. Es el Dharma manifestándose de forma concreta.
 
