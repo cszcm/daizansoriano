@@ -68,7 +68,7 @@ Habrá momentos en que mis propias necesidades interfieran. Necesidad de ser com
 
 También es posible que, sin quererlo, contribuya a crear una dependencia que no te conviene. Que haya algo en mi manera de enseñar que refuerce el vínculo conmigo en lugar de fortalecer tu autonomía. Es uno de los riesgos estructurales de este rol, y no puedo garantizar que lo evitaré siempre.
 
-Y, sin embargo, pese a todo esto, el vínculo discipular puede tener un enorme valor. No porque el maestro sea perfecto, sino porque la práctica compartida con alguien con más recorrido puede ayudarnos a ver aspectos que, en soledad, tardaríamos mucho más en reconocer o incluso no los reconoceríamos en absoluto.
+Y, sin embargo, pese a todo esto, el vínculo discipular tiene un enorme valor. No porque el maestro sea perfecto, sino porque la práctica compartida con alguien con más recorrido puede ayudarnos a ver aspectos que, en soledad, tardaríamos mucho más en reconocer o incluso no los reconoceríamos en absoluto.
 
 ## Qué hacer cuando falle
 
