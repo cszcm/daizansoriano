@@ -82,7 +82,7 @@ Si yo reconozco que he fallado, intentaré decírtelo. No para descargar sobre t
 
 Lo que hace que esta relación valga la pena no es que yo no falle. Es que cuando falle, podamos mirarlo sin que eso destruya lo que hemos construido juntos.
 
-La figura del maestro, en el mejor de los casos, no es la de alguien que ha llegado a un lugar especial. Es la de alguien que sigue practicando, sigue equivocándose, sigue aprendiendo y que, precisamente por eso, puede caminar un trecho junto a otras personas.
+La figura del maestro no es la de alguien que ha llegado a un lugar especial. Es la de alguien que sigue practicando, sigue equivocándose, sigue aprendiendo y que, precisamente por eso, puede caminar un trecho junto a otras personas.
 
 Si algún sentido tiene este vínculo, no nace de la perfección, sino de la práctica compartida, la honestidad mutua y la confianza en el Dharma.
 
