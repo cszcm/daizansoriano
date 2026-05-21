@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "La figura del maestro: proyecciones, límites y errores"
-subtitle: "Una reflexión honesta sobre lo que soy, lo que no soy, y lo que probablemente haré mal"
+subtitle: "Una reflexión sobre lo que soy, lo que no soy, y lo que probablemente haré mal"
 description: "Reflexión sobre la figura del maestro en la relación discipular: las proyecciones que genera, los límites reales del rol, y una enumeración de los errores que probablemente haya cometido y cometeré."
 date: 2026-05-21 10:00:00 +0200
 categories: [Práctica]
