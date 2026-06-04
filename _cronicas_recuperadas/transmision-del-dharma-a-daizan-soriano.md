@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Transmision del Dharma a Daizan Soriano"
+date: 2020-12-24
 description: "Texto completo de Jose Manuel Maceiras sobre la transmision del Dharma a Daizan Soriano en Luz Serena."
 permalink: /cronicas/transmision-del-dharma-a-daizan-soriano/
 image: /assets/images/2020/transmision-del-dharma-a-daizan-soriano-img1.png

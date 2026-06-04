@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Shessin de junio en Anatot, Arucas, Gran Canaria"
+date: 2021-07-08
 description: "Cronica del retiro celebrado en Anatot, Arucas, en junio de 2021, con texto de Marcos Fricke y fotografias del encuentro."
 permalink: /cronicas/shessin-de-junio-en-anatot-arucas-gran-canaria/
 image: /assets/images/2021/shessin-de-junio-en-anatot-arucas-gran-canaria-img1.jpg

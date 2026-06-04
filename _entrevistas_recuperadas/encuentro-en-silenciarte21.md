@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Encuentro en Silenciarte21"
+date: 2021-05-27
 description: "Con motivo de una visita a Las Palmas de Gran Canaria para un retiro de introduccion al Zen, Daizan comparte este encuentro con Pedro, creador de Silenciarte21."
 permalink: /entrevistas/encuentro-en-silenciarte21/
 image: /assets/images/2021/encuentro-en-silenciarte21-img1.png

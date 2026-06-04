@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Entrevista a Samuel Soriano, instructor de meditacion zen"
+date: 2018-01-14
 description: "Entrevista integra publicada originalmente en Soto Zen sobre la practica en Alicante, el recorrido de Samuel Soriano y su experiencia en la via."
 permalink: /entrevistas/entrevista-samuel-soriano-instructor-meditacion-zen/
 image: /assets/images/2018/entrevista-samuel-soriano-instructor-meditacion-zen-img1.jpeg

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Cronica del Retiro de Acercamiento"
+date: 2021-05-09
 description: "Cronica del retiro de acercamiento celebrado en Luz Serena del 30 de abril al 2 de mayo de 2021, con testimonio de Luz."
 permalink: /cronicas/cronica-del-retiro-de-acercamiento/
 image: /assets/images/2021/cronica-del-retiro-de-acercamiento-img1.jpg

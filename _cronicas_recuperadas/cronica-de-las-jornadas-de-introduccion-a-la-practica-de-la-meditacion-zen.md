@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Cronica de las jornadas de introduccion a la practica de la meditacion zen"
+date: 2008-02-25
 description: "Cronica de Nacho sobre las jornadas de introduccion a la practica de la meditacion zen celebradas en Luz Serena en febrero de 2008."
 permalink: /cronicas/cronica-de-las-jornadas-de-introduccion-a-la-practica-de-la-meditacion-zen/
 image: /assets/images/2008/cronica-de-las-jornadas-de-introduccion-a-la-practica-de-la-meditacion-zen-img1.jpg

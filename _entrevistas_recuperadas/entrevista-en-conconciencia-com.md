@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Entrevista en conconciencia.com"
+date: 2015-08-14
 description: "Entrevista integra realizada por Inaki Calvo para conconciencia.com sobre retiro, practica zen y experiencia personal."
 permalink: /entrevistas/entrevista-en-conconciencia-com/
 image: /assets/images/2015/entrevista-en-conconciencia-com-img1.jpg

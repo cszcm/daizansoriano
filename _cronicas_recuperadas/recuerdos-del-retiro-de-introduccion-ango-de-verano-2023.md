@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Recuerdos del retiro de introduccion, Ango de verano del 2023"
+date: 2023-09-27
 description: "Carta de Gaspar sobre el retiro de introduccion a zazen celebrado en Luz Serena durante el Ango de verano del 2023."
 permalink: /cronicas/recuerdos-del-retiro-de-introduccion-ango-de-verano-2023/
 image: /assets/images/2023/recuerdos-del-retiro-de-introduccion-ango-de-verano-2023-img1.jpg

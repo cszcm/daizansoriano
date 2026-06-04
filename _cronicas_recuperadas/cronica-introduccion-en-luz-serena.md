@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Cronica introduccion en Luz Serena"
+date: 2012-01-06
 description: "Cronica temprana de introduccion en Luz Serena sobre el paso del ritmo exterior al silencio y al reconocimiento interior."
 permalink: /cronicas/cronica-introduccion-en-luz-serena/
 image: /assets/images/2012/cronica-introduccion-en-luz-serena-img1.jpg

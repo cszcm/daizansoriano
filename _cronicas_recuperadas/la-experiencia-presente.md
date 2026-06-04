@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "La experiencia presente"
+date: 2015-08-18
 description: "Cronica de Lola Torrent sobre una sesshin de introduccion en Luz Serena y el modo en que el silencio transforma la experiencia."
 permalink: /cronicas/la-experiencia-presente/
 image: /assets/images/2015/la-experiencia-presente-img1.jpg
