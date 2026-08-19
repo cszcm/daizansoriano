@@ -41,7 +41,7 @@ Como maestro suyo podría hablar de su compromiso con la práctica, de su consta
 
 Ervigio me enseñó también algo que quizá solo ahora comprendo con toda claridad: podemos pensar de manera muy diferente y, sin embargo, reconocernos en aquello que está antes de nuestras opiniones y nuestras ideas. Podemos sentarnos juntos. Podemos trabajar juntos. Podemos cuidarnos.
 
-Quizá eso también sea el Dharma.
+Eso también es el Dharma.
 
 ![Ervigio haciendo de jisha en la rohatsu de 2025.](/assets/images/2026/ervigio-entrada.jpg)
 *Ervigio haciendo de jisha en la rohatsu de 2025.*
