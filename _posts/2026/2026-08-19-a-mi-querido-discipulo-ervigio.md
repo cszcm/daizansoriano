@@ -24,7 +24,7 @@ Pero entonces estaba Ervigio.
 
 Y su buen corazón terminaba siempre por hacer pequeñas todas esas diferencias.
 
-Porque más allá de las ideas estaba la persona. Y Ervigio era, ante todo, una buena persona: generosa, disponible, fiel a la práctica y a la Sangha. De esas personas que, cuando hacía falta algo en la comunidad, no preguntaban demasiado: simplemente estaban allí.
+Porque más allá de las ideas estaba la persona. Y Ervigio era, ante todo, una buena persona: generosa, disponible, fiel a la práctica y a la Sangha. De esas personas que, cuando hacía falta algo en la comunidad, no preguntaba demasiado: simplemente estaba allí.
 
 Siempre dispuesto a ayudar.
 
@@ -54,9 +54,7 @@ Y queda su ejemplo.
 
 Personalmente, sé que lo voy a echar mucho en falta en los teishos y en las enseñanzas. Me gustaba lanzarle pequeñas piedrecitas sobre el despertar: sobre la diferencia entre un despertar buscado solo para uno mismo y el despertar del bodhisattva que promueve el Zen, abierto al bien de todos los seres. Ervigio escuchaba esas palabras desde su propia búsqueda, con seriedad y con una aspiración sincera.
 
-Querido Ervigio, gracias por tu práctica.
-Gracias por tu entrega.
-Gracias por haber estado tantas veces cuando hacía falta.
+Querido Ervigio, gracias por tu práctica. Gracias por tu entrega. Gracias por haber estado tantas veces cuando hacía falta.
 
 Que los méritos de tu vida y de tu práctica se extiendan a todos los seres.
 
