@@ -52,6 +52,8 @@ Queda su lugar vacío. Quedan los recuerdos. Quedan todas esas pequeñas cosas q
 
 Y queda su ejemplo.
 
+Personalmente, sé que lo voy a echar mucho en falta en los teishos y en las enseñanzas. Me gustaba lanzarle pequeñas piedrecitas sobre el despertar: sobre la diferencia entre un despertar buscado solo para uno mismo y el despertar del bodhisattva que promueve el Zen, abierto al bien de todos los seres. Ervigio escuchaba esas palabras desde su propia búsqueda, con seriedad y con una aspiración sincera.
+
 Querido Ervigio, gracias por tu práctica.
 Gracias por tu entrega.
 Gracias por haber estado tantas veces cuando hacía falta.
