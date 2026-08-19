@@ -33,7 +33,7 @@ Siempre dispuesto a ayudar.
 
 En una Sangha hay personas que destacan por sus palabras, otras por sus conocimientos, otras por su silencio y otras por su práctica. Ervigio pertenecía también a una categoría quizá menos visible, pero absolutamente imprescindible: la de quienes sostienen la comunidad con sus manos, con su tiempo y con su disponibilidad.
 
-Durante un tiempo asumió la responsabilidad de la práctica online. Todos los días, de lunes a viernes, a las 7:15 de la mañana, estaba allí para dirigirla. Ese gesto cotidiano, silencioso y constante, dice mucho de él: de su fidelidad, de su disciplina y de su manera de cuidar la Sangha.
+Desde el principio de la formación de la comunidad asumió la responsabilidad de la práctica online. Todos los días, de lunes a viernes, a las 7:15 de la mañana, estaba allí para dirigirla. Ese gesto cotidiano, silencioso y constante, dice mucho de él: de su fidelidad, de su disciplina y de su manera de cuidar la Sangha.
 
 Nunca olvidaré esa capacidad de entrega.
 
