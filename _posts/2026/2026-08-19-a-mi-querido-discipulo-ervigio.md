@@ -4,7 +4,7 @@ title: A mi querido discípulo Ervigio
 subtitle: En memoria de un discípulo querido
 description: Despedida a Ervigio, uno de mis primeros discípulos, en memoria de su generosidad y su entrega a la Sangha.
 image: /assets/images/2026/ervigio-incienso.jpg
-date: 2026-08-19 09:00:00 +0100
+date: 2026-08-19 08:00:00 +0100
 redirect_from:
   - /2026/08/19/a-mi-querido-discipulo-ervigio/
 categories: [Comunidad]
