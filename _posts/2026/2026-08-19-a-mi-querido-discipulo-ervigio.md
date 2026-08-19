@@ -53,3 +53,7 @@ Gracias por tu entrega.
 Gracias por haber estado tantas veces cuando hacía falta.
 
 Que los méritos de tu vida y de tu práctica se extiendan a todos los seres.
+
+Con gratitud,
+
+Daizan
