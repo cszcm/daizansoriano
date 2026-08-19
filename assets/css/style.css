@@ -848,6 +848,28 @@ html[data-contrast="high"] .post-content a:hover {
   box-shadow: var(--shadow-soft);
 }
 
+.post-content figure,
+.post-content p:has(> img:only-child) {
+  margin: 2.4rem 0 0.45rem;
+  text-align: center;
+}
+
+.post-content figcaption,
+.post-content p:has(> img:only-child) + p:has(> em:only-child) {
+  max-width: 42rem;
+  margin: 0 auto 2.2rem;
+  color: var(--muted);
+  font-family: "Zen Kaku Gothic New", Arial, sans-serif;
+  font-size: 0.72em;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.post-content p:has(> img:only-child) + p:has(> em:only-child) em {
+  font-style: normal;
+}
+
 .search-page {
   padding: 0.8rem 0 3rem;
 }
