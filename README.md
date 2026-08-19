@@ -105,17 +105,16 @@ Si un tema encaja, prioriza estas etiquetas antes de inventar variantes:
 
 Nota: si aparece una nueva etiqueta, intenta que siga el mismo estilo (sin tildes/guiones) y que no duplique otra existente (p. ej. compasion en vez de compasión).
 
-## Contador de visitas por entrada
+## Estadísticas por entrada
 
-El blog incluye un contador de visitas por post.
+El blog registra estadísticas por post con GoatCounter, pero no muestra un contador público de visitas en las entradas.
 
-- Contador visible: proveedores `countapi.xyz`/`counterapi.dev` y fallback local `localStorage`.
-- Tracking adicional opcional: `GoatCounter` si configuras `goatcounter.code`.
+- Tracking opcional: `GoatCounter` si configuras `goatcounter.code`.
 
 ### Cómo funciona
 
-- El contador visible intenta servicios remotos y, si fallan (CORS, red o adblock), usa contador local para no quedar en blanco.
-- Si defines `goatcounter.code` en `_config.yml`, también se intenta enviar tracking a GoatCounter.
+- Si defines `goatcounter.code` en `_config.yml`, las visitas se envían a GoatCounter.
+- No se renderiza ningún bloque visible con el número de visitas en la página.
 
 ### Activar GoatCounter
 
@@ -136,11 +135,11 @@ Añade en el front matter:
 views: false
 ```
 
-Por defecto, si no se define `views`, el contador se muestra.
+Por defecto, si no se define `views`, el tracking de GoatCounter se carga en la entrada.
 
 ### Archivo relacionado
 
-- Include del contador: `_includes/post-views.html`
+- Include de estadísticas: `_includes/post-views.html`
 
 ## Licencia
 
@@ -272,4 +271,4 @@ Este comando genera/actualiza:
 
 
 
- ssh-keygen -t ed25519 -C "deploy-daizansoriano" -f ~/. ssh/d_deploy_daizansoriano -N "" 
+ ssh-keygen -t ed25519 -C "deploy-daizansoriano" -f ~/. ssh/d_deploy_daizansoriano -N ""
