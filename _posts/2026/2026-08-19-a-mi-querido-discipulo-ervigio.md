@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A mi querido discípulo Ervigio
+title: A mi querido discípulo Ervigio Vázquez
 subtitle: En memoria de un discípulo querido
 description: Despedida a Ervigio Vázquez, uno de mis primeros discípulos, en memoria de su generosidad y su entrega a la Sangha.
 image: /assets/images/2026/ervigio-incienso.jpg
@@ -11,19 +11,27 @@ categories: [Comunidad]
 tags: [discipulado, sangha, comunidad, dharma, impermanencia, soto zen]
 ---
 
-Hoy me resulta difícil encontrar palabras para despedirme de Ervigio.
+![Ervigio ofreciendo incienso en la ceremonia de precepto del Bodhisattva, 2025.](/assets/images/2026/ervigio-incienso.jpg)
+*Ervigio ofreciendo incienso en la ceremonia de precepto del Bodhisattva, 2025.*
 
-Durante estos años compartimos práctica, retiros, trabajos y muchos momentos de la vida de la Sangha. Éramos, además, personas muy distintas. Nuestra manera de comprender algunas cosas del mundo no siempre coincidía. A veces, incluso, estábamos en lugares muy alejados.
+Hoy me resulta difícil encontrar palabras para despedirme de Ervigio Vázquez, uno de mis primeros discípulos.
+
+Durante estos años compartimos práctica, retiros, trabajos y muchos momentos de la vida de la Sangha. No se perdía casi ninguna actividad que organizáramos.
+
+Éramos, además, personas muy distintas. Nuestra manera de comprender algunas cosas del mundo no siempre coincidía. A veces, incluso, estábamos en lugares muy alejados, y debo reconocer que esa distancia en ocasiones me producía cierta incomodidad.
 
 Pero entonces estaba Ervigio.
 
-Y su buen corazón hacía pequeñas todas esas diferencias.
+Y su buen corazón terminaba siempre por hacer pequeñas todas esas diferencias.
 
-Más allá de las ideas estaba la persona. Y Ervigio era, ante todo, una buena persona: generosa, disponible, fiel a la práctica y a la Sangha. De esas personas que, cuando hacía falta algo, no preguntaban demasiado. Simplemente estaban allí.
+Porque más allá de las ideas estaba la persona. Y Ervigio era, ante todo, una buena persona: generosa, disponible, fiel a la práctica y a la Sangha. De esas personas que, cuando hacía falta algo en la comunidad, no preguntaban demasiado: simplemente estaban allí.
 
 Siempre dispuesto a ayudar.
 
-En una Sangha hay quienes destacan por sus palabras, otros por sus conocimientos, otros por su silencio y otros por su práctica. Ervigio pertenecía también a una categoría menos visible, pero absolutamente imprescindible: la de quienes sostienen la comunidad con sus manos, con su tiempo y con su disponibilidad.
+![Círculo de corazones tras la noche de Mara, 2025.](/assets/images/2026/ervigio-zazen.jpg)
+*Círculo de corazones tras la noche de Mara, 2025. Ervigio la hizo completa.*
+
+En una Sangha hay personas que destacan por sus palabras, otras por sus conocimientos, otras por su silencio y otras por su práctica. Ervigio pertenecía también a una categoría quizá menos visible, pero absolutamente imprescindible: la de quienes sostienen la comunidad con sus manos, con su tiempo y con su disponibilidad.
 
 Durante un tiempo asumió la responsabilidad de la práctica online. Todos los días, de lunes a viernes, a las 7:15 de la mañana, estaba allí para dirigirla. Ese gesto cotidiano, silencioso y constante, dice mucho de él: de su fidelidad, de su disciplina y de su manera de cuidar la Sangha.
 
@@ -31,11 +39,14 @@ Nunca olvidaré esa capacidad de entrega.
 
 Como maestro suyo podría hablar de su compromiso con la práctica, de su constancia o de su sincero anhelo de despertar. Pero hoy prefiero recordar algo más sencillo y más profundo: su humanidad.
 
-Ervigio me enseñó algo que quizá solo ahora comprendo con toda claridad: que podemos pensar de manera muy diferente y, aun así, reconocernos en lo que está antes de nuestras opiniones y de nuestras ideas. Podemos sentarnos juntos. Podemos trabajar juntos. Podemos cuidarnos.
+Ervigio me enseñó también algo que quizá solo ahora comprendo con toda claridad: podemos pensar de manera muy diferente y, sin embargo, reconocernos en aquello que está antes de nuestras opiniones y nuestras ideas. Podemos sentarnos juntos. Podemos trabajar juntos. Podemos cuidarnos.
 
 Quizá eso también sea el Dharma.
 
-Hoy la Sangha pierde a uno de los suyos, y yo pierdo a un querido discípulo.
+![Ervigio haciendo de jisha en la rohatsu de 2025.](/assets/images/2026/ervigio-entrada.jpg)
+*Ervigio haciendo de jisha en la rohatsu de 2025.*
+
+Hoy la Sangha pierde a una persona muy querida, a uno de los suyos, y yo pierdo a un querido discípulo.
 
 Queda su lugar vacío. Quedan los recuerdos. Quedan todas esas pequeñas cosas que hizo por los demás y que seguramente ya nadie podrá enumerar.
 
