@@ -1,8 +1,8 @@
 ---
 layout: post
-title: A mi querido discípulo Ervigio
+title: A mi querido discípulo Ervigio Vázquez
 subtitle: En memoria de un discípulo querido
-description: Despedida a Ervigio, uno de mis primeros discípulos, en memoria de su generosidad y su entrega a la Sangha.
+description: Despedida a Ervigio Vázquez, uno de mis primeros discípulos, en memoria de su generosidad y su entrega a la Sangha.
 image: /assets/images/2026/ervigio-incienso.jpg
 date: 2026-08-19 08:00:00 +0100
 redirect_from:
@@ -14,7 +14,7 @@ tags: [discipulado, sangha, comunidad, dharma, impermanencia, soto zen]
 ![Ervigio ofreciendo incienso en la ceremonia de precepto del Bodhisattva, 2025.](/assets/images/2026/ervigio-incienso.jpg)
 *Ervigio ofreciendo incienso en la ceremonia de precepto del Bodhisattva, 2025.*
 
-Me resulta difícil encontrar palabras para despedirme de Ervigio, uno de mis primeros discípulos. Durante estos años compartimos práctica, retiros, trabajos y muchos momentos de la vida de la Sangha, no se perdía ninguna actividad que organizáramos.
+Me resulta difícil encontrar palabras para despedirme de Ervigio Vázquez, uno de mis primeros discípulos. Durante estos años compartimos práctica, retiros, trabajos y muchos momentos de la vida de la Sangha, no se perdía ninguna actividad que organizáramos.
 
 Éramos, además, personas muy distintas. Nuestra manera de comprender algunas cosas del mundo estaba en lugares casi opuestos y, en ocasiones, debo reconocer que esa distancia me producía cierta incomodidad.
 
