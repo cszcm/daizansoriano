@@ -54,6 +54,8 @@ Y queda su ejemplo.
 
 Personalmente, sé que lo voy a echar mucho en falta en los teishos y en las enseñanzas. Me gustaba lanzarle pequeñas piedrecitas sobre el despertar: sobre la diferencia entre un despertar buscado solo para uno mismo y el despertar del bodhisattva que promueve el Zen, abierto al bien de todos los seres. Ervigio escuchaba esas palabras desde su propia búsqueda, con seriedad y con una aspiración sincera.
 
+El primer día del retiro que comienza mañana celebraremos una ceremonia de despedida por él. Encenderemos incienso, recitaremos juntos y ofreceremos los méritos de nuestra práctica para que pueda seguir profundizando en la Vía del Despertar, bajo la protección de todos los Buddhas, Bodhisattvas y Ancestros. Será nuestra manera de acompañarlo, de honrar su vida y de dejar que su recuerdo siga presente en el corazón de la Sangha.
+
 Querido Ervigio, gracias por tu práctica. Gracias por tu entrega. Gracias por haber estado tantas veces cuando hacía falta.
 
 Que los méritos de tu vida y de tu práctica se extiendan a todos los seres.
