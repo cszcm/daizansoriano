@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A mi querido discípulo Ervigio Vázquez
+title: A mi querido discípulo Ervigio
 subtitle: En memoria de un discípulo querido
 description: Despedida a Ervigio Vázquez, uno de mis primeros discípulos, en memoria de su generosidad y su entrega a la Sangha.
 image: /assets/images/2026/ervigio-incienso.jpg
@@ -11,42 +11,41 @@ categories: [Comunidad]
 tags: [discipulado, sangha, comunidad, dharma, impermanencia, soto zen]
 ---
 
-![Ervigio ofreciendo incienso en la ceremonia de precepto del Bodhisattva, 2025.](/assets/images/2026/ervigio-incienso.jpg)
-*Ervigio ofreciendo incienso en la ceremonia de precepto del Bodhisattva, 2025.*
+Hoy me resulta difícil encontrar palabras para despedirme de Ervigio.
 
-Me resulta difícil encontrar palabras para despedirme de Ervigio Vázquez, uno de mis primeros discípulos. Durante estos años compartimos práctica, retiros, trabajos y muchos momentos de la vida de la Sangha, no se perdía ninguna actividad que organizáramos.
-
-Éramos, además, personas muy distintas. Nuestra manera de comprender algunas cosas del mundo estaba en lugares casi opuestos y, en ocasiones, debo reconocer que esa distancia me producía cierta incomodidad.
+Durante estos años compartimos práctica, retiros, trabajos y muchos momentos de la vida de la Sangha. Éramos, además, personas muy distintas. Nuestra manera de comprender algunas cosas del mundo no siempre coincidía. A veces, incluso, estábamos en lugares muy alejados.
 
 Pero entonces estaba Ervigio.
 
-Su buen corazón terminaba siempre por hacer pequeñas todas esas diferencias.
+Y su buen corazón hacía pequeñas todas esas diferencias.
 
-Porque más allá de las ideas estaba la persona. Y Ervigio era, sobre todo, una persona buena. Generosa. De esas que cuando hacía falta algo en la comunidad no preguntaban demasiado: simplemente estaban allí.
+Más allá de las ideas estaba la persona. Y Ervigio era, ante todo, una buena persona: generosa, disponible, fiel a la práctica y a la Sangha. De esas personas que, cuando hacía falta algo, no preguntaban demasiado. Simplemente estaban allí.
 
 Siempre dispuesto a ayudar.
 
-![Círculo de corazones tras la noche de Mara, 2025.](/assets/images/2026/ervigio-zazen.jpg)
-*Círculo de corazones tras la noche de Mara, 2025. Ervigio la hizo completa.*
+En una Sangha hay quienes destacan por sus palabras, otros por sus conocimientos, otros por su silencio y otros por su práctica. Ervigio pertenecía también a una categoría menos visible, pero absolutamente imprescindible: la de quienes sostienen la comunidad con sus manos, con su tiempo y con su disponibilidad.
 
-En una Sangha hay personas que destacan por sus palabras, otras por sus conocimientos y otras por su práctica. Ervigio pertenecía también a una categoría quizá menos visible, pero absolutamente imprescindible: la de quienes sostienen la comunidad con sus manos, con su tiempo y con su disponibilidad.
+Durante un tiempo asumió la responsabilidad de la práctica online. Todos los días, de lunes a viernes, a las 7:15 de la mañana, estaba allí para dirigirla. Ese gesto cotidiano, silencioso y constante, dice mucho de él: de su fidelidad, de su disciplina y de su manera de cuidar la Sangha.
 
 Nunca olvidaré esa capacidad de entrega.
 
-Como maestro suyo podría hablar de su compromiso con la práctica, de su constancia o de su sincero anhelo de despertar. Pero hoy prefiero recordar su humanidad.
+Como maestro suyo podría hablar de su compromiso con la práctica, de su constancia o de su sincero anhelo de despertar. Pero hoy prefiero recordar algo más sencillo y más profundo: su humanidad.
 
-Ervigio me enseñó también algo que quizá solo ahora comprendo plenamente. Podemos pensar de manera muy diferente y, sin embargo, reconocernos en aquello que está antes de nuestras opiniones y nuestras ideas. Podemos sentarnos juntos. Podemos trabajar juntos. Podemos cuidarnos.
+Ervigio me enseñó algo que quizá solo ahora comprendo con toda claridad: que podemos pensar de manera muy diferente y, aun así, reconocernos en lo que está antes de nuestras opiniones y de nuestras ideas. Podemos sentarnos juntos. Podemos trabajar juntos. Podemos cuidarnos.
 
-Eso también es el Dharma.
+Quizá eso también sea el Dharma.
 
-![Ervigio haciendo de jisha en la rohatsu de 2025.](/assets/images/2026/ervigio-entrada.jpg)
-*Ervigio haciendo de jisha en la rohatsu de 2025.*
+Hoy la Sangha pierde a uno de los suyos, y yo pierdo a un querido discípulo.
 
-Hoy la Sangha pierde a una persona muy querida y yo pierdo a un querido discípulo.
-
-Queda su lugar vacío. Quedan los recuerdos. Quedan todas esas pequeñas cosas que hizo por los demás.
+Queda su lugar vacío. Quedan los recuerdos. Quedan todas esas pequeñas cosas que hizo por los demás y que seguramente ya nadie podrá enumerar.
 
 Y queda su ejemplo.
+
+Personalmente, sé que lo voy a echar mucho en falta en los teishos y en las enseñanzas. Me gustaba lanzarle pequeñas piedrecitas sobre el despertar: sobre la diferencia entre un despertar buscado solo para uno mismo y el despertar del bodhisattva que promueve el Zen, abierto al bien de todos los seres. Ervigio escuchaba esas palabras desde su propia búsqueda, con seriedad y con una aspiración sincera.
+
+Quiero agradecer también, de corazón, a todas las personas que me han expresado su pesar y su cercanía en estos momentos. Vuestras palabras acompañan este duelo y nos recuerdan cuánto fue querido Ervigio.
+
+El primer día del retiro que comienza mañana celebraremos una ceremonia de despedida por él. Encenderemos incienso, recitaremos juntos y ofreceremos los méritos de nuestra práctica para que pueda seguir profundizando en la Vía del Despertar, bajo la protección de todos los Buddhas, Bodhisattvas y Ancestros. Será nuestra manera de acompañarlo, de honrar su vida y de dejar que su recuerdo siga presente en el corazón de la Sangha.
 
 Querido Ervigio, gracias por tu práctica.
 Gracias por tu entrega.
@@ -54,6 +53,4 @@ Gracias por haber estado tantas veces cuando hacía falta.
 
 Que los méritos de tu vida y de tu práctica se extiendan a todos los seres.
 
-Con gratitud,
-
-Daizan
+Gasshō.
