@@ -1,13 +1,12 @@
---- layout: post title: La cocina de Ryūan 
-subtitle: Sobre servir sin convertirlo en 
-sacrificio ni en compensación description: Relato 
-sobre un practicante que, al hacerse cargo de la 
-cocina durante un retiro, siente que se pierde el 
-zazen del dojo, y sobre lo que le enseña su 
-maestro acerca de dónde está realmente la 
-práctica. date: 2026-08-28 09:00:00 +0200 
-categories: [Practica] tags: [zazen, practica, 
-ego, presencia, soto zen, servicio] ---
+---
+layout: post
+title: La cocina de Ryūan
+subtitle: Sobre servir sin convertirlo en sacrificio ni en compensación
+description: Relato sobre un practicante que, al hacerse cargo de la cocina durante un retiro, siente que se pierde el zazen del dojo, y sobre lo que le enseña su maestro acerca de dónde está realmente la práctica.
+date: 2026-08-28 09:00:00 +0200
+categories: [Practica]
+tags: [zazen, practica, ego, presencia, soto zen, servicio]
+---
 
 Ryūan llevaba tres días sin pisar el dojo.
 
