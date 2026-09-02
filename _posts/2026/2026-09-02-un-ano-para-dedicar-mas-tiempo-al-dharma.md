@@ -3,7 +3,7 @@ layout: post
 title: "Un año para dedicar más tiempo al Dharma"
 subtitle: "Una carta personal sobre esta nueva etapa"
 description: "Este curso he solicitado un año de permiso en mi trabajo para dedicar más tiempo y energía a la práctica, la enseñanza y el cuidado de la comunidad de Camino Medio."
-date: 2026-08-01 09:00:00 +0200
+date: 2026-09-02 09:00:00 +0200
 categories: [Comunidad]
 tags: [camino medio, comunidad, dharma, sangha, soto zen]
 ---
